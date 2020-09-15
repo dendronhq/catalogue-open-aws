@@ -1,9 +1,9 @@
 ---
-id: 33b9a3ba-1694-42a5-98eb-64dcdf85cbb3
+id: cloudwatch
 title: Cloudwatch
 desc: ''
-updated: 1600137750380
-created: 1600137750380
+updated: '0'
+created: '0'
 data: {}
 fname: service.cloudwatch
 stub: false

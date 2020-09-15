@@ -1,9 +1,9 @@
 ---
-id: b618b01b-b644-4310-9aeb-5d5a9e150dff
+id: ec2
 title: Ec2
 desc: ''
-updated: 1600137750379
-created: 1600137750379
+updated: '0'
+created: '0'
 data: {}
 fname: service.ec2
 stub: false
