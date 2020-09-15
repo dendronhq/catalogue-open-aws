@@ -1,0 +1,29 @@
+{
+  "todo": {
+    "prefix": "to",
+    "scope": "markdown",
+    "body": "- [ ] ",
+    "description": "todo box"
+  },
+  "h3": {
+    "prefix": "h3",
+    "scope": "markdown",
+    "body": "### "
+  },
+  "project": {
+    "prefix": "project",
+    "body": [
+      "## Goals",
+      "",
+      "## Details",
+      "",
+      "## Discussions",
+      "",
+      "## Tasks",
+      "",
+      "## Release Notes",
+      "",
+    ],
+    "description": ""
+  }
+}
