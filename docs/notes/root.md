@@ -17,4 +17,4 @@ permalink: /
 ---
 # AWS
 
-This is a cheatsheet for AWS services. It is generated from open source content from the following projects
+This site is meant to be a reference of all things AWS. It is compiled from the [highest quality open sources of information](notes/dd5fcf14-9678-4f38-acec-4b8965c8c568) available about AWS. It is generated and published using [Dendron](http://dendron.so/), the open source note taking tool. 

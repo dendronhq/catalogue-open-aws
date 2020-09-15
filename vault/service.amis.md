@@ -1,9 +1,9 @@
 ---
-id: 55ebc2ee-2864-43f1-bd0a-05fff813781d
+id: 7069a0b2-c5e2-4847-947f-7da373a74cf5
 title: Amis
 desc: ''
-updated: 1600137750380
-created: 1600137750380
+updated: 1600144245314
+created: 1600144245314
 stub: false
 ---
 # AMIs
