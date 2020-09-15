@@ -14,3 +14,4 @@ stub: false
 - [ ] add rds pricing info
 - [ ] add iam policy info
 - [ ] add cli info
+- [ ] add aws daily updates

@@ -1,0 +1,7 @@
+{
+  "name": "aws",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "kevinslin <kevin@thence.io>",
+  "license": "MIT"
+}
