@@ -1,9 +1,9 @@
 ---
-id: d028a125-a56e-42c7-8d8e-030fb7f88c82
+id: s3
 title: S3
 desc: ''
-updated: 1600144245309
-created: 1600144245309
+updated: '0'
+created: '0'
 stub: false
 ---
 # S3

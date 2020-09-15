@@ -1,9 +1,9 @@
 ---
-id: 9f8b0bd9-0199-4758-965d-8b0a151287e3
+id: ec2
 title: Ec2
 desc: ''
-updated: 1600144245313
-created: 1600144245313
+updated: '0'
+created: '0'
 stub: false
 ---
 # EC2
