@@ -13,7 +13,6 @@ children:
   - dd5fcf14-9678-4f38-acec-4b8965c8c568
   - 372878b7-5f47-4445-91dd-d2fae5be08ad
   - 6cd09d9c-6929-423c-9bb0-a117e8215473
-  - cde7abe2-2213-493a-8e28-41a7f459e9a5
   - 684025f0-af74-48ff-a902-bdb787eb0621
 hpath: root
 permalink: /
