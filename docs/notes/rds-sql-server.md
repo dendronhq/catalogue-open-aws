@@ -5,11 +5,11 @@ desc: ''
 updated: '0'
 created: '0'
 data: {}
-fname: service.rds-sql-server
+fname: s.rds-sql-server
 stub: false
 parent: 684025f0-af74-48ff-a902-bdb787eb0621
 children: []
-hpath: service.rds-sql-server
+hpath: s.rds-sql-server
 ---
 # RDS SQL Server
 

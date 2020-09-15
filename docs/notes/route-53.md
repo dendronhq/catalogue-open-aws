@@ -5,11 +5,11 @@ desc: ''
 updated: '0'
 created: '0'
 data: {}
-fname: service.route-53
+fname: s.route-53
 stub: false
 parent: 684025f0-af74-48ff-a902-bdb787eb0621
 children: []
-hpath: service.route-53
+hpath: s.route-53
 ---
 # Route 53
 

@@ -5,11 +5,11 @@ desc: ''
 updated: '0'
 created: '0'
 data: {}
-fname: service.lambda
+fname: s.lambda
 stub: false
 parent: 684025f0-af74-48ff-a902-bdb787eb0621
 children: []
-hpath: service.lambda
+hpath: s.lambda
 ---
 # Lambda
 

@@ -5,11 +5,11 @@ desc: ''
 updated: '0'
 created: '0'
 data: {}
-fname: service.api-gateway
+fname: s.api-gateway
 stub: false
 parent: 684025f0-af74-48ff-a902-bdb787eb0621
 children: []
-hpath: service.api-gateway
+hpath: s.api-gateway
 ---
 # API Gateway
 

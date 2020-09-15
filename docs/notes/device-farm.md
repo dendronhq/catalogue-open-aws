@@ -5,11 +5,11 @@ desc: ''
 updated: '0'
 created: '0'
 data: {}
-fname: service.device-farm
+fname: s.device-farm
 stub: false
 parent: 684025f0-af74-48ff-a902-bdb787eb0621
 children: []
-hpath: service.device-farm
+hpath: s.device-farm
 ---
 # Device Farm
 

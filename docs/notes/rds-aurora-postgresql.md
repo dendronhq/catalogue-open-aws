@@ -5,11 +5,11 @@ desc: ''
 updated: '0'
 created: '0'
 data: {}
-fname: service.rds-aurora-postgresql
+fname: s.rds-aurora-postgresql
 stub: false
 parent: 684025f0-af74-48ff-a902-bdb787eb0621
 children: []
-hpath: service.rds-aurora-postgresql
+hpath: s.rds-aurora-postgresql
 ---
 # RDS Aurora PostgreSQL
 
