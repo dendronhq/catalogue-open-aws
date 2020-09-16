@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "kevinslin <kevin@thence.io>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@dendronhq/og-aws-seed": "0.0.0"
+  }
 }
