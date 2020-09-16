@@ -1,4 +1,7 @@
 ---
+source:
+  name: og-aws
+  url: 'https://github.com/open-guides/og-aws'
 id: route-53
 title: Route-53
 desc: ''

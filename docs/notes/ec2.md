@@ -1,4 +1,7 @@
 ---
+source:
+  name: og-aws
+  url: 'https://github.com/open-guides/og-aws'
 id: ec2
 title: Ec2
 desc: ''

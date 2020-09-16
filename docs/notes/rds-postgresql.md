@@ -1,4 +1,7 @@
 ---
+source:
+  name: og-aws
+  url: 'https://github.com/open-guides/og-aws'
 id: rds-postgresql
 title: Rds-postgresql
 desc: ''

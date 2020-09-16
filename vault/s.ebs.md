@@ -5,6 +5,9 @@ desc: ''
 updated: '0'
 created: '0'
 stub: false
+source:
+  name: og-aws
+  url: 'https://github.com/open-guides/og-aws'
 ---
 # EBS
 

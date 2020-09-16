@@ -1,4 +1,7 @@
 ---
+source:
+  name: og-aws
+  url: 'https://github.com/open-guides/og-aws'
 id: 'vpcs-network-security,-and-security-groups'
 title: 'Vpcs-network-security,-and-security-groups'
 desc: ''
