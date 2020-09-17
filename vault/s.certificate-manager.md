@@ -1,6 +1,6 @@
 ---
 id: certificate-manager
-title: Certificate Manager
+title: Certificate-manager
 desc: ''
 updated: '0'
 created: '0'

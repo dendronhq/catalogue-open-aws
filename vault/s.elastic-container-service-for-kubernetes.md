@@ -1,6 +1,6 @@
 ---
 id: elastic-container-service-for-kubernetes
-title: Elastic Container Service for Kubernetes
+title: Elastic-container-service-for-kubernetes
 desc: ''
 updated: '0'
 created: '0'

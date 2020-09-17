@@ -1,6 +1,6 @@
 ---
 id: waf
-title: WAF
+title: Waf
 desc: ''
 updated: '0'
 created: '0'

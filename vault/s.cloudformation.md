@@ -1,6 +1,6 @@
 ---
 id: cloudformation
-title: CloudFormation
+title: Cloudformation
 desc: ''
 updated: '0'
 created: '0'

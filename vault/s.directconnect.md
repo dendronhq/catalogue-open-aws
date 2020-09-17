@@ -1,6 +1,6 @@
 ---
 id: directconnect
-title: DirectConnect
+title: Directconnect
 desc: ''
 updated: '0'
 created: '0'

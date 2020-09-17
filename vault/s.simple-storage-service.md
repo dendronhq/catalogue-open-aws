@@ -1,6 +1,6 @@
 ---
 id: simple-storage-service
-title: Simple Storage Service
+title: Simple-storage-service
 desc: ''
 updated: '0'
 created: '0'

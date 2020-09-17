@@ -1,6 +1,6 @@
 ---
 id: rds-sql-server
-title: RDS SQL Server
+title: Rds-sql-server
 desc: ''
 updated: '0'
 created: '0'

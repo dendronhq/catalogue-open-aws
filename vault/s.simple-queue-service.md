@@ -1,6 +1,6 @@
 ---
 id: simple-queue-service
-title: Simple Queue Service
+title: Simple-queue-service
 desc: ''
 updated: '0'
 created: '0'

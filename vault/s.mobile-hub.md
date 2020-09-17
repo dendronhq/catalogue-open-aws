@@ -1,6 +1,6 @@
 ---
 id: mobile-hub
-title: Mobile Hub
+title: Mobile-hub
 desc: ''
 updated: '0'
 created: '0'

@@ -1,6 +1,6 @@
 ---
 id: application-load-balancer
-title: Application Load Balancer
+title: Application-load-balancer
 desc: ''
 updated: '0'
 created: '0'

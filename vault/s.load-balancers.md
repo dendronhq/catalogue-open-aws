@@ -1,6 +1,6 @@
 ---
 id: load-balancers
-title: Load Balancers
+title: Load-balancers
 desc: ''
 updated: '0'
 created: '0'

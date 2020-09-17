@@ -1,6 +1,6 @@
 ---
 id: rds-mysql-and-mariadb
-title: RDS MySQL and MariaDB
+title: Rds-mysql-and-mariadb
 desc: ''
 updated: '0'
 created: '0'

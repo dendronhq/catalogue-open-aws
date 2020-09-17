@@ -1,6 +1,6 @@
 ---
 id: elastic-beanstalk
-title: Elastic Beanstalk
+title: Elastic-beanstalk
 desc: ''
 updated: '0'
 created: '0'

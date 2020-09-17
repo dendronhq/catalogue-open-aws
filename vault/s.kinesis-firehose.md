@@ -1,6 +1,6 @@
 ---
 id: kinesis-firehose
-title: Kinesis Firehose
+title: Kinesis-firehose
 desc: ''
 updated: '0'
 created: '0'

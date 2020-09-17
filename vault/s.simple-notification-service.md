@@ -1,6 +1,6 @@
 ---
 id: simple-notification-service
-title: Simple Notification Service
+title: Simple-notification-service
 desc: ''
 updated: '0'
 created: '0'

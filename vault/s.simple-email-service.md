@@ -1,6 +1,6 @@
 ---
 id: simple-email-service
-title: Simple Email Service
+title: Simple-email-service
 desc: ''
 updated: '0'
 created: '0'

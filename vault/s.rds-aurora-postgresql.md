@@ -1,6 +1,6 @@
 ---
 id: rds-aurora-postgresql
-title: RDS Aurora PostgreSQL
+title: Rds-aurora-postgresql
 desc: ''
 updated: '0'
 created: '0'

@@ -1,6 +1,6 @@
 ---
 id: key-management-service
-title: Key Management Service
+title: Key-management-service
 desc: ''
 updated: '0'
 created: '0'

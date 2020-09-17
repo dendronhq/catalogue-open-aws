@@ -1,6 +1,6 @@
 ---
 id: cloudwatch
-title: CloudWatch
+title: Cloudwatch
 desc: ''
 updated: '0'
 created: '0'

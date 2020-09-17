@@ -1,6 +1,6 @@
 ---
 id: device-farm
-title: Device Farm
+title: Device-farm
 desc: ''
 updated: '0'
 created: '0'

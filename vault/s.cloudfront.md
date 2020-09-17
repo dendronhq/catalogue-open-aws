@@ -1,6 +1,6 @@
 ---
 id: cloudfront
-title: CloudFront
+title: Cloudfront
 desc: ''
 updated: '0'
 created: '0'

@@ -1,6 +1,6 @@
 ---
 id: elastic-mapreduce
-title: Elastic MapReduce
+title: Elastic-mapreduce
 desc: ''
 updated: '0'
 created: '0'

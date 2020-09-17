@@ -1,6 +1,6 @@
 ---
 id: s3-glacier
-title: S3 Glacier
+title: S3-glacier
 desc: ''
 updated: '0'
 created: '0'

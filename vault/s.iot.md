@@ -1,6 +1,6 @@
 ---
 id: iot
-title: IoT
+title: Iot
 desc: ''
 updated: '0'
 created: '0'

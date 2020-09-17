@@ -1,6 +1,6 @@
 ---
 id: ec2
-title: EC2
+title: Ec2
 desc: ''
 updated: '0'
 created: '0'
