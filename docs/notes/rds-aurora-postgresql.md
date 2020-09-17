@@ -11,7 +11,7 @@ created: '0'
 data: {}
 fname: s.rds-aurora-postgresql
 stub: false
-parent: 361fa08e-e76d-4cc2-a680-8fb169bda9f2
+parent: 1f759d8c-cca7-4fc4-9aa2-6dbf6e596abf
 children: []
 hpath: s.rds-aurora-postgresql
 ---

@@ -3,6 +3,9 @@ sources:
   - name: og-aws
     url: 'https://github.com/open-guides/og-aws'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
+  - name: Jerry Hargrove
+    url: 'https://www.awsgeek.com/'
+    license: Creative Commons Attribution-ShareAlike 4.0 International License
 id: elasticache
 title: ElastiCache
 desc: ''
@@ -11,10 +14,14 @@ created: '0'
 data: {}
 fname: s.elasticache
 stub: false
-parent: 361fa08e-e76d-4cc2-a680-8fb169bda9f2
+parent: 1f759d8c-cca7-4fc4-9aa2-6dbf6e596abf
 children: []
 hpath: s.elasticache
 ---
+![](/assets/images/Amazon-ElastiCache_en.jpg)
+
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-ElastiCache/)
+
 # ElastiCache
 
 ### ElastiCache Basics
