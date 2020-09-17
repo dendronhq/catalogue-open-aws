@@ -1,19 +1,31 @@
 ---
-source:
-  name: og-aws
-  url: 'https://github.com/open-guides/og-aws'
+sources:
+  - name: og-aws
+    url: 'https://github.com/open-guides/og-aws'
+    license: Creative Commons Attribution-ShareAlike 4.0 International License
+  - name: Jerry Hargrove
+    url: 'https://www.awsgeek.com/'
+    license: Creative Commons Attribution-ShareAlike 4.0 International License
 id: simple-notification-service
-title: Simple Notification Service
+title: Simple-notification-service
 desc: ''
 updated: '0'
 created: '0'
 data: {}
 fname: s.simple-notification-service
 stub: false
-parent: 2f2e0f63-3883-4f91-94ab-0fa7a50302b6
+parent: 0c784c77-14fc-4d63-a36d-040930bc1b8b
 children: []
 hpath: s.simple-notification-service
 ---
+![](/assets/images/Amazon-SNS_en.jpg)
+
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-SNS/)
+
+![](/assets/images/Amazon-SNS_en.jpg)
+
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-SNS/)
+
 # Simple Notification Service
 
 ### SNS Basics

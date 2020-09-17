@@ -1,19 +1,31 @@
 ---
-source:
-  name: og-aws
-  url: 'https://github.com/open-guides/og-aws'
+sources:
+  - name: og-aws
+    url: 'https://github.com/open-guides/og-aws'
+    license: Creative Commons Attribution-ShareAlike 4.0 International License
+  - name: Jerry Hargrove
+    url: 'https://www.awsgeek.com/'
+    license: Creative Commons Attribution-ShareAlike 4.0 International License
 id: elastic-container-service-for-kubernetes
-title: Elastic Container Service for Kubernetes
+title: Elastic-container-service-for-kubernetes
 desc: ''
 updated: '0'
 created: '0'
 data: {}
 fname: s.elastic-container-service-for-kubernetes
 stub: false
-parent: 2f2e0f63-3883-4f91-94ab-0fa7a50302b6
+parent: 0c784c77-14fc-4d63-a36d-040930bc1b8b
 children: []
 hpath: s.elastic-container-service-for-kubernetes
 ---
+![](/assets/images/Amazon-EKS_en.jpg)
+
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-EKS/)
+
+![](/assets/images/Amazon-EKS_en.jpg)
+
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-EKS/)
+
 # Elastic Container Service for Kubernetes
 
 ### EKS Basics

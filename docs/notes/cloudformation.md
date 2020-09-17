@@ -1,16 +1,17 @@
 ---
-source:
-  name: og-aws
-  url: 'https://github.com/open-guides/og-aws'
+sources:
+  - name: og-aws
+    url: 'https://github.com/open-guides/og-aws'
+    license: Creative Commons Attribution-ShareAlike 4.0 International License
 id: cloudformation
-title: CloudFormation
+title: Cloudformation
 desc: ''
 updated: '0'
 created: '0'
 data: {}
 fname: s.cloudformation
 stub: false
-parent: 2f2e0f63-3883-4f91-94ab-0fa7a50302b6
+parent: 0c784c77-14fc-4d63-a36d-040930bc1b8b
 children: []
 hpath: s.cloudformation
 ---
