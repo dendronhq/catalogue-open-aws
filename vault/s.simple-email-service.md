@@ -1,6 +1,6 @@
 ---
-id: ses
-title: Ses
+id: simple-email-service
+title: Simple Email Service
 desc: ''
 updated: '0'
 created: '0'
@@ -9,7 +9,7 @@ source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
 ---
-# SES
+# Simple Email Service
 
 ### SES Basics
 

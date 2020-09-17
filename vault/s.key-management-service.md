@@ -1,6 +1,6 @@
 ---
-id: kms
-title: Kms
+id: key-management-service
+title: Key Management Service
 desc: ''
 updated: '0'
 created: '0'
@@ -9,7 +9,7 @@ source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
 ---
-# KMS
+# Key Management Service
 
 ### KMS Basics
 

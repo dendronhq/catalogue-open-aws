@@ -1,6 +1,6 @@
 ---
 id: auto-scaling
-title: Auto-scaling
+title: Auto Scaling
 desc: ''
 updated: '0'
 created: '0'

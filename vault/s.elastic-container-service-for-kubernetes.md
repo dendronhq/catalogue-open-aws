@@ -1,6 +1,6 @@
 ---
-id: eks
-title: Eks
+id: elastic-container-service-for-kubernetes
+title: Elastic Container Service for Kubernetes
 desc: ''
 updated: '0'
 created: '0'
@@ -9,7 +9,7 @@ source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
 ---
-# EKS
+# Elastic Container Service for Kubernetes
 
 ### EKS Basics
 -	📒 [Homepage](https://aws.amazon.com/eks/) ∙ [User guide](http://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html) ∙ [FAQ](https://aws.amazon.com/eks/faq/) ∙ [Pricing](https://aws.amazon.com/eks/pricing/)

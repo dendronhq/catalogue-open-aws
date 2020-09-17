@@ -1,6 +1,6 @@
 ---
-id: sqs
-title: Sqs
+id: simple-queue-service
+title: Simple Queue Service
 desc: ''
 updated: '0'
 created: '0'
@@ -9,7 +9,7 @@ source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
 ---
-# SQS
+# Simple Queue Service
 
 ### SQS Basics
 

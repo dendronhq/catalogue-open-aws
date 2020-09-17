@@ -1,6 +1,6 @@
 ---
 id: elasticache
-title: Elasticache
+title: ElastiCache
 desc: ''
 updated: '0'
 created: '0'

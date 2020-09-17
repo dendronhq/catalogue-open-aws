@@ -1,6 +1,6 @@
 ---
 id: amis
-title: Amis
+title: AMIs
 desc: ''
 updated: '0'
 created: '0'

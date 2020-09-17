@@ -1,6 +1,6 @@
 ---
-id: s3
-title: S3
+id: simple-storage-service
+title: Simple Storage Service
 desc: ''
 updated: '0'
 created: '0'
@@ -9,7 +9,7 @@ source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
 ---
-# S3
+# Simple Storage Service
 
 ### S3 Basics
 

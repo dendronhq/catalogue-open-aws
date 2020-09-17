@@ -1,6 +1,6 @@
 ---
 id: kinesis-streams
-title: Kinesis-streams
+title: Kinesis Streams
 desc: ''
 updated: '0'
 created: '0'

@@ -1,6 +1,6 @@
 ---
-id: emr
-title: Emr
+id: elastic-mapreduce
+title: Elastic MapReduce
 desc: ''
 updated: '0'
 created: '0'
@@ -9,7 +9,7 @@ source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
 ---
-# EMR
+# Elastic MapReduce
 
 ### EMR Basics
 

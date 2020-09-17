@@ -1,6 +1,6 @@
 ---
-id: efs
-title: Efs
+id: elastic-file-system
+title: Elastic File System
 desc: ''
 updated: '0'
 created: '0'
@@ -9,7 +9,7 @@ source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
 ---
-# EFS
+# Elastic File System
 
 
 ### EFS Basics

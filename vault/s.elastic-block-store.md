@@ -1,6 +1,6 @@
 ---
-id: ebs
-title: Ebs
+id: elastic-block-store
+title: Elastic Block Store
 desc: ''
 updated: '0'
 created: '0'
@@ -9,7 +9,7 @@ source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
 ---
-# EBS
+# Elastic Block Store
 
 ### EBS Basics
 

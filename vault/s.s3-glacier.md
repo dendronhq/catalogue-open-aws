@@ -1,6 +1,6 @@
 ---
-id: glacier
-title: Glacier
+id: s3-glacier
+title: S3 Glacier
 desc: ''
 updated: '0'
 created: '0'
@@ -9,7 +9,7 @@ source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
 ---
-# Glacier
+# S3 Glacier
 
 ### Glacier Basics
 

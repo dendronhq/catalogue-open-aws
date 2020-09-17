@@ -1,6 +1,6 @@
 ---
-id: alb
-title: Alb
+id: application-load-balancer
+title: Application Load Balancer
 desc: ''
 updated: '0'
 created: '0'
@@ -9,7 +9,7 @@ source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
 ---
-# ALB
+# Application Load Balancer
 
 ### ALB Basics
 

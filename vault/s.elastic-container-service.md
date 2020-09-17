@@ -1,6 +1,6 @@
 ---
-id: ecs
-title: Ecs
+id: elastic-container-service
+title: Elastic Container Service
 desc: ''
 updated: '0'
 created: '0'
@@ -9,7 +9,7 @@ source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
 ---
-# ECS
+# Elastic Container Service
 
 ### ECS Basics
 

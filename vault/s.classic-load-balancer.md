@@ -1,6 +1,6 @@
 ---
-id: clb
-title: Clb
+id: classic-load-balancer
+title: Classic Load Balancer
 desc: ''
 updated: '0'
 created: '0'
@@ -9,7 +9,7 @@ source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
 ---
-# CLB
+# Classic Load Balancer
 
 ### CLB Basics
 

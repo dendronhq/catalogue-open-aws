@@ -1,6 +1,6 @@
 ---
 id: elastic-ips
-title: Elastic-ips
+title: Elastic IPs
 desc: ''
 updated: '0'
 created: '0'

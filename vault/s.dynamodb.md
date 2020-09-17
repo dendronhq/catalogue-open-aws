@@ -1,6 +1,6 @@
 ---
 id: dynamodb
-title: Dynamodb
+title: DynamoDB
 desc: ''
 updated: '0'
 created: '0'

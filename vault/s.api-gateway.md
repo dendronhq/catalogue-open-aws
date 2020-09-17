@@ -1,6 +1,6 @@
 ---
 id: api-gateway
-title: Api-gateway
+title: API Gateway
 desc: ''
 updated: '0'
 created: '0'

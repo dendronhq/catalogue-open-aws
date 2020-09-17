@@ -1,6 +1,6 @@
 ---
 id: step-functions
-title: Step-functions
+title: Step Functions
 desc: ''
 updated: '0'
 created: '0'
