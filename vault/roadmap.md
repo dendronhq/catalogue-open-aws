@@ -10,6 +10,7 @@ stub: false
 # Roadmap
 
 - [x] add og-aws information
+- [x] add awsgeek diagrams
 - [ ] add ec2 pricing info
 - [ ] add rds pricing info
 - [ ] add iam policy info
