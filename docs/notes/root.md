@@ -17,7 +17,7 @@ children:
 hpath: root
 permalink: /
 ---
-# Open AWS
+# The Open AWS Catalogue
 
 This site is meant to be a reference of all things AWS. It is compiled from the [highest quality open sources of information](notes/dd5fcf14-9678-4f38-acec-4b8965c8c568) available about AWS. It is generated and published using [Dendron](http://dendron.so/), the open source note taking tool. 
 

@@ -13,11 +13,11 @@ Open AWS is a **compilation** of current open source guides available on AWS whi
 
 Open AWS is formatted and published using [Dendron](https://dendron.so), an open source knowledge management platform that helps people create, build, and collaborate on knowledge. 
 
-Dendron makes it possible to curate and remix information from existing sources into what we call [catalogues](TODO)
+Dendron makes it possible to curate and remix information from existing sources. 
 
-The guide that you see here is generated from the [open-aws-catalogue](TODO). To add content from additional sources, you can use the following stps:
+The guide that you see here is generated using the [aws seeds package](https://github.com/dendronhq/seeds.aws). To add content from additional sources:
 - see if the guide covers something that is already on our [[roadmap]]
-    - if yes, check the corresponding issue to see if anyone has started working on the pod
-        - if no one has claimed the pod, feel free to claim it by posting in the issue
-        - once you have finished with the pod, publish it to github and update the issue with the output of running your pod
-    - if no, send us a [pod request](TODO) 
+    - if yes, check the corresponding issue to see if anyone has started working on the issue
+        - if no one has claimed the issue, feel free to claim it by posting in the issue
+        - once you have finished with the issue, publish it to github and update the issue and submit a merge request
+    - if no, send us a [seed request](TODO) 
