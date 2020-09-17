@@ -1,9 +1,9 @@
 ---
-id: 3de7a93a-342c-4d7c-93b8-0f09008b622b
-title: Appsync
+id: appsync
+title: AppSync
 desc: ''
-updated: 1600364869981
-created: 1600364869981
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

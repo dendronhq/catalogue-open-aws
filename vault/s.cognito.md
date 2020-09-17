@@ -1,9 +1,9 @@
 ---
-id: 03bb928c-c395-40d9-9891-6b00e0c59201
+id: cognito
 title: Cognito
 desc: ''
-updated: 1600364869989
-created: 1600364869989
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

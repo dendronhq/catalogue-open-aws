@@ -1,9 +1,9 @@
 ---
-id: e66815b4-b0ca-4045-aeba-ef8be7feb619
+id: textract
 title: Textract
 desc: ''
-updated: 1600364869994
-created: 1600364869994
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

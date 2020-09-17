@@ -3,11 +3,11 @@ sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
-id: ec61d989-bad7-4b9c-b544-c08f1637a6c6
-title: Guardduty
+id: guardduty
+title: GuardDuty
 desc: ''
-updated: 1600364869992
-created: 1600364869992
+updated: '0'
+created: '0'
 data: {}
 fname: s.guardduty
 stub: false

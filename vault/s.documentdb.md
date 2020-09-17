@@ -1,9 +1,9 @@
 ---
-id: e456b8e8-a1dd-4be2-ac8e-669f93b19355
-title: Documentdb
+id: documentdb
+title: DocumentDB
 desc: ''
-updated: 1600364869989
-created: 1600364869989
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

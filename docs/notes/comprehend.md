@@ -3,11 +3,11 @@ sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
-id: 598bdbfe-72fe-4e48-a24b-d204df04e6f3
+id: comprehend
 title: Comprehend
 desc: ''
-updated: 1600364869989
-created: 1600364869989
+updated: '0'
+created: '0'
 data: {}
 fname: s.comprehend
 stub: false

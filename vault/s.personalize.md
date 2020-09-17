@@ -1,9 +1,9 @@
 ---
-id: 8b96490f-5504-49ca-b2f3-91067947e040
+id: personalize
 title: Personalize
 desc: ''
-updated: 1600364869993
-created: 1600364869993
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

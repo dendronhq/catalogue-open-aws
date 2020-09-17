@@ -3,18 +3,18 @@ sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
-id: 03bb928c-c395-40d9-9891-6b00e0c59201
-title: Cognito
+id: appsync
+title: AppSync
 desc: ''
-updated: 1600364869989
-created: 1600364869989
+updated: '0'
+created: '0'
 data: {}
-fname: s.cognito
+fname: s.appsync
 stub: false
 parent: 1f759d8c-cca7-4fc4-9aa2-6dbf6e596abf
 children: []
-hpath: s.cognito
+hpath: s.appsync
 ---
-![](/assets/images/Amazon-Cognito_en.jpg)
+![](/assets/images/AWS-AppSync_en.jpg)
 
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-Cognito/)
+> Image from [@awsgeek](https://www.awsgeek.com/AWS-AppSync/)

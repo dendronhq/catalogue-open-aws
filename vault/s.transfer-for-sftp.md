@@ -1,9 +1,9 @@
 ---
-id: 2ce82492-271c-44fb-ae82-59f8dc36c7dd
-title: Transfer-for-sftp
+id: transfer-for-sftp
+title: Transfer for SFTP
 desc: ''
-updated: 1600364869986
-created: 1600364869986
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

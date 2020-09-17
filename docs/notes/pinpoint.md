@@ -3,11 +3,11 @@ sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
-id: caa9a5ce-9168-44bc-b81d-6157f0239f6b
+id: pinpoint
 title: Pinpoint
 desc: ''
-updated: 1600364869993
-created: 1600364869993
+updated: '0'
+created: '0'
 data: {}
 fname: s.pinpoint
 stub: false

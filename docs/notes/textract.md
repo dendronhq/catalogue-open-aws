@@ -3,11 +3,11 @@ sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
-id: e66815b4-b0ca-4045-aeba-ef8be7feb619
+id: textract
 title: Textract
 desc: ''
-updated: 1600364869994
-created: 1600364869994
+updated: '0'
+created: '0'
 data: {}
 fname: s.textract
 stub: false

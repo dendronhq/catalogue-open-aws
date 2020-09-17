@@ -1,9 +1,9 @@
 ---
-id: 5a579e26-e79f-4e78-b00a-e4604494057e
-title: Fsx-for-windows-file-server
+id: fsx-for-windows-file-server
+title: FSx for Windows File Server
 desc: ''
-updated: 1600364869991
-created: 1600364869991
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

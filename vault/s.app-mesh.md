@@ -1,9 +1,9 @@
 ---
-id: c3b5bb55-ae5f-4ca0-be02-3d008b24a777
-title: App-mesh
+id: app-mesh
+title: App Mesh
 desc: ''
-updated: 1600364869981
-created: 1600364869981
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

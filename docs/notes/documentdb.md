@@ -3,18 +3,18 @@ sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
-id: 324b6a87-5767-4a7c-9690-8ec04ed70a55
-title: Datasync
+id: documentdb
+title: DocumentDB
 desc: ''
-updated: 1600364869982
-created: 1600364869982
+updated: '0'
+created: '0'
 data: {}
-fname: s.datasync
+fname: s.documentdb
 stub: false
 parent: 1f759d8c-cca7-4fc4-9aa2-6dbf6e596abf
 children: []
-hpath: s.datasync
+hpath: s.documentdb
 ---
-![](/assets/images/AWS-DataSync_en.jpg)
+![](/assets/images/Amazon-DocumentDB_en.jpg)
 
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-DataSync/)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-DocumentDB/)

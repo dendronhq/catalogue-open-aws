@@ -1,9 +1,9 @@
 ---
-id: 9701827a-8ba6-4068-972e-906126d66fc7
-title: Ground-station
+id: ground-station
+title: Ground Station
 desc: ''
-updated: 1600364869982
-created: 1600364869982
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

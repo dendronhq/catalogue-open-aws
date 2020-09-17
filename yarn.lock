@@ -217,9 +217,9 @@
     yargs "^13.3.0"
 
 "@dendronhq/awsgeek-seed@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@dendronhq/awsgeek-seed/-/awsgeek-seed-0.1.2.tgz#166e0966e2175b059ebaa8902cc6e37b362df101"
-  integrity sha512-lhVJeoeAXHyRpr1cLu0GBR4RwtrjHHrxwlC8Yz28Zxq4FbAXc/Na/MPQtV6MELy2DaUQ6BwCIMNekEEkhs7wnA==
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@dendronhq/awsgeek-seed/-/awsgeek-seed-0.1.3.tgz#b78748300955efba23d67d9f0665a127ec54d9da"
+  integrity sha512-v7ahq2fE5rwXYJf7q1hXryGtRfaGfzHHayqPz7zDdC8l1GATrHcV+/GkCwS65EPn6DBAN3rvaTY/Li44X8ebgA==
   dependencies:
     "@dendronhq/aws-constants" "^0.1.2"
     "@dendronhq/seeds-core" "^0.11.4-alpha.0"
@@ -712,9 +712,9 @@
     moment "*"
 
 "@types/node@*":
-  version "14.10.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.10.2.tgz#9b47a2c8e4dabd4db73b57e750b24af689600514"
-  integrity sha512-IzMhbDYCpv26pC2wboJ4MMOa9GKtjplXfcAqrMeNJpUUwpM/2ATt2w1JPUXwS6spu856TvKZL2AOmeU2rAxskw==
+  version "14.11.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.1.tgz#56af902ad157e763f9ba63d671c39cda3193c835"
+  integrity sha512-oTQgnd0hblfLsJ6BvJzzSL+Inogp3lq9fGgqRkMB/ziKMgEUaFl801OncOzUmalfzt14N0oPHMK47ipl+wbTIw==
 
 "@types/node@13.11.0":
   version "13.11.0"
@@ -3075,9 +3075,9 @@ jsprim@^1.2.2:
     verror "1.10.0"
 
 keyv@^4.0.0:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.0.2.tgz#586777fc38c28badebd4d9cb5e000c09a2bc2777"
-  integrity sha512-EApxc1YZC/Uf+8dsrGqDqUK3cW8oPLgyeATzELkyAFE9OTf2jpFbi2qLtlrONy+SMmupkR3p5jGWeMEd0Z/ZHg==
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.0.3.tgz#4f3aa98de254803cafcd2896734108daa35e4254"
+  integrity sha512-zdGa2TOpSZPq5mU6iowDARnMBZgtCqJ11dJROFi6tg6kTn4nuUdU09lFyLFSaHrWqpIJ+EBq4E8/Dc0Vx5vLdA==
   dependencies:
     json-buffer "3.0.1"
 

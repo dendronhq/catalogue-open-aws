@@ -1,9 +1,9 @@
 ---
-id: a12f4843-9c93-410e-894e-31c2a2748e5a
-title: Event-bridge
+id: event-bridge
+title: Event Bridge
 desc: ''
-updated: 1600364869991
-created: 1600364869991
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

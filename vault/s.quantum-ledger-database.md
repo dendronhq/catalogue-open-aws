@@ -1,9 +1,9 @@
 ---
-id: 265b6c0b-cbd7-4219-846c-efbb3f2e24fe
-title: Quantum-ledger-database
+id: quantum-ledger-database
+title: Quantum Ledger Database
 desc: ''
-updated: 1600364869993
-created: 1600364869993
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

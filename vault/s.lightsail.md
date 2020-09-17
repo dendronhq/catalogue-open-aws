@@ -1,9 +1,9 @@
 ---
-id: 3d87aabb-be72-4de7-817c-676dae06dd85
+id: lightsail
 title: Lightsail
 desc: ''
-updated: 1600364869992
-created: 1600364869992
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

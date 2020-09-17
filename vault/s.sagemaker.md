@@ -1,9 +1,9 @@
 ---
-id: 72f69ce6-1097-43e7-93f6-63645ce44840
-title: Sagemaker
+id: sagemaker
+title: SageMaker
 desc: ''
-updated: 1600364869994
-created: 1600364869994
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

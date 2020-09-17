@@ -3,18 +3,18 @@ sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
-id: 3de7a93a-342c-4d7c-93b8-0f09008b622b
-title: Appsync
+id: transcribe
+title: Transcribe
 desc: ''
-updated: 1600364869981
-created: 1600364869981
+updated: '0'
+created: '0'
 data: {}
-fname: s.appsync
+fname: s.transcribe
 stub: false
 parent: 1f759d8c-cca7-4fc4-9aa2-6dbf6e596abf
 children: []
-hpath: s.appsync
+hpath: s.transcribe
 ---
-![](/assets/images/AWS-AppSync_en.jpg)
+![](/assets/images/Amazon-Transcribe_en.jpg)
 
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-AppSync/)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-Transcribe/)

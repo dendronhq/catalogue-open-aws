@@ -3,18 +3,18 @@ sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
-id: 01159f25-1d01-4d94-865a-35cf7ce40050
-title: Athena
+id: personalize
+title: Personalize
 desc: ''
-updated: 1600364869989
-created: 1600364869989
+updated: '0'
+created: '0'
 data: {}
-fname: s.athena
+fname: s.personalize
 stub: false
 parent: 1f759d8c-cca7-4fc4-9aa2-6dbf6e596abf
 children: []
-hpath: s.athena
+hpath: s.personalize
 ---
-![](/assets/images/Amazon-Athena_en.jpg)
+![](/assets/images/Amazon-Personalize_en.jpg)
 
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-Athena/)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-Personalize/)

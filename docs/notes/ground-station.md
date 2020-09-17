@@ -3,11 +3,11 @@ sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
-id: 9701827a-8ba6-4068-972e-906126d66fc7
-title: Ground-station
+id: ground-station
+title: Ground Station
 desc: ''
-updated: 1600364869982
-created: 1600364869982
+updated: '0'
+created: '0'
 data: {}
 fname: s.ground-station
 stub: false

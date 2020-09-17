@@ -1,9 +1,9 @@
 ---
-id: 45c3ba3a-c979-491c-88f4-88aa6cbdb6d2
-title: Storage-gateway
+id: storage-gateway
+title: Storage Gateway
 desc: ''
-updated: 1600364869984
-created: 1600364869984
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

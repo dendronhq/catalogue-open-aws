@@ -1,9 +1,9 @@
 ---
-id: b007fd6d-9443-4376-8b16-b93c14dbbcb4
+id: rekognition
 title: Rekognition
 desc: ''
-updated: 1600364869993
-created: 1600364869993
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

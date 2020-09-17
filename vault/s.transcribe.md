@@ -1,9 +1,9 @@
 ---
-id: 5251796c-6580-406d-94b5-d3c50bd85436
+id: transcribe
 title: Transcribe
 desc: ''
-updated: 1600364869994
-created: 1600364869994
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove

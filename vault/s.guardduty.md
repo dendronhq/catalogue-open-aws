@@ -1,9 +1,9 @@
 ---
-id: ec61d989-bad7-4b9c-b544-c08f1637a6c6
-title: Guardduty
+id: guardduty
+title: GuardDuty
 desc: ''
-updated: 1600364869992
-created: 1600364869992
+updated: '0'
+created: '0'
 stub: false
 sources:
   - name: Jerry Hargrove
