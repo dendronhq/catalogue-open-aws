@@ -5,10 +5,18 @@ desc: ''
 updated: '0'
 created: '0'
 stub: false
-source:
-  name: og-aws
-  url: 'https://github.com/open-guides/og-aws'
+sources:
+  - name: og-aws
+    url: 'https://github.com/open-guides/og-aws'
+    license: Creative Commons Attribution-ShareAlike 4.0 International License
+  - name: Jerry Hargrove
+    url: 'https://www.awsgeek.com/'
+    license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
+![](/assets/images/Amazon-EMR_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-EMR/)
+
+
 # Elastic MapReduce
 
 ### EMR Basics
