@@ -1,6 +1,6 @@
 ---
-id: 'vpcs-network-security,-and-security-groups'
-title: 'Vpcs-network-security,-and-security-groups'
+id: vpcs-network-security-and-security-groups
+title: Vpcs-network-security-and-security-groups
 desc: ''
 updated: '0'
 created: '0'
