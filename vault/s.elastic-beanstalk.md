@@ -17,6 +17,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-Elastic-Beanstalk/)
 
 
+![](/assets/images/AWS-Elastic-Beanstalk_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/AWS-Elastic-Beanstalk/)
+
+
 # Elastic Beanstalk
 
 ### Elastic Beanstalk Basics

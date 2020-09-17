@@ -17,6 +17,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-ALB/)
 
 
+![](/assets/images/AWS-ALB_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/AWS-ALB/)
+
+
 # Application Load Balancer
 
 ### ALB Basics

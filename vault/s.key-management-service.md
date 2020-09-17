@@ -17,6 +17,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-KMS/)
 
 
+![](/assets/images/AWS-KMS_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/AWS-KMS/)
+
+
 # Key Management Service
 
 ### KMS Basics

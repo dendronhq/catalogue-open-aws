@@ -17,6 +17,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-ElastiCache/)
 
 
+![](/assets/images/Amazon-ElastiCache_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-ElastiCache/)
+
+
 # ElastiCache
 
 ### ElastiCache Basics

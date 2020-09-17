@@ -17,6 +17,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-SNS/)
 
 
+![](/assets/images/Amazon-SNS_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-SNS/)
+
+
 # Simple Notification Service
 
 ### SNS Basics
