@@ -21,6 +21,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-EKS/)
 
 
+![](/assets/images/Amazon-EKS_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-EKS/)
+
+
 # Elastic Container Service for Kubernetes
 
 ### EKS Basics

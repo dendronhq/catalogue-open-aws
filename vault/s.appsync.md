@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/AWS-AppSync_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-AppSync/)
+
+
+![](/assets/images/AWS-AppSync_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/AWS-AppSync/)

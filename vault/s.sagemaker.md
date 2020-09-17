@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-SageMaker_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-SageMaker/)
+
+
+![](/assets/images/Amazon-SageMaker_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-SageMaker/)

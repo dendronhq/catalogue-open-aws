@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-DocumentDB_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-DocumentDB/)
+
+
+![](/assets/images/Amazon-DocumentDB_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-DocumentDB/)

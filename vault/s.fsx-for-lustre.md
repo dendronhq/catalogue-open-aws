@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-FSx-for-Lustre_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-FSx-for-Lustre/)
+
+
+![](/assets/images/Amazon-FSx-for-Lustre_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-FSx-for-Lustre/)

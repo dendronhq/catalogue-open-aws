@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-Rekognition_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-Rekognition/)
+
+
+![](/assets/images/Amazon-Rekognition_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-Rekognition/)

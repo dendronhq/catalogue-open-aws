@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/AWS-Ground-Station_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-Ground-Station/)
+
+
+![](/assets/images/AWS-Ground-Station_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/AWS-Ground-Station/)

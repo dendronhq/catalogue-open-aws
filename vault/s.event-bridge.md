@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-EventBridge_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-EventBridge/)
+
+
+![](/assets/images/Amazon-EventBridge_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-EventBridge/)

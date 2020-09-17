@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-Comprehend_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-Comprehend/)
+
+
+![](/assets/images/Amazon-Comprehend_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-Comprehend/)

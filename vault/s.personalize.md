@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-Personalize_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-Personalize/)
+
+
+![](/assets/images/Amazon-Personalize_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-Personalize/)

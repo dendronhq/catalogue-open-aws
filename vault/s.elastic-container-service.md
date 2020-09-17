@@ -21,6 +21,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-ECS/)
 
 
+![](/assets/images/Amazon-ECS_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-ECS/)
+
+
 # Elastic Container Service
 
 ### ECS Basics

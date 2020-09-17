@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-FSx-for-Windows-File-Server_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-FSx-for-Windows-File-Server/)
+
+
+![](/assets/images/Amazon-FSx-for-Windows-File-Server_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-FSx-for-Windows-File-Server/)

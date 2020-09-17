@@ -21,6 +21,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-WAF/)
 
 
+![](/assets/images/AWS-WAF_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/AWS-WAF/)
+
+
 # WAF
 
 ### WAF Basics

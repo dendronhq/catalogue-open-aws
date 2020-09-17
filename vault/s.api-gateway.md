@@ -21,6 +21,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-API-Gateway/)
 
 
+![](/assets/images/Amazon-API-Gateway_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-API-Gateway/)
+
+
 # API Gateway
 
 ### API Gateway Basics

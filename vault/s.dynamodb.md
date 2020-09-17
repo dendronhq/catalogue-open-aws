@@ -21,6 +21,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-DynamoDB/)
 
 
+![](/assets/images/Amazon-DynamoDB_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-DynamoDB/)
+
+
 # DynamoDB
 
 ### DynamoDB Basics

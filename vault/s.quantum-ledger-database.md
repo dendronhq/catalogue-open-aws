@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-QLDB_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-QLDB/)
+
+
+![](/assets/images/Amazon-QLDB_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-QLDB/)

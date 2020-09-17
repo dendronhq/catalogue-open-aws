@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/AWS-Storage-Gateway_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-Storage-Gateway/)
+
+
+![](/assets/images/AWS-Storage-Gateway_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/AWS-Storage-Gateway/)

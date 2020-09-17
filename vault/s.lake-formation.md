@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/AWS-Lake-Formation_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-Lake-Formation/)
+
+
+![](/assets/images/AWS-Lake-Formation_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/AWS-Lake-Formation/)

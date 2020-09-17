@@ -21,6 +21,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-EMR/)
 
 
+![](/assets/images/Amazon-EMR_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-EMR/)
+
+
 # Elastic MapReduce
 
 ### EMR Basics

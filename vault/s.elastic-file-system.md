@@ -21,6 +21,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-EFS/)
 
 
+![](/assets/images/Amazon-EFS_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-EFS/)
+
+
 # Elastic File System
 
 

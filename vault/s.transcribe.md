@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-Transcribe_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-Transcribe/)
+
+
+![](/assets/images/Amazon-Transcribe_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-Transcribe/)

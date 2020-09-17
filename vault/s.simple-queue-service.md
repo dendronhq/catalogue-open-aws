@@ -21,6 +21,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-SQS/)
 
 
+![](/assets/images/Amazon-SQS_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-SQS/)
+
+
 # Simple Queue Service
 
 ### SQS Basics

@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-Textract_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-Textract/)
+
+
+![](/assets/images/Amazon-Textract_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-Textract/)

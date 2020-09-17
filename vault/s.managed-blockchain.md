@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-Managed-Blockchain_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-Managed-Blockchain/)
+
+
+![](/assets/images/Amazon-Managed-Blockchain_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-Managed-Blockchain/)

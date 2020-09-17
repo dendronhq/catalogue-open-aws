@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-GuardDuty_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-GuardDuty/)
+
+
+![](/assets/images/Amazon-GuardDuty_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-GuardDuty/)

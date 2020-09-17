@@ -12,3 +12,7 @@ sources:
 ---
 ![](/assets/images/Amazon-Pinpoint_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-Pinpoint/)
+
+
+![](/assets/images/Amazon-Pinpoint_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-Pinpoint/)

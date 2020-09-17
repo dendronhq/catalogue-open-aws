@@ -21,6 +21,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-S3/)
 
 
+![](/assets/images/Amazon-S3_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-S3/)
+
+
 # Simple Storage Service
 
 ### S3 Basics

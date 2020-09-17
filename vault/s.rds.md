@@ -21,6 +21,10 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-RDS/)
 
 
+![](/assets/images/Amazon-RDS_en.jpg)
+> Image from [@awsgeek](https://www.awsgeek.com/Amazon-RDS/)
+
+
 # RDS
 
 ### RDS Basics
