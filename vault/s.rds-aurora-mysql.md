@@ -1,6 +1,6 @@
 ---
 id: rds-aurora-mysql
-title: Rds-aurora-mysql
+title: RDS Aurora MySQL
 desc: ''
 updated: '0'
 created: '0'

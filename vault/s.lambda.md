@@ -17,14 +17,6 @@ sources:
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-Lambda/)
 
 
-![](/assets/images/AWS-Lambda_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-Lambda/)
-
-
-![](/assets/images/AWS-Lambda_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-Lambda/)
-
-
 # Lambda
 
 ### Lambda Basics

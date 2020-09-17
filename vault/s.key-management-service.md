@@ -1,6 +1,6 @@
 ---
 id: key-management-service
-title: Key-management-service
+title: Key Management Service
 desc: ''
 updated: '0'
 created: '0'
@@ -13,14 +13,6 @@ sources:
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/AWS-KMS_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-KMS/)
-
-
-![](/assets/images/AWS-KMS_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-KMS/)
-
-
 ![](/assets/images/AWS-KMS_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-KMS/)
 

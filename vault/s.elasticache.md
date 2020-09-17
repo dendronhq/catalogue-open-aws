@@ -1,6 +1,6 @@
 ---
 id: elasticache
-title: Elasticache
+title: ElastiCache
 desc: ''
 updated: '0'
 created: '0'
@@ -13,14 +13,6 @@ sources:
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/Amazon-ElastiCache_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-ElastiCache/)
-
-
-![](/assets/images/Amazon-ElastiCache_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-ElastiCache/)
-
-
 ![](/assets/images/Amazon-ElastiCache_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-ElastiCache/)
 

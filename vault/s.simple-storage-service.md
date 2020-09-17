@@ -1,6 +1,6 @@
 ---
 id: simple-storage-service
-title: Simple-storage-service
+title: Simple Storage Service
 desc: ''
 updated: '0'
 created: '0'
@@ -13,14 +13,6 @@ sources:
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/Amazon-S3_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-S3/)
-
-
-![](/assets/images/Amazon-S3_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-S3/)
-
-
 ![](/assets/images/Amazon-S3_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-S3/)
 

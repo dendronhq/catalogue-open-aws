@@ -1,6 +1,6 @@
 ---
 id: classic-load-balancer
-title: Classic-load-balancer
+title: Classic Load Balancer
 desc: ''
 updated: '0'
 created: '0'

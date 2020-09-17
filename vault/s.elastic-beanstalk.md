@@ -1,6 +1,6 @@
 ---
 id: elastic-beanstalk
-title: Elastic-beanstalk
+title: Elastic Beanstalk
 desc: ''
 updated: '0'
 created: '0'
@@ -13,14 +13,6 @@ sources:
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/AWS-Elastic-Beanstalk_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-Elastic-Beanstalk/)
-
-
-![](/assets/images/AWS-Elastic-Beanstalk_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-Elastic-Beanstalk/)
-
-
 ![](/assets/images/AWS-Elastic-Beanstalk_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-Elastic-Beanstalk/)
 

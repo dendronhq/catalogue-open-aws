@@ -1,6 +1,6 @@
 ---
 id: rds-postgresql
-title: Rds-postgresql
+title: RDS PostgreSQL
 desc: ''
 updated: '0'
 created: '0'

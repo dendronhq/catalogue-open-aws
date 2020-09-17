@@ -4,14 +4,14 @@ sources:
     url: 'https://github.com/open-guides/og-aws'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 id: cloudfront
-title: Cloudfront
+title: CloudFront
 desc: ''
 updated: '0'
 created: '0'
 data: {}
 fname: s.cloudfront
 stub: false
-parent: 0c784c77-14fc-4d63-a36d-040930bc1b8b
+parent: 361fa08e-e76d-4cc2-a680-8fb169bda9f2
 children: []
 hpath: s.cloudfront
 ---

@@ -3,9 +3,6 @@ sources:
   - name: og-aws
     url: 'https://github.com/open-guides/og-aws'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
-  - name: Jerry Hargrove
-    url: 'https://www.awsgeek.com/'
-    license: Creative Commons Attribution-ShareAlike 4.0 International License
 id: lambda
 title: Lambda
 desc: ''
@@ -14,18 +11,10 @@ created: '0'
 data: {}
 fname: s.lambda
 stub: false
-parent: 0c784c77-14fc-4d63-a36d-040930bc1b8b
+parent: 361fa08e-e76d-4cc2-a680-8fb169bda9f2
 children: []
 hpath: s.lambda
 ---
-![](/assets/images/AWS-Lambda_en.jpg)
-
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-Lambda/)
-
-![](/assets/images/AWS-Lambda_en.jpg)
-
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-Lambda/)
-
 # Lambda
 
 ### Lambda Basics

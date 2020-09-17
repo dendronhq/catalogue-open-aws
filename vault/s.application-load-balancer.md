@@ -1,6 +1,6 @@
 ---
 id: application-load-balancer
-title: Application-load-balancer
+title: Application Load Balancer
 desc: ''
 updated: '0'
 created: '0'
@@ -13,14 +13,6 @@ sources:
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/AWS-ALB_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-ALB/)
-
-
-![](/assets/images/AWS-ALB_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-ALB/)
-
-
 ![](/assets/images/AWS-ALB_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-ALB/)
 

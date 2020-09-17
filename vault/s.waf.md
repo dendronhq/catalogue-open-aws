@@ -1,6 +1,6 @@
 ---
 id: waf
-title: Waf
+title: WAF
 desc: ''
 updated: '0'
 created: '0'
@@ -13,14 +13,6 @@ sources:
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/AWS-WAF_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-WAF/)
-
-
-![](/assets/images/AWS-WAF_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-WAF/)
-
-
 ![](/assets/images/AWS-WAF_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-WAF/)
 

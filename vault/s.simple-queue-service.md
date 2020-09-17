@@ -1,6 +1,6 @@
 ---
 id: simple-queue-service
-title: Simple-queue-service
+title: Simple Queue Service
 desc: ''
 updated: '0'
 created: '0'
@@ -13,14 +13,6 @@ sources:
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/Amazon-SQS_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-SQS/)
-
-
-![](/assets/images/Amazon-SQS_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-SQS/)
-
-
 ![](/assets/images/Amazon-SQS_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-SQS/)
 

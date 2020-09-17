@@ -1,6 +1,6 @@
 ---
 id: opsworks
-title: Opsworks
+title: OpsWorks
 desc: ''
 updated: '0'
 created: '0'

@@ -1,18 +1,14 @@
 ---
-id: 1e8cb792-b01e-460d-bc6b-0a4d88364842
+id: 324b6a87-5767-4a7c-9690-8ec04ed70a55
 title: Datasync
 desc: ''
-updated: 1600363321226
-created: 1600363321226
+updated: 1600364869982
+created: 1600364869982
 stub: false
 sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/AWS-DataSync_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-DataSync/)
-
-
 ![](/assets/images/AWS-DataSync_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-DataSync/)

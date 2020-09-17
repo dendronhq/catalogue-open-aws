@@ -1,6 +1,6 @@
 ---
 id: elastic-block-store
-title: Elastic-block-store
+title: Elastic Block Store
 desc: ''
 updated: '0'
 created: '0'

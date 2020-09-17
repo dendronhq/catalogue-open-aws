@@ -1,18 +1,14 @@
 ---
-id: 930ea5a4-779a-4280-9f56-d7ec39b60780
+id: c3b5bb55-ae5f-4ca0-be02-3d008b24a777
 title: App-mesh
 desc: ''
-updated: 1600363321226
-created: 1600363321226
+updated: 1600364869981
+created: 1600364869981
 stub: false
 sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/AWS-App-Mesh_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-App-Mesh/)
-
-
 ![](/assets/images/AWS-App-Mesh_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-App-Mesh/)

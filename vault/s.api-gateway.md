@@ -1,6 +1,6 @@
 ---
 id: api-gateway
-title: Api-gateway
+title: API Gateway
 desc: ''
 updated: '0'
 created: '0'
@@ -13,14 +13,6 @@ sources:
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/Amazon-API-Gateway_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-API-Gateway/)
-
-
-![](/assets/images/Amazon-API-Gateway_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-API-Gateway/)
-
-
 ![](/assets/images/Amazon-API-Gateway_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-API-Gateway/)
 

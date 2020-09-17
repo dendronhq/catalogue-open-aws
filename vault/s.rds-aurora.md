@@ -1,6 +1,6 @@
 ---
 id: rds-aurora
-title: Rds-aurora
+title: RDS Aurora
 desc: ''
 updated: '0'
 created: '0'

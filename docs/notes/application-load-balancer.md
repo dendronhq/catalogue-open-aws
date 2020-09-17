@@ -3,29 +3,18 @@ sources:
   - name: og-aws
     url: 'https://github.com/open-guides/og-aws'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
-  - name: Jerry Hargrove
-    url: 'https://www.awsgeek.com/'
-    license: Creative Commons Attribution-ShareAlike 4.0 International License
 id: application-load-balancer
-title: Application-load-balancer
+title: Application Load Balancer
 desc: ''
 updated: '0'
 created: '0'
 data: {}
 fname: s.application-load-balancer
 stub: false
-parent: 0c784c77-14fc-4d63-a36d-040930bc1b8b
+parent: 361fa08e-e76d-4cc2-a680-8fb169bda9f2
 children: []
 hpath: s.application-load-balancer
 ---
-![](/assets/images/AWS-ALB_en.jpg)
-
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-ALB/)
-
-![](/assets/images/AWS-ALB_en.jpg)
-
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-ALB/)
-
 # Application Load Balancer
 
 ### ALB Basics

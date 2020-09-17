@@ -1,6 +1,6 @@
 ---
 id: dynamodb
-title: Dynamodb
+title: DynamoDB
 desc: ''
 updated: '0'
 created: '0'
@@ -13,14 +13,6 @@ sources:
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/Amazon-DynamoDB_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-DynamoDB/)
-
-
-![](/assets/images/Amazon-DynamoDB_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-DynamoDB/)
-
-
 ![](/assets/images/Amazon-DynamoDB_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-DynamoDB/)
 

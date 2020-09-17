@@ -1,18 +1,14 @@
 ---
-id: e427d7e0-f58c-49d5-8f22-145d05f5f3d0
+id: e66815b4-b0ca-4045-aeba-ef8be7feb619
 title: Textract
 desc: ''
-updated: 1600363321243
-created: 1600363321243
+updated: 1600364869994
+created: 1600364869994
 stub: false
 sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/Amazon-Textract_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/Amazon-Textract/)
-
-
 ![](/assets/images/Amazon-Textract_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/Amazon-Textract/)

@@ -1,18 +1,14 @@
 ---
-id: 677ddef8-dc1a-4136-af9a-e8414d8a490c
+id: 9701827a-8ba6-4068-972e-906126d66fc7
 title: Ground-station
 desc: ''
-updated: 1600363321227
-created: 1600363321227
+updated: 1600364869982
+created: 1600364869982
 stub: false
 sources:
   - name: Jerry Hargrove
     url: 'https://www.awsgeek.com/'
     license: Creative Commons Attribution-ShareAlike 4.0 International License
 ---
-![](/assets/images/AWS-Ground-Station_en.jpg)
-> Image from [@awsgeek](https://www.awsgeek.com/AWS-Ground-Station/)
-
-
 ![](/assets/images/AWS-Ground-Station_en.jpg)
 > Image from [@awsgeek](https://www.awsgeek.com/AWS-Ground-Station/)
