@@ -5,7 +5,7 @@ title: Open AWS
 logo: "/assets/images/logo.png"
 exclude: [ "node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile", "*/dendron.template.release.md"
 ]
-footer_content: ""
+footer_content: "All material on this page is licensed under the Creative Commons Attribution 4.0 International License"
 
 gh_edit_link: false
 
