@@ -5,6 +5,8 @@
   "author": "kevinslin <kevin@thence.io>",
   "license": "MIT",
   "dependencies": {
-    "@dendronhq/og-aws-seed": "0.0.0"
+    "@dendronhq/awsgeek-seed": "^0.1.2",
+    "@dendronhq/dendron-cli": "^0.11.3",
+    "@dendronhq/og-aws-seed": "^0.1.2"
   }
 }
