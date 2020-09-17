@@ -2,19 +2,19 @@
 source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
-id: eks
-title: Eks
+id: elastic-container-service-for-kubernetes
+title: Elastic Container Service for Kubernetes
 desc: ''
 updated: '0'
 created: '0'
 data: {}
-fname: s.eks
+fname: s.elastic-container-service-for-kubernetes
 stub: false
-parent: 684025f0-af74-48ff-a902-bdb787eb0621
+parent: 2f2e0f63-3883-4f91-94ab-0fa7a50302b6
 children: []
-hpath: s.eks
+hpath: s.elastic-container-service-for-kubernetes
 ---
-# EKS
+# Elastic Container Service for Kubernetes
 
 ### EKS Basics
 

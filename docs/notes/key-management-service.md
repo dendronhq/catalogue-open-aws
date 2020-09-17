@@ -2,19 +2,19 @@
 source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
-id: kms
-title: Kms
+id: key-management-service
+title: Key Management Service
 desc: ''
 updated: '0'
 created: '0'
 data: {}
-fname: s.kms
+fname: s.key-management-service
 stub: false
-parent: 684025f0-af74-48ff-a902-bdb787eb0621
+parent: 2f2e0f63-3883-4f91-94ab-0fa7a50302b6
 children: []
-hpath: s.kms
+hpath: s.key-management-service
 ---
-# KMS
+# Key Management Service
 
 ### KMS Basics
 

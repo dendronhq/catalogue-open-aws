@@ -2,19 +2,19 @@
 source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
-id: s3
-title: S3
+id: simple-storage-service
+title: Simple Storage Service
 desc: ''
 updated: '0'
 created: '0'
 data: {}
-fname: s.s3
+fname: s.simple-storage-service
 stub: false
-parent: 684025f0-af74-48ff-a902-bdb787eb0621
+parent: 2f2e0f63-3883-4f91-94ab-0fa7a50302b6
 children: []
-hpath: s.s3
+hpath: s.simple-storage-service
 ---
-# S3
+# Simple Storage Service
 
 ### S3 Basics
 

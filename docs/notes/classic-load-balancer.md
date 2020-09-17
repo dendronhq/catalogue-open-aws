@@ -2,19 +2,19 @@
 source:
   name: og-aws
   url: 'https://github.com/open-guides/og-aws'
-id: clb
-title: Clb
+id: classic-load-balancer
+title: Classic Load Balancer
 desc: ''
 updated: '0'
 created: '0'
 data: {}
-fname: s.clb
+fname: s.classic-load-balancer
 stub: false
-parent: 684025f0-af74-48ff-a902-bdb787eb0621
+parent: 2f2e0f63-3883-4f91-94ab-0fa7a50302b6
 children: []
-hpath: s.clb
+hpath: s.classic-load-balancer
 ---
-# CLB
+# Classic Load Balancer
 
 ### CLB Basics
 
