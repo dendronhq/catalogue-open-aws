@@ -1,0 +1,58 @@
+---
+id: bdb6dfd5-f1c6-4988-a042-5234c84bfa8d
+title: API Gateway
+desc: ''
+updated: '0'
+created: '0'
+stub: false
+sources:
+  - name: Policy Sentry
+    url: 'https://github.com/salesforce/policy_sentry'
+    license: MIT
+---
+# API Gateway
+## Summary
+- prefix: execute-api
+## Privileges
+### InvalidateCache
+- description: Used to invalidate API cache upon a client request
+- access level: Write
+- resource types
+```
+{
+    "execute-api-general": {
+        "resource_type": "execute-api-general",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+```
+### Invoke
+- description: Used to invoke an API upon a client request
+- access level: Write
+- resource types
+```
+{
+    "execute-api-general": {
+        "resource_type": "execute-api-general",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+```
+### ManageConnections
+- description: ManageConnections controls access to the @connections API
+- access level: Write
+- resource types
+```
+{
+    "execute-api-general": {
+        "resource_type": "execute-api-general",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+```
