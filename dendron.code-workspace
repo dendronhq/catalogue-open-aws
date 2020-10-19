@@ -2,12 +2,6 @@
     "folders": [
         {
             "path": "vault"
-        },
-        {
-            "path": "."
-        },
-        {
-            "path": "/Users/kevinlin/projects/dendronv2/dendron-seedbank/vaults/aws/pods/og-aws-pod"
         }
     ],
     "settings": {
