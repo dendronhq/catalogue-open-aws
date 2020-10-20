@@ -1,18 +1,21 @@
 ---
-id: f9230b5e-6c10-49d5-8894-f2f784ea6aa2
+id: iam-Kinesis Firehose
 title: Kinesis Firehose
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Kinesis Firehose
-## Summary
 - prefix: firehose
+
+## Table of Contents
+
 ## Privileges
 ### CreateDeliveryStream
 - description: Creates a delivery stream.

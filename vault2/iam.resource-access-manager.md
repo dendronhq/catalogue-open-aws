@@ -1,18 +1,21 @@
 ---
-id: 7433bf9a-7531-481a-b74a-785170b829aa
+id: iam-Resource Access Manager
 title: Resource Access Manager
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Resource Access Manager
-## Summary
 - prefix: ram
+
+## Table of Contents
+
 ## Privileges
 ### AcceptResourceShareInvitation
 - description: Accept the specified resource share invitation

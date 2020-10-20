@@ -1,18 +1,21 @@
 ---
-id: 46a4f728-3ae9-4812-99db-32c58a61bb73
+id: iam-EC2 Instance Connect
 title: EC2 Instance Connect
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # EC2 Instance Connect
-## Summary
 - prefix: ec2-instance-connect
+
+## Table of Contents
+
 ## Privileges
 ### SendSSHPublicKey
 - description: Grants permission to push the SSH public key to the instance metadata where it remains for 60 seconds.

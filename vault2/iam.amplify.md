@@ -1,18 +1,21 @@
 ---
-id: cdd1a46c-1b27-4ee7-8abc-9312b68653c3
+id: iam-Amplify
 title: Amplify
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Amplify
-## Summary
 - prefix: amplify
+
+## Table of Contents
+
 ## Privileges
 ### CreateApp
 - description: Creates a new Amplify App.

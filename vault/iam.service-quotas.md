@@ -1,18 +1,21 @@
 ---
-id: f47414f8-79ea-49b3-a565-c4e46484101e
+id: iam-Service Quotas
 title: Service Quotas
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Service Quotas
-## Summary
 - prefix: servicequotas
+
+## Table of Contents
+
 ## Privileges
 ### AssociateServiceQuotaTemplate
 - description: Grants permission to associate the Service Quotas template with your organization

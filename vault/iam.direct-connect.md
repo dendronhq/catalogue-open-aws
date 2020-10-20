@@ -1,18 +1,21 @@
 ---
-id: 58464121-1cf9-44d4-8c22-7798e051814f
+id: iam-Direct Connect
 title: Direct Connect
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Direct Connect
-## Summary
 - prefix: directconnect
+
+## Table of Contents
+
 ## Privileges
 ### AcceptDirectConnectGatewayAssociationProposal
 - description: Accepts a proposal request to attach a virtual private gateway to a Direct Connect gateway.

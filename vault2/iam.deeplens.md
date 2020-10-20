@@ -1,18 +1,21 @@
 ---
-id: 4df3e6ba-c634-40e4-a882-ffbd6c3059ef
+id: iam-DeepLens
 title: DeepLens
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # DeepLens
-## Summary
 - prefix: deeplens
+
+## Table of Contents
+
 ## Privileges
 ### AssociateServiceRoleToAccount
 - description: Associates the user's account with IAM roles controlling various permissions needed by AWS DeepLens for proper functionality.

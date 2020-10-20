@@ -1,18 +1,21 @@
 ---
-id: e53c3ed5-0faa-4805-876c-b8cffee710dd
+id: iam-Elemental MediaTailor
 title: Elemental MediaTailor
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elemental MediaTailor
-## Summary
 - prefix: mediatailor
+
+## Table of Contents
+
 ## Privileges
 ### DeletePlaybackConfiguration
 - description: Deletes the playback configuration for the specified name

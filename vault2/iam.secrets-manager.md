@@ -1,18 +1,21 @@
 ---
-id: 267cb4b1-40f7-4757-b03f-66b44e921846
+id: iam-Secrets Manager
 title: Secrets Manager
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Secrets Manager
-## Summary
 - prefix: secretsmanager
+
+## Table of Contents
+
 ## Privileges
 ### CancelRotateSecret
 - description: Enables the user to cancel an in-progress secret rotation.

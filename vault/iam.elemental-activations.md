@@ -1,18 +1,21 @@
 ---
-id: 85c4271f-42f2-4c59-8d91-80db452cea58
+id: iam-Elemental Activations
 title: Elemental Activations
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elemental Activations
-## Summary
 - prefix: elemental-activations
+
+## Table of Contents
+
 ## Privileges
 ### DownloadSoftware
 - description: Download the Software files for AWS Elemental Appliances and Software Purchases

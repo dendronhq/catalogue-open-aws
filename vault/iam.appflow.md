@@ -1,18 +1,21 @@
 ---
-id: 2c8b2338-5e81-4d2f-85ca-eca7d36b1895
+id: iam-AppFlow
 title: AppFlow
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # AppFlow
-## Summary
 - prefix: appflow
+
+## Table of Contents
+
 ## Privileges
 ### CreateConnectorProfile
 - description: Grants permission to create a login profile to be used with Amazon AppFlow flows

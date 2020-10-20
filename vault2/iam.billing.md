@@ -1,18 +1,21 @@
 ---
-id: 8ebaa01a-4875-4f0c-ae22-e284e850fdf4
+id: iam-Billing
 title: Billing
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Billing
-## Summary
 - prefix: aws-portal
+
+## Table of Contents
+
 ## Privileges
 ### ModifyAccount
 - description: Allow or deny IAM users permission to modify Account Settings.

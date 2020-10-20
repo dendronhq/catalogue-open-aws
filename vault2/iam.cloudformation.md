@@ -1,18 +1,21 @@
 ---
-id: af16f27e-25af-4cbf-94d1-fb2c9656a91f
+id: iam-CloudFormation
 title: CloudFormation
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CloudFormation
-## Summary
 - prefix: cloudformation
+
+## Table of Contents
+
 ## Privileges
 ### CancelUpdateStack
 - description: Cancels an update on the specified stack.

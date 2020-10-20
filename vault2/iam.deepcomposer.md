@@ -1,18 +1,21 @@
 ---
-id: 11c7a7c2-390c-4cf2-9595-e6f11d1ef544
+id: iam-DeepComposer
 title: DeepComposer
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # DeepComposer
-## Summary
 - prefix: deepcomposer
+
+## Table of Contents
+
 ## Privileges
 ### AssociateCoupon
 - description: Associates a DeepComposer coupon (or DSN) with the account associated with the sender of the request.

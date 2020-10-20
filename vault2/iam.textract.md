@@ -1,18 +1,21 @@
 ---
-id: 4f7f9cf4-75bf-47b2-b572-a3de706ea8b9
+id: iam-Textract
 title: Textract
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Textract
-## Summary
 - prefix: textract
+
+## Table of Contents
+
 ## Privileges
 ### AnalyzeDocument
 - description: Detects instances of real-world document entities within an image provided as input.

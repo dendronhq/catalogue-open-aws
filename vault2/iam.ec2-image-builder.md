@@ -1,18 +1,21 @@
 ---
-id: b1fb034d-6573-4e3f-a3f8-152068fac246
+id: iam-EC2 Image Builder
 title: EC2 Image Builder
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # EC2 Image Builder
-## Summary
 - prefix: imagebuilder
+
+## Table of Contents
+
 ## Privileges
 ### CancelImageCreation
 - description: Cancel an image creation

@@ -1,18 +1,21 @@
 ---
-id: 45c31f71-8e18-4b69-bb99-78ead5f5020f
+id: iam-FSx
 title: FSx
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # FSx
-## Summary
 - prefix: fsx
+
+## Table of Contents
+
 ## Privileges
 ### CancelDataRepositoryTask
 - description: This action cancels a data repository task

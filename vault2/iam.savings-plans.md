@@ -1,18 +1,21 @@
 ---
-id: d2be887d-cad3-4186-94ff-389cd66ff43b
+id: iam-Savings Plans
 title: Savings Plans
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Savings Plans
-## Summary
 - prefix: savingsplans
+
+## Table of Contents
+
 ## Privileges
 ### CreateSavingsPlan
 - description: Grants permission to create a savings plan

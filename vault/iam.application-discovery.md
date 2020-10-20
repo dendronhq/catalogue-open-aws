@@ -1,18 +1,21 @@
 ---
-id: 25369a12-f9c2-4209-b183-0bf36315085f
+id: iam-Application Discovery
 title: Application Discovery
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Application Discovery
-## Summary
 - prefix: discovery
+
+## Table of Contents
+
 ## Privileges
 ### AssociateConfigurationItemsToApplication
 - description: Associates one or more configuration items with an application.

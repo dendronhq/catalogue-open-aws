@@ -1,18 +1,21 @@
 ---
-id: 1c010e84-26c6-4a55-8247-9f42b7f19e3c
+id: iam-CodeGuru
 title: CodeGuru
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CodeGuru
-## Summary
 - prefix: codeguru
+
+## Table of Contents
+
 ## Privileges
 ### GetCodeGuruFreeTrialSummary
 - description: Gets free trial summary for the CodeGuru service which includes expiration date.

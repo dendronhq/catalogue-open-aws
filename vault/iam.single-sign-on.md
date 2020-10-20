@@ -1,18 +1,21 @@
 ---
-id: b02b5d80-a696-4d66-a0d2-826fac7ee9f0
+id: iam-Single Sign-On
 title: Single Sign-On
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Single Sign-On
-## Summary
 - prefix: sso
+
+## Table of Contents
+
 ## Privileges
 ### AssociateDirectory
 - description: Connect a directory to be used by AWS Single Sign-On

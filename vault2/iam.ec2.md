@@ -1,18 +1,21 @@
 ---
-id: e9d3cc5f-4576-4915-b7d3-e9ada8a95cfb
+id: iam-EC2
 title: EC2
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # EC2
-## Summary
 - prefix: ec2
+
+## Table of Contents
+
 ## Privileges
 ### AcceptReservedInstancesExchangeQuote
 - description: Grants permission to accept a Convertible Reserved Instance exchange quote

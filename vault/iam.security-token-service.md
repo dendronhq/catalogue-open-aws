@@ -1,18 +1,21 @@
 ---
-id: ee4c6d7a-c3ff-4732-af61-1648232ab112
+id: iam-Security Token Service
 title: Security Token Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Security Token Service
-## Summary
 - prefix: sts
+
+## Table of Contents
+
 ## Privileges
 ### AssumeRole
 - description: Returns a set of temporary security credentials that you can use to access AWS resources that you might not normally have access to

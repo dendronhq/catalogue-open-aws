@@ -1,18 +1,21 @@
 ---
-id: 2978575d-ad3b-483f-bfa2-312204cce454
+id: iam-Forecast
 title: Forecast
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Forecast
-## Summary
 - prefix: forecast
+
+## Table of Contents
+
 ## Privileges
 ### CreateDataset
 - description: Creates a dataset

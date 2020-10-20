@@ -1,18 +1,21 @@
 ---
-id: e94f314c-ad1a-4f6a-9be0-7ae98632a7c8
+id: iam-Device Farm
 title: Device Farm
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Device Farm
-## Summary
 - prefix: devicefarm
+
+## Table of Contents
+
 ## Privileges
 ### CreateDevicePool
 - description: Grants permission to create a device pool within a project

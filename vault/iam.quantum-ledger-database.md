@@ -1,18 +1,21 @@
 ---
-id: e10eef08-1baa-4c86-9fde-6c750276030b
+id: iam-Quantum Ledger Database
 title: Quantum Ledger Database
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Quantum Ledger Database
-## Summary
 - prefix: qldb
+
+## Table of Contents
+
 ## Privileges
 ### CancelJournalKinesisStream
 - description: Grants permission to cancel a journal kinesis stream

@@ -1,18 +1,21 @@
 ---
-id: 8e65d1a6-bfc0-4818-b183-849204f62a0f
+id: iam-Rekognition
 title: Rekognition
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Rekognition
-## Summary
 - prefix: rekognition
+
+## Table of Contents
+
 ## Privileges
 ### CompareFaces
 - description: Compares a face in source input image with each face detected in the target input image.

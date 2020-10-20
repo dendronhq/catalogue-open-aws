@@ -1,18 +1,21 @@
 ---
-id: f7c78abb-5eb1-4f1f-a973-3599014583e6
+id: iam-Application Discovery Arsenal
 title: Application Discovery Arsenal
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Application Discovery Arsenal
-## Summary
 - prefix: arsenal
+
+## Table of Contents
+
 ## Privileges
 ### RegisterOnPremisesAgent
 - description: Grants permission to register AWS provided data collectors to the Application Discovery Service

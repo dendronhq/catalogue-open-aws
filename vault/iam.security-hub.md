@@ -1,18 +1,21 @@
 ---
-id: 2c9c3cc6-67ae-4141-83fd-cd5fae4ae139
+id: iam-Security Hub
 title: Security Hub
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Security Hub
-## Summary
 - prefix: securityhub
+
+## Table of Contents
+
 ## Privileges
 ### AcceptInvitation
 - description: Grants permission to accept Security Hub invitations to become a member account

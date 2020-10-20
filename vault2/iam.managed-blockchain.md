@@ -1,18 +1,21 @@
 ---
-id: 6aed7260-c960-42fb-abd3-5937fd2da4c8
+id: iam-Managed Blockchain
 title: Managed Blockchain
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Managed Blockchain
-## Summary
 - prefix: managedblockchain
+
+## Table of Contents
+
 ## Privileges
 ### CreateMember
 - description: Grants permission to create a member of an Amazon Managed Blockchain network.

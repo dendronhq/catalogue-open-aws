@@ -1,18 +1,21 @@
 ---
-id: 8f14813e-e2b1-4b65-887c-1c133562a08a
+id: iam-Glue
 title: Glue
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Glue
-## Summary
 - prefix: glue
+
+## Table of Contents
+
 ## Privileges
 ### BatchCreatePartition
 - description: Grants permission to create one or more partitions

@@ -1,18 +1,21 @@
 ---
-id: 5b32c3ea-3431-4c22-911f-2d60848b3f1d
+id: iam-Data Exchange
 title: Data Exchange
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Data Exchange
-## Summary
 - prefix: dataexchange
+
+## Table of Contents
+
 ## Privileges
 ### CancelJob
 - description: Grants permissions to cancel a job.

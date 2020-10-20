@@ -1,18 +1,21 @@
 ---
-id: c46fba70-7973-4007-8d82-887fc8ff5e7e
+id: iam-Managed Apache Cassandra Service
 title: Managed Apache Cassandra Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Managed Apache Cassandra Service
-## Summary
 - prefix: cassandra
+
+## Table of Contents
+
 ## Privileges
 ### Alter
 - description: Grants permission to alter a keyspace or table

@@ -1,18 +1,21 @@
 ---
-id: 5b7293e3-8d55-42e2-b981-038540b86233
+id: iam-Simple Storage Service
 title: Simple Storage Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Simple Storage Service
-## Summary
 - prefix: s3
+
+## Table of Contents
+
 ## Privileges
 ### AbortMultipartUpload
 - description: Grants permission to abort a multipart upload

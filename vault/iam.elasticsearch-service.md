@@ -1,18 +1,21 @@
 ---
-id: e956012c-08eb-42bf-82b7-95a8f3d0e3f3
+id: iam-Elasticsearch Service
 title: Elasticsearch Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elasticsearch Service
-## Summary
 - prefix: es
+
+## Table of Contents
+
 ## Privileges
 ### AcceptInboundCrossClusterSearchConnection
 - description: Allows the destination domain owner to accept an inbound cross-cluster search connection request

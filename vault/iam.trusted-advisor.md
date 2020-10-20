@@ -1,18 +1,21 @@
 ---
-id: b364e5ba-b1bb-4615-a4c9-c06474064e25
+id: iam-Trusted Advisor
 title: Trusted Advisor
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Trusted Advisor
-## Summary
 - prefix: trustedadvisor
+
+## Table of Contents
+
 ## Privileges
 ### DescribeAccount
 - description: Grants permission to view the AWS Support plan and various AWS Trusted Advisor preferences

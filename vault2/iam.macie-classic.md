@@ -1,18 +1,21 @@
 ---
-id: 82e1107a-22b9-48a8-92c3-5dbead11bad4
+id: iam-Macie Classic
 title: Macie Classic
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Macie Classic
-## Summary
 - prefix: macie
+
+## Table of Contents
+
 ## Privileges
 ### AssociateMemberAccount
 - description: Enables the user to associate a specified AWS account with Amazon Macie as a member account.

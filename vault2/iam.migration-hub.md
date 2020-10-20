@@ -1,18 +1,21 @@
 ---
-id: 4140bf08-a8ac-4a33-8bd7-8c92df7412cc
+id: iam-Migration Hub
 title: Migration Hub
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Migration Hub
-## Summary
 - prefix: mgh
+
+## Table of Contents
+
 ## Privileges
 ### AssociateCreatedArtifact
 - description: Associate a given AWS artifact to a MigrationTask

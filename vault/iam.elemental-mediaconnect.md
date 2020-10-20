@@ -1,18 +1,21 @@
 ---
-id: 0d59fa6a-ac5e-4814-8bb1-d6ca03f3eb2c
+id: iam-Elemental MediaConnect
 title: Elemental MediaConnect
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elemental MediaConnect
-## Summary
 - prefix: mediaconnect
+
+## Table of Contents
+
 ## Privileges
 ### AddFlowOutputs
 - description: Grants permission to add outputs to any flow.

@@ -1,18 +1,21 @@
 ---
-id: 130ccbd5-63cc-4de9-b402-19e0a318d452
+id: iam-DynamoDB Accelerator
 title: DynamoDB Accelerator
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # DynamoDB Accelerator
-## Summary
 - prefix: dax
+
+## Table of Contents
+
 ## Privileges
 ### BatchGetItem
 - description: The BatchGetItem action returns the attributes of one or more items from one or more tables.

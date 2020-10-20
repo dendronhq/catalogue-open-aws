@@ -1,18 +1,21 @@
 ---
-id: e6f7d66b-1ca3-4c27-b98b-b18dfc0ae10a
+id: iam-Lambda
 title: Lambda
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Lambda
-## Summary
 - prefix: lambda
+
+## Table of Contents
+
 ## Privileges
 ### AddLayerVersionPermission
 - description: Grants permission to add permissions to the resource-based policy of a version of an AWS Lambda layer

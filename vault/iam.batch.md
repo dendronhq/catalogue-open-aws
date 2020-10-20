@@ -1,18 +1,21 @@
 ---
-id: 3f781492-4011-4dc3-ae33-d0073a3964cd
+id: iam-Batch
 title: Batch
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Batch
-## Summary
 - prefix: batch
+
+## Table of Contents
+
 ## Privileges
 ### CancelJob
 - description: Cancels a job in an AWS Batch job queue.

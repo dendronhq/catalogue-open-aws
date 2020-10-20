@@ -1,18 +1,21 @@
 ---
-id: 7d53dfbd-97ea-4cce-b9bc-60293bf5c4a1
+id: iam-Route 53 Resolver
 title: Route 53 Resolver
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Route 53 Resolver
-## Summary
 - prefix: route53resolver
+
+## Table of Contents
+
 ## Privileges
 ### AssociateResolverEndpointIpAddress
 - description: Grants permission to associate a specified IP address with a Resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound)

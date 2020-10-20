@@ -1,18 +1,21 @@
 ---
-id: dcaa5cac-2c5a-40d2-a9c3-ba33b0d8184e
+id: iam-Lex
 title: Lex
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Lex
-## Summary
 - prefix: lex
+
+## Table of Contents
+
 ## Privileges
 ### CreateBotVersion
 - description: Creates a new version based on the $LATEST version of the specified bot.

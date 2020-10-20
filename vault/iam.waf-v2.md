@@ -1,18 +1,21 @@
 ---
-id: d45240eb-2f15-4676-993e-5c11cfdcd8a2
+id: iam-WAF V2
 title: WAF V2
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # WAF V2
-## Summary
 - prefix: wafv2
+
+## Table of Contents
+
 ## Privileges
 ### AssociateWebACL
 - description: Grants permission to associate a WebACL with a resource.

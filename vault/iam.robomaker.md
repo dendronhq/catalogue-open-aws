@@ -1,18 +1,21 @@
 ---
-id: f083ac83-8aee-497e-90b6-41b62fc12f15
+id: iam-RoboMaker
 title: RoboMaker
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # RoboMaker
-## Summary
 - prefix: robomaker
+
+## Table of Contents
+
 ## Privileges
 ### BatchDeleteWorlds
 - description: Delete one or more worlds in a batch operation

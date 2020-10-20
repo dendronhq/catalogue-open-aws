@@ -1,18 +1,21 @@
 ---
-id: 15a25805-301e-42e8-80c9-eea8a8c8c667
+id: iam-Health APIs and Notifications
 title: Health APIs and Notifications
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Health APIs and Notifications
-## Summary
 - prefix: health
+
+## Table of Contents
+
 ## Privileges
 ### DescribeAffectedAccountsForOrganization
 - description: Gets a list of accounts that have been affected by the specified events in organization.

@@ -1,18 +1,21 @@
 ---
-id: baea4264-7190-48ed-8ffd-da24fee0a4e4
+id: iam-Simple Email Service
 title: Simple Email Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Simple Email Service
-## Summary
 - prefix: ses
+
+## Table of Contents
+
 ## Privileges
 ### CloneReceiptRuleSet
 - description: Creates a receipt rule set by cloning an existing one

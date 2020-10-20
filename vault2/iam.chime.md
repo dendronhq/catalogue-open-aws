@@ -1,18 +1,21 @@
 ---
-id: 7a5ff779-bdeb-4a38-891b-12b5c60d488d
+id: iam-Chime
 title: Chime
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Chime
-## Summary
 - prefix: chime
+
+## Table of Contents
+
 ## Privileges
 ### AcceptDelegate
 - description: Grants permission to accept the delegate invitation to share management of an Amazon Chime account with another AWS Account

@@ -1,18 +1,21 @@
 ---
-id: a686e016-539f-49e6-bdca-396019f83376
+id: iam-QuickSight
 title: QuickSight
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # QuickSight
-## Summary
 - prefix: quicksight
+
+## Table of Contents
+
 ## Privileges
 ### CreateAccountCustomization
 - description: Grants permission to create an account customization for QuickSight account or namespace

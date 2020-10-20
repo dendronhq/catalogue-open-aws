@@ -1,18 +1,21 @@
 ---
-id: 0125ebcf-e8cb-4788-82df-d412ffef54ad
+id: iam-CodeStar Notifications
 title: CodeStar Notifications
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CodeStar Notifications
-## Summary
 - prefix: codestar-notifications
+
+## Table of Contents
+
 ## Privileges
 ### CreateNotificationRule
 - description: Grants permission to create a notification rule for a resource

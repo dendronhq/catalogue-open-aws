@@ -1,18 +1,21 @@
 ---
-id: 399cfd2e-dc90-400f-a1cf-5dc08370fc77
+id: iam-CloudSearch
 title: CloudSearch
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CloudSearch
-## Summary
 - prefix: cloudsearch
+
+## Table of Contents
+
 ## Privileges
 ### AddTags
 - description: Attaches resource tags to an Amazon CloudSearch domain.

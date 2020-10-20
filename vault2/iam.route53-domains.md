@@ -1,18 +1,21 @@
 ---
-id: 9fa02544-5a47-4821-9392-9c6ab2b87610
+id: iam-Route53 Domains
 title: Route53 Domains
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Route53 Domains
-## Summary
 - prefix: route53domains
+
+## Table of Contents
+
 ## Privileges
 ### CheckDomainAvailability
 - description: Grants permission to check the availability of one domain name

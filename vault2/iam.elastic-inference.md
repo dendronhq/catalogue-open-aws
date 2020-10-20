@@ -1,18 +1,21 @@
 ---
-id: 64574217-78de-4aad-8234-fdcd05d61343
+id: iam-Elastic Inference
 title: Elastic Inference
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elastic Inference
-## Summary
 - prefix: elastic-inference
+
+## Table of Contents
+
 ## Privileges
 ### Connect
 - description: Connects customer to Elastic Inference accelerator

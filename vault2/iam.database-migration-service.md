@@ -1,18 +1,21 @@
 ---
-id: b97dd725-9168-4265-8fba-0caffa6b206c
+id: iam-Database Migration Service
 title: Database Migration Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Database Migration Service
-## Summary
 - prefix: dms
+
+## Table of Contents
+
 ## Privileges
 ### AddTagsToResource
 - description: Adds metadata tags to a DMS resource, including replication instance, endpoint, security group, and migration task

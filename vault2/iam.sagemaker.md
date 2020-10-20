@@ -1,18 +1,21 @@
 ---
-id: 47684ce7-42fe-46bb-a50d-38c8a4ecf0da
+id: iam-SageMaker
 title: SageMaker
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # SageMaker
-## Summary
 - prefix: sagemaker
+
+## Table of Contents
+
 ## Privileges
 ### AddTags
 - description: Adds or overwrites one or more tags for the specified Amazon SageMaker resource.

@@ -1,18 +1,21 @@
 ---
-id: ac39ec10-9951-4303-ba46-2ac73824b196
+id: iam-Kinesis Analytics V2
 title: Kinesis Analytics V2
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Kinesis Analytics V2
-## Summary
 - prefix: kinesisanalytics
+
+## Table of Contents
+
 ## Privileges
 ### AddApplicationCloudWatchLoggingOption
 - description: Adds cloudwatch logging option to the application.

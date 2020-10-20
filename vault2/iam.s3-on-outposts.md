@@ -1,18 +1,21 @@
 ---
-id: 978c8000-fc03-4947-bbbe-53df6fcb5b09
+id: iam-S3 on Outposts
 title: S3 on Outposts
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # S3 on Outposts
-## Summary
 - prefix: s3-outposts
+
+## Table of Contents
+
 ## Privileges
 ### AbortMultipartUpload
 - description: Grants permission to abort a multipart upload

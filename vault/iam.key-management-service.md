@@ -1,18 +1,21 @@
 ---
-id: b806d9c2-f964-4d4d-9036-91fa6ae167ea
+id: iam-Key Management Service
 title: Key Management Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Key Management Service
-## Summary
 - prefix: kms
+
+## Table of Contents
+
 ## Privileges
 ### CancelKeyDeletion
 - description: Controls permission to cancel the scheduled deletion of a customer master key.

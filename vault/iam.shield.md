@@ -1,18 +1,21 @@
 ---
-id: e967009d-2af3-4b85-83e7-f7913fad9355
+id: iam-Shield
 title: Shield
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Shield
-## Summary
 - prefix: shield
+
+## Table of Contents
+
 ## Privileges
 ### AssociateDRTLogBucket
 - description: Authorizes the DDoS Response team to access the specified Amazon S3 bucket containing your flow logs

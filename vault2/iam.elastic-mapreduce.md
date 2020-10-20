@@ -1,18 +1,21 @@
 ---
-id: 0dbe8bb3-a9e7-4ce3-bf25-e86307cc181f
+id: iam-Elastic MapReduce
 title: Elastic MapReduce
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elastic MapReduce
-## Summary
 - prefix: elasticmapreduce
+
+## Table of Contents
+
 ## Privileges
 ### AddInstanceFleet
 - description: Grants permission to add an instance fleet to a running cluster.

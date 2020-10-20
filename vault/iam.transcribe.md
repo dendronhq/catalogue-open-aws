@@ -1,18 +1,21 @@
 ---
-id: 8fe206eb-ae37-4042-bd3c-9bca6c926ba1
+id: iam-Transcribe
 title: Transcribe
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Transcribe
-## Summary
 - prefix: transcribe
+
+## Table of Contents
+
 ## Privileges
 ### CreateLanguageModel
 - description: Grants permission to create a new custom language model.

@@ -1,18 +1,21 @@
 ---
-id: bc6c596f-da8e-4e1f-ac6b-5599037925d9
+id: iam-Well-Architected Tool
 title: Well-Architected Tool
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Well-Architected Tool
-## Summary
 - prefix: wellarchitected
+
+## Table of Contents
+
 ## Privileges
 ### CreateWorkload
 - description: Creates a new workload.

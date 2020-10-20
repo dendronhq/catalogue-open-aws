@@ -1,18 +1,21 @@
 ---
-id: c1378d33-ebd7-4a6d-ad89-b8348f7661f9
+id: iam-IoT
 title: IoT
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # IoT
-## Summary
 - prefix: iot
+
+## Table of Contents
+
 ## Privileges
 ### AcceptCertificateTransfer
 - description: Accepts a pending certificate transfer.

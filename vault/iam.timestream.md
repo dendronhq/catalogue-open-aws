@@ -1,18 +1,21 @@
 ---
-id: 93cddbce-3857-4ab4-ba06-53bc87d1e99e
+id: iam-Timestream
 title: Timestream
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Timestream
-## Summary
 - prefix: timestream
+
+## Table of Contents
+
 ## Privileges
 ### CancelQuery
 - description: Grants Permission to cancel queries in your account

@@ -1,18 +1,21 @@
 ---
-id: 12933bd8-21fd-4a35-b84c-0fa8bef13825
+id: iam-AppStream 2.0
 title: AppStream 2.0
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # AppStream 2.0
-## Summary
 - prefix: appstream
+
+## Table of Contents
+
 ## Privileges
 ### AssociateFleet
 - description: Grants permission to associate the specified fleet with the specified stack

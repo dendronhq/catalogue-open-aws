@@ -1,18 +1,21 @@
 ---
-id: 06e7b4b0-deed-477e-8b68-d02cb00cb2c5
+id: iam-IoT Things Graph
 title: IoT Things Graph
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # IoT Things Graph
-## Summary
 - prefix: iotthingsgraph
+
+## Table of Contents
+
 ## Privileges
 ### AssociateEntityToThing
 - description: Associates a device with a concrete thing that is in the user's registry. A thing can be associated with only one device at a time. If you associate a thing with a new device id, its previous association will be removed.

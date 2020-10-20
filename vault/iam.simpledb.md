@@ -1,18 +1,21 @@
 ---
-id: 551dbd96-e6a9-49d2-87f9-0095fbf1aa44
+id: iam-SimpleDB
 title: SimpleDB
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # SimpleDB
-## Summary
 - prefix: sdb
+
+## Table of Contents
+
 ## Privileges
 ### BatchDeleteAttributes
 - description: Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies.

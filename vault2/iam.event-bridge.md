@@ -1,18 +1,21 @@
 ---
-id: 3a219245-4c8a-4b2f-8c33-788c9ea8142c
+id: iam-Event Bridge
 title: Event Bridge
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Event Bridge
-## Summary
 - prefix: events
+
+## Table of Contents
+
 ## Privileges
 ### ActivateEventSource
 - description: Activates a partner event source that has been deactivated. Once activated, your matching event bus will start receiving events from the event source.

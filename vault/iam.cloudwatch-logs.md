@@ -1,18 +1,21 @@
 ---
-id: 8ef0b86d-d8a5-48c4-94e6-a8f3f2acf9df
+id: iam-CloudWatch Logs
 title: CloudWatch Logs
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CloudWatch Logs
-## Summary
 - prefix: logs
+
+## Table of Contents
+
 ## Privileges
 ### AssociateKmsKey
 - description: Associates the specified AWS Key Management Service (AWS KMS) customer master key (CMK) with the specified log group.

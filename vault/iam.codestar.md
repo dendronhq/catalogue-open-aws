@@ -1,18 +1,21 @@
 ---
-id: 4a4a8a43-b9e4-40d2-b765-4fa21f0a274e
+id: iam-CodeStar
 title: CodeStar
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CodeStar
-## Summary
 - prefix: codestar
+
+## Table of Contents
+
 ## Privileges
 ### AssociateTeamMember
 - description: Adds a user to the team for an AWS CodeStar project.

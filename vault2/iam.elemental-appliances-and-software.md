@@ -1,18 +1,21 @@
 ---
-id: f967c67e-1545-4993-939d-0cfbbb1ff50b
+id: iam-Elemental Appliances and Software
 title: Elemental Appliances and Software
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elemental Appliances and Software
-## Summary
 - prefix: elemental-appliances-software
+
+## Table of Contents
+
 ## Privileges
 ### CreateQuote
 - description: Create a quote

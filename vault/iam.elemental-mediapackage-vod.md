@@ -1,18 +1,21 @@
 ---
-id: 78332c7a-c016-4bb0-851f-95a0affa1f02
+id: iam-Elemental MediaPackage VOD
 title: Elemental MediaPackage VOD
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elemental MediaPackage VOD
-## Summary
 - prefix: mediapackage-vod
+
+## Table of Contents
+
 ## Privileges
 ### CreateAsset
 - description: Grants permission to create an asset in AWS Elemental MediaPackage

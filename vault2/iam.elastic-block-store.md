@@ -1,18 +1,21 @@
 ---
-id: c12920f5-9ba3-4042-83c3-8621aff802df
+id: iam-Elastic Block Store
 title: Elastic Block Store
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elastic Block Store
-## Summary
 - prefix: ebs
+
+## Table of Contents
+
 ## Privileges
 ### CompleteSnapshot
 - description: Grants permission to seal and complete the snapshot after all of the required blocks of data have been written to it.

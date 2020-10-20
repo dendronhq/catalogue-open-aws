@@ -1,18 +1,21 @@
 ---
-id: 6da743d2-f492-4b36-af1f-a1f9bc2e86cb
+id: iam-Managed Streaming for Kafka
 title: Managed Streaming for Kafka
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Managed Streaming for Kafka
-## Summary
 - prefix: kafka
+
+## Table of Contents
+
 ## Privileges
 ### CreateCluster
 - description: Grants permission to create a cluster.

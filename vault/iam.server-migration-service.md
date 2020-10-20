@@ -1,18 +1,21 @@
 ---
-id: 849ccfbd-89dd-4e73-bdb6-eb49b18fd709
+id: iam-Server Migration Service
 title: Server Migration Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Server Migration Service
-## Summary
 - prefix: sms
+
+## Table of Contents
+
 ## Privileges
 ### CreateApp
 - description: Grants permission to create an application configuration to migrate on-premise application onto AWS

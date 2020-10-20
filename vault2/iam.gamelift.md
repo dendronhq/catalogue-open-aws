@@ -1,18 +1,21 @@
 ---
-id: 3985283b-cd5c-4457-bf88-fb03c1b31dbc
+id: iam-GameLift
 title: GameLift
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # GameLift
-## Summary
 - prefix: gamelift
+
+## Table of Contents
+
 ## Privileges
 ### AcceptMatch
 - description: Registers player acceptance or rejection of a proposed FlexMatch match.

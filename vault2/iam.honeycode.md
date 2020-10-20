@@ -1,18 +1,21 @@
 ---
-id: 1a0f6056-3af8-4955-ad2a-83e0a29ecea3
+id: iam-Honeycode
 title: Honeycode
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Honeycode
-## Summary
 - prefix: honeycode
+
+## Table of Contents
+
 ## Privileges
 ### ApproveTeamAssociation
 - description: Grants permission to approve a team association request for your AWS Account

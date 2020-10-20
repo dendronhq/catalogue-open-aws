@@ -1,18 +1,21 @@
 ---
-id: 32924d28-5c6f-4590-bed0-daec8599cc4f
+id: iam-Purchase Orders Console
 title: Purchase Orders Console
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Purchase Orders Console
-## Summary
 - prefix: purchase-orders
+
+## Table of Contents
+
 ## Privileges
 ### ModifyPurchaseOrders
 - description: Modify purchase orders and details

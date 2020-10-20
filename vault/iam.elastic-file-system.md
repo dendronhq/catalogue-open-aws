@@ -1,18 +1,21 @@
 ---
-id: f8da71cd-0ea5-46dd-8d76-6e55468d461b
+id: iam-Elastic File System
 title: Elastic File System
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elastic File System
-## Summary
 - prefix: elasticfilesystem
+
+## Table of Contents
+
 ## Privileges
 ### Backup
 - description: Starts a backup job for an existing file system.

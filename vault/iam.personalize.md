@@ -1,18 +1,21 @@
 ---
-id: 592dae3d-81da-4852-a019-b746c55a2b88
+id: iam-Personalize
 title: Personalize
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Personalize
-## Summary
 - prefix: personalize
+
+## Table of Contents
+
 ## Privileges
 ### CreateBatchInferenceJob
 - description: Creates a batch inference job

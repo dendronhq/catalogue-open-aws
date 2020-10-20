@@ -1,18 +1,21 @@
 ---
-id: c7e6226c-1df5-4f92-976b-ee6a85781d2e
+id: iam-Transfer for SFTP
 title: Transfer for SFTP
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Transfer for SFTP
-## Summary
 - prefix: transfer
+
+## Table of Contents
+
 ## Privileges
 ### CreateServer
 - description: Enables the caller to create a server.

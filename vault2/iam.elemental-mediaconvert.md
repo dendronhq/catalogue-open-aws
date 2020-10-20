@@ -1,18 +1,21 @@
 ---
-id: 7b47c0f2-68ba-4a88-bc2b-c0d0e030dec6
+id: iam-Elemental MediaConvert
 title: Elemental MediaConvert
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elemental MediaConvert
-## Summary
 - prefix: mediaconvert
+
+## Table of Contents
+
 ## Privileges
 ### AssociateCertificate
 - description: Grants permission to associate an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert.

@@ -1,18 +1,21 @@
 ---
-id: dfd03565-3c8f-4dda-bbe1-67c4cecb997e
+id: iam-Identity And Access Management
 title: Identity And Access Management
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Identity And Access Management
-## Summary
 - prefix: iam
+
+## Table of Contents
+
 ## Privileges
 ### AddClientIDToOpenIDConnectProvider
 - description: Grants permission to add a new client ID (audience) to the list of registered IDs for the specified IAM OpenID Connect (OIDC) provider resource

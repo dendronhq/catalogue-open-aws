@@ -1,18 +1,21 @@
 ---
-id: e985832e-6ab3-4b08-8fcc-6c3640791737
+id: iam-Comprehend Medical
 title: Comprehend Medical
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Comprehend Medical
-## Summary
 - prefix: comprehendmedical
+
+## Table of Contents
+
 ## Privileges
 ### DetectEntities
 - description: Inspects the specified text for the specified type of entities and returns information about them.

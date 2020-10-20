@@ -1,18 +1,21 @@
 ---
-id: e8719db9-b8e1-4100-a19d-e0aa5453a26c
+id: iam-DeepRacer
 title: DeepRacer
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # DeepRacer
-## Summary
 - prefix: deepracer
+
+## Table of Contents
+
 ## Privileges
 ### CloneReinforcementLearningModel
 - description: Grants permission to clone existing DeepRacer models

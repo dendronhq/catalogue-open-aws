@@ -1,18 +1,21 @@
 ---
-id: 2efcecbe-1921-4ec2-bbb4-d86f7d276a59
+id: iam-Outposts
 title: Outposts
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Outposts
-## Summary
 - prefix: outposts
+
+## Table of Contents
+
 ## Privileges
 ### CreateOutpost
 - description: Creates an Outpost

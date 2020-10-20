@@ -1,18 +1,21 @@
 ---
-id: e6a1ad67-dfce-48d4-904d-3b05561fa86b
+id: iam-Cloud Map
 title: Cloud Map
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Cloud Map
-## Summary
 - prefix: servicediscovery
+
+## Table of Contents
+
 ## Privileges
 ### CreateHttpNamespace
 - description: Creates an HTTP namespace.

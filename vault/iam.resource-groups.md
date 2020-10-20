@@ -1,18 +1,21 @@
 ---
-id: 6d647c29-0e7d-41a8-a63d-6e2c6a7e9a67
+id: iam-Resource Groups
 title: Resource Groups
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Resource Groups
-## Summary
 - prefix: resource-groups
+
+## Table of Contents
+
 ## Privileges
 ### CreateGroup
 - description: Creates a group with a specified name, description, and resource query.

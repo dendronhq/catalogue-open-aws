@@ -1,18 +1,21 @@
 ---
-id: cbdc32a7-f88d-44c2-bf30-4c543a89b1ee
+id: iam-Elastic Transcoder
 title: Elastic Transcoder
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elastic Transcoder
-## Summary
 - prefix: elastictranscoder
+
+## Table of Contents
+
 ## Privileges
 ### CancelJob
 - description: Cancel a job that Elastic Transcoder has not begun to process

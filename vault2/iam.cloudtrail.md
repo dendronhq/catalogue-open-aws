@@ -1,18 +1,21 @@
 ---
-id: 0c83dd89-f333-4ccc-9120-c7848715bb0b
+id: iam-CloudTrail
 title: CloudTrail
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CloudTrail
-## Summary
 - prefix: cloudtrail
+
+## Table of Contents
+
 ## Privileges
 ### AddTags
 - description: Grants permission to add one or more tags to a trail, up to a limit of 10

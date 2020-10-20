@@ -1,18 +1,21 @@
 ---
-id: 6a5cc682-8dc8-40ef-8dc4-97c1369f3fb0
+id: iam-EventBridge Schemas
 title: EventBridge Schemas
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # EventBridge Schemas
-## Summary
 - prefix: schemas
+
+## Table of Contents
+
 ## Privileges
 ### CreateDiscoverer
 - description: Creates an event schema discoverer. Once created, your events will be automatically map into corresponding schema documents

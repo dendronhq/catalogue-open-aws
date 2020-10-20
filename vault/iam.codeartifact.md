@@ -1,18 +1,21 @@
 ---
-id: 0060f326-1e3f-42f3-b97b-53beaf20cea8
+id: iam-CodeArtifact
 title: CodeArtifact
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CodeArtifact
-## Summary
 - prefix: codeartifact
+
+## Table of Contents
+
 ## Privileges
 ### AssociateExternalConnection
 - description: Grants permission to add an external connection to a repository

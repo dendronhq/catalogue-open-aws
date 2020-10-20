@@ -1,18 +1,21 @@
 ---
-id: b2146adf-94a3-400a-8318-bdb72ed57ea5
+id: iam-RDS
 title: RDS
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # RDS
-## Summary
 - prefix: rds
+
+## Table of Contents
+
 ## Privileges
 ### AddRoleToDBCluster
 - description: Grants permission to associate an Identity and Access Management (IAM) role from an Aurora DB cluster

@@ -1,18 +1,21 @@
 ---
-id: 2f1839a4-f69e-4975-9e34-32bd6360fb0a
+id: iam-Connect
 title: Connect
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Connect
-## Summary
 - prefix: connect
+
+## Table of Contents
+
 ## Privileges
 ### AssociateRoutingProfileQueues
 - description: Grants permissions to associate queues with a routing profile in an Amazon Connect instance.

@@ -1,18 +1,21 @@
 ---
-id: e1b8fb8f-e5d1-4873-802e-a96c22ca8d38
+id: iam-Elemental MediaPackage
 title: Elemental MediaPackage
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elemental MediaPackage
-## Summary
 - prefix: mediapackage
+
+## Table of Contents
+
 ## Privileges
 ### CreateChannel
 - description: Grants permission to create a channel in AWS Elemental MediaPackage.

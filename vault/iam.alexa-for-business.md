@@ -1,18 +1,21 @@
 ---
-id: 83631c68-a51b-4c24-bfb2-1e0267498303
+id: iam-Alexa for Business
 title: Alexa for Business
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Alexa for Business
-## Summary
 - prefix: a4b
+
+## Table of Contents
+
 ## Privileges
 ### ApproveSkill
 - description: Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.

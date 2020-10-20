@@ -1,18 +1,21 @@
 ---
-id: e65edf2d-4ae8-4a04-850d-e47746e77c36
+id: iam-AppSync
 title: AppSync
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # AppSync
-## Summary
 - prefix: appsync
+
+## Table of Contents
+
 ## Privileges
 ### CreateApiKey
 - description: Creates a unique key that you can distribute to clients who are executing your API.

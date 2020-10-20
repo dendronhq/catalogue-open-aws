@@ -1,18 +1,21 @@
 ---
-id: 5d121522-a934-498b-81d1-e826409e307b
+id: iam-Mobile Hub
 title: Mobile Hub
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Mobile Hub
-## Summary
 - prefix: mobilehub
+
+## Table of Contents
+
 ## Privileges
 ### CreateProject
 - description: Create a project

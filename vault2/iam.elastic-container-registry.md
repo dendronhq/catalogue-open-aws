@@ -1,18 +1,21 @@
 ---
-id: d20e8061-9d54-4bbe-bc0c-1d3337d64756
+id: iam-Elastic Container Registry
 title: Elastic Container Registry
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elastic Container Registry
-## Summary
 - prefix: ecr
+
+## Table of Contents
+
 ## Privileges
 ### BatchCheckLayerAvailability
 - description: Grants permission to check the availability of multiple image layers in a specified registry and repository

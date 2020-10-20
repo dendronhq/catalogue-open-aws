@@ -1,18 +1,21 @@
 ---
-id: 03108576-0c47-4542-a3fe-63ae55757b5a
+id: iam-Compute Optimizer
 title: Compute Optimizer
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Compute Optimizer
-## Summary
 - prefix: compute-optimizer
+
+## Table of Contents
+
 ## Privileges
 ### DescribeRecommendationExportJobs
 - description: Grants permission to view the status of recommendation export jobs.

@@ -1,18 +1,21 @@
 ---
-id: b0640e7a-84e0-4382-957c-6c761e857830
+id: iam-RDS IAM Authentication
 title: RDS IAM Authentication
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # RDS IAM Authentication
-## Summary
 - prefix: rds-db
+
+## Table of Contents
+
 ## Privileges
 ### connect
 - description: Allows IAM role or user to connect to RDS database

@@ -1,18 +1,21 @@
 ---
-id: e2d4c24f-b16f-43dc-80b7-ee0180a68c70
+id: iam-Lake Formation
 title: Lake Formation
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Lake Formation
-## Summary
 - prefix: lakeformation
+
+## Table of Contents
+
 ## Privileges
 ### BatchGrantPermissions
 - description: Grants data lake permissions to one or more principals in a batch.

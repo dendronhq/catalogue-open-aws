@@ -1,18 +1,21 @@
 ---
-id: 0ab8d80a-df29-4b34-b70e-89d099943fa6
+id: iam-Support
 title: Support
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Support
-## Summary
 - prefix: support
+
+## Table of Contents
+
 ## Privileges
 ### AddAttachmentsToSet
 - description: Adds one or more attachments to an AWS Support case.

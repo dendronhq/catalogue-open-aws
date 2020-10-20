@@ -1,18 +1,21 @@
 ---
-id: b994ee6a-ca34-40d4-b6b1-eed004dd374b
+id: iam-Elastic Container Service for Kubernetes
 title: Elastic Container Service for Kubernetes
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elastic Container Service for Kubernetes
-## Summary
 - prefix: eks
+
+## Table of Contents
+
 ## Privileges
 ### CreateCluster
 - description: Creates an Amazon EKS cluster.

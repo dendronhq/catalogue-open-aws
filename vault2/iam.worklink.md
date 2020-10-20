@@ -1,18 +1,21 @@
 ---
-id: fbf92667-71d4-4c9f-a197-d3e587dd150b
+id: iam-WorkLink
 title: WorkLink
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # WorkLink
-## Summary
 - prefix: worklink
+
+## Table of Contents
+
 ## Privileges
 ### AssociateDomain
 - description: Grants permission to associate a domain with an Amazon WorkLink fleet

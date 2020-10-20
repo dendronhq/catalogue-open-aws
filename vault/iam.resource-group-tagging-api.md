@@ -1,18 +1,21 @@
 ---
-id: 6c6e58bc-b842-447f-a72c-99b8f43d7515
+id: iam-Resource Group Tagging API
 title: Resource Group Tagging API
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Resource Group Tagging API
-## Summary
 - prefix: tag
+
+## Table of Contents
+
 ## Privileges
 ### DescribeReportCreation
 - description: Describe the status of the StartReportCreation operation.

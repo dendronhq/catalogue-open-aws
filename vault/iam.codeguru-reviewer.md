@@ -1,18 +1,21 @@
 ---
-id: 4a362adf-6e93-4347-afcf-7d6cca8e1e68
+id: iam-CodeGuru Reviewer
 title: CodeGuru Reviewer
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CodeGuru Reviewer
-## Summary
 - prefix: codeguru-reviewer
+
+## Table of Contents
+
 ## Privileges
 ### AssociateRepository
 - description: Grants permission to associates a repository with Amazon CodeGuru Reviewer.

@@ -1,18 +1,21 @@
 ---
-id: cc9bb5f4-b014-42b1-9897-272a0bfe871c
+id: iam-Elastic Container Service
 title: Elastic Container Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elastic Container Service
-## Summary
 - prefix: ecs
+
+## Table of Contents
+
 ## Privileges
 ### CreateCapacityProvider
 - description: Creates a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in capacity provider strategies to facilitate cluster auto scaling.

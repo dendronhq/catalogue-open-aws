@@ -1,18 +1,21 @@
 ---
-id: 5709c06e-eb9e-4fdd-b81c-9ea58b1108c2
+id: iam-CodeGuru Profiler
 title: CodeGuru Profiler
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CodeGuru Profiler
-## Summary
 - prefix: codeguru-profiler
+
+## Table of Contents
+
 ## Privileges
 ### AddNotificationChannels
 - description: Grants permission to add up to 2 topic ARNs of existing AWS SNS topics to publish notifications

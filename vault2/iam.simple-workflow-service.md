@@ -1,18 +1,21 @@
 ---
-id: 40e7e910-976c-4844-8090-94d1e9dcd608
+id: iam-Simple Workflow Service
 title: Simple Workflow Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Simple Workflow Service
-## Summary
 - prefix: swf
+
+## Table of Contents
+
 ## Privileges
 ### CancelTimer
 - description: Description for CancelTimer

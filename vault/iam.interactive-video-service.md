@@ -1,18 +1,21 @@
 ---
-id: a08d4f24-abe3-46b7-a063-863a72b2942a
+id: iam-Interactive Video Service
 title: Interactive Video Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Interactive Video Service
-## Summary
 - prefix: ivs
+
+## Table of Contents
+
 ## Privileges
 ### BatchGetChannel
 - description: Grants permission to get multiple channels simultaneously by channel ARN.

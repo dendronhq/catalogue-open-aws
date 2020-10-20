@@ -1,18 +1,21 @@
 ---
-id: 87b4bd49-1a20-461a-bdc6-1fdfc0a88ca2
+id: iam-Ground Station
 title: Ground Station
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Ground Station
-## Summary
 - prefix: groundstation
+
+## Table of Contents
+
 ## Privileges
 ### CancelContact
 - description: Grants permission to cancel a contact

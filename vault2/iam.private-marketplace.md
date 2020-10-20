@@ -1,18 +1,21 @@
 ---
-id: ff0a186f-b52e-4a7d-8064-35d8a9f229c4
+id: iam-Private Marketplace
 title: Private Marketplace
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Private Marketplace
-## Summary
 - prefix: aws-marketplace
+
+## Table of Contents
+
 ## Privileges
 ### AssociateProductsWithPrivateMarketplace
 - description: Adds new approved products to the Private Marketplace. Also allows to approve a request for a product to be associated with the Private Marketplace. This action can be performed by any account in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it.

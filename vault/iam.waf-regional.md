@@ -1,18 +1,21 @@
 ---
-id: 1ffa34f6-5041-43f9-8a2c-ab5ba026d1a7
+id: iam-WAF Regional
 title: WAF Regional
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # WAF Regional
-## Summary
 - prefix: waf-regional
+
+## Table of Contents
+
 ## Privileges
 ### AssociateWebACL
 - description: Associates a WebACL with a resource.

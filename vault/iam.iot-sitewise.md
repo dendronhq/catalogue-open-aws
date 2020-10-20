@@ -1,18 +1,21 @@
 ---
-id: 24b6c2c1-3b7b-43cc-bdfd-312f6c69e44c
+id: iam-IoT SiteWise
 title: IoT SiteWise
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # IoT SiteWise
-## Summary
 - prefix: iotsitewise
+
+## Table of Contents
+
 ## Privileges
 ### AssociateAssets
 - description: Grants permission to associate a child asset to a parent asset by a hierarchy

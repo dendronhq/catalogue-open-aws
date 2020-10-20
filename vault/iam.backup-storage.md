@@ -1,18 +1,21 @@
 ---
-id: 68087cb4-99d1-46cf-a29e-25b1102e94cc
+id: iam-Backup storage
 title: Backup storage
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Backup storage
-## Summary
 - prefix: backup-storage
+
+## Table of Contents
+
 ## Privileges
 ### MountCapsule
 - description: Associates a KMS key to a backup vault

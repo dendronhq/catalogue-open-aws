@@ -1,18 +1,21 @@
 ---
-id: 675190e3-813c-4b95-8d9e-634569713bff
+id: iam-Config
 title: Config
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Config
-## Summary
 - prefix: config
+
+## Table of Contents
+
 ## Privileges
 ### BatchGetAggregateResourceConfig
 - description: Returns the current configuration items for resources that are present in your AWS Config aggregator

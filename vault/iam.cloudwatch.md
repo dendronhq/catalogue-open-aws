@@ -1,18 +1,21 @@
 ---
-id: bfd0b302-af11-4238-a68c-ee18854b926e
+id: iam-CloudWatch
 title: CloudWatch
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CloudWatch
-## Summary
 - prefix: cloudwatch
+
+## Table of Contents
+
 ## Privileges
 ### DeleteAlarms
 - description: Deletes all specified alarms. In the event of an error, no alarms are deleted

@@ -1,18 +1,21 @@
 ---
-id: 5595e95a-261b-4b6e-8e02-92e9e6525ebd
+id: iam-Artifact
 title: Artifact
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Artifact
-## Summary
 - prefix: artifact
+
+## Table of Contents
+
 ## Privileges
 ### AcceptAgreement
 - description: Grants permission to accept an AWS agreement that has not yet been accepted by the customer account.

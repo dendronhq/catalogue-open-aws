@@ -1,18 +1,21 @@
 ---
-id: 1f1fd9ff-c57c-4e3b-b9e1-d085cc76510f
+id: iam-Manage Amazon API Gateway
 title: Manage Amazon API Gateway
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Manage Amazon API Gateway
-## Summary
 - prefix: apigateway
+
+## Table of Contents
+
 ## Privileges
 ### DELETE
 - description: Used to delete resources

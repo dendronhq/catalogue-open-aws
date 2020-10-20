@@ -1,18 +1,21 @@
 ---
-id: 99325e9d-ca0a-449f-bc20-7f82c3f41f8b
+id: iam-Elemental MediaStore
 title: Elemental MediaStore
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elemental MediaStore
-## Summary
 - prefix: mediastore
+
+## Table of Contents
+
 ## Privileges
 ### CreateContainer
 - description: Grants permission to create containers.

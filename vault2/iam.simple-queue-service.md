@@ -1,18 +1,21 @@
 ---
-id: 6dcc9e3e-26b6-4652-903d-6afa6f1e17e4
+id: iam-Simple Queue Service
 title: Simple Queue Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Simple Queue Service
-## Summary
 - prefix: sqs
+
+## Table of Contents
+
 ## Privileges
 ### AddPermission
 - description: Adds a permission to a queue for a specific principal.

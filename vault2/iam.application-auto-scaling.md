@@ -1,18 +1,21 @@
 ---
-id: a942897f-d29e-489c-ac24-70845f52ef8b
+id: iam-Application Auto Scaling
 title: Application Auto Scaling
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Application Auto Scaling
-## Summary
 - prefix: application-autoscaling
+
+## Table of Contents
+
 ## Privileges
 ### DeleteScalingPolicy
 - description: Deletes an Application Auto Scaling scaling policy that was previously created.

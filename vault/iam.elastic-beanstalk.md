@@ -1,18 +1,21 @@
 ---
-id: 393b336e-5eba-4dd0-9650-101738a7283c
+id: iam-Elastic Beanstalk
 title: Elastic Beanstalk
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elastic Beanstalk
-## Summary
 - prefix: elasticbeanstalk
+
+## Table of Contents
+
 ## Privileges
 ### AbortEnvironmentUpdate
 - description: Grants permission to cancel in-progress environment configuration update or application version deployment.

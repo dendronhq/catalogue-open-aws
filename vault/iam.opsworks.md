@@ -1,18 +1,21 @@
 ---
-id: 0cb8f562-0cec-4b7c-956d-88418a4f0c04
+id: iam-OpsWorks
 title: OpsWorks
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # OpsWorks
-## Summary
 - prefix: opsworks
+
+## Table of Contents
+
 ## Privileges
 ### AssignInstance
 - description: Assign a registered instance to a layer

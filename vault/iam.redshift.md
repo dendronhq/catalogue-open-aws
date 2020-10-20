@@ -1,18 +1,21 @@
 ---
-id: 4d8d0798-223c-4f8a-a52e-efbed4e8dc4a
+id: iam-Redshift
 title: Redshift
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Redshift
-## Summary
 - prefix: redshift
+
+## Table of Contents
+
 ## Privileges
 ### AcceptReservedNodeExchange
 - description: Grants permission to exchange a DC1 reserved node for a DC2 reserved node with no changes to the configuration

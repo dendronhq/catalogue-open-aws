@@ -1,18 +1,21 @@
 ---
-id: 2998c5ba-19c5-4ff4-ab08-8e7ab4018764
+id: iam-Cost and Usage Report
 title: Cost and Usage Report
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Cost and Usage Report
-## Summary
 - prefix: cur
+
+## Table of Contents
+
 ## Privileges
 ### DeleteReportDefinition
 - description: Delete Cost and Usage Report Definition

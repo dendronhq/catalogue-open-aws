@@ -1,18 +1,21 @@
 ---
-id: bc64513a-5ed2-4717-a62c-87b6c208d950
+id: iam-Marketplace Management Portal
 title: Marketplace Management Portal
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Marketplace Management Portal
-## Summary
 - prefix: aws-marketplace-management
+
+## Table of Contents
+
 ## Privileges
 ### uploadFiles
 - description: Allows access to the File Upload page inside the AWS Marketplace Management Portal.

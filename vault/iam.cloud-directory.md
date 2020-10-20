@@ -1,18 +1,21 @@
 ---
-id: 80a0545f-2bea-41d9-b57a-dd133e2b27b7
+id: iam-Cloud Directory
 title: Cloud Directory
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Cloud Directory
-## Summary
 - prefix: clouddirectory
+
+## Table of Contents
+
 ## Privileges
 ### AddFacetToObject
 - description: Adds a new Facet to an object.

@@ -1,18 +1,21 @@
 ---
-id: 0bfbdce2-8892-4171-bcbf-5d58f77fd899
+id: iam-Simple Notification Service
 title: Simple Notification Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Simple Notification Service
-## Summary
 - prefix: sns
+
+## Table of Contents
+
 ## Privileges
 ### AddPermission
 - description: Adds a statement to a topic's access control policy, granting access for the specified AWS accounts to the specified actions.

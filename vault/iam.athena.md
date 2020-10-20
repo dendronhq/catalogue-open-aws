@@ -1,18 +1,21 @@
 ---
-id: d290a925-a184-4ce7-9c8f-06565bcacb58
+id: iam-Athena
 title: Athena
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Athena
-## Summary
 - prefix: athena
+
+## Table of Contents
+
 ## Privileges
 ### BatchGetNamedQuery
 - description: Grants permissions to get information about one or more named queries.

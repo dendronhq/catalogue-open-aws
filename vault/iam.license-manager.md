@@ -1,18 +1,21 @@
 ---
-id: 38dc56d2-4e95-4fb4-b670-fc3ad60a12a8
+id: iam-License Manager
 title: License Manager
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # License Manager
-## Summary
 - prefix: license-manager
+
+## Table of Contents
+
 ## Privileges
 ### CreateLicenseConfiguration
 - description: Creates a new license configuration

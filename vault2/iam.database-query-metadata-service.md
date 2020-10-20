@@ -1,18 +1,21 @@
 ---
-id: ac6157a6-8e5a-4760-abdb-d57eff78d1f8
+id: iam-Database Query Metadata Service
 title: Database Query Metadata Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Database Query Metadata Service
-## Summary
 - prefix: dbqms
+
+## Table of Contents
+
 ## Privileges
 ### CreateFavoriteQuery
 - description: Creates a new favorite query

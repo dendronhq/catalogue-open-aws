@@ -1,18 +1,21 @@
 ---
-id: b40c73fe-946f-4cfc-87cd-a945700a6446
+id: iam-Redshift Data API
 title: Redshift Data API
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Redshift Data API
-## Summary
 - prefix: redshift-data
+
+## Table of Contents
+
 ## Privileges
 ### CancelStatement
 - description: Grants permission to cancel a running query

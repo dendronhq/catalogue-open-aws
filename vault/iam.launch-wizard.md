@@ -1,18 +1,21 @@
 ---
-id: a6bb7b22-82a2-46b1-b28b-e516c6d314f1
+id: iam-Launch Wizard
 title: Launch Wizard
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Launch Wizard
-## Summary
 - prefix: launchwizard
+
+## Table of Contents
+
 ## Privileges
 ### DeleteApp
 - description: Delete an application

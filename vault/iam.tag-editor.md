@@ -1,18 +1,21 @@
 ---
-id: 27356bac-67d7-490c-8a95-be9ccb813d2c
+id: iam-Tag Editor
 title: Tag Editor
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Tag Editor
-## Summary
 - prefix: resource-explorer
+
+## Table of Contents
+
 ## Privileges
 ### ListResourceTypes
 - description: Grants permission to retrieve the resource types currently supported by Tag Editor

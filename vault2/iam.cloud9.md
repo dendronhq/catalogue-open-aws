@@ -1,18 +1,21 @@
 ---
-id: 9216f105-9900-4884-9875-e7460e16fbc1
+id: iam-Cloud9
 title: Cloud9
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Cloud9
-## Summary
 - prefix: cloud9
+
+## Table of Contents
+
 ## Privileges
 ### CreateEnvironmentEC2
 - description: Grants permission to create an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then hosts the environment on the instance.

@@ -1,18 +1,21 @@
 ---
-id: b2e021b5-fd2d-43b6-95a0-d7674dbfc5a3
+id: iam-DynamoDB
 title: DynamoDB
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # DynamoDB
-## Summary
 - prefix: dynamodb
+
+## Table of Contents
+
 ## Privileges
 ### BatchGetItem
 - description: Returns the attributes of one or more items from one or more tables

@@ -1,18 +1,21 @@
 ---
-id: 460b3d0e-02bd-42a7-a1e3-9dd2eca3409c
+id: iam-Network Manager
 title: Network Manager
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Network Manager
-## Summary
 - prefix: networkmanager
+
+## Table of Contents
+
 ## Privileges
 ### AssociateCustomerGateway
 - description: Grants permission to associate a customer gateway to a device

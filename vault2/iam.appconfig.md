@@ -1,18 +1,21 @@
 ---
-id: a9978638-1e0d-42c6-b9cc-dbf5961de12e
+id: iam-AppConfig
 title: AppConfig
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # AppConfig
-## Summary
 - prefix: appconfig
+
+## Table of Contents
+
 ## Privileges
 ### CreateApplication
 - description: Grants permission to create an application

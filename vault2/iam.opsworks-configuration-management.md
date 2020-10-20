@@ -1,18 +1,21 @@
 ---
-id: eac531db-cdfc-478d-8547-a307f27d92b1
+id: iam-OpsWorks Configuration Management
 title: OpsWorks Configuration Management
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # OpsWorks Configuration Management
-## Summary
 - prefix: opsworks-cm
+
+## Table of Contents
+
 ## Privileges
 ### AssociateNode
 - description: Associate a node to a configuration management server.

@@ -1,18 +1,21 @@
 ---
-id: 9d363f7e-56c6-4131-bfb6-be00b59358da
+id: iam-Systems Manager
 title: Systems Manager
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Systems Manager
-## Summary
 - prefix: ssm
+
+## Table of Contents
+
 ## Privileges
 ### AddTagsToResource
 - description: Grants permission to add or overwrite one or more tags for a specified AWS resource

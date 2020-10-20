@@ -1,18 +1,21 @@
 ---
-id: 58ecc165-d0c1-4703-9613-690390708ed5
+id: iam-IoT Events
 title: IoT Events
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # IoT Events
-## Summary
 - prefix: iotevents
+
+## Table of Contents
+
 ## Privileges
 ### BatchPutMessage
 - description: Sends a set of messages to the AWS IoT Events system.

@@ -1,18 +1,21 @@
 ---
-id: 006ede1d-fdb7-4365-a33a-f1ba56bf7b95
+id: iam-Message Delivery Service
 title: Message Delivery Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Message Delivery Service
-## Summary
 - prefix: ec2messages
+
+## Table of Contents
+
 ## Privileges
 ### AcknowledgeMessage
 - description: Acknowledges a message, ensuring it will not be delivered again

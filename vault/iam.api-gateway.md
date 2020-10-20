@@ -1,18 +1,21 @@
 ---
-id: bdb6dfd5-f1c6-4988-a042-5234c84bfa8d
+id: iam-API Gateway
 title: API Gateway
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # API Gateway
-## Summary
 - prefix: execute-api
+
+## Table of Contents
+
 ## Privileges
 ### InvalidateCache
 - description: Used to invalidate API cache upon a client request

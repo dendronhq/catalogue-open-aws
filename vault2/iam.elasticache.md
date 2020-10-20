@@ -1,18 +1,21 @@
 ---
-id: dc124f2d-b120-4074-8673-9e2343f6f0cd
+id: iam-ElastiCache
 title: ElastiCache
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # ElastiCache
-## Summary
 - prefix: elasticache
+
+## Table of Contents
+
 ## Privileges
 ### AddTagsToResource
 - description: The AddTagsToResource action adds up to 10 cost allocation tags to the named resource.

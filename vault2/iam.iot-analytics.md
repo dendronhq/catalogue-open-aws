@@ -1,18 +1,21 @@
 ---
-id: 853e923c-18a4-4da2-97ba-63569e0e0f1b
+id: iam-IoT Analytics
 title: IoT Analytics
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # IoT Analytics
-## Summary
 - prefix: iotanalytics
+
+## Table of Contents
+
 ## Privileges
 ### BatchPutMessage
 - description: Puts a batch of messages into the specified channel.

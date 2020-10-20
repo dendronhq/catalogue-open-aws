@@ -1,18 +1,21 @@
 ---
-id: a612009a-7d5b-4bcb-93ad-aeda5154ba9d
+id: iam-Identity Store
 title: Identity Store
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Identity Store
-## Summary
 - prefix: identitystore
+
+## Table of Contents
+
 ## Privileges
 ### DescribeGroup
 - description: Retrieves information about group from the directory that AWS Identity Store provides by default

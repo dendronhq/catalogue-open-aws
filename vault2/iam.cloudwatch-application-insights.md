@@ -1,18 +1,21 @@
 ---
-id: 629a3857-03f0-4983-b992-66a2d0e9f144
+id: iam-CloudWatch Application Insights
 title: CloudWatch Application Insights
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CloudWatch Application Insights
-## Summary
 - prefix: applicationinsights
+
+## Table of Contents
+
 ## Privileges
 ### CreateApplication
 - description: Creates an application from a resource group

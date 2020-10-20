@@ -1,18 +1,21 @@
 ---
-id: 56957767-89d0-421e-abdc-d374d37c1f3d
+id: iam-Snowball
 title: Snowball
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Snowball
-## Summary
 - prefix: snowball
+
+## Table of Contents
+
 ## Privileges
 ### CancelCluster
 - description: Cancels a cluster job.

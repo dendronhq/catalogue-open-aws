@@ -1,18 +1,21 @@
 ---
-id: 11b5e2e4-a683-4ed6-a1dc-541b98043de0
+id: iam-Certificate Manager
 title: Certificate Manager
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Certificate Manager
-## Summary
 - prefix: acm
+
+## Table of Contents
+
 ## Privileges
 ### AddTagsToCertificate
 - description: Adds one or more tags to a certificate.

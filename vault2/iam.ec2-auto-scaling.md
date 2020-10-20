@@ -1,18 +1,21 @@
 ---
-id: b4b54a25-c7a6-4b4d-843b-eb7b58fd4681
+id: iam-EC2 Auto Scaling
 title: EC2 Auto Scaling
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # EC2 Auto Scaling
-## Summary
 - prefix: autoscaling
+
+## Table of Contents
+
 ## Privileges
 ### AttachInstances
 - description: Attaches one or more EC2 instances to the specified Auto Scaling group.

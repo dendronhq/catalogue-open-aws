@@ -1,18 +1,21 @@
 ---
-id: 636e2fa2-7587-4127-93d8-6a6d3a1804d6
+id: iam-RDS Data API
 title: RDS Data API
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # RDS Data API
-## Summary
 - prefix: rds-data
+
+## Table of Contents
+
 ## Privileges
 ### BatchExecuteStatement
 - description: Runs a batch SQL statement over an array of data.

@@ -1,18 +1,21 @@
 ---
-id: f33c7c4c-2612-443d-ad80-77b2dafb6aaa
+id: iam-Lightsail
 title: Lightsail
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Lightsail
-## Summary
 - prefix: lightsail
+
+## Table of Contents
+
 ## Privileges
 ### AllocateStaticIp
 - description: Creates a static IP address that can be attached to an instance.

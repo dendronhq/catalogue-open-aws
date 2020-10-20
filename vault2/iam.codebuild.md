@@ -1,18 +1,21 @@
 ---
-id: 99c1f657-f6d7-4867-9ffe-51c261fa9252
+id: iam-CodeBuild
 title: CodeBuild
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CodeBuild
-## Summary
 - prefix: codebuild
+
+## Table of Contents
+
 ## Privileges
 ### BatchDeleteBuilds
 - description: Deletes one or more builds.

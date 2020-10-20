@@ -1,18 +1,21 @@
 ---
-id: a37a9b8a-b5d1-4408-ae8b-51c5f23dc304
+id: iam-WorkMail
 title: WorkMail
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # WorkMail
-## Summary
 - prefix: workmail
+
+## Table of Contents
+
 ## Privileges
 ### AddMembersToGroup
 - description: Adds a list of members (users or groups) to a group.

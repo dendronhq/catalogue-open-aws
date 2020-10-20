@@ -1,18 +1,21 @@
 ---
-id: 716f72ec-1c81-4784-b008-87f45489ee1b
+id: iam-Cost Explorer Service
 title: Cost Explorer Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Cost Explorer Service
-## Summary
 - prefix: ce
+
+## Table of Contents
+
 ## Privileges
 ### CreateAnomalyMonitor
 - description: Grants permission to create a new Anomaly Monitor

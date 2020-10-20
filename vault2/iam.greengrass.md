@@ -1,18 +1,21 @@
 ---
-id: 970b5854-d99f-4f77-96b0-441f52afb6ed
+id: iam-Greengrass
 title: Greengrass
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Greengrass
-## Summary
 - prefix: greengrass
+
+## Table of Contents
+
 ## Privileges
 ### AssociateRoleToGroup
 - description: Grants permission to associate a role with a group. The role's permissions must allow Greengrass core Lambda functions and connectors to perform actions in other AWS services.

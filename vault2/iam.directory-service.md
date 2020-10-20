@@ -1,18 +1,21 @@
 ---
-id: eb24277f-3ebb-48e4-9ff2-5d02c4abe61f
+id: iam-Directory Service
 title: Directory Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Directory Service
-## Summary
 - prefix: ds
+
+## Table of Contents
+
 ## Privileges
 ### AcceptSharedDirectory
 - description: Accepts a directory sharing request that was sent from the directory owner account.

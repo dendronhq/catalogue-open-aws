@@ -1,18 +1,21 @@
 ---
-id: cbb4b722-6e55-4e7f-9b4e-f033f6d18fad
+id: iam-Chatbot
 title: Chatbot
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Chatbot
-## Summary
 - prefix: chatbot
+
+## Table of Contents
+
 ## Privileges
 ### CreateChimeWebhookConfiguration
 - description: Creates an AWS Chatbot Chime Webhook Configuration.

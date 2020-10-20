@@ -1,18 +1,21 @@
 ---
-id: 83275c01-f071-43ba-977f-c1a49d8ef662
+id: iam-X-Ray
 title: X-Ray
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # X-Ray
-## Summary
 - prefix: xray
+
+## Table of Contents
+
 ## Privileges
 ### BatchGetTraces
 - description: Grants permission to retrieve a list of traces specified by ID. Each trace is a collection of segment documents that originates from a single request. Use GetTraceSummaries to get a list of trace IDs

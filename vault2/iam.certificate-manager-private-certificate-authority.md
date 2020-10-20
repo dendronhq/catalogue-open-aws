@@ -1,18 +1,21 @@
 ---
-id: b604dc5c-afa5-41da-a9fa-2940ca52e8e3
+id: iam-Certificate Manager Private Certificate Authority
 title: Certificate Manager Private Certificate Authority
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Certificate Manager Private Certificate Authority
-## Summary
 - prefix: acm-pca
+
+## Table of Contents
+
 ## Privileges
 ### CreateCertificateAuthority
 - description: Creates an ACM Private CA and its associated private key and configuration.

@@ -1,18 +1,21 @@
 ---
-id: 81b34ab4-d69a-4fdb-9159-9c92b977703a
+id: iam-Firewall Manager
 title: Firewall Manager
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Firewall Manager
-## Summary
 - prefix: fms
+
+## Table of Contents
+
 ## Privileges
 ### AssociateAdminAccount
 - description: Sets the AWS Firewall Manager administrator account and enables the service in all organization accounts

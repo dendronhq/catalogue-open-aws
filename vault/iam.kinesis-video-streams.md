@@ -1,18 +1,21 @@
 ---
-id: aa8bca2e-5d49-445f-8c25-edd4827910d5
+id: iam-Kinesis Video Streams
 title: Kinesis Video Streams
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Kinesis Video Streams
-## Summary
 - prefix: kinesisvideo
+
+## Table of Contents
+
 ## Privileges
 ### ConnectAsMaster
 - description: Grants permission to connect as a master to the signaling channel specified by the endpoint

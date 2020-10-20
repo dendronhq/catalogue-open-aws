@@ -1,18 +1,21 @@
 ---
-id: c0856361-e025-47ca-bd77-fa1fe46c4097
+id: iam-Performance Insights
 title: Performance Insights
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Performance Insights
-## Summary
 - prefix: pi
+
+## Table of Contents
+
 ## Privileges
 ### DescribeDimensionKeys
 - description: For a specific time period, retrieve the top N dimension keys for a metric.

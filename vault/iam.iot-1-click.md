@@ -1,18 +1,21 @@
 ---
-id: bcaaca73-8c8b-4871-9fde-457460cfffed
+id: iam-IoT 1-Click
 title: IoT 1-Click
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # IoT 1-Click
-## Summary
 - prefix: iot1click
+
+## Table of Contents
+
 ## Privileges
 ### AssociateDeviceWithPlacement
 - description: Associate a device to a placement

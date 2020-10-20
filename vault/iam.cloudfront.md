@@ -1,18 +1,21 @@
 ---
-id: 4a029208-e931-4b84-aec7-253a5d6c5a91
+id: iam-CloudFront
 title: CloudFront
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CloudFront
-## Summary
 - prefix: cloudfront
+
+## Table of Contents
+
 ## Privileges
 ### CreateCachePolicy
 - description: This action adds a new cache policy to CloudFront.

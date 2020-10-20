@@ -1,18 +1,21 @@
 ---
-id: 49a47ca7-a7cc-4625-963c-d62b8da8b6e6
+id: iam-CodeDeploy
 title: CodeDeploy
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CodeDeploy
-## Summary
 - prefix: codedeploy
+
+## Table of Contents
+
 ## Privileges
 ### AddTagsToOnPremisesInstances
 - description: Add tags to one or more on-premises instances.

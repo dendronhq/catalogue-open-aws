@@ -1,18 +1,21 @@
 ---
-id: 307a330e-a7e9-42b7-aa11-a2765d921892
+id: iam-Kendra
 title: Kendra
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Kendra
-## Summary
 - prefix: kendra
+
+## Table of Contents
+
 ## Privileges
 ### BatchDeleteDocument
 - description: Batch Delete document

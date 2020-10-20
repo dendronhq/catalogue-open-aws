@@ -1,18 +1,21 @@
 ---
-id: b5970a3a-e5de-4bdd-b95f-fb8eeb8fb125
+id: iam-Mobile Analytics
 title: Mobile Analytics
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Mobile Analytics
-## Summary
 - prefix: mobileanalytics
+
+## Table of Contents
+
 ## Privileges
 ### GetFinancialReports
 - description: Grant access to financial metrics for an app

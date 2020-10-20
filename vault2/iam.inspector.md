@@ -1,18 +1,21 @@
 ---
-id: 19068232-d184-4ff4-838f-d00c09596fb3
+id: iam-Inspector
 title: Inspector
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Inspector
-## Summary
 - prefix: inspector
+
+## Table of Contents
+
 ## Privileges
 ### AddAttributesToFindings
 - description: Assigns attributes (key and value pairs) to the findings that are specified by the ARNs of the findings.

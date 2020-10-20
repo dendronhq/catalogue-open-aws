@@ -1,18 +1,21 @@
 ---
-id: eb0be44f-c2e9-431d-b354-68f3092b13f3
+id: iam-SSO Directory
 title: SSO Directory
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # SSO Directory
-## Summary
 - prefix: sso-directory
+
+## Table of Contents
+
 ## Privileges
 ### AddMemberToGroup
 - description: Adds member to the group in the directory that AWS SSO provides by default

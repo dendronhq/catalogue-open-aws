@@ -1,18 +1,21 @@
 ---
-id: a45acadf-3f8b-450b-bf56-15affa9a4b07
+id: iam-Code Signing for Amazon FreeRTOS
 title: Code Signing for Amazon FreeRTOS
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Code Signing for Amazon FreeRTOS
-## Summary
 - prefix: signer
+
+## Table of Contents
+
 ## Privileges
 ### CancelSigningProfile
 - description: Cancels a signing profile.

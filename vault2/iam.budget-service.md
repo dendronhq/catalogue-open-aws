@@ -1,18 +1,21 @@
 ---
-id: 18027926-8acd-4862-a80c-713442be3ad7
+id: iam-Budget Service
 title: Budget Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Budget Service
-## Summary
 - prefix: budgets
+
+## Table of Contents
+
 ## Privileges
 ### CreateBudgetAction
 - description: Grants permissions to create and define a response that you can configure to execute once your budget has exceeded a specific budget threshold.

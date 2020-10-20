@@ -1,18 +1,21 @@
 ---
-id: 18d237aa-34f2-44a8-a3ad-8dcb1d25663b
+id: iam-Serverless Application Repository
 title: Serverless Application Repository
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Serverless Application Repository
-## Summary
 - prefix: serverlessrepo
+
+## Table of Contents
+
 ## Privileges
 ### CreateApplication
 - description: Creates an application, optionally including an AWS SAM file to create the first application version in the same call.

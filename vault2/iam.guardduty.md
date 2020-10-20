@@ -1,18 +1,21 @@
 ---
-id: 1efb1716-b139-498f-aa64-a34cae23f2d8
+id: iam-GuardDuty
 title: GuardDuty
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # GuardDuty
-## Summary
 - prefix: guardduty
+
+## Table of Contents
+
 ## Privileges
 ### AcceptInvitation
 - description: Grants permission to accept invitations to become a GuardDuty member account

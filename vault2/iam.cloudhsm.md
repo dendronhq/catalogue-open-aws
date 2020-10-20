@@ -1,18 +1,21 @@
 ---
-id: 9acba68c-8b3b-4d4d-bc12-4f645968539f
+id: iam-CloudHSM
 title: CloudHSM
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CloudHSM
-## Summary
 - prefix: cloudhsm
+
+## Table of Contents
+
 ## Privileges
 ### AddTagsToResource
 - description: Adds or overwrites one or more tags for the specified AWS CloudHSM resource

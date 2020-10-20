@@ -1,18 +1,21 @@
 ---
-id: 51bee9da-5adf-47d5-b23c-a473adbc423c
+id: iam-Cognito User Pools
 title: Cognito User Pools
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Cognito User Pools
-## Summary
 - prefix: cognito-idp
+
+## Table of Contents
+
 ## Privileges
 ### AddCustomAttributes
 - description: Adds additional user attributes to the user pool schema.

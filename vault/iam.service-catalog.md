@@ -1,18 +1,21 @@
 ---
-id: 5bc130a7-6ce5-422a-a275-e4391a746754
+id: iam-Service Catalog
 title: Service Catalog
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Service Catalog
-## Summary
 - prefix: servicecatalog
+
+## Table of Contents
+
 ## Privileges
 ### AcceptPortfolioShare
 - description: Grants permission to accept a portfolio that has been shared with you

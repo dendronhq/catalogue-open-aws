@@ -1,18 +1,21 @@
 ---
-id: 872c0dc4-4ccf-420e-a904-2f68426daf44
+id: iam-Auto Scaling
 title: Auto Scaling
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Auto Scaling
-## Summary
 - prefix: autoscaling-plans
+
+## Table of Contents
+
 ## Privileges
 ### CreateScalingPlan
 - description: Creates a scaling plan.

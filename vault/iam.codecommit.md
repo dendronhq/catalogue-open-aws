@@ -1,18 +1,21 @@
 ---
-id: 7310e2c3-0259-4134-98c8-47aaf690f88b
+id: iam-CodeCommit
 title: CodeCommit
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CodeCommit
-## Summary
 - prefix: codecommit
+
+## Table of Contents
+
 ## Privileges
 ### AssociateApprovalRuleTemplateWithRepository
 - description: Grants permission to associate an approval rule template with a repository

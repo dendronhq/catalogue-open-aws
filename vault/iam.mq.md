@@ -1,18 +1,21 @@
 ---
-id: 68d3c35c-2fdd-4300-bbde-7c31db27e7bb
+id: iam-MQ
 title: MQ
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # MQ
-## Summary
 - prefix: mq
+
+## Table of Contents
+
 ## Privileges
 ### CreateBroker
 - description: Grants permission to create a broker.

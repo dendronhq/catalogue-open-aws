@@ -1,18 +1,21 @@
 ---
-id: 560a05f6-953f-4d78-83be-89c50c87ac88
+id: iam-IAM Access Analyzer
 title: IAM Access Analyzer
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # IAM Access Analyzer
-## Summary
 - prefix: access-analyzer
+
+## Table of Contents
+
 ## Privileges
 ### CreateAnalyzer
 - description: Grants permission to create an analyzer.

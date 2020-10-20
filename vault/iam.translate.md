@@ -1,18 +1,21 @@
 ---
-id: c98f3094-acf3-4f13-aa4f-6aad2469483b
+id: iam-Translate
 title: Translate
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Translate
-## Summary
 - prefix: translate
+
+## Table of Contents
+
 ## Privileges
 ### DeleteTerminology
 - description: A synchronous action that deletes a custom terminology.

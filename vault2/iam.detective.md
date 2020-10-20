@@ -1,18 +1,21 @@
 ---
-id: ab8c1f09-e583-49f3-bffa-b94959bfae6c
+id: iam-Detective
 title: Detective
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Detective
-## Summary
 - prefix: detective
+
+## Table of Contents
+
 ## Privileges
 ### AcceptInvitation
 - description: Grants permission to accept an invitation to become a member of a behavior graph

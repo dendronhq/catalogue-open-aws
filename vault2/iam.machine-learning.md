@@ -1,18 +1,21 @@
 ---
-id: 6dc9e7cb-7861-4eb5-93f6-36cc0f3eb6e9
+id: iam-Machine Learning
 title: Machine Learning
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Machine Learning
-## Summary
 - prefix: machinelearning
+
+## Table of Contents
+
 ## Privileges
 ### AddTags
 - description: Adds one or more tags to an object, up to a limit of 10. Each tag consists of a key and an optional value

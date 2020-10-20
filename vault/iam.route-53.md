@@ -1,18 +1,21 @@
 ---
-id: fdb9f8da-f409-40cb-9ad6-faaa9ff39cea
+id: iam-Route 53
 title: Route 53
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Route 53
-## Summary
 - prefix: route53
+
+## Table of Contents
+
 ## Privileges
 ### AssociateVPCWithHostedZone
 - description: Grants permission to associate an additional Amazon VPC with a private hosted zone

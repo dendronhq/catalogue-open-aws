@@ -1,18 +1,21 @@
 ---
-id: e3090c39-a79c-4f1d-8a0a-4bb5b4b6c126
+id: iam-Step Functions
 title: Step Functions
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Step Functions
-## Summary
 - prefix: states
+
+## Table of Contents
+
 ## Privileges
 ### CreateActivity
 - description: Creates an activity. Activities must poll Step Functions using the GetActivityTask and respond using SendTask* API calls.

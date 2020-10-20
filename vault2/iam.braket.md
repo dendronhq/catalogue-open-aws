@@ -1,18 +1,21 @@
 ---
-id: b3632b8f-ddd5-4c63-bb36-a2901f4cf123
+id: iam-Braket
 title: Braket
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Braket
-## Summary
 - prefix: braket
+
+## Table of Contents
+
 ## Privileges
 ### CancelQuantumTask
 - description: Grants permission to cancel a quantum task.

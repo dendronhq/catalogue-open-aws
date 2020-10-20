@@ -1,18 +1,21 @@
 ---
-id: 9f2ba67e-521e-404b-8d6c-af9dcd6683a7
+id: iam-S3 Glacier
 title: S3 Glacier
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # S3 Glacier
-## Summary
 - prefix: glacier
+
+## Table of Contents
+
 ## Privileges
 ### AbortMultipartUpload
 - description: Aborts a multipart upload identified by the upload ID

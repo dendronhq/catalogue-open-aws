@@ -1,18 +1,21 @@
 ---
-id: e0acbcd6-0ca4-468f-996b-2b0097195c8f
+id: iam-Mechanical Turk
 title: Mechanical Turk
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Mechanical Turk
-## Summary
 - prefix: mechanicalturk
+
+## Table of Contents
+
 ## Privileges
 ### AcceptQualificationRequest
 - description: The AcceptQualificationRequest operation grants a Worker's request for a Qualification

@@ -1,18 +1,21 @@
 ---
-id: abf1e51e-7d89-410f-8e01-3ca7a7891dfe
+id: iam-Fraud Detector
 title: Fraud Detector
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Fraud Detector
-## Summary
 - prefix: frauddetector
+
+## Table of Contents
+
 ## Privileges
 ### BatchCreateVariable
 - description: Creates a batch of variables.

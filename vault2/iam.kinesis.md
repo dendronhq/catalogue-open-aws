@@ -1,18 +1,21 @@
 ---
-id: 0d273f81-db29-4a47-a7c7-3179b9dfa7d7
+id: iam-Kinesis
 title: Kinesis
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Kinesis
-## Summary
 - prefix: kinesis
+
+## Table of Contents
+
 ## Privileges
 ### AddTagsToStream
 - description: Adds or updates tags for the specified Amazon Kinesis stream. Each stream can have up to 10 tags.

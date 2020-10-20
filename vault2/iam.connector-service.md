@@ -1,18 +1,21 @@
 ---
-id: d49dd3b7-a067-4872-953f-a3131482e639
+id: iam-Connector Service
 title: Connector Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Connector Service
-## Summary
 - prefix: awsconnector
+
+## Table of Contents
+
 ## Privileges
 ### GetConnectorHealth
 - description: Retrieves all health metrics that were published from the Server Migration Connector.

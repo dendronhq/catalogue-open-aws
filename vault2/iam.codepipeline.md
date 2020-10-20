@@ -1,18 +1,21 @@
 ---
-id: c9a2945a-2121-4965-8cd1-8ae949ed3d67
+id: iam-CodePipeline
 title: CodePipeline
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CodePipeline
-## Summary
 - prefix: codepipeline
+
+## Table of Contents
+
 ## Privileges
 ### AcknowledgeJob
 - description: Grants permission to view information about a specified job and whether that job has been received by the job worker

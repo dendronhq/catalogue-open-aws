@@ -1,18 +1,21 @@
 ---
-id: 2c75c974-57b8-4b27-9b34-250602d05ea6
+id: iam-CodeStar Connections
 title: CodeStar Connections
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CodeStar Connections
-## Summary
 - prefix: codestar-connections
+
+## Table of Contents
+
 ## Privileges
 ### CreateConnection
 - description: Grants permission to create a Connection resource

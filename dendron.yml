@@ -3,3 +3,11 @@ site:
         - root
     siteRootDir: docs
     usePrettyRefs: true
+    config:
+      iam: 
+          customFrontmatter: [
+            {
+              key: "toc",
+              value: true,
+            },
+          ]

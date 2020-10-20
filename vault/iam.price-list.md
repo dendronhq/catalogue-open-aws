@@ -1,18 +1,21 @@
 ---
-id: 4d987c4d-fa0b-4a4b-9dfb-efc49a3475e2
+id: iam-Price List
 title: Price List
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Price List
-## Summary
 - prefix: pricing
+
+## Table of Contents
+
 ## Privileges
 ### DescribeServices
 - description: Returns the service details for all (paginated) services (if serviceCode is not set) or service detail for a particular service (if given serviceCode).

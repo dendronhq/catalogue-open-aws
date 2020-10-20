@@ -1,18 +1,21 @@
 ---
-id: 19e7f2ae-1f86-49f7-8fd5-425f3c1c8655
+id: iam-DataSync
 title: DataSync
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # DataSync
-## Summary
 - prefix: datasync
+
+## Table of Contents
+
 ## Privileges
 ### CancelTaskExecution
 - description: Cancels execution of a sync task.

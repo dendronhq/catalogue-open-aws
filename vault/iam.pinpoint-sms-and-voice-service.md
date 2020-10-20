@@ -1,18 +1,21 @@
 ---
-id: a81ef220-76c3-4f73-9bfd-f64fffecabdc
+id: iam-Pinpoint SMS and Voice Service
 title: Pinpoint SMS and Voice Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Pinpoint SMS and Voice Service
-## Summary
 - prefix: sms-voice
+
+## Table of Contents
+
 ## Privileges
 ### CreateConfigurationSet
 - description: Create a new configuration set. After you create the configuration set, you can add one or more event destinations to it.

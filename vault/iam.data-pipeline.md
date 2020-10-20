@@ -1,18 +1,21 @@
 ---
-id: 79fbe7a9-0930-4717-a0da-c4f3c893309c
+id: iam-Data Pipeline
 title: Data Pipeline
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Data Pipeline
-## Summary
 - prefix: datapipeline
+
+## Table of Contents
+
 ## Privileges
 ### ActivatePipeline
 - description: Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.

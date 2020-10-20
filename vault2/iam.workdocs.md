@@ -1,18 +1,21 @@
 ---
-id: b8cb91fa-515b-467d-a052-f221a3b06cd5
+id: iam-WorkDocs
 title: WorkDocs
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # WorkDocs
-## Summary
 - prefix: workdocs
+
+## Table of Contents
+
 ## Privileges
 ### AbortDocumentVersionUpload
 - description: Grants permission to abort the upload of the specified document version that was previously initiated by InitiateDocumentVersionUpload.

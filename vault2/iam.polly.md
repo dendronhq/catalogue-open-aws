@@ -1,18 +1,21 @@
 ---
-id: 1460bb7d-8a5d-429a-b21b-4a56c5fe96c3
+id: iam-Polly
 title: Polly
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Polly
-## Summary
 - prefix: polly
+
+## Table of Contents
+
 ## Privileges
 ### DeleteLexicon
 - description: Deletes the specified pronunciation lexicon stored in an AWS Region

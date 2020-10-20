@@ -1,18 +1,21 @@
 ---
-id: 1e2f03a9-24c1-433e-816c-7dd118da3ddc
+id: iam-Accounts
 title: Accounts
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Accounts
-## Summary
 - prefix: account
+
+## Table of Contents
+
 ## Privileges
 ### DisableRegion
 - description: Grants permission to disable a region

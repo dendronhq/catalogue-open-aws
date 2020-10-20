@@ -1,18 +1,21 @@
 ---
-id: 098773e8-0a65-4990-aa80-e8f0e35e707a
+id: iam-Session Manager Message Gateway Service
 title: Session Manager Message Gateway Service
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Session Manager Message Gateway Service
-## Summary
 - prefix: ssmmessages
+
+## Table of Contents
+
 ## Privileges
 ### CreateControlChannel
 - description: Registers a control channel for an instance to send control messages to Systems Manager service.

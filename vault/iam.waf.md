@@ -1,18 +1,21 @@
 ---
-id: c69c5c90-7b9e-457a-bb31-076dea0edc04
+id: iam-WAF
 title: WAF
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # WAF
-## Summary
 - prefix: waf
+
+## Table of Contents
+
 ## Privileges
 ### CreateByteMatchSet
 - description: Creates a ByteMatchSet.

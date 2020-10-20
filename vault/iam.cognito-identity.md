@@ -1,18 +1,21 @@
 ---
-id: 9c059877-1378-4182-b99a-0486e14bfc64
+id: iam-Cognito Identity
 title: Cognito Identity
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Cognito Identity
-## Summary
 - prefix: cognito-identity
+
+## Table of Contents
+
 ## Privileges
 ### CreateIdentityPool
 - description: Creates a new identity pool.

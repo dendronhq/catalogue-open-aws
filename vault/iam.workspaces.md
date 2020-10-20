@@ -1,18 +1,21 @@
 ---
-id: b6a36ee4-16f1-40a3-81a5-cb6a72492e3e
+id: iam-WorkSpaces
 title: WorkSpaces
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # WorkSpaces
-## Summary
 - prefix: workspaces
+
+## Table of Contents
+
 ## Privileges
 ### AssociateIpGroups
 - description: Associates the specified IP access control group with the specified directory.

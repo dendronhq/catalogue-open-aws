@@ -1,18 +1,21 @@
 ---
-id: de688fd6-665d-4024-a0ca-6abd20e76987
+id: iam-Elemental MediaLive
 title: Elemental MediaLive
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Elemental MediaLive
-## Summary
 - prefix: medialive
+
+## Table of Contents
+
 ## Privileges
 ### BatchDelete
 - description: Grants permission to delete channels, inputs, input security groups, and multiplexes.

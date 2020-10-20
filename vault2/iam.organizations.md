@@ -1,18 +1,21 @@
 ---
-id: 720d3db1-fd5d-4b49-8e52-df21b0b512cb
+id: iam-Organizations
 title: Organizations
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Organizations
-## Summary
 - prefix: organizations
+
+## Table of Contents
+
 ## Privileges
 ### AcceptHandshake
 - description: Grants permission to send a response to the originator of a handshake agreeing to the action proposed by the handshake request.

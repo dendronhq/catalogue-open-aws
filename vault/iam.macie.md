@@ -1,18 +1,21 @@
 ---
-id: 556e2702-217a-4607-bde1-de912a3153aa
+id: iam-Macie
 title: Macie
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Macie
-## Summary
 - prefix: macie2
+
+## Table of Contents
+
 ## Privileges
 ### AcceptInvitation
 - description: Grants permission to accept an Amazon Macie membership invitation

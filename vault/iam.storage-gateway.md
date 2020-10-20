@@ -1,18 +1,21 @@
 ---
-id: 10b59261-8bb2-4ad3-9504-d71a29942785
+id: iam-Storage Gateway
 title: Storage Gateway
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Storage Gateway
-## Summary
 - prefix: storagegateway
+
+## Table of Contents
+
 ## Privileges
 ### ActivateGateway
 - description: This operation activates the gateway you previously deployed on your host.

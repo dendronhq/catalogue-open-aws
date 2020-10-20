@@ -1,18 +1,21 @@
 ---
-id: 20cc4a08-0c52-4539-a740-8f22c2df93e3
+id: iam-Pinpoint
 title: Pinpoint
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Pinpoint
-## Summary
 - prefix: mobiletargeting
+
+## Table of Contents
+
 ## Privileges
 ### CreateApp
 - description: Create an app.

@@ -1,18 +1,21 @@
 ---
-id: 762c33d0-b926-4fb1-a391-ef2f312aeac4
+id: iam-GroundTruth Labeling
 title: GroundTruth Labeling
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # GroundTruth Labeling
-## Summary
 - prefix: groundtruthlabeling
+
+## Table of Contents
+
 ## Privileges
 ### DescribeConsoleJob
 - description: Get status of GroundTruthLabeling Jobs.

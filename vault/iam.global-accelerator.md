@@ -1,18 +1,21 @@
 ---
-id: 3603d088-7cfa-4c40-8df4-150c8842c67a
+id: iam-Global Accelerator
 title: Global Accelerator
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Global Accelerator
-## Summary
 - prefix: globalaccelerator
+
+## Table of Contents
+
 ## Privileges
 ### AdvertiseByoipCidr
 - description: Advertises an IPv4 address range that is provisioned for use with your accelerator through bring your own IP addresses (BYOIP).

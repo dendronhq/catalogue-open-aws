@@ -1,18 +1,21 @@
 ---
-id: e939ce08-b425-48d2-9de6-735a358e1368
+id: iam-Cognito Sync
 title: Cognito Sync
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Cognito Sync
-## Summary
 - prefix: cognito-sync
+
+## Table of Contents
+
 ## Privileges
 ### BulkPublish
 - description: Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream.

@@ -1,18 +1,21 @@
 ---
-id: e6a23dd1-1e8b-412f-bd67-f367a19f29a3
+id: iam-IoT Device Tester
 title: IoT Device Tester
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # IoT Device Tester
-## Summary
 - prefix: iot-device-tester
+
+## Table of Contents
+
 ## Privileges
 ### CheckVersion
 - description: Grants permission for IoT Device Tester to check if a given set of product, test suite and device tester version are compatible

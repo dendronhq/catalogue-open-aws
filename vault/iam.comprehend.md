@@ -1,18 +1,21 @@
 ---
-id: e3a2f985-5d10-45f9-9704-5c0eb0379ef0
+id: iam-Comprehend
 title: Comprehend
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Comprehend
-## Summary
 - prefix: comprehend
+
+## Table of Contents
+
 ## Privileges
 ### BatchDetectDominantLanguage
 - description: Grants permission to detect the language or languages present in the list of text documents

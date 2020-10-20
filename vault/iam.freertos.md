@@ -1,18 +1,21 @@
 ---
-id: 9da1fc04-934d-443e-aebf-98ac2e11781d
+id: iam-FreeRTOS
 title: FreeRTOS
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # FreeRTOS
-## Summary
 - prefix: freertos
+
+## Table of Contents
+
 ## Privileges
 ### CreateSoftwareConfiguration
 - description: Creates a software configuration.

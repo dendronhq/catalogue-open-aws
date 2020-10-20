@@ -1,18 +1,21 @@
 ---
-id: d3a2a242-e008-44ec-ba9d-c2923fd96442
+id: iam-WorkSpaces Application Manager
 title: WorkSpaces Application Manager
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # WorkSpaces Application Manager
-## Summary
 - prefix: wam
+
+## Table of Contents
+
 ## Privileges
 ### AuthenticatePackager
 - description: Allows the Amazon WAM packaging instance to access your application package catalog.

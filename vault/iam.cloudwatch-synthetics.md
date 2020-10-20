@@ -1,18 +1,21 @@
 ---
-id: 4c5ebd85-440a-480d-bb0d-bef8930fedbb
+id: iam-CloudWatch Synthetics
 title: CloudWatch Synthetics
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # CloudWatch Synthetics
-## Summary
 - prefix: synthetics
+
+## Table of Contents
+
 ## Privileges
 ### CreateCanary
 - description: Create a canary.

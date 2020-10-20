@@ -1,18 +1,21 @@
 ---
-id: babab529-a17a-47b3-bd8a-375325a5a4e5
+id: iam-Data Lifecycle Manager
 title: Data Lifecycle Manager
 desc: ''
 updated: '0'
 created: '0'
 stub: false
+toc: true
 sources:
   - name: Policy Sentry
     url: 'https://github.com/salesforce/policy_sentry'
     license: MIT
 ---
 # Data Lifecycle Manager
-## Summary
 - prefix: dlm
+
+## Table of Contents
+
 ## Privileges
 ### CreateLifecyclePolicy
 - description: Create a data lifecycle policy to manage the scheduled creation and retention of Amazon EBS snapshots. You may have up to 100 policies.
