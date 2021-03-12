@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Route 53 Resolver - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Route 53 Resolver.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Route 53 Resolver.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Route 53 Resolver.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Route 53 Resolver - undefined" />
+  <meta name="twitter:title" content="Route 53 Resolver - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Route 53 Resolver</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Route 53 Resolver">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="route-53-resolver"><a aria-hidden="true" class="anchor-heading" href="#route-53-resolver"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Route 53 Resolver</h1>
+<ul>
+<li>prefix: route53resolver</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="associateresolverendpointipaddress"><a aria-hidden="true" class="anchor-heading" href="#associateresolverendpointipaddress"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociateResolverEndpointIpAddress</h3>
+<ul>
+<li>description: Grants permission to associate a specified IP address with a Resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound)</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-endpoint": {
+        "resource_type": "resolver-endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="associateresolverquerylogconfig"><a aria-hidden="true" class="anchor-heading" href="#associateresolverquerylogconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociateResolverQueryLogConfig</h3>
+<ul>
+<li>description: Grants permission to associate an Amazon VPC with a specified query logging configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-query-log-config": {
+        "resource_type": "resolver-query-log-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="associateresolverrule"><a aria-hidden="true" class="anchor-heading" href="#associateresolverrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociateResolverRule</h3>
+<ul>
+<li>description: Grants permission to associate a specified Resolver rule with a specified VPC</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-rule": {
+        "resource_type": "resolver-rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createresolverendpoint"><a aria-hidden="true" class="anchor-heading" href="#createresolverendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateResolverEndpoint</h3>
+<ul>
+<li>description: Grants permission to create a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-endpoint": {
+        "resource_type": "resolver-endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createresolverquerylogconfig"><a aria-hidden="true" class="anchor-heading" href="#createresolverquerylogconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateResolverQueryLogConfig</h3>
+<ul>
+<li>description: Grants permission to create a Resolver query logging configuration, which defines where you want Resolver to save DNS query logs that originate in your VPCs</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-query-log-config": {
+        "resource_type": "resolver-query-log-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createresolverrule"><a aria-hidden="true" class="anchor-heading" href="#createresolverrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateResolverRule</h3>
+<ul>
+<li>description: For DNS queries that originate in your VPC, grants permission to define how to route the queries out of the VPC</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-rule": {
+        "resource_type": "resolver-rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteresolverendpoint"><a aria-hidden="true" class="anchor-heading" href="#deleteresolverendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteResolverEndpoint</h3>
+<ul>
+<li>description: Grants permission to delete a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it's an inbound or an outbound endpoint</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-endpoint": {
+        "resource_type": "resolver-endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteresolverquerylogconfig"><a aria-hidden="true" class="anchor-heading" href="#deleteresolverquerylogconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteResolverQueryLogConfig</h3>
+<ul>
+<li>description: Grants permission to delete a Resolver query logging configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-query-log-config": {
+        "resource_type": "resolver-query-log-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteresolverrule"><a aria-hidden="true" class="anchor-heading" href="#deleteresolverrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteResolverRule</h3>
+<ul>
+<li>description: Grants permission to delete a Resolver rule</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-rule": {
+        "resource_type": "resolver-rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociateresolverendpointipaddress"><a aria-hidden="true" class="anchor-heading" href="#disassociateresolverendpointipaddress"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociateResolverEndpointIpAddress</h3>
+<ul>
+<li>description: Grants permission to remove a specified IP address from a Resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound)</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-endpoint": {
+        "resource_type": "resolver-endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociateresolverquerylogconfig"><a aria-hidden="true" class="anchor-heading" href="#disassociateresolverquerylogconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociateResolverQueryLogConfig</h3>
+<ul>
+<li>description: Grants permission to remove the association between a specified Resolver query logging configuration and a specified VPC</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-query-log-config": {
+        "resource_type": "resolver-query-log-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociateresolverrule"><a aria-hidden="true" class="anchor-heading" href="#disassociateresolverrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociateResolverRule</h3>
+<ul>
+<li>description: Grants permission to remove the association between a specified Resolver rule and a specified VPC</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-rule": {
+        "resource_type": "resolver-rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getresolverendpoint"><a aria-hidden="true" class="anchor-heading" href="#getresolverendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetResolverEndpoint</h3>
+<ul>
+<li>description: Grants permission to get information about a specified Resolver endpoint, such as whether it's an inbound or an outbound endpoint, and the IP addresses in your VPC that DNS queries are forwarded to on the way into or out of your VPC</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-endpoint": {
+        "resource_type": "resolver-endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getresolverquerylogconfig"><a aria-hidden="true" class="anchor-heading" href="#getresolverquerylogconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetResolverQueryLogConfig</h3>
+<ul>
+<li>description: Grants permission to get information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration is logging queries for and the location that logs are sent to</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-query-log-config": {
+        "resource_type": "resolver-query-log-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getresolverquerylogconfigassociation"><a aria-hidden="true" class="anchor-heading" href="#getresolverquerylogconfigassociation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetResolverQueryLogConfigAssociation</h3>
+<ul>
+<li>description: Grants permission to get information about a specified association between a Resolver query logging configuration and an Amazon VPC. When you associate a VPC with a query logging configuration, Resolver logs DNS queries that originate in that VPC</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-query-log-config": {
+        "resource_type": "resolver-query-log-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getresolverquerylogconfigpolicy"><a aria-hidden="true" class="anchor-heading" href="#getresolverquerylogconfigpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetResolverQueryLogConfigPolicy</h3>
+<ul>
+<li>description: Grants permission to get information about a specified Resolver query logging policy, which specifies the Resolver query logging operations and resources that you want to allow another AWS account to use</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-query-log-config": {
+        "resource_type": "resolver-query-log-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getresolverrule"><a aria-hidden="true" class="anchor-heading" href="#getresolverrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetResolverRule</h3>
+<ul>
+<li>description: Grants permission to get information about a specified Resolver rule, such as the domain name that the rule forwards DNS queries for and the IP address that queries are forwarded to.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-rule": {
+        "resource_type": "resolver-rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getresolverruleassociation"><a aria-hidden="true" class="anchor-heading" href="#getresolverruleassociation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetResolverRuleAssociation</h3>
+<ul>
+<li>description: Grants permission to get information about an association between a specified Resolver rule and a VPC</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-rule": {
+        "resource_type": "resolver-rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getresolverrulepolicy"><a aria-hidden="true" class="anchor-heading" href="#getresolverrulepolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetResolverRulePolicy</h3>
+<ul>
+<li>description: Grants permission to get information about a Resolver rule policy, which specifies the Resolver operations and resources that you want to allow another AWS account to use</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-rule": {
+        "resource_type": "resolver-rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listresolverendpointipaddresses"><a aria-hidden="true" class="anchor-heading" href="#listresolverendpointipaddresses"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListResolverEndpointIpAddresses</h3>
+<ul>
+<li>description: For a specified Resolver endpoint, grants permission to list the IP addresses that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound)</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-endpoint": {
+        "resource_type": "resolver-endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listresolverendpoints"><a aria-hidden="true" class="anchor-heading" href="#listresolverendpoints"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListResolverEndpoints</h3>
+<ul>
+<li>description: Grants permission to list all the Resolver endpoints that were created using the current AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listresolverquerylogconfigassociations"><a aria-hidden="true" class="anchor-heading" href="#listresolverquerylogconfigassociations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListResolverQueryLogConfigAssociations</h3>
+<ul>
+<li>description: Grants permission to list information about associations between Amazon VPCs and query logging configurations</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-query-log-config": {
+        "resource_type": "resolver-query-log-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listresolverquerylogconfigs"><a aria-hidden="true" class="anchor-heading" href="#listresolverquerylogconfigs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListResolverQueryLogConfigs</h3>
+<ul>
+<li>description: Grants permission to list information about the specified query logging configurations, which define where you want Resolver to save DNS query logs and specify the VPCs that you want to log queries for</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-query-log-config": {
+        "resource_type": "resolver-query-log-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listresolverruleassociations"><a aria-hidden="true" class="anchor-heading" href="#listresolverruleassociations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListResolverRuleAssociations</h3>
+<ul>
+<li>description: Grants permission to list the associations that were created between Resolver rules and VPCs using the current AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listresolverrules"><a aria-hidden="true" class="anchor-heading" href="#listresolverrules"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListResolverRules</h3>
+<ul>
+<li>description: Grants permission to list the Resolver rules that were created using the current AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Grants permission to list the tags that you associated with the specified resource</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-endpoint": {
+        "resource_type": "resolver-endpoint",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "resolver-rule": {
+        "resource_type": "resolver-rule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putresolverquerylogconfigpolicy"><a aria-hidden="true" class="anchor-heading" href="#putresolverquerylogconfigpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutResolverQueryLogConfigPolicy</h3>
+<ul>
+<li>description: Grants permission to specify an AWS account that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-query-log-config": {
+        "resource_type": "resolver-query-log-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putresolverrulepolicy"><a aria-hidden="true" class="anchor-heading" href="#putresolverrulepolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutResolverRulePolicy</h3>
+<ul>
+<li>description: Grants permission to specify an AWS account that you want to share rules with, the Resolver rules that you want to share, and the operations that you want the account to be able to perform on those rules</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-rule": {
+        "resource_type": "resolver-rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Grants permission to add one or more tags to a specified resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-endpoint": {
+        "resource_type": "resolver-endpoint",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "resolver-rule": {
+        "resource_type": "resolver-rule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Grants permission to remove one or more tags from a specified resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-endpoint": {
+        "resource_type": "resolver-endpoint",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "resolver-rule": {
+        "resource_type": "resolver-rule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateresolverendpoint"><a aria-hidden="true" class="anchor-heading" href="#updateresolverendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateResolverEndpoint</h3>
+<ul>
+<li>description: Grants permission to update selected settings for an inbound or an outbound Resolver endpoint</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-endpoint": {
+        "resource_type": "resolver-endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateresolverrule"><a aria-hidden="true" class="anchor-heading" href="#updateresolverrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateResolverRule</h3>
+<ul>
+<li>description: Grants permission to update settings for a specified Resolver rule</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resolver-rule": {
+        "resource_type": "resolver-rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Route 53 Resolver"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

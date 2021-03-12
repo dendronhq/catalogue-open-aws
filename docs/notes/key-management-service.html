@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Key Management Service - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/key-management-service.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/key-management-service.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/key-management-service.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Key Management Service - undefined" />
+  <meta name="twitter:title" content="Key Management Service - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/1f759d8c-cca7-4fc4-9aa2-6dbf6e596abf.html">Services</a></li><li class="breadcrumb-nav-list-item">Key Management Service</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Key Management Service">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <p><img src="/assets/images/AWS-KMS_en.jpg"></p>
+<blockquote>
+<p>Image from <a href="https://www.awsgeek.com/AWS-KMS/">@awsgeek</a></p>
+</blockquote>
+<h1 id="key-management-service"><a aria-hidden="true" class="anchor-heading" href="#key-management-service"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Key Management Service</h1>
+<h3 id="kms-basics"><a aria-hidden="true" class="anchor-heading" href="#kms-basics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>KMS Basics</h3>
+<ul>
+<li>📒 <a href="https://aws.amazon.com/kms/">Homepage</a> ∙ <a href="http://docs.aws.amazon.com/kms/latest/developerguide/">Developer guide</a> ∙ <a href="https://aws.amazon.com/kms/faqs/">FAQ</a> ∙ <a href="https://aws.amazon.com/kms/pricing/">Pricing</a></li>
+<li><strong>KMS</strong> (Key Management Service) is a secure service for creating, storing and auditing usage of cryptographic keys.</li>
+<li><strong>Service integration:</strong> KMS <a href="http://docs.aws.amazon.com/kms/latest/developerguide/service-integration.html">integrates with other AWS services</a>: EBS, Elastic Transcoder, EMR, Redshift, RDS, SES, S3, WorkMail and Workspaces.</li>
+<li><strong>Encryption APIs:</strong> The <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> and <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html">Decrypt API</a> allow you to encrypt and decrypt data on the KMS service side, never exposing the master key contents.</li>
+<li><strong>Data keys:</strong> The <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">GenerateDataKey</a> API generates a new key off of a master key. The data key contents are exposed to you so you can use it to encrypt and decrypt any size of data in your application layer. KMS does not store, manage or track data keys, you are responsible for this in your application.</li>
+<li>🔹<strong>Auditing:</strong> Turn on CloudTrail to audit all KMS API events.</li>
+<li><strong>Access:</strong> Use <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key policies</a> and <a href="http://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html">IAM policies</a> to grant different levels of KMS access. For example, you create an IAM policy that only <a href="http://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policy-example-encrypt-decrypt-specific-cmks">allows a user to encrypt and decrypt with a specific key</a>.</li>
+</ul>
+<h3 id="kms-tips"><a aria-hidden="true" class="anchor-heading" href="#kms-tips"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>KMS Tips</h3>
+<ul>
+<li>🔹It’s very common for companies to manage keys completely via home-grown mechanisms, but it’s far preferable to use a service such as KMS from the beginning, as it encourages more secure design and improves policies and processes around managing keys.</li>
+<li>A good motivation and overview is in <a href="http://www.slideshare.net/AmazonWebServices/encryption-and-key-management-in-aws">this AWS presentation</a>.</li>
+<li>The cryptographic details are in <a href="https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf">this AWS whitepaper</a>.</li>
+<li><a href="https://convox.com/blog/encryption-at-rest">This blog from Convox</a> demonstrates why and how to use KMS for encryption at rest.</li>
+</ul>
+<h3 id="kms-gotchas-and-limitations"><a aria-hidden="true" class="anchor-heading" href="#kms-gotchas-and-limitations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>KMS Gotchas and Limitations</h3>
+<ul>
+<li>🔸The Encrypt API only works with &#x3C; 4KB of data. Larger data requires generating and managing a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> in your application layer.</li>
+<li>🔸KMS audit events are not available in the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">CloudTrail Lookup Events API</a>. You need to look find them in the raw .json.gz files that CloudTrail saves in S3.</li>
+<li>🔸In order to encrypt a multi-part upload to S3, the KMS Key Policy needs to allow “kms:Decrypt” and “kms:GenerateDataKey*” in addition to “kms:Encrypt”, otherwise the upload will fail with an “AccessDenied” error.</li>
+<li>🔸KMS keys are region specific — they are stored and can only be used in the region in which they are created. They can't be transferred to other regions.</li>
+<li>🔸KMS keys have a key policy that must grant access to something to manage the key.  If you don't grant anything access to the key on creation, then you have to reach out to support to have the key policy reset <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Reduce the Risk of the Key Becoming Unmanagable</a>.</li>
+<li>🔸If you use a key policy to grant access to IAM roles or users and then delete the user/role, recreating the user or role won't grant them permission to the key again.</li>
+</ul><span id="navId" data="key-management-service"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

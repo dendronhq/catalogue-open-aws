@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Database Migration Service - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Database Migration Service.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Database Migration Service.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Database Migration Service.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Database Migration Service - undefined" />
+  <meta name="twitter:title" content="Database Migration Service - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Database Migration Service</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Database Migration Service">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="database-migration-service"><a aria-hidden="true" class="anchor-heading" href="#database-migration-service"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Database Migration Service</h1>
+<ul>
+<li>prefix: dms</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="addtagstoresource"><a aria-hidden="true" class="anchor-heading" href="#addtagstoresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddTagsToResource</h3>
+<ul>
+<li>description: Adds metadata tags to a DMS resource, including replication instance, endpoint, security group, and migration task</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Certificate": {
+        "resource_type": "Certificate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "Endpoint": {
+        "resource_type": "Endpoint",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "EventSubscription": {
+        "resource_type": "EventSubscription",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ReplicationInstance": {
+        "resource_type": "ReplicationInstance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ReplicationSubnetGroup": {
+        "resource_type": "ReplicationSubnetGroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ReplicationTask": {
+        "resource_type": "ReplicationTask",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "dms:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="applypendingmaintenanceaction"><a aria-hidden="true" class="anchor-heading" href="#applypendingmaintenanceaction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ApplyPendingMaintenanceAction</h3>
+<ul>
+<li>description: Applies a pending maintenance action to a resource (for example, to a replication instance).</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationInstance": {
+        "resource_type": "ReplicationInstance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createendpoint"><a aria-hidden="true" class="anchor-heading" href="#createendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateEndpoint</h3>
+<ul>
+<li>description: Creates an endpoint using the provided settings</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "dms:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createeventsubscription"><a aria-hidden="true" class="anchor-heading" href="#createeventsubscription"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateEventSubscription</h3>
+<ul>
+<li>description: Creates an AWS DMS event notification subscription.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "dms:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createreplicationinstance"><a aria-hidden="true" class="anchor-heading" href="#createreplicationinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateReplicationInstance</h3>
+<ul>
+<li>description: Creates the replication instance using the specified parameters</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "dms:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createreplicationsubnetgroup"><a aria-hidden="true" class="anchor-heading" href="#createreplicationsubnetgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateReplicationSubnetGroup</h3>
+<ul>
+<li>description: Creates a replication subnet group given a list of the subnet IDs in a VPC</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "dms:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createreplicationtask"><a aria-hidden="true" class="anchor-heading" href="#createreplicationtask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateReplicationTask</h3>
+<ul>
+<li>description: Creates a replication task using the specified parameters</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Endpoint": {
+        "resource_type": "Endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ReplicationInstance": {
+        "resource_type": "ReplicationInstance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "dms:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletecertificate"><a aria-hidden="true" class="anchor-heading" href="#deletecertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteCertificate</h3>
+<ul>
+<li>description: Deletes the specified certificate</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Certificate": {
+        "resource_type": "Certificate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteendpoint"><a aria-hidden="true" class="anchor-heading" href="#deleteendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEndpoint</h3>
+<ul>
+<li>description: Deletes the specified endpoint</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Endpoint": {
+        "resource_type": "Endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteeventsubscription"><a aria-hidden="true" class="anchor-heading" href="#deleteeventsubscription"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEventSubscription</h3>
+<ul>
+<li>description: Deletes an AWS DMS event subscription.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "EventSubscription": {
+        "resource_type": "EventSubscription",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletereplicationinstance"><a aria-hidden="true" class="anchor-heading" href="#deletereplicationinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteReplicationInstance</h3>
+<ul>
+<li>description: Deletes the specified replication instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationInstance": {
+        "resource_type": "ReplicationInstance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletereplicationsubnetgroup"><a aria-hidden="true" class="anchor-heading" href="#deletereplicationsubnetgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteReplicationSubnetGroup</h3>
+<ul>
+<li>description: Deletes a subnet group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationSubnetGroup": {
+        "resource_type": "ReplicationSubnetGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletereplicationtask"><a aria-hidden="true" class="anchor-heading" href="#deletereplicationtask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteReplicationTask</h3>
+<ul>
+<li>description: Deletes the specified replication task</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationTask": {
+        "resource_type": "ReplicationTask",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeaccountattributes"><a aria-hidden="true" class="anchor-heading" href="#describeaccountattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAccountAttributes</h3>
+<ul>
+<li>description: Lists all of the AWS DMS attributes for a customer account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describecertificates"><a aria-hidden="true" class="anchor-heading" href="#describecertificates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeCertificates</h3>
+<ul>
+<li>description: Provides a description of the certificate.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconnections"><a aria-hidden="true" class="anchor-heading" href="#describeconnections"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConnections</h3>
+<ul>
+<li>description: Describes the status of the connections that have been made between the replication instance and an endpoint</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeendpointtypes"><a aria-hidden="true" class="anchor-heading" href="#describeendpointtypes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEndpointTypes</h3>
+<ul>
+<li>description: Returns information about the type of endpoints available</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeendpoints"><a aria-hidden="true" class="anchor-heading" href="#describeendpoints"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEndpoints</h3>
+<ul>
+<li>description: Returns information about the endpoints for your account in the current region</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeeventcategories"><a aria-hidden="true" class="anchor-heading" href="#describeeventcategories"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEventCategories</h3>
+<ul>
+<li>description: Lists categories for all event source types, or, if specified, for a specified source type.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeeventsubscriptions"><a aria-hidden="true" class="anchor-heading" href="#describeeventsubscriptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEventSubscriptions</h3>
+<ul>
+<li>description: Lists all the event subscriptions for a customer account.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeevents"><a aria-hidden="true" class="anchor-heading" href="#describeevents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEvents</h3>
+<ul>
+<li>description: Lists events for a given source identifier and source type.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeorderablereplicationinstances"><a aria-hidden="true" class="anchor-heading" href="#describeorderablereplicationinstances"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeOrderableReplicationInstances</h3>
+<ul>
+<li>description: Returns information about the replication instance types that can be created in the specified region</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describerefreshschemasstatus"><a aria-hidden="true" class="anchor-heading" href="#describerefreshschemasstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeRefreshSchemasStatus</h3>
+<ul>
+<li>description: Returns the status of the RefreshSchemas operation</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Endpoint": {
+        "resource_type": "Endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describereplicationinstancetasklogs"><a aria-hidden="true" class="anchor-heading" href="#describereplicationinstancetasklogs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeReplicationInstanceTaskLogs</h3>
+<ul>
+<li>description: Returns information about the task logs for the specified task.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationInstance": {
+        "resource_type": "ReplicationInstance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describereplicationinstances"><a aria-hidden="true" class="anchor-heading" href="#describereplicationinstances"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeReplicationInstances</h3>
+<ul>
+<li>description: Returns information about replication instances for your account in the current region</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describereplicationsubnetgroups"><a aria-hidden="true" class="anchor-heading" href="#describereplicationsubnetgroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeReplicationSubnetGroups</h3>
+<ul>
+<li>description: Returns information about the replication subnet groups</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describereplicationtaskassessmentresults"><a aria-hidden="true" class="anchor-heading" href="#describereplicationtaskassessmentresults"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeReplicationTaskAssessmentResults</h3>
+<ul>
+<li>description: Returns the task assessment results from Amazon S3. This action always returns the latest results.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationTask": {
+        "resource_type": "ReplicationTask",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describereplicationtasks"><a aria-hidden="true" class="anchor-heading" href="#describereplicationtasks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeReplicationTasks</h3>
+<ul>
+<li>description: Returns information about replication tasks for your account in the current region</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeschemas"><a aria-hidden="true" class="anchor-heading" href="#describeschemas"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeSchemas</h3>
+<ul>
+<li>description: Returns information about the schema for the specified endpoint</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Endpoint": {
+        "resource_type": "Endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetablestatistics"><a aria-hidden="true" class="anchor-heading" href="#describetablestatistics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTableStatistics</h3>
+<ul>
+<li>description: Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationTask": {
+        "resource_type": "ReplicationTask",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="importcertificate"><a aria-hidden="true" class="anchor-heading" href="#importcertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ImportCertificate</h3>
+<ul>
+<li>description: Uploads the specified certificate.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Lists all tags for an AWS DMS resource</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Certificate": {
+        "resource_type": "Certificate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "Endpoint": {
+        "resource_type": "Endpoint",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "EventSubscription": {
+        "resource_type": "EventSubscription",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ReplicationInstance": {
+        "resource_type": "ReplicationInstance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ReplicationSubnetGroup": {
+        "resource_type": "ReplicationSubnetGroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ReplicationTask": {
+        "resource_type": "ReplicationTask",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyendpoint"><a aria-hidden="true" class="anchor-heading" href="#modifyendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyEndpoint</h3>
+<ul>
+<li>description: Modifies the specified endpoint</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Endpoint": {
+        "resource_type": "Endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "Certificate": {
+        "resource_type": "Certificate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyeventsubscription"><a aria-hidden="true" class="anchor-heading" href="#modifyeventsubscription"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyEventSubscription</h3>
+<ul>
+<li>description: Modifies an existing AWS DMS event notification subscription.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyreplicationinstance"><a aria-hidden="true" class="anchor-heading" href="#modifyreplicationinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyReplicationInstance</h3>
+<ul>
+<li>description: Modifies the replication instance to apply new settings</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationInstance": {
+        "resource_type": "ReplicationInstance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyreplicationsubnetgroup"><a aria-hidden="true" class="anchor-heading" href="#modifyreplicationsubnetgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyReplicationSubnetGroup</h3>
+<ul>
+<li>description: Modifies the settings for the specified replication subnet group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyreplicationtask"><a aria-hidden="true" class="anchor-heading" href="#modifyreplicationtask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyReplicationTask</h3>
+<ul>
+<li>description: Modifies the specified replication task.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationTask": {
+        "resource_type": "ReplicationTask",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="rebootreplicationinstance"><a aria-hidden="true" class="anchor-heading" href="#rebootreplicationinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RebootReplicationInstance</h3>
+<ul>
+<li>description: Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance becomes available again.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationInstance": {
+        "resource_type": "ReplicationInstance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="refreshschemas"><a aria-hidden="true" class="anchor-heading" href="#refreshschemas"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RefreshSchemas</h3>
+<ul>
+<li>description: Populates the schema for the specified endpoint</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Endpoint": {
+        "resource_type": "Endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ReplicationInstance": {
+        "resource_type": "ReplicationInstance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="reloadtables"><a aria-hidden="true" class="anchor-heading" href="#reloadtables"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ReloadTables</h3>
+<ul>
+<li>description: Reloads the target database table with the source data.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationTask": {
+        "resource_type": "ReplicationTask",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="removetagsfromresource"><a aria-hidden="true" class="anchor-heading" href="#removetagsfromresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RemoveTagsFromResource</h3>
+<ul>
+<li>description: Removes metadata tags from a DMS resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Certificate": {
+        "resource_type": "Certificate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "Endpoint": {
+        "resource_type": "Endpoint",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "EventSubscription": {
+        "resource_type": "EventSubscription",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ReplicationInstance": {
+        "resource_type": "ReplicationInstance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ReplicationSubnetGroup": {
+        "resource_type": "ReplicationSubnetGroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ReplicationTask": {
+        "resource_type": "ReplicationTask",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startreplicationtask"><a aria-hidden="true" class="anchor-heading" href="#startreplicationtask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartReplicationTask</h3>
+<ul>
+<li>description: Starts the replication task</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationTask": {
+        "resource_type": "ReplicationTask",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startreplicationtaskassessment"><a aria-hidden="true" class="anchor-heading" href="#startreplicationtaskassessment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartReplicationTaskAssessment</h3>
+<ul>
+<li>description: Starts the replication task assessment for unsupported data types in the source database.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationTask": {
+        "resource_type": "ReplicationTask",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopreplicationtask"><a aria-hidden="true" class="anchor-heading" href="#stopreplicationtask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopReplicationTask</h3>
+<ul>
+<li>description: Stops the replication task</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ReplicationTask": {
+        "resource_type": "ReplicationTask",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="testconnection"><a aria-hidden="true" class="anchor-heading" href="#testconnection"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TestConnection</h3>
+<ul>
+<li>description: Tests the connection between the replication instance and the endpoint</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Endpoint": {
+        "resource_type": "Endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ReplicationInstance": {
+        "resource_type": "ReplicationInstance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Database Migration Service"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

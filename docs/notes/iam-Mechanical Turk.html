@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Mechanical Turk - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Mechanical Turk.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Mechanical Turk.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Mechanical Turk.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Mechanical Turk - undefined" />
+  <meta name="twitter:title" content="Mechanical Turk - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Mechanical Turk</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Mechanical Turk">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="mechanical-turk"><a aria-hidden="true" class="anchor-heading" href="#mechanical-turk"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Mechanical Turk</h1>
+<ul>
+<li>prefix: mechanicalturk</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="acceptqualificationrequest"><a aria-hidden="true" class="anchor-heading" href="#acceptqualificationrequest"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AcceptQualificationRequest</h3>
+<ul>
+<li>description: The AcceptQualificationRequest operation grants a Worker's request for a Qualification</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="approveassignment"><a aria-hidden="true" class="anchor-heading" href="#approveassignment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ApproveAssignment</h3>
+<ul>
+<li>description: The ApproveAssignment operation approves the results of a completed assignment</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="associatequalificationwithworker"><a aria-hidden="true" class="anchor-heading" href="#associatequalificationwithworker"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociateQualificationWithWorker</h3>
+<ul>
+<li>description: The AssociateQualificationWithWorker operation gives a Worker a Qualification</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createadditionalassignmentsforhit"><a aria-hidden="true" class="anchor-heading" href="#createadditionalassignmentsforhit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAdditionalAssignmentsForHIT</h3>
+<ul>
+<li>description: The CreateAdditionalAssignmentsForHIT operation increases the maximum number of assignments of an existing HIT</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createhit"><a aria-hidden="true" class="anchor-heading" href="#createhit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateHIT</h3>
+<ul>
+<li>description: The CreateHIT operation creates a new HIT (Human Intelligence Task)</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createhittype"><a aria-hidden="true" class="anchor-heading" href="#createhittype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateHITType</h3>
+<ul>
+<li>description: The CreateHITType operation creates a new HIT type</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createhitwithhittype"><a aria-hidden="true" class="anchor-heading" href="#createhitwithhittype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateHITWithHITType</h3>
+<ul>
+<li>description: The CreateHITWithHITType operation creates a new Human Intelligence Task (HIT) using an existing HITTypeID generated by the CreateHITType operation</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createqualificationtype"><a aria-hidden="true" class="anchor-heading" href="#createqualificationtype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateQualificationType</h3>
+<ul>
+<li>description: The CreateQualificationType operation creates a new Qualification type, which is represented by a QualificationType data structure</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createworkerblock"><a aria-hidden="true" class="anchor-heading" href="#createworkerblock"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateWorkerBlock</h3>
+<ul>
+<li>description: The CreateWorkerBlock operation allows you to prevent a Worker from working on your HITs</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletehit"><a aria-hidden="true" class="anchor-heading" href="#deletehit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteHIT</h3>
+<ul>
+<li>description: The DeleteHIT operation disposes of a HIT that is no longer needed</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletequalificationtype"><a aria-hidden="true" class="anchor-heading" href="#deletequalificationtype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteQualificationType</h3>
+<ul>
+<li>description: The DeleteQualificationType disposes a Qualification type and disposes any HIT types that are associated with the Qualification type</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteworkerblock"><a aria-hidden="true" class="anchor-heading" href="#deleteworkerblock"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteWorkerBlock</h3>
+<ul>
+<li>description: The DeleteWorkerBlock operation allows you to reinstate a blocked Worker to work on your HITs</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociatequalificationfromworker"><a aria-hidden="true" class="anchor-heading" href="#disassociatequalificationfromworker"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociateQualificationFromWorker</h3>
+<ul>
+<li>description: The DisassociateQualificationFromWorker revokes a previously granted Qualification from a user</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaccountbalance"><a aria-hidden="true" class="anchor-heading" href="#getaccountbalance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAccountBalance</h3>
+<ul>
+<li>description: The GetAccountBalance operation retrieves the amount of money in your Amazon Mechanical Turk account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getassignment"><a aria-hidden="true" class="anchor-heading" href="#getassignment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAssignment</h3>
+<ul>
+<li>description: The GetAssignment retrieves an assignment with an AssignmentStatus value of Submitted, Approved, or Rejected, using the assignment's ID</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getfileuploadurl"><a aria-hidden="true" class="anchor-heading" href="#getfileuploadurl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetFileUploadURL</h3>
+<ul>
+<li>description: The GetFileUploadURL operation generates and returns a temporary URL</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gethit"><a aria-hidden="true" class="anchor-heading" href="#gethit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetHIT</h3>
+<ul>
+<li>description: The GetHIT operation retrieves the details of the specified HIT</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getqualificationscore"><a aria-hidden="true" class="anchor-heading" href="#getqualificationscore"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetQualificationScore</h3>
+<ul>
+<li>description: The GetQualificationScore operation returns the value of a Worker's Qualification for a given Qualification type</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getqualificationtype"><a aria-hidden="true" class="anchor-heading" href="#getqualificationtype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetQualificationType</h3>
+<ul>
+<li>description: The GetQualificationType operation retrieves information about a Qualification type using its ID</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listassignmentsforhit"><a aria-hidden="true" class="anchor-heading" href="#listassignmentsforhit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAssignmentsForHIT</h3>
+<ul>
+<li>description: The ListAssignmentsForHIT operation retrieves completed assignments for a HIT</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listbonuspayments"><a aria-hidden="true" class="anchor-heading" href="#listbonuspayments"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListBonusPayments</h3>
+<ul>
+<li>description: The ListBonusPayments operation retrieves the amounts of bonuses you have paid to Workers for a given HIT or assignment</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listhits"><a aria-hidden="true" class="anchor-heading" href="#listhits"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListHITs</h3>
+<ul>
+<li>description: The ListHITs operation returns all of a Requester's HITs</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listhitsforqualificationtype"><a aria-hidden="true" class="anchor-heading" href="#listhitsforqualificationtype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListHITsForQualificationType</h3>
+<ul>
+<li>description: The ListHITsForQualificationType operation returns the HITs that use the given QualififcationType for a QualificationRequirement</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listqualificationrequests"><a aria-hidden="true" class="anchor-heading" href="#listqualificationrequests"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListQualificationRequests</h3>
+<ul>
+<li>description: The ListQualificationRequests operation retrieves requests for Qualifications of a particular Qualification type</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listqualificationtypes"><a aria-hidden="true" class="anchor-heading" href="#listqualificationtypes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListQualificationTypes</h3>
+<ul>
+<li>description: The ListQualificationTypes operation searches for Qualification types using the specified search query, and returns a list of Qualification types</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listreviewpolicyresultsforhit"><a aria-hidden="true" class="anchor-heading" href="#listreviewpolicyresultsforhit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListReviewPolicyResultsForHIT</h3>
+<ul>
+<li>description: The ListReviewPolicyResultsForHIT operation retrieves the computed results and the actions taken in the course of executing your Review Policies during a CreateHIT operation</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listreviewablehits"><a aria-hidden="true" class="anchor-heading" href="#listreviewablehits"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListReviewableHITs</h3>
+<ul>
+<li>description: The ListReviewableHITs operation returns all of a Requester's HITs that have not been approved or rejected</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listworkerblocks"><a aria-hidden="true" class="anchor-heading" href="#listworkerblocks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListWorkerBlocks</h3>
+<ul>
+<li>description: The ListWorkersBlocks operation retrieves a list of Workers who are blocked from working on your HITs</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listworkerswithqualificationtype"><a aria-hidden="true" class="anchor-heading" href="#listworkerswithqualificationtype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListWorkersWithQualificationType</h3>
+<ul>
+<li>description: The ListWorkersWithQualificationType operation returns all of the Workers with a given Qualification type</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="notifyworkers"><a aria-hidden="true" class="anchor-heading" href="#notifyworkers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>NotifyWorkers</h3>
+<ul>
+<li>description: The NotifyWorkers operation sends an email to one or more Workers that you specify with the Worker ID</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="rejectassignment"><a aria-hidden="true" class="anchor-heading" href="#rejectassignment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RejectAssignment</h3>
+<ul>
+<li>description: The RejectAssignment operation rejects the results of a completed assignment</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="rejectqualificationrequest"><a aria-hidden="true" class="anchor-heading" href="#rejectqualificationrequest"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RejectQualificationRequest</h3>
+<ul>
+<li>description: The RejectQualificationRequest operation rejects a user's request for a Qualification</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="sendbonus"><a aria-hidden="true" class="anchor-heading" href="#sendbonus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SendBonus</h3>
+<ul>
+<li>description: The SendBonus operation issues a payment of money from your account to a Worker</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="sendtesteventnotification"><a aria-hidden="true" class="anchor-heading" href="#sendtesteventnotification"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SendTestEventNotification</h3>
+<ul>
+<li>description: The SendTestEventNotification operation causes Amazon Mechanical Turk to send a notification message as if a HIT event occurred, according to the provided notification specification</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateexpirationforhit"><a aria-hidden="true" class="anchor-heading" href="#updateexpirationforhit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateExpirationForHIT</h3>
+<ul>
+<li>description: The UpdateExpirationForHIT operation allows you extend the expiration time of a HIT beyond is current expiration or expire a HIT immediately</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatehitreviewstatus"><a aria-hidden="true" class="anchor-heading" href="#updatehitreviewstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateHITReviewStatus</h3>
+<ul>
+<li>description: The UpdateHITReviewStatus operation toggles the status of a HIT</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatehittypeofhit"><a aria-hidden="true" class="anchor-heading" href="#updatehittypeofhit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateHITTypeOfHIT</h3>
+<ul>
+<li>description: The UpdateHITTypeOfHIT operation allows you to change the HITType properties of a HIT</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatenotificationsettings"><a aria-hidden="true" class="anchor-heading" href="#updatenotificationsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateNotificationSettings</h3>
+<ul>
+<li>description: The UpdateNotificationSettings operation creates, updates, disables or re-enables notifications for a HIT type</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatequalificationtype"><a aria-hidden="true" class="anchor-heading" href="#updatequalificationtype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateQualificationType</h3>
+<ul>
+<li>description: The UpdateQualificationType operation modifies the attributes of an existing Qualification type, which is represented by a QualificationType data structure</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Mechanical Turk"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

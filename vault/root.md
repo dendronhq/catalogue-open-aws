@@ -1,6 +1,6 @@
 ---
 id: root
-title: root
+title: Home
 desc: ''
 updated: 1600137386045
 created: 1600137386045

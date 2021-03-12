@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>WAF - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-WAF.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-WAF.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-WAF.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="WAF - undefined" />
+  <meta name="twitter:title" content="WAF - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">WAF</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="WAF">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="waf"><a aria-hidden="true" class="anchor-heading" href="#waf"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>WAF</h1>
+<ul>
+<li>prefix: waf</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="createbytematchset"><a aria-hidden="true" class="anchor-heading" href="#createbytematchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateByteMatchSet</h3>
+<ul>
+<li>description: Creates a ByteMatchSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bytematchset": {
+        "resource_type": "bytematchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creategeomatchset"><a aria-hidden="true" class="anchor-heading" href="#creategeomatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateGeoMatchSet</h3>
+<ul>
+<li>description: Creates a GeoMatchSet, which you use to specify which web requests you want to allow or block based on the country that the requests originate from.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "geomatchset": {
+        "resource_type": "geomatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createipset"><a aria-hidden="true" class="anchor-heading" href="#createipset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateIPSet</h3>
+<ul>
+<li>description: Creates an IPSet, which you use to specify which web requests you want to allow or block based on the IP addresses that the requests originate from.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ipset": {
+        "resource_type": "ipset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createratebasedrule"><a aria-hidden="true" class="anchor-heading" href="#createratebasedrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRateBasedRule</h3>
+<ul>
+<li>description: Creates a RateBasedRule, which contains a RateLimit specifying the maximum number of requests that AWS WAF allows from a specified IP address in a five-minute period.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ratebasedrule": {
+        "resource_type": "ratebasedrule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createregexmatchset"><a aria-hidden="true" class="anchor-heading" href="#createregexmatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRegexMatchSet</h3>
+<ul>
+<li>description: Creates a RegexMatchSet, which you use to specify which web requests you want to allow or block based on the regex patterns you specified in a RegexPatternSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "regexmatchset": {
+        "resource_type": "regexmatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createregexpatternset"><a aria-hidden="true" class="anchor-heading" href="#createregexpatternset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRegexPatternSet</h3>
+<ul>
+<li>description: Creates a RegexPatternSet, which you use to specify the regular expression (regex) pattern that you want AWS WAF to search for.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "regexpatternset": {
+        "resource_type": "regexpatternset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createrule"><a aria-hidden="true" class="anchor-heading" href="#createrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRule</h3>
+<ul>
+<li>description: Creates a Rule, which contains the IPSet objects, ByteMatchSet objects, and other predicates that identify the requests that you want to block.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rule": {
+        "resource_type": "rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createrulegroup"><a aria-hidden="true" class="anchor-heading" href="#createrulegroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRuleGroup</h3>
+<ul>
+<li>description: Creates a RuleGroup. A rule group is a collection of predefined rules that you add to a WebACL.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rulegroup": {
+        "resource_type": "rulegroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsizeconstraintset"><a aria-hidden="true" class="anchor-heading" href="#createsizeconstraintset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSizeConstraintSet</h3>
+<ul>
+<li>description: Creates a SizeConstraintSet, which you use to identify the part of a web request that you want to check for length.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "sizeconstraintset": {
+        "resource_type": "sizeconstraintset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsqlinjectionmatchset"><a aria-hidden="true" class="anchor-heading" href="#createsqlinjectionmatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSqlInjectionMatchSet</h3>
+<ul>
+<li>description: Creates a SqlInjectionMatchSet, which you use to allow, block, or count requests that contain snippets of SQL code in a specified part of web requests.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "sqlinjectionmatchset": {
+        "resource_type": "sqlinjectionmatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createwebacl"><a aria-hidden="true" class="anchor-heading" href="#createwebacl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateWebACL</h3>
+<ul>
+<li>description: Creates a WebACL, which contains the Rules that identify the CloudFront web requests that you want to allow, block, or count.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "webacl": {
+        "resource_type": "webacl",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createwebaclmigrationstack"><a aria-hidden="true" class="anchor-heading" href="#createwebaclmigrationstack"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateWebACLMigrationStack</h3>
+<ul>
+<li>description: Create and store a CloudFormation tempalte that creates an equivalent WAF v2 WebACL from the given WAF Classic WebACL in the given S3 bucket.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "webacl": {
+        "resource_type": "webacl",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "s3:PutObject"
+        ]
+    }
+}
+</code></pre>
+<h3 id="createxssmatchset"><a aria-hidden="true" class="anchor-heading" href="#createxssmatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateXssMatchSet</h3>
+<ul>
+<li>description: Creates an XssMatchSet, which you use to allow, block, or count requests that contain cross-site scripting attacks in the specified part of web requests.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "xssmatchset": {
+        "resource_type": "xssmatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletebytematchset"><a aria-hidden="true" class="anchor-heading" href="#deletebytematchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteByteMatchSet</h3>
+<ul>
+<li>description: Permanently deletes a ByteMatchSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bytematchset": {
+        "resource_type": "bytematchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletegeomatchset"><a aria-hidden="true" class="anchor-heading" href="#deletegeomatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteGeoMatchSet</h3>
+<ul>
+<li>description: Permanently deletes an GeoMatchSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "geomatchset": {
+        "resource_type": "geomatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteipset"><a aria-hidden="true" class="anchor-heading" href="#deleteipset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteIPSet</h3>
+<ul>
+<li>description: Permanently deletes an IPSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ipset": {
+        "resource_type": "ipset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteloggingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deleteloggingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteLoggingConfiguration</h3>
+<ul>
+<li>description: Permanently deletes the LoggingConfiguration from the specified web ACL.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "webacl": {
+        "resource_type": "webacl",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletepermissionpolicy"><a aria-hidden="true" class="anchor-heading" href="#deletepermissionpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeletePermissionPolicy</h3>
+<ul>
+<li>description: Permanently deletes an IAM policy from the specified RuleGroup.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rulegroup": {
+        "resource_type": "rulegroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteratebasedrule"><a aria-hidden="true" class="anchor-heading" href="#deleteratebasedrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRateBasedRule</h3>
+<ul>
+<li>description: Permanently deletes a RateBasedRule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ratebasedrule": {
+        "resource_type": "ratebasedrule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteregexmatchset"><a aria-hidden="true" class="anchor-heading" href="#deleteregexmatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRegexMatchSet</h3>
+<ul>
+<li>description: Permanently deletes an RegexMatchSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "regexmatchset": {
+        "resource_type": "regexmatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteregexpatternset"><a aria-hidden="true" class="anchor-heading" href="#deleteregexpatternset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRegexPatternSet</h3>
+<ul>
+<li>description: Permanently deletes an RegexPatternSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "regexpatternset": {
+        "resource_type": "regexpatternset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleterule"><a aria-hidden="true" class="anchor-heading" href="#deleterule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRule</h3>
+<ul>
+<li>description: Permanently deletes a Rule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rule": {
+        "resource_type": "rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleterulegroup"><a aria-hidden="true" class="anchor-heading" href="#deleterulegroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRuleGroup</h3>
+<ul>
+<li>description: Permanently deletes a RuleGroup.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rulegroup": {
+        "resource_type": "rulegroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesizeconstraintset"><a aria-hidden="true" class="anchor-heading" href="#deletesizeconstraintset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSizeConstraintSet</h3>
+<ul>
+<li>description: Permanently deletes a SizeConstraintSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "sizeconstraintset": {
+        "resource_type": "sizeconstraintset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesqlinjectionmatchset"><a aria-hidden="true" class="anchor-heading" href="#deletesqlinjectionmatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSqlInjectionMatchSet</h3>
+<ul>
+<li>description: Permanently deletes a SqlInjectionMatchSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "sqlinjectionmatchset": {
+        "resource_type": "sqlinjectionmatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletewebacl"><a aria-hidden="true" class="anchor-heading" href="#deletewebacl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteWebACL</h3>
+<ul>
+<li>description: Permanently deletes a WebACL.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "webacl": {
+        "resource_type": "webacl",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletexssmatchset"><a aria-hidden="true" class="anchor-heading" href="#deletexssmatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteXssMatchSet</h3>
+<ul>
+<li>description: Permanently deletes an XssMatchSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "xssmatchset": {
+        "resource_type": "xssmatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbytematchset"><a aria-hidden="true" class="anchor-heading" href="#getbytematchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetByteMatchSet</h3>
+<ul>
+<li>description: Returns the ByteMatchSet specified by ByteMatchSetId.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bytematchset": {
+        "resource_type": "bytematchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getchangetoken"><a aria-hidden="true" class="anchor-heading" href="#getchangetoken"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetChangeToken</h3>
+<ul>
+<li>description: When you want to create, update, or delete AWS WAF objects, get a change token and include the change token in the create, update, or delete request.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getchangetokenstatus"><a aria-hidden="true" class="anchor-heading" href="#getchangetokenstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetChangeTokenStatus</h3>
+<ul>
+<li>description: Returns the status of a ChangeToken that you got by calling GetChangeToken.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getgeomatchset"><a aria-hidden="true" class="anchor-heading" href="#getgeomatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetGeoMatchSet</h3>
+<ul>
+<li>description: Returns the GeoMatchSet specified by GeoMatchSetId.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "geomatchset": {
+        "resource_type": "geomatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getipset"><a aria-hidden="true" class="anchor-heading" href="#getipset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetIPSet</h3>
+<ul>
+<li>description: Returns the IPSet that is specified by IPSetId.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ipset": {
+        "resource_type": "ipset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getloggingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getloggingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetLoggingConfiguration</h3>
+<ul>
+<li>description: Returns the LoggingConfiguration for the specified web ACL.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "webacl": {
+        "resource_type": "webacl",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getpermissionpolicy"><a aria-hidden="true" class="anchor-heading" href="#getpermissionpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPermissionPolicy</h3>
+<ul>
+<li>description: Returns the IAM policy attached to the RuleGroup.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rulegroup": {
+        "resource_type": "rulegroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getratebasedrule"><a aria-hidden="true" class="anchor-heading" href="#getratebasedrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRateBasedRule</h3>
+<ul>
+<li>description: Returns the RateBasedRule that is specified by the RuleId that you included in the GetRateBasedRule request.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ratebasedrule": {
+        "resource_type": "ratebasedrule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getratebasedrulemanagedkeys"><a aria-hidden="true" class="anchor-heading" href="#getratebasedrulemanagedkeys"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRateBasedRuleManagedKeys</h3>
+<ul>
+<li>description: Returns an array of IP addresses currently being blocked by the RateBasedRule that is specified by the RuleId.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ratebasedrule": {
+        "resource_type": "ratebasedrule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getregexmatchset"><a aria-hidden="true" class="anchor-heading" href="#getregexmatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRegexMatchSet</h3>
+<ul>
+<li>description: Returns the RegexMatchSet specified by RegexMatchSetId.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "regexmatchset": {
+        "resource_type": "regexmatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getregexpatternset"><a aria-hidden="true" class="anchor-heading" href="#getregexpatternset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRegexPatternSet</h3>
+<ul>
+<li>description: Returns the RegexPatternSet specified by RegexPatternSetId.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "regexpatternset": {
+        "resource_type": "regexpatternset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrule"><a aria-hidden="true" class="anchor-heading" href="#getrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRule</h3>
+<ul>
+<li>description: Returns the Rule that is specified by the RuleId that you included in the GetRule request.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rule": {
+        "resource_type": "rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrulegroup"><a aria-hidden="true" class="anchor-heading" href="#getrulegroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRuleGroup</h3>
+<ul>
+<li>description: Returns the RuleGroup that is specified by the RuleGroupId that you included in the GetRuleGroup request.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rulegroup": {
+        "resource_type": "rulegroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsampledrequests"><a aria-hidden="true" class="anchor-heading" href="#getsampledrequests"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSampledRequests</h3>
+<ul>
+<li>description: Gets detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from among the first 5,000 requests that your AWS resource received during a time range that you choose.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rule": {
+        "resource_type": "rule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "webacl": {
+        "resource_type": "webacl",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsizeconstraintset"><a aria-hidden="true" class="anchor-heading" href="#getsizeconstraintset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSizeConstraintSet</h3>
+<ul>
+<li>description: Returns the SizeConstraintSet specified by SizeConstraintSetId.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "sizeconstraintset": {
+        "resource_type": "sizeconstraintset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsqlinjectionmatchset"><a aria-hidden="true" class="anchor-heading" href="#getsqlinjectionmatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSqlInjectionMatchSet</h3>
+<ul>
+<li>description: Returns the SqlInjectionMatchSet that is specified by SqlInjectionMatchSetId.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "sqlinjectionmatchset": {
+        "resource_type": "sqlinjectionmatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getwebacl"><a aria-hidden="true" class="anchor-heading" href="#getwebacl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetWebACL</h3>
+<ul>
+<li>description: Returns the WebACL that is specified by WebACLId.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "webacl": {
+        "resource_type": "webacl",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getxssmatchset"><a aria-hidden="true" class="anchor-heading" href="#getxssmatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetXssMatchSet</h3>
+<ul>
+<li>description: Returns the XssMatchSet that is specified by XssMatchSetId.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "xssmatchset": {
+        "resource_type": "xssmatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listactivatedrulesinrulegroup"><a aria-hidden="true" class="anchor-heading" href="#listactivatedrulesinrulegroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListActivatedRulesInRuleGroup</h3>
+<ul>
+<li>description: Returns an array of ActivatedRule objects.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listbytematchsets"><a aria-hidden="true" class="anchor-heading" href="#listbytematchsets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListByteMatchSets</h3>
+<ul>
+<li>description: Returns an array of ByteMatchSetSummary objects.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listgeomatchsets"><a aria-hidden="true" class="anchor-heading" href="#listgeomatchsets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListGeoMatchSets</h3>
+<ul>
+<li>description: Returns an array of GeoMatchSetSummary objects.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listipsets"><a aria-hidden="true" class="anchor-heading" href="#listipsets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListIPSets</h3>
+<ul>
+<li>description: Returns an array of IPSetSummary objects in the response.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listloggingconfigurations"><a aria-hidden="true" class="anchor-heading" href="#listloggingconfigurations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListLoggingConfigurations</h3>
+<ul>
+<li>description: Returns an array of LoggingConfiguration objects.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listratebasedrules"><a aria-hidden="true" class="anchor-heading" href="#listratebasedrules"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRateBasedRules</h3>
+<ul>
+<li>description: Returns an array of RuleSummary objects.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listregexmatchsets"><a aria-hidden="true" class="anchor-heading" href="#listregexmatchsets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRegexMatchSets</h3>
+<ul>
+<li>description: Returns an array of RegexMatchSetSummary objects.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listregexpatternsets"><a aria-hidden="true" class="anchor-heading" href="#listregexpatternsets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRegexPatternSets</h3>
+<ul>
+<li>description: Returns an array of RegexPatternSetSummary objects.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listrulegroups"><a aria-hidden="true" class="anchor-heading" href="#listrulegroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRuleGroups</h3>
+<ul>
+<li>description: Returns an array of RuleGroup objects.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listrules"><a aria-hidden="true" class="anchor-heading" href="#listrules"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRules</h3>
+<ul>
+<li>description: Returns an array of RuleSummary objects.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsizeconstraintsets"><a aria-hidden="true" class="anchor-heading" href="#listsizeconstraintsets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSizeConstraintSets</h3>
+<ul>
+<li>description: Returns an array of SizeConstraintSetSummary objects.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsqlinjectionmatchsets"><a aria-hidden="true" class="anchor-heading" href="#listsqlinjectionmatchsets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSqlInjectionMatchSets</h3>
+<ul>
+<li>description: Returns an array of SqlInjectionMatchSet objects.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsubscribedrulegroups"><a aria-hidden="true" class="anchor-heading" href="#listsubscribedrulegroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSubscribedRuleGroups</h3>
+<ul>
+<li>description: Returns an array of RuleGroup objects that you are subscribed to.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Lists the Tags for a given resource.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ratebasedrule": {
+        "resource_type": "ratebasedrule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "rule": {
+        "resource_type": "rule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "rulegroup": {
+        "resource_type": "rulegroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "webacl": {
+        "resource_type": "webacl",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listwebacls"><a aria-hidden="true" class="anchor-heading" href="#listwebacls"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListWebACLs</h3>
+<ul>
+<li>description: Returns an array of WebACLSummary objects in the response.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listxssmatchsets"><a aria-hidden="true" class="anchor-heading" href="#listxssmatchsets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListXssMatchSets</h3>
+<ul>
+<li>description: Returns an array of XssMatchSet objects.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putloggingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putloggingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutLoggingConfiguration</h3>
+<ul>
+<li>description: Associates a LoggingConfiguration with a specified web ACL.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "webacl": {
+        "resource_type": "webacl",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:CreateServiceLinkedRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="putpermissionpolicy"><a aria-hidden="true" class="anchor-heading" href="#putpermissionpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutPermissionPolicy</h3>
+<ul>
+<li>description: Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup across accounts.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rulegroup": {
+        "resource_type": "rulegroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Adds a Tag to a given resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ratebasedrule": {
+        "resource_type": "ratebasedrule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "rule": {
+        "resource_type": "rule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "rulegroup": {
+        "resource_type": "rulegroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "webacl": {
+        "resource_type": "webacl",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Removes a Tag from a given resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ratebasedrule": {
+        "resource_type": "ratebasedrule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "rule": {
+        "resource_type": "rule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "rulegroup": {
+        "resource_type": "rulegroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "webacl": {
+        "resource_type": "webacl",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatebytematchset"><a aria-hidden="true" class="anchor-heading" href="#updatebytematchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateByteMatchSet</h3>
+<ul>
+<li>description: Inserts or deletes ByteMatchTuple objects (filters) in a ByteMatchSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bytematchset": {
+        "resource_type": "bytematchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updategeomatchset"><a aria-hidden="true" class="anchor-heading" href="#updategeomatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateGeoMatchSet</h3>
+<ul>
+<li>description: Inserts or deletes GeoMatchConstraint objects in a GeoMatchSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "geomatchset": {
+        "resource_type": "geomatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateipset"><a aria-hidden="true" class="anchor-heading" href="#updateipset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateIPSet</h3>
+<ul>
+<li>description: Inserts or deletes IPSetDescriptor objects in an IPSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ipset": {
+        "resource_type": "ipset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateratebasedrule"><a aria-hidden="true" class="anchor-heading" href="#updateratebasedrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRateBasedRule</h3>
+<ul>
+<li>description: Inserts or deletes Predicate objects in a rule and updates the RateLimit in the rule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ratebasedrule": {
+        "resource_type": "ratebasedrule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateregexmatchset"><a aria-hidden="true" class="anchor-heading" href="#updateregexmatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRegexMatchSet</h3>
+<ul>
+<li>description: Inserts or deletes RegexMatchTuple objects (filters) in a RegexMatchSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "regexmatchset": {
+        "resource_type": "regexmatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateregexpatternset"><a aria-hidden="true" class="anchor-heading" href="#updateregexpatternset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRegexPatternSet</h3>
+<ul>
+<li>description: Inserts or deletes RegexPatternStrings in a RegexPatternSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "regexpatternset": {
+        "resource_type": "regexpatternset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updaterule"><a aria-hidden="true" class="anchor-heading" href="#updaterule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRule</h3>
+<ul>
+<li>description: Inserts or deletes Predicate objects in a Rule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rule": {
+        "resource_type": "rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updaterulegroup"><a aria-hidden="true" class="anchor-heading" href="#updaterulegroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRuleGroup</h3>
+<ul>
+<li>description: Inserts or deletes ActivatedRule objects in a RuleGroup.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rulegroup": {
+        "resource_type": "rulegroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatesizeconstraintset"><a aria-hidden="true" class="anchor-heading" href="#updatesizeconstraintset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateSizeConstraintSet</h3>
+<ul>
+<li>description: Inserts or deletes SizeConstraint objects (filters) in a SizeConstraintSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "sizeconstraintset": {
+        "resource_type": "sizeconstraintset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatesqlinjectionmatchset"><a aria-hidden="true" class="anchor-heading" href="#updatesqlinjectionmatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateSqlInjectionMatchSet</h3>
+<ul>
+<li>description: Inserts or deletes SqlInjectionMatchTuple objects (filters) in a SqlInjectionMatchSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "sqlinjectionmatchset": {
+        "resource_type": "sqlinjectionmatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatewebacl"><a aria-hidden="true" class="anchor-heading" href="#updatewebacl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateWebACL</h3>
+<ul>
+<li>description: Inserts or deletes ActivatedRule objects in a WebACL.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "webacl": {
+        "resource_type": "webacl",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatexssmatchset"><a aria-hidden="true" class="anchor-heading" href="#updatexssmatchset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateXssMatchSet</h3>
+<ul>
+<li>description: Inserts or deletes XssMatchTuple objects (filters) in an XssMatchSet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "xssmatchset": {
+        "resource_type": "xssmatchset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-WAF"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

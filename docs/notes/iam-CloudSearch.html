@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>CloudSearch - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-CloudSearch.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-CloudSearch.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-CloudSearch.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="CloudSearch - undefined" />
+  <meta name="twitter:title" content="CloudSearch - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">CloudSearch</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="CloudSearch">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="cloudsearch"><a aria-hidden="true" class="anchor-heading" href="#cloudsearch"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CloudSearch</h1>
+<ul>
+<li>prefix: cloudsearch</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="addtags"><a aria-hidden="true" class="anchor-heading" href="#addtags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddTags</h3>
+<ul>
+<li>description: Attaches resource tags to an Amazon CloudSearch domain.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="buildsuggesters"><a aria-hidden="true" class="anchor-heading" href="#buildsuggesters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BuildSuggesters</h3>
+<ul>
+<li>description: Indexes the search suggestions.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdomain"><a aria-hidden="true" class="anchor-heading" href="#createdomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDomain</h3>
+<ul>
+<li>description: Creates a new search domain.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="defineanalysisscheme"><a aria-hidden="true" class="anchor-heading" href="#defineanalysisscheme"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DefineAnalysisScheme</h3>
+<ul>
+<li>description: Configures an analysis scheme that can be applied to a text or text-array field to define language-specific text processing options.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="defineexpression"><a aria-hidden="true" class="anchor-heading" href="#defineexpression"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DefineExpression</h3>
+<ul>
+<li>description: Configures an Expression for the search domain.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="defineindexfield"><a aria-hidden="true" class="anchor-heading" href="#defineindexfield"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DefineIndexField</h3>
+<ul>
+<li>description: Configures an IndexField for the search domain.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="definesuggester"><a aria-hidden="true" class="anchor-heading" href="#definesuggester"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DefineSuggester</h3>
+<ul>
+<li>description: Configures a suggester for a domain.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteanalysisscheme"><a aria-hidden="true" class="anchor-heading" href="#deleteanalysisscheme"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAnalysisScheme</h3>
+<ul>
+<li>description: Deletes an analysis scheme.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedomain"><a aria-hidden="true" class="anchor-heading" href="#deletedomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDomain</h3>
+<ul>
+<li>description: Permanently deletes a search domain and all of its data.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteexpression"><a aria-hidden="true" class="anchor-heading" href="#deleteexpression"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteExpression</h3>
+<ul>
+<li>description: Removes an Expression from the search domain.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteindexfield"><a aria-hidden="true" class="anchor-heading" href="#deleteindexfield"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteIndexField</h3>
+<ul>
+<li>description: Removes an IndexField from the search domain.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesuggester"><a aria-hidden="true" class="anchor-heading" href="#deletesuggester"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSuggester</h3>
+<ul>
+<li>description: Deletes a suggester.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeanalysisschemes"><a aria-hidden="true" class="anchor-heading" href="#describeanalysisschemes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAnalysisSchemes</h3>
+<ul>
+<li>description: Gets the analysis schemes configured for a domain.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeavailabilityoptions"><a aria-hidden="true" class="anchor-heading" href="#describeavailabilityoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAvailabilityOptions</h3>
+<ul>
+<li>description: Gets the availability options configured for a domain.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedomainendpointoptions"><a aria-hidden="true" class="anchor-heading" href="#describedomainendpointoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDomainEndpointOptions</h3>
+<ul>
+<li>description: Gets the domain endpoint options configured for a domain.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedomains"><a aria-hidden="true" class="anchor-heading" href="#describedomains"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDomains</h3>
+<ul>
+<li>description: Gets information about the search domains owned by this account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeexpressions"><a aria-hidden="true" class="anchor-heading" href="#describeexpressions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeExpressions</h3>
+<ul>
+<li>description: Gets the expressions configured for the search domain.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeindexfields"><a aria-hidden="true" class="anchor-heading" href="#describeindexfields"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeIndexFields</h3>
+<ul>
+<li>description: Gets information about the index fields configured for the search domain.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describescalingparameters"><a aria-hidden="true" class="anchor-heading" href="#describescalingparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeScalingParameters</h3>
+<ul>
+<li>description: Gets the scaling parameters configured for a domain.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeserviceaccesspolicies"><a aria-hidden="true" class="anchor-heading" href="#describeserviceaccesspolicies"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeServiceAccessPolicies</h3>
+<ul>
+<li>description: Gets information about the access policies that control access to the domain's document and search endpoints.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describesuggesters"><a aria-hidden="true" class="anchor-heading" href="#describesuggesters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeSuggesters</h3>
+<ul>
+<li>description: Gets the suggesters configured for a domain.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="indexdocuments"><a aria-hidden="true" class="anchor-heading" href="#indexdocuments"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>IndexDocuments</h3>
+<ul>
+<li>description: Tells the search domain to start indexing its documents using the latest indexing options.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdomainnames"><a aria-hidden="true" class="anchor-heading" href="#listdomainnames"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDomainNames</h3>
+<ul>
+<li>description: Lists all search domains owned by an account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtags"><a aria-hidden="true" class="anchor-heading" href="#listtags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTags</h3>
+<ul>
+<li>description: Displays all of the resource tags for an Amazon CloudSearch domain.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="removetags"><a aria-hidden="true" class="anchor-heading" href="#removetags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RemoveTags</h3>
+<ul>
+<li>description: Removes the specified resource tags from an Amazon ES domain.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateavailabilityoptions"><a aria-hidden="true" class="anchor-heading" href="#updateavailabilityoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAvailabilityOptions</h3>
+<ul>
+<li>description: Configures the availability options for a domain.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedomainendpointoptions"><a aria-hidden="true" class="anchor-heading" href="#updatedomainendpointoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDomainEndpointOptions</h3>
+<ul>
+<li>description: Configures the domain endpoint options for a domain.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatescalingparameters"><a aria-hidden="true" class="anchor-heading" href="#updatescalingparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateScalingParameters</h3>
+<ul>
+<li>description: Configures scaling parameters for a domain.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateserviceaccesspolicies"><a aria-hidden="true" class="anchor-heading" href="#updateserviceaccesspolicies"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateServiceAccessPolicies</h3>
+<ul>
+<li>description: Configures the access rules that control access to the domain's document and search endpoints.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="document"><a aria-hidden="true" class="anchor-heading" href="#document"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>document</h3>
+<ul>
+<li>description: Allows access to the document service operations.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="search"><a aria-hidden="true" class="anchor-heading" href="#search"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>search</h3>
+<ul>
+<li>description: Allows access to the search operations.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="suggest"><a aria-hidden="true" class="anchor-heading" href="#suggest"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>suggest</h3>
+<ul>
+<li>description: Allows access to the suggest operations.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-CloudSearch"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

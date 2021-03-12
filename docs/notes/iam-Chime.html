@@ -1,0 +1,2802 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Chime - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Chime.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Chime.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Chime.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Chime - undefined" />
+  <meta name="twitter:title" content="Chime - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Chime</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Chime">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="chime"><a aria-hidden="true" class="anchor-heading" href="#chime"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Chime</h1>
+<ul>
+<li>prefix: chime</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="acceptdelegate"><a aria-hidden="true" class="anchor-heading" href="#acceptdelegate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AcceptDelegate</h3>
+<ul>
+<li>description: Grants permission to accept the delegate invitation to share management of an Amazon Chime account with another AWS Account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="activateusers"><a aria-hidden="true" class="anchor-heading" href="#activateusers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ActivateUsers</h3>
+<ul>
+<li>description: Grants permission to activate users in an Amazon Chime Enterprise account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="adddomain"><a aria-hidden="true" class="anchor-heading" href="#adddomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddDomain</h3>
+<ul>
+<li>description: Grants permission to add a domain to your Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="addorupdategroups"><a aria-hidden="true" class="anchor-heading" href="#addorupdategroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddOrUpdateGroups</h3>
+<ul>
+<li>description: Grants permission to add new or update existing Active Directory or Okta user groups associated with your Amazon Chime Enterprise account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="associatephonenumberwithuser"><a aria-hidden="true" class="anchor-heading" href="#associatephonenumberwithuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociatePhoneNumberWithUser</h3>
+<ul>
+<li>description: Grants permission to associate a phone number with an Amazon Chime user</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="associatephonenumberswithvoiceconnector"><a aria-hidden="true" class="anchor-heading" href="#associatephonenumberswithvoiceconnector"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociatePhoneNumbersWithVoiceConnector</h3>
+<ul>
+<li>description: Grants permission to associate multiple phone numbers with an Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="associatephonenumberswithvoiceconnectorgroup"><a aria-hidden="true" class="anchor-heading" href="#associatephonenumberswithvoiceconnectorgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociatePhoneNumbersWithVoiceConnectorGroup</h3>
+<ul>
+<li>description: Grants permission to associate multiple phone numbers with an Amazon Chime Voice Connector Group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="associatesignindelegategroupswithaccount"><a aria-hidden="true" class="anchor-heading" href="#associatesignindelegategroupswithaccount"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociateSigninDelegateGroupsWithAccount</h3>
+<ul>
+<li>description: Grants permission to associate the specified sign-in delegate groups with the specified Amazon Chime account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="authorizedirectory"><a aria-hidden="true" class="anchor-heading" href="#authorizedirectory"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AuthorizeDirectory</h3>
+<ul>
+<li>description: Grants permission to authorize an Active Directory for your Amazon Chime Enterprise account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchcreateattendee"><a aria-hidden="true" class="anchor-heading" href="#batchcreateattendee"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchCreateAttendee</h3>
+<ul>
+<li>description: Grants permission to create new attendees for an active Amazon Chime SDK meeting</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchcreateroommembership"><a aria-hidden="true" class="anchor-heading" href="#batchcreateroommembership"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchCreateRoomMembership</h3>
+<ul>
+<li>description: Grants permission to batch add room members</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchdeletephonenumber"><a aria-hidden="true" class="anchor-heading" href="#batchdeletephonenumber"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchDeletePhoneNumber</h3>
+<ul>
+<li>description: Grants permission to move up to 50 phone numbers to the deletion queue</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchsuspenduser"><a aria-hidden="true" class="anchor-heading" href="#batchsuspenduser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchSuspendUser</h3>
+<ul>
+<li>description: Grants permission to suspend up to 50 users from a Team or EnterpriseLWA Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchunsuspenduser"><a aria-hidden="true" class="anchor-heading" href="#batchunsuspenduser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchUnsuspendUser</h3>
+<ul>
+<li>description: Grants permission to remove the suspension from up to 50 previously suspended users for the specified Amazon Chime EnterpriseLWA account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchupdatephonenumber"><a aria-hidden="true" class="anchor-heading" href="#batchupdatephonenumber"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchUpdatePhoneNumber</h3>
+<ul>
+<li>description: Grants permission to update phone number details within the UpdatePhoneNumberRequestItem object for up to 50 phone numbers</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchupdateuser"><a aria-hidden="true" class="anchor-heading" href="#batchupdateuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchUpdateUser</h3>
+<ul>
+<li>description: Grants permission to update user details within the UpdateUserRequestItem object for up to 20 users for the specified Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="connectdirectory"><a aria-hidden="true" class="anchor-heading" href="#connectdirectory"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ConnectDirectory</h3>
+<ul>
+<li>description: Grants permission to connect an Active Directory to your Amazon Chime Enterprise account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": [
+            "ds:ConnectDirectory"
+        ]
+    }
+}
+</code></pre>
+<h3 id="createaccount"><a aria-hidden="true" class="anchor-heading" href="#createaccount"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAccount</h3>
+<ul>
+<li>description: Grants permission to create an Amazon Chime account under the administrator's AWS account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createapikey"><a aria-hidden="true" class="anchor-heading" href="#createapikey"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateApiKey</h3>
+<ul>
+<li>description: Grants permission to create a new SCIM access key for your Amazon Chime account and Okta configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createattendee"><a aria-hidden="true" class="anchor-heading" href="#createattendee"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAttendee</h3>
+<ul>
+<li>description: Grants permission to create a new attendee for an active Amazon Chime SDK meeting</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createbot"><a aria-hidden="true" class="anchor-heading" href="#createbot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateBot</h3>
+<ul>
+<li>description: Grants permission to create a bot for an Amazon Chime Enterprise account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createbotmembership"><a aria-hidden="true" class="anchor-heading" href="#createbotmembership"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateBotMembership</h3>
+<ul>
+<li>description: Grants permission to add a bot to a chat room in your Amazon Chime Enterprise account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcdrbucket"><a aria-hidden="true" class="anchor-heading" href="#createcdrbucket"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateCDRBucket</h3>
+<ul>
+<li>description: Grants permission to create a new Call Detail Record S3 bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": [
+            "s3:CreateBucket",
+            "s3:ListAllMyBuckets"
+        ]
+    }
+}
+</code></pre>
+<h3 id="createmeeting"><a aria-hidden="true" class="anchor-heading" href="#createmeeting"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateMeeting</h3>
+<ul>
+<li>description: Grants permission to create a new Amazon Chime SDK meeting in the specified media Region, with no initial attendees</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createmeetingwithattendees"><a aria-hidden="true" class="anchor-heading" href="#createmeetingwithattendees"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateMeetingWithAttendees</h3>
+<ul>
+<li>description: Grants permission to create a new Amazon Chime SDK meeting in the specified media Region, with a set of attendees</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createphonenumberorder"><a aria-hidden="true" class="anchor-heading" href="#createphonenumberorder"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreatePhoneNumberOrder</h3>
+<ul>
+<li>description: Grants permission to create a phone number order with the Carriers</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createproxysession"><a aria-hidden="true" class="anchor-heading" href="#createproxysession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateProxySession</h3>
+<ul>
+<li>description: Grants permission to create a proxy session for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createroom"><a aria-hidden="true" class="anchor-heading" href="#createroom"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRoom</h3>
+<ul>
+<li>description: Grants permission to create a room</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createroommembership"><a aria-hidden="true" class="anchor-heading" href="#createroommembership"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRoomMembership</h3>
+<ul>
+<li>description: Grants permission to add a room member</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createuser"><a aria-hidden="true" class="anchor-heading" href="#createuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateUser</h3>
+<ul>
+<li>description: Grants permission to create a user under the specified Amazon Chime account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createvoiceconnector"><a aria-hidden="true" class="anchor-heading" href="#createvoiceconnector"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateVoiceConnector</h3>
+<ul>
+<li>description: Grants permission to create a Amazon Chime Voice Connector under the administrator's AWS account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createvoiceconnectorgroup"><a aria-hidden="true" class="anchor-heading" href="#createvoiceconnectorgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateVoiceConnectorGroup</h3>
+<ul>
+<li>description: Grants permission to create a Amazon Chime Voice Connector Group under the administrator's AWS account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteaccount"><a aria-hidden="true" class="anchor-heading" href="#deleteaccount"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAccount</h3>
+<ul>
+<li>description: Grants permission to delete the specified Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteaccountopenidconfig"><a aria-hidden="true" class="anchor-heading" href="#deleteaccountopenidconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAccountOpenIdConfig</h3>
+<ul>
+<li>description: Grants permission to delete the OpenIdConfig attributes from your Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteapikey"><a aria-hidden="true" class="anchor-heading" href="#deleteapikey"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteApiKey</h3>
+<ul>
+<li>description: Grants permission to delete the specified SCIM access key associated with your Amazon Chime account and Okta configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteattendee"><a aria-hidden="true" class="anchor-heading" href="#deleteattendee"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAttendee</h3>
+<ul>
+<li>description: Grants permission to delete the specified attendee from an Amazon Chime SDK meeting</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletecdrbucket"><a aria-hidden="true" class="anchor-heading" href="#deletecdrbucket"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteCDRBucket</h3>
+<ul>
+<li>description: Grants permission to delete a Call Detail Record S3 bucket from your Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": [
+            "s3:DeleteBucket"
+        ]
+    }
+}
+</code></pre>
+<h3 id="deletedelegate"><a aria-hidden="true" class="anchor-heading" href="#deletedelegate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDelegate</h3>
+<ul>
+<li>description: Grants permission to delete delegated AWS account management from your Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedomain"><a aria-hidden="true" class="anchor-heading" href="#deletedomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDomain</h3>
+<ul>
+<li>description: Grants permission to delete a domain from your Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteeventsconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deleteeventsconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEventsConfiguration</h3>
+<ul>
+<li>description: Grants permission to delete an events configuration for a bot to receive outgoing events</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletegroups"><a aria-hidden="true" class="anchor-heading" href="#deletegroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteGroups</h3>
+<ul>
+<li>description: Grants permission to delete Active Directory or Okta user groups from your Amazon Chime Enterprise account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletemeeting"><a aria-hidden="true" class="anchor-heading" href="#deletemeeting"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteMeeting</h3>
+<ul>
+<li>description: Grants permission to delete the specified Amazon Chime SDK meeting</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletephonenumber"><a aria-hidden="true" class="anchor-heading" href="#deletephonenumber"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeletePhoneNumber</h3>
+<ul>
+<li>description: Grants permission to move a phone number to the deletion queue</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteproxysession"><a aria-hidden="true" class="anchor-heading" href="#deleteproxysession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteProxySession</h3>
+<ul>
+<li>description: Grants permission to delete a proxy session for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteroom"><a aria-hidden="true" class="anchor-heading" href="#deleteroom"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRoom</h3>
+<ul>
+<li>description: Grants permission to delete a room</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteroommembership"><a aria-hidden="true" class="anchor-heading" href="#deleteroommembership"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRoomMembership</h3>
+<ul>
+<li>description: Grants permission to remove a room member</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevoiceconnector"><a aria-hidden="true" class="anchor-heading" href="#deletevoiceconnector"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVoiceConnector</h3>
+<ul>
+<li>description: Grants permission to delete the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevoiceconnectoremergencycallingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deletevoiceconnectoremergencycallingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVoiceConnectorEmergencyCallingConfiguration</h3>
+<ul>
+<li>description: Grants permission to delete emergency calling configuration for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevoiceconnectorgroup"><a aria-hidden="true" class="anchor-heading" href="#deletevoiceconnectorgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVoiceConnectorGroup</h3>
+<ul>
+<li>description: Grants permission to delete the specified Amazon Chime Voice Connector Group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevoiceconnectororigination"><a aria-hidden="true" class="anchor-heading" href="#deletevoiceconnectororigination"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVoiceConnectorOrigination</h3>
+<ul>
+<li>description: Grants permission to delete the origination settings for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevoiceconnectorproxy"><a aria-hidden="true" class="anchor-heading" href="#deletevoiceconnectorproxy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVoiceConnectorProxy</h3>
+<ul>
+<li>description: Grants permission to delete proxy configuration for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevoiceconnectorstreamingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deletevoiceconnectorstreamingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVoiceConnectorStreamingConfiguration</h3>
+<ul>
+<li>description: Grants permission to delete streaming configuration for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevoiceconnectortermination"><a aria-hidden="true" class="anchor-heading" href="#deletevoiceconnectortermination"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVoiceConnectorTermination</h3>
+<ul>
+<li>description: Grants permission to delete the termination settings for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevoiceconnectorterminationcredentials"><a aria-hidden="true" class="anchor-heading" href="#deletevoiceconnectorterminationcredentials"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVoiceConnectorTerminationCredentials</h3>
+<ul>
+<li>description: Grants permission to delete SIP termination credentials for the specified Amazon Chime Voice Connector</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociatephonenumberfromuser"><a aria-hidden="true" class="anchor-heading" href="#disassociatephonenumberfromuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociatePhoneNumberFromUser</h3>
+<ul>
+<li>description: Grants permission to disassociate the primary provisioned number from the specified Amazon Chime user</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociatephonenumbersfromvoiceconnector"><a aria-hidden="true" class="anchor-heading" href="#disassociatephonenumbersfromvoiceconnector"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociatePhoneNumbersFromVoiceConnector</h3>
+<ul>
+<li>description: Grants permission to disassociate multiple phone numbers from the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociatephonenumbersfromvoiceconnectorgroup"><a aria-hidden="true" class="anchor-heading" href="#disassociatephonenumbersfromvoiceconnectorgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociatePhoneNumbersFromVoiceConnectorGroup</h3>
+<ul>
+<li>description: Grants permission to disassociate multiple phone numbers from the specified Amazon Chime Voice Connector Group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociatesignindelegategroupsfromaccount"><a aria-hidden="true" class="anchor-heading" href="#disassociatesignindelegategroupsfromaccount"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociateSigninDelegateGroupsFromAccount</h3>
+<ul>
+<li>description: Grants permission to disassociate the specified sign-in delegate groups from the specified Amazon Chime account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disconnectdirectory"><a aria-hidden="true" class="anchor-heading" href="#disconnectdirectory"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisconnectDirectory</h3>
+<ul>
+<li>description: Grants permission to disconnect the Active Directory from your Amazon Chime Enterprise account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaccount"><a aria-hidden="true" class="anchor-heading" href="#getaccount"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAccount</h3>
+<ul>
+<li>description: Grants permission to get details for the specified Amazon Chime account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaccountresource"><a aria-hidden="true" class="anchor-heading" href="#getaccountresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAccountResource</h3>
+<ul>
+<li>description: Grants permission to get details for the account resource associated with your Amazon Chime account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaccountsettings"><a aria-hidden="true" class="anchor-heading" href="#getaccountsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAccountSettings</h3>
+<ul>
+<li>description: Grants permission to get account settings for the specified Amazon Chime account ID</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaccountwithopenidconfig"><a aria-hidden="true" class="anchor-heading" href="#getaccountwithopenidconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAccountWithOpenIdConfig</h3>
+<ul>
+<li>description: Grants permission to get the account details and OpenIdConfig attributes for your Amazon Chime account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getattendee"><a aria-hidden="true" class="anchor-heading" href="#getattendee"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAttendee</h3>
+<ul>
+<li>description: Grants permission to get attendee details for a specified meeting ID and attendee ID</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbot"><a aria-hidden="true" class="anchor-heading" href="#getbot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBot</h3>
+<ul>
+<li>description: Grants permission to retrieve details for the specified bot</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcdrbucket"><a aria-hidden="true" class="anchor-heading" href="#getcdrbucket"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCDRBucket</h3>
+<ul>
+<li>description: Grants permission to get details of a Call Detail Record S3 bucket associated with your Amazon Chime account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": [
+            "s3:GetBucketAcl",
+            "s3:GetBucketLocation",
+            "s3:GetBucketLogging",
+            "s3:GetBucketVersioning",
+            "s3:GetBucketWebsite"
+        ]
+    }
+}
+</code></pre>
+<h3 id="getdomain"><a aria-hidden="true" class="anchor-heading" href="#getdomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDomain</h3>
+<ul>
+<li>description: Grants permission to get domain details for a domain associated with your Amazon Chime account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="geteventsconfiguration"><a aria-hidden="true" class="anchor-heading" href="#geteventsconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetEventsConfiguration</h3>
+<ul>
+<li>description: Grants permission to retrieve details for an events configuration for a bot to receive outgoing events</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getglobalsettings"><a aria-hidden="true" class="anchor-heading" href="#getglobalsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetGlobalSettings</h3>
+<ul>
+<li>description: Grants permission to get global settings related to Amazon Chime for the AWS account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmeeting"><a aria-hidden="true" class="anchor-heading" href="#getmeeting"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMeeting</h3>
+<ul>
+<li>description: Grants permission to get the meeting record for a specified meeting ID</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmeetingdetail"><a aria-hidden="true" class="anchor-heading" href="#getmeetingdetail"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMeetingDetail</h3>
+<ul>
+<li>description: Grants permission to get attendee, connection, and other details for a meeting</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getphonenumber"><a aria-hidden="true" class="anchor-heading" href="#getphonenumber"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPhoneNumber</h3>
+<ul>
+<li>description: Grants permission to get details for the specified phone number</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getphonenumberorder"><a aria-hidden="true" class="anchor-heading" href="#getphonenumberorder"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPhoneNumberOrder</h3>
+<ul>
+<li>description: Grants permission to get details for the specified phone number order</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getphonenumbersettings"><a aria-hidden="true" class="anchor-heading" href="#getphonenumbersettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPhoneNumberSettings</h3>
+<ul>
+<li>description: Grants permission to get phone number settings related to Amazon Chime for the AWS account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getproxysession"><a aria-hidden="true" class="anchor-heading" href="#getproxysession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetProxySession</h3>
+<ul>
+<li>description: Grants permission to get details of the specified proxy session for the specified Amazon Chime Voice Connector</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getretentionsettings"><a aria-hidden="true" class="anchor-heading" href="#getretentionsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRetentionSettings</h3>
+<ul>
+<li>description: Gets the retention settings for the specified Amazon Chime account.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getroom"><a aria-hidden="true" class="anchor-heading" href="#getroom"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRoom</h3>
+<ul>
+<li>description: Grants permission to retrieve a room</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettelephonylimits"><a aria-hidden="true" class="anchor-heading" href="#gettelephonylimits"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTelephonyLimits</h3>
+<ul>
+<li>description: Grants permission to get telephony limits for the AWS account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getuser"><a aria-hidden="true" class="anchor-heading" href="#getuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetUser</h3>
+<ul>
+<li>description: Grants permission to get details for the specified user ID</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getuseractivityreportdata"><a aria-hidden="true" class="anchor-heading" href="#getuseractivityreportdata"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetUserActivityReportData</h3>
+<ul>
+<li>description: Grants permission to get a summary of user activity on the user details page</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getuserbyemail"><a aria-hidden="true" class="anchor-heading" href="#getuserbyemail"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetUserByEmail</h3>
+<ul>
+<li>description: Grants permission to get user details for an Amazon Chime user based on the email address in an Amazon Chime Enterprise or Team account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getusersettings"><a aria-hidden="true" class="anchor-heading" href="#getusersettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetUserSettings</h3>
+<ul>
+<li>description: Grants permission to get user settings related to the specified Amazon Chime user</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getvoiceconnector"><a aria-hidden="true" class="anchor-heading" href="#getvoiceconnector"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetVoiceConnector</h3>
+<ul>
+<li>description: Grants permission to get details for the specified Amazon Chime Voice Connector</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getvoiceconnectoremergencycallingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getvoiceconnectoremergencycallingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetVoiceConnectorEmergencyCallingConfiguration</h3>
+<ul>
+<li>description: Grants permission to get details of the emergency calling configuration for the specified Amazon Chime Voice Connector</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getvoiceconnectorgroup"><a aria-hidden="true" class="anchor-heading" href="#getvoiceconnectorgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetVoiceConnectorGroup</h3>
+<ul>
+<li>description: Grants permission to get details for the specified Amazon Chime Voice Connector Group</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getvoiceconnectorloggingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getvoiceconnectorloggingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetVoiceConnectorLoggingConfiguration</h3>
+<ul>
+<li>description: Grants permission to get details of the logging configuration for the specified Amazon Chime Voice Connector</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getvoiceconnectororigination"><a aria-hidden="true" class="anchor-heading" href="#getvoiceconnectororigination"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetVoiceConnectorOrigination</h3>
+<ul>
+<li>description: Grants permission to get details of the origination settings for the specified Amazon Chime Voice Connector</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getvoiceconnectorproxy"><a aria-hidden="true" class="anchor-heading" href="#getvoiceconnectorproxy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetVoiceConnectorProxy</h3>
+<ul>
+<li>description: Grants permission to get details of the proxy configuration for the specified Amazon Chime Voice Connector</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getvoiceconnectorstreamingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getvoiceconnectorstreamingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetVoiceConnectorStreamingConfiguration</h3>
+<ul>
+<li>description: Grants permission to get details of the streaming configuration for the specified Amazon Chime Voice Connector</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getvoiceconnectortermination"><a aria-hidden="true" class="anchor-heading" href="#getvoiceconnectortermination"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetVoiceConnectorTermination</h3>
+<ul>
+<li>description: Grants permission to get details of the termination settings for the specified Amazon Chime Voice Connector</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getvoiceconnectorterminationhealth"><a aria-hidden="true" class="anchor-heading" href="#getvoiceconnectorterminationhealth"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetVoiceConnectorTerminationHealth</h3>
+<ul>
+<li>description: Grants permission to get details of the termination health for the specified Amazon Chime Voice Connector</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="invitedelegate"><a aria-hidden="true" class="anchor-heading" href="#invitedelegate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>InviteDelegate</h3>
+<ul>
+<li>description: Grants permission to send an invitation to accept a request for AWS account delegation for an Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="inviteusers"><a aria-hidden="true" class="anchor-heading" href="#inviteusers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>InviteUsers</h3>
+<ul>
+<li>description: Grants permission to invite as many as 50 users to the specified Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="inviteusersfromprovider"><a aria-hidden="true" class="anchor-heading" href="#inviteusersfromprovider"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>InviteUsersFromProvider</h3>
+<ul>
+<li>description: Grants permission to invite users from a third party provider to your Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listaccountusagereportdata"><a aria-hidden="true" class="anchor-heading" href="#listaccountusagereportdata"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAccountUsageReportData</h3>
+<ul>
+<li>description: Grants permission to list Amazon Chime account usage reporting data</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listaccounts"><a aria-hidden="true" class="anchor-heading" href="#listaccounts"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAccounts</h3>
+<ul>
+<li>description: Grants permission to list the Amazon Chime accounts under the administrator's AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listapikeys"><a aria-hidden="true" class="anchor-heading" href="#listapikeys"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListApiKeys</h3>
+<ul>
+<li>description: Grants permission to list the SCIM access keys defined for your Amazon Chime account and Okta configuration</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listattendeetags"><a aria-hidden="true" class="anchor-heading" href="#listattendeetags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAttendeeTags</h3>
+<ul>
+<li>description: Grants permission to list the tags applied to an Amazon Chime SDK attendee resource</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listattendees"><a aria-hidden="true" class="anchor-heading" href="#listattendees"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAttendees</h3>
+<ul>
+<li>description: Grants permission to list up to 100 attendees for a specified Amazon Chime SDK meeting</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listbots"><a aria-hidden="true" class="anchor-heading" href="#listbots"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListBots</h3>
+<ul>
+<li>description: Grants permission to list the bots associated with the administrator's Amazon Chime Enterprise account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcdrbucket"><a aria-hidden="true" class="anchor-heading" href="#listcdrbucket"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCDRBucket</h3>
+<ul>
+<li>description: Grants permission to list Call Detail Record S3 buckets</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": [
+            "s3:ListAllMyBuckets",
+            "s3:ListBucket"
+        ]
+    }
+}
+</code></pre>
+<h3 id="listcallingregions"><a aria-hidden="true" class="anchor-heading" href="#listcallingregions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCallingRegions</h3>
+<ul>
+<li>description: Grants permission to list the calling regions available for the administrator's AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdelegates"><a aria-hidden="true" class="anchor-heading" href="#listdelegates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDelegates</h3>
+<ul>
+<li>description: Grants permission to list account delegate information associated with your Amazon Chime account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdirectories"><a aria-hidden="true" class="anchor-heading" href="#listdirectories"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDirectories</h3>
+<ul>
+<li>description: Grants permission to list active Active Directories hosted in the Directory Service of your AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdomains"><a aria-hidden="true" class="anchor-heading" href="#listdomains"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDomains</h3>
+<ul>
+<li>description: Grants permission to list domains associated with your Amazon Chime account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listgroups"><a aria-hidden="true" class="anchor-heading" href="#listgroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListGroups</h3>
+<ul>
+<li>description: Grants permission to list Active Directory or Okta user groups associated with your Amazon Chime Enterprise account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listmeetingevents"><a aria-hidden="true" class="anchor-heading" href="#listmeetingevents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListMeetingEvents</h3>
+<ul>
+<li>description: Grants permission to list all events that occurred for a specified meeting</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listmeetingtags"><a aria-hidden="true" class="anchor-heading" href="#listmeetingtags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListMeetingTags</h3>
+<ul>
+<li>description: Grants permission to list the tags applied to an Amazon Chime SDK meeting resource.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listmeetings"><a aria-hidden="true" class="anchor-heading" href="#listmeetings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListMeetings</h3>
+<ul>
+<li>description: Grants permission to list up to 100 active Amazon Chime SDK meetings</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listmeetingsreportdata"><a aria-hidden="true" class="anchor-heading" href="#listmeetingsreportdata"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListMeetingsReportData</h3>
+<ul>
+<li>description: Grants permission to list meetings ended during the specified date range</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listphonenumberorders"><a aria-hidden="true" class="anchor-heading" href="#listphonenumberorders"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListPhoneNumberOrders</h3>
+<ul>
+<li>description: Grants permission to list the phone number orders under the administrator's AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listphonenumbers"><a aria-hidden="true" class="anchor-heading" href="#listphonenumbers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListPhoneNumbers</h3>
+<ul>
+<li>description: Grants permission to list the phone numbers under the administrator's AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listproxysessions"><a aria-hidden="true" class="anchor-heading" href="#listproxysessions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListProxySessions</h3>
+<ul>
+<li>description: Grants permission to list proxy sessions for the specified Amazon Chime Voice Connector</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listroommemberships"><a aria-hidden="true" class="anchor-heading" href="#listroommemberships"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRoomMemberships</h3>
+<ul>
+<li>description: Grants permission to list all room members</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listrooms"><a aria-hidden="true" class="anchor-heading" href="#listrooms"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRooms</h3>
+<ul>
+<li>description: Grants permission to list rooms</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Grants permission to list the tags applied to an Amazon Chime SDK meeting resource.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listusers"><a aria-hidden="true" class="anchor-heading" href="#listusers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListUsers</h3>
+<ul>
+<li>description: Grants permission to list the users that belong to the specified Amazon Chime account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listvoiceconnectorgroups"><a aria-hidden="true" class="anchor-heading" href="#listvoiceconnectorgroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListVoiceConnectorGroups</h3>
+<ul>
+<li>description: Grants permission to list the Amazon Chime Voice Connector Groups under the administrator's AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listvoiceconnectorterminationcredentials"><a aria-hidden="true" class="anchor-heading" href="#listvoiceconnectorterminationcredentials"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListVoiceConnectorTerminationCredentials</h3>
+<ul>
+<li>description: Grants permission to list the SIP termination credentials for the specified Amazon Chime Voice Connector</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listvoiceconnectors"><a aria-hidden="true" class="anchor-heading" href="#listvoiceconnectors"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListVoiceConnectors</h3>
+<ul>
+<li>description: Grants permission to list the Amazon Chime Voice Connectors under the administrator's AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="logoutuser"><a aria-hidden="true" class="anchor-heading" href="#logoutuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>LogoutUser</h3>
+<ul>
+<li>description: Grants permission to log out the specified user from all of the devices they are currently logged into</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="puteventsconfiguration"><a aria-hidden="true" class="anchor-heading" href="#puteventsconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutEventsConfiguration</h3>
+<ul>
+<li>description: Grants permission to update details for an events configuration for a bot to receive outgoing events</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putretentionsettings"><a aria-hidden="true" class="anchor-heading" href="#putretentionsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutRetentionSettings</h3>
+<ul>
+<li>description: Puts retention settings for the specified Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putvoiceconnectoremergencycallingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putvoiceconnectoremergencycallingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutVoiceConnectorEmergencyCallingConfiguration</h3>
+<ul>
+<li>description: Grants permission to add emergency calling configuration for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putvoiceconnectorloggingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putvoiceconnectorloggingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutVoiceConnectorLoggingConfiguration</h3>
+<ul>
+<li>description: Grants permission to add logging configuration for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": [
+            "logs:CreateLogDelivery",
+            "logs:CreateLogGroup",
+            "logs:DeleteLogDelivery",
+            "logs:DescribeLogGroups",
+            "logs:GetLogDelivery",
+            "logs:ListLogDeliveries"
+        ]
+    }
+}
+</code></pre>
+<h3 id="putvoiceconnectororigination"><a aria-hidden="true" class="anchor-heading" href="#putvoiceconnectororigination"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutVoiceConnectorOrigination</h3>
+<ul>
+<li>description: Grants permission to update the origination settings for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putvoiceconnectorproxy"><a aria-hidden="true" class="anchor-heading" href="#putvoiceconnectorproxy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutVoiceConnectorProxy</h3>
+<ul>
+<li>description: Grants permission to add proxy configuration for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putvoiceconnectorstreamingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putvoiceconnectorstreamingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutVoiceConnectorStreamingConfiguration</h3>
+<ul>
+<li>description: Grants permission to add streaming configuration for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putvoiceconnectortermination"><a aria-hidden="true" class="anchor-heading" href="#putvoiceconnectortermination"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutVoiceConnectorTermination</h3>
+<ul>
+<li>description: Grants permission to update the termination settings for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putvoiceconnectorterminationcredentials"><a aria-hidden="true" class="anchor-heading" href="#putvoiceconnectorterminationcredentials"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutVoiceConnectorTerminationCredentials</h3>
+<ul>
+<li>description: Grants permission to add SIP termination credentials for the specified Amazon Chime Voice Connector</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="redactconversationmessage"><a aria-hidden="true" class="anchor-heading" href="#redactconversationmessage"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RedactConversationMessage</h3>
+<ul>
+<li>description: Redacts the specified Chime conversation Message</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="redactroommessage"><a aria-hidden="true" class="anchor-heading" href="#redactroommessage"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RedactRoomMessage</h3>
+<ul>
+<li>description: Redacts the specified Chime room Message</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="regeneratesecuritytoken"><a aria-hidden="true" class="anchor-heading" href="#regeneratesecuritytoken"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegenerateSecurityToken</h3>
+<ul>
+<li>description: Grants permission to regenerate the security token for the specified bot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="renameaccount"><a aria-hidden="true" class="anchor-heading" href="#renameaccount"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RenameAccount</h3>
+<ul>
+<li>description: Grants permission to modify the account name for your Amazon Chime Enterprise or Team account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="renewdelegate"><a aria-hidden="true" class="anchor-heading" href="#renewdelegate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RenewDelegate</h3>
+<ul>
+<li>description: Grants permission to renew the delegation request associated with an Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resetaccountresource"><a aria-hidden="true" class="anchor-heading" href="#resetaccountresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResetAccountResource</h3>
+<ul>
+<li>description: Grants permission to reset the account resource in your Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resetpersonalpin"><a aria-hidden="true" class="anchor-heading" href="#resetpersonalpin"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResetPersonalPIN</h3>
+<ul>
+<li>description: Grants permission to reset the personal meeting PIN for the specified user on an Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="restorephonenumber"><a aria-hidden="true" class="anchor-heading" href="#restorephonenumber"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RestorePhoneNumber</h3>
+<ul>
+<li>description: Grants permission to restore the specified phone number from the deltion queue back to the phone number inventory</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="retrievedataexports"><a aria-hidden="true" class="anchor-heading" href="#retrievedataexports"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RetrieveDataExports</h3>
+<ul>
+<li>description: Grants permission to download the file containing links to all user attachments returned as part of the "Request attachments" action</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="searchavailablephonenumbers"><a aria-hidden="true" class="anchor-heading" href="#searchavailablephonenumbers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SearchAvailablePhoneNumbers</h3>
+<ul>
+<li>description: Grants permission to search phone numbers that can be ordered from the carrier</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startdataexport"><a aria-hidden="true" class="anchor-heading" href="#startdataexport"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartDataExport</h3>
+<ul>
+<li>description: Grants permission to submit the "Request attachments" request</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="submitsupportrequest"><a aria-hidden="true" class="anchor-heading" href="#submitsupportrequest"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SubmitSupportRequest</h3>
+<ul>
+<li>description: Grants permission to submit a customer service support request</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="suspendusers"><a aria-hidden="true" class="anchor-heading" href="#suspendusers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SuspendUsers</h3>
+<ul>
+<li>description: Grants permission to suspend users from an Amazon Chime Enterprise account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagattendee"><a aria-hidden="true" class="anchor-heading" href="#tagattendee"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagAttendee</h3>
+<ul>
+<li>description: Grants permission to apply the specified tags to the specified Amazon Chime SDK attendee</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagmeeting"><a aria-hidden="true" class="anchor-heading" href="#tagmeeting"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagMeeting</h3>
+<ul>
+<li>description: Grants permission to apply the specified tags to the specified Amazon Chime SDK meeting.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}",
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Grants permission to apply the specified tags to the specified Amazon Chime SDK meeting resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}",
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="unauthorizedirectory"><a aria-hidden="true" class="anchor-heading" href="#unauthorizedirectory"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UnauthorizeDirectory</h3>
+<ul>
+<li>description: Grants permission to unauthorize an Active Directory from your Amazon Chime Enterprise account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagattendee"><a aria-hidden="true" class="anchor-heading" href="#untagattendee"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagAttendee</h3>
+<ul>
+<li>description: Grants permission to untag the specified tags from the specified Amazon Chime SDK attendee.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagmeeting"><a aria-hidden="true" class="anchor-heading" href="#untagmeeting"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagMeeting</h3>
+<ul>
+<li>description: Grants permission to untag the specified tags from the specified Amazon Chime SDK meeting.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Grants permission to untag the specified tags from the specified Amazon Chime SDK meeting resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "meeting": {
+        "resource_type": "meeting",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateaccount"><a aria-hidden="true" class="anchor-heading" href="#updateaccount"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAccount</h3>
+<ul>
+<li>description: Grants permission to update account details for the specified Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateaccountopenidconfig"><a aria-hidden="true" class="anchor-heading" href="#updateaccountopenidconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAccountOpenIdConfig</h3>
+<ul>
+<li>description: Grants permission to update the OpenIdConfig attributes for your Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateaccountresource"><a aria-hidden="true" class="anchor-heading" href="#updateaccountresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAccountResource</h3>
+<ul>
+<li>description: Grants permission to update the account resource in your Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateaccountsettings"><a aria-hidden="true" class="anchor-heading" href="#updateaccountsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAccountSettings</h3>
+<ul>
+<li>description: Grants permission to update the settings for the specified Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatebot"><a aria-hidden="true" class="anchor-heading" href="#updatebot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateBot</h3>
+<ul>
+<li>description: Grants permission to update the status of the specified bot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecdrsettings"><a aria-hidden="true" class="anchor-heading" href="#updatecdrsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateCDRSettings</h3>
+<ul>
+<li>description: Grants permission to update your Call Detail Record S3 bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": [
+            "s3:CreateBucket",
+            "s3:DeleteBucket",
+            "s3:ListAllMyBuckets"
+        ]
+    }
+}
+</code></pre>
+<h3 id="updateglobalsettings"><a aria-hidden="true" class="anchor-heading" href="#updateglobalsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateGlobalSettings</h3>
+<ul>
+<li>description: Grants permission to update the global settings related to Amazon Chime for the AWS account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatephonenumber"><a aria-hidden="true" class="anchor-heading" href="#updatephonenumber"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdatePhoneNumber</h3>
+<ul>
+<li>description: Grants permission to update phone number details for the specified phone number</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatephonenumbersettings"><a aria-hidden="true" class="anchor-heading" href="#updatephonenumbersettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdatePhoneNumberSettings</h3>
+<ul>
+<li>description: Grants permission to update phone number settings related to Amazon Chime for the AWS account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateproxysession"><a aria-hidden="true" class="anchor-heading" href="#updateproxysession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateProxySession</h3>
+<ul>
+<li>description: Grants permission to update a proxy session for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateroom"><a aria-hidden="true" class="anchor-heading" href="#updateroom"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRoom</h3>
+<ul>
+<li>description: Grants permission to update a room</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateroommembership"><a aria-hidden="true" class="anchor-heading" href="#updateroommembership"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRoomMembership</h3>
+<ul>
+<li>description: Grants permission to update room membership role</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatesupportedlicenses"><a aria-hidden="true" class="anchor-heading" href="#updatesupportedlicenses"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateSupportedLicenses</h3>
+<ul>
+<li>description: Grants permission to update the supported license tiers available for users in your Amazon Chime account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateuser"><a aria-hidden="true" class="anchor-heading" href="#updateuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateUser</h3>
+<ul>
+<li>description: Grants permission to update user details for a specified user ID</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateuserlicenses"><a aria-hidden="true" class="anchor-heading" href="#updateuserlicenses"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateUserLicenses</h3>
+<ul>
+<li>description: Grants permission to update the licenses for your Amazon Chime users</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateusersettings"><a aria-hidden="true" class="anchor-heading" href="#updateusersettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateUserSettings</h3>
+<ul>
+<li>description: Grants permission to update user settings related to the specified Amazon Chime user</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatevoiceconnector"><a aria-hidden="true" class="anchor-heading" href="#updatevoiceconnector"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateVoiceConnector</h3>
+<ul>
+<li>description: Grants permission to update Amazon Chime Voice Connector details for the specified Amazon Chime Voice Connector</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatevoiceconnectorgroup"><a aria-hidden="true" class="anchor-heading" href="#updatevoiceconnectorgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateVoiceConnectorGroup</h3>
+<ul>
+<li>description: Grants permission to update Amazon Chime Voice Connector Group details for the specified Amazon Chime Voice Connector Group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="validateaccountresource"><a aria-hidden="true" class="anchor-heading" href="#validateaccountresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ValidateAccountResource</h3>
+<ul>
+<li>description: Grants permission to validate the account resource in your Amazon Chime account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Chime"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

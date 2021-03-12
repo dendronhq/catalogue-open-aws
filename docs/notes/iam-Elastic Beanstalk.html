@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Elastic Beanstalk - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Elastic Beanstalk.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Elastic Beanstalk.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Elastic Beanstalk.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Elastic Beanstalk - undefined" />
+  <meta name="twitter:title" content="Elastic Beanstalk - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Elastic Beanstalk</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Elastic Beanstalk">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="elastic-beanstalk"><a aria-hidden="true" class="anchor-heading" href="#elastic-beanstalk"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Elastic Beanstalk</h1>
+<ul>
+<li>prefix: elasticbeanstalk</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="abortenvironmentupdate"><a aria-hidden="true" class="anchor-heading" href="#abortenvironmentupdate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AbortEnvironmentUpdate</h3>
+<ul>
+<li>description: Grants permission to cancel in-progress environment configuration update or application version deployment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="addtags"><a aria-hidden="true" class="anchor-heading" href="#addtags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddTags</h3>
+<ul>
+<li>description: Grants permission to add tags to an Elastic Beanstalk resource and to update tag values.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "application": {
+        "resource_type": "application",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "applicationversion": {
+        "resource_type": "applicationversion",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "configurationtemplate": {
+        "resource_type": "configurationtemplate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "platform": {
+        "resource_type": "platform",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="applyenvironmentmanagedaction"><a aria-hidden="true" class="anchor-heading" href="#applyenvironmentmanagedaction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ApplyEnvironmentManagedAction</h3>
+<ul>
+<li>description: Grants permission to apply a scheduled managed action immediately.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="associateenvironmentoperationsrole"><a aria-hidden="true" class="anchor-heading" href="#associateenvironmentoperationsrole"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociateEnvironmentOperationsRole</h3>
+<ul>
+<li>description: Grants permission to associate an operations role with an environment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="checkdnsavailability"><a aria-hidden="true" class="anchor-heading" href="#checkdnsavailability"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CheckDNSAvailability</h3>
+<ul>
+<li>description: Grants permission to check CNAME availability.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="composeenvironments"><a aria-hidden="true" class="anchor-heading" href="#composeenvironments"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ComposeEnvironments</h3>
+<ul>
+<li>description: Grants permission to create or update a group of environments, each running a separate component of a single application.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "application": {
+        "resource_type": "application",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "applicationversion": {
+        "resource_type": "applicationversion",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createapplication"><a aria-hidden="true" class="anchor-heading" href="#createapplication"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateApplication</h3>
+<ul>
+<li>description: Grants permission to create a new application.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "application": {
+        "resource_type": "application",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createapplicationversion"><a aria-hidden="true" class="anchor-heading" href="#createapplicationversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateApplicationVersion</h3>
+<ul>
+<li>description: Grants permission to create an application version for an application.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "application": {
+        "resource_type": "application",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "applicationversion": {
+        "resource_type": "applicationversion",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createconfigurationtemplate"><a aria-hidden="true" class="anchor-heading" href="#createconfigurationtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateConfigurationTemplate</h3>
+<ul>
+<li>description: Grants permission to create a configuration template.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "configurationtemplate": {
+        "resource_type": "configurationtemplate",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:FromApplication",
+            "elasticbeanstalk:FromApplicationVersion",
+            "elasticbeanstalk:FromConfigurationTemplate",
+            "elasticbeanstalk:FromEnvironment",
+            "elasticbeanstalk:FromSolutionStack",
+            "elasticbeanstalk:FromPlatform",
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createenvironment"><a aria-hidden="true" class="anchor-heading" href="#createenvironment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateEnvironment</h3>
+<ul>
+<li>description: Grants permission to launch an environment for an application.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:FromApplicationVersion",
+            "elasticbeanstalk:FromConfigurationTemplate",
+            "elasticbeanstalk:FromSolutionStack",
+            "elasticbeanstalk:FromPlatform",
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createplatformversion"><a aria-hidden="true" class="anchor-heading" href="#createplatformversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreatePlatformVersion</h3>
+<ul>
+<li>description: Grants permission to create a new version of a custom platform.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "platform": {
+        "resource_type": "platform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createstoragelocation"><a aria-hidden="true" class="anchor-heading" href="#createstoragelocation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateStorageLocation</h3>
+<ul>
+<li>description: Grants permission to create the Amazon S3 storage location for the account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteapplication"><a aria-hidden="true" class="anchor-heading" href="#deleteapplication"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteApplication</h3>
+<ul>
+<li>description: Grants permission to delete an application along with all associated versions and configurations.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "application": {
+        "resource_type": "application",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteapplicationversion"><a aria-hidden="true" class="anchor-heading" href="#deleteapplicationversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteApplicationVersion</h3>
+<ul>
+<li>description: Grants permission to delete an application version from an application.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "applicationversion": {
+        "resource_type": "applicationversion",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteconfigurationtemplate"><a aria-hidden="true" class="anchor-heading" href="#deleteconfigurationtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteConfigurationTemplate</h3>
+<ul>
+<li>description: Grants permission to delete a configuration template.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "configurationtemplate": {
+        "resource_type": "configurationtemplate",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteenvironmentconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deleteenvironmentconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEnvironmentConfiguration</h3>
+<ul>
+<li>description: Grants permission to delete the draft configuration associated with the running environment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteplatformversion"><a aria-hidden="true" class="anchor-heading" href="#deleteplatformversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeletePlatformVersion</h3>
+<ul>
+<li>description: Grants permission to delete a version of a custom platform.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "platform": {
+        "resource_type": "platform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeaccountattributes"><a aria-hidden="true" class="anchor-heading" href="#describeaccountattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAccountAttributes</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of account attributes, including resource quotas.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeapplicationversions"><a aria-hidden="true" class="anchor-heading" href="#describeapplicationversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeApplicationVersions</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of application versions stored in an AWS Elastic Beanstalk storage bucket.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "applicationversion": {
+        "resource_type": "applicationversion",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeapplications"><a aria-hidden="true" class="anchor-heading" href="#describeapplications"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeApplications</h3>
+<ul>
+<li>description: Grants permission to retrieve the descriptions of existing applications.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "application": {
+        "resource_type": "application",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconfigurationoptions"><a aria-hidden="true" class="anchor-heading" href="#describeconfigurationoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConfigurationOptions</h3>
+<ul>
+<li>description: Grants permission to retrieve descriptions of environment configuration options.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "configurationtemplate": {
+        "resource_type": "configurationtemplate",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    },
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    },
+    "solutionstack": {
+        "resource_type": "solutionstack",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconfigurationsettings"><a aria-hidden="true" class="anchor-heading" href="#describeconfigurationsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConfigurationSettings</h3>
+<ul>
+<li>description: Grants permission to retrieve a description of the settings for a configuration set.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "configurationtemplate": {
+        "resource_type": "configurationtemplate",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    },
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeenvironmenthealth"><a aria-hidden="true" class="anchor-heading" href="#describeenvironmenthealth"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEnvironmentHealth</h3>
+<ul>
+<li>description: Grants permission to retrieve information about the overall health of an environment.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeenvironmentmanagedactionhistory"><a aria-hidden="true" class="anchor-heading" href="#describeenvironmentmanagedactionhistory"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEnvironmentManagedActionHistory</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of an environment's completed and failed managed actions.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeenvironmentmanagedactions"><a aria-hidden="true" class="anchor-heading" href="#describeenvironmentmanagedactions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEnvironmentManagedActions</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of an environment's upcoming and in-progress managed actions.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeenvironmentresources"><a aria-hidden="true" class="anchor-heading" href="#describeenvironmentresources"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEnvironmentResources</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of AWS resources for an environment.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeenvironments"><a aria-hidden="true" class="anchor-heading" href="#describeenvironments"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEnvironments</h3>
+<ul>
+<li>description: Grants permission to retrieve descriptions for existing environments.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeevents"><a aria-hidden="true" class="anchor-heading" href="#describeevents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEvents</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of event descriptions matching a set of criteria.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "application": {
+        "resource_type": "application",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "applicationversion": {
+        "resource_type": "applicationversion",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    },
+    "configurationtemplate": {
+        "resource_type": "configurationtemplate",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    },
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeinstanceshealth"><a aria-hidden="true" class="anchor-heading" href="#describeinstanceshealth"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeInstancesHealth</h3>
+<ul>
+<li>description: Grants permission to retrieve more detailed information about the health of environment instances.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeplatformversion"><a aria-hidden="true" class="anchor-heading" href="#describeplatformversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribePlatformVersion</h3>
+<ul>
+<li>description: Grants permission to retrieve a description of a platform version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "platform": {
+        "resource_type": "platform",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociateenvironmentoperationsrole"><a aria-hidden="true" class="anchor-heading" href="#disassociateenvironmentoperationsrole"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociateEnvironmentOperationsRole</h3>
+<ul>
+<li>description: Grants permission to disassociate an operations role with an environment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listavailablesolutionstacks"><a aria-hidden="true" class="anchor-heading" href="#listavailablesolutionstacks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAvailableSolutionStacks</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of the available solution stack names.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "solutionstack": {
+        "resource_type": "solutionstack",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listplatformbranches"><a aria-hidden="true" class="anchor-heading" href="#listplatformbranches"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListPlatformBranches</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of the available platform branches.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listplatformversions"><a aria-hidden="true" class="anchor-heading" href="#listplatformversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListPlatformVersions</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of the available platforms.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "platform": {
+        "resource_type": "platform",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of tags of an Elastic Beanstalk resource.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "application": {
+        "resource_type": "application",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "applicationversion": {
+        "resource_type": "applicationversion",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "configurationtemplate": {
+        "resource_type": "configurationtemplate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "platform": {
+        "resource_type": "platform",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putinstancestatistics"><a aria-hidden="true" class="anchor-heading" href="#putinstancestatistics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutInstanceStatistics</h3>
+<ul>
+<li>description: Grants permission to submit instance statistics for enhanced health.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "application": {
+        "resource_type": "application",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="rebuildenvironment"><a aria-hidden="true" class="anchor-heading" href="#rebuildenvironment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RebuildEnvironment</h3>
+<ul>
+<li>description: Grants permission to delete and recreate all of the AWS resources for an environment and to force a restart.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="removetags"><a aria-hidden="true" class="anchor-heading" href="#removetags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RemoveTags</h3>
+<ul>
+<li>description: Grants permission to remove tags from an Elastic Beanstalk resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "application": {
+        "resource_type": "application",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "applicationversion": {
+        "resource_type": "applicationversion",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "configurationtemplate": {
+        "resource_type": "configurationtemplate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "platform": {
+        "resource_type": "platform",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="requestenvironmentinfo"><a aria-hidden="true" class="anchor-heading" href="#requestenvironmentinfo"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RequestEnvironmentInfo</h3>
+<ul>
+<li>description: Grants permission to initiate a request to compile information of the deployed environment.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="restartappserver"><a aria-hidden="true" class="anchor-heading" href="#restartappserver"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RestartAppServer</h3>
+<ul>
+<li>description: Grants permission to request an environment to restart the application container server running on each Amazon EC2 instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="retrieveenvironmentinfo"><a aria-hidden="true" class="anchor-heading" href="#retrieveenvironmentinfo"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RetrieveEnvironmentInfo</h3>
+<ul>
+<li>description: Grants permission to retrieve the compiled information from a RequestEnvironmentInfo request.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="swapenvironmentcnames"><a aria-hidden="true" class="anchor-heading" href="#swapenvironmentcnames"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SwapEnvironmentCNAMEs</h3>
+<ul>
+<li>description: Grants permission to swap the CNAMEs of two environments.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:FromEnvironment"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="terminateenvironment"><a aria-hidden="true" class="anchor-heading" href="#terminateenvironment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TerminateEnvironment</h3>
+<ul>
+<li>description: Grants permission to terminate an environment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateapplication"><a aria-hidden="true" class="anchor-heading" href="#updateapplication"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateApplication</h3>
+<ul>
+<li>description: Grants permission to update an application with specified properties.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "application": {
+        "resource_type": "application",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateapplicationresourcelifecycle"><a aria-hidden="true" class="anchor-heading" href="#updateapplicationresourcelifecycle"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateApplicationResourceLifecycle</h3>
+<ul>
+<li>description: Grants permission to update the application version lifecycle policy associated with the application.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "application": {
+        "resource_type": "application",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateapplicationversion"><a aria-hidden="true" class="anchor-heading" href="#updateapplicationversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateApplicationVersion</h3>
+<ul>
+<li>description: Grants permission to update an application version with specified properties.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "applicationversion": {
+        "resource_type": "applicationversion",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateconfigurationtemplate"><a aria-hidden="true" class="anchor-heading" href="#updateconfigurationtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateConfigurationTemplate</h3>
+<ul>
+<li>description: Grants permission to update a configuration template with specified properties or configuration option values.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "configurationtemplate": {
+        "resource_type": "configurationtemplate",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:FromApplication",
+            "elasticbeanstalk:FromApplicationVersion",
+            "elasticbeanstalk:FromConfigurationTemplate",
+            "elasticbeanstalk:FromEnvironment",
+            "elasticbeanstalk:FromSolutionStack",
+            "elasticbeanstalk:FromPlatform"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateenvironment"><a aria-hidden="true" class="anchor-heading" href="#updateenvironment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateEnvironment</h3>
+<ul>
+<li>description: Grants permission to update an environment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "environment": {
+        "resource_type": "environment",
+        "required": true,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:FromApplicationVersion",
+            "elasticbeanstalk:FromConfigurationTemplate",
+            "elasticbeanstalk:FromSolutionStack",
+            "elasticbeanstalk:FromPlatform"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="validateconfigurationsettings"><a aria-hidden="true" class="anchor-heading" href="#validateconfigurationsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ValidateConfigurationSettings</h3>
+<ul>
+<li>description: Grants permission to check the validity of a set of configuration settings for a configuration template or an environment.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "configurationtemplate": {
+        "resource_type": "configurationtemplate",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    },
+    "environment": {
+        "resource_type": "environment",
+        "required": false,
+        "condition_keys": [
+            "elasticbeanstalk:InApplication"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Elastic Beanstalk"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

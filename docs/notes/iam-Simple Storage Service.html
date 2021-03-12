@@ -1,0 +1,2901 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Simple Storage Service - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Simple Storage Service.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Simple Storage Service.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Simple Storage Service.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Simple Storage Service - undefined" />
+  <meta name="twitter:title" content="Simple Storage Service - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Simple Storage Service</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Simple Storage Service">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="simple-storage-service"><a aria-hidden="true" class="anchor-heading" href="#simple-storage-service"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Simple Storage Service</h1>
+<ul>
+<li>prefix: s3</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="abortmultipartupload"><a aria-hidden="true" class="anchor-heading" href="#abortmultipartupload"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AbortMultipartUpload</h3>
+<ul>
+<li>description: Grants permission to abort a multipart upload</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointArn",
+            "s3:DataAccessPointAccount",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="bypassgovernanceretention"><a aria-hidden="true" class="anchor-heading" href="#bypassgovernanceretention"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BypassGovernanceRetention</h3>
+<ul>
+<li>description: Grants permission to allow circumvention of governance-mode object retention settings</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:RequestObjectTag/&#x3C;key>",
+            "s3:RequestObjectTagKeys",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-acl",
+            "s3:x-amz-content-sha256",
+            "s3:x-amz-copy-source",
+            "s3:x-amz-grant-full-control",
+            "s3:x-amz-grant-read",
+            "s3:x-amz-grant-read-acp",
+            "s3:x-amz-grant-write",
+            "s3:x-amz-grant-write-acp",
+            "s3:x-amz-metadata-directive",
+            "s3:x-amz-server-side-encryption",
+            "s3:x-amz-server-side-encryption-aws-kms-key-id",
+            "s3:x-amz-storage-class",
+            "s3:x-amz-website-redirect-location",
+            "s3:object-lock-mode",
+            "s3:object-lock-retain-until-date",
+            "s3:object-lock-remaining-retention-days",
+            "s3:object-lock-legal-hold"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createaccesspoint"><a aria-hidden="true" class="anchor-heading" href="#createaccesspoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAccessPoint</h3>
+<ul>
+<li>description: Grants permission to create a new access point</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "accesspoint": {
+        "resource_type": "accesspoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:locationconstraint",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-acl",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createbucket"><a aria-hidden="true" class="anchor-heading" href="#createbucket"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateBucket</h3>
+<ul>
+<li>description: Grants permission to create a new bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:locationconstraint",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-acl",
+            "s3:x-amz-content-sha256",
+            "s3:x-amz-grant-full-control",
+            "s3:x-amz-grant-read",
+            "s3:x-amz-grant-read-acp",
+            "s3:x-amz-grant-write",
+            "s3:x-amz-grant-write-acp"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createjob"><a aria-hidden="true" class="anchor-heading" href="#createjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateJob</h3>
+<ul>
+<li>description: Grants permission to create a new Amazon S3 Batch Operations job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256",
+            "s3:RequestJobPriority",
+            "s3:RequestJobOperation",
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="deleteaccesspoint"><a aria-hidden="true" class="anchor-heading" href="#deleteaccesspoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAccessPoint</h3>
+<ul>
+<li>description: Grants permission to delete the access point named in the URI</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "accesspoint": {
+        "resource_type": "accesspoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointArn",
+            "s3:DataAccessPointAccount",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteaccesspointpolicy"><a aria-hidden="true" class="anchor-heading" href="#deleteaccesspointpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAccessPointPolicy</h3>
+<ul>
+<li>description: Grants permission to delete the policy on a specified access point</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "accesspoint": {
+        "resource_type": "accesspoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointArn",
+            "s3:DataAccessPointAccount",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletebucket"><a aria-hidden="true" class="anchor-heading" href="#deletebucket"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteBucket</h3>
+<ul>
+<li>description: Grants permission to delete the bucket named in the URI</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletebucketownershipcontrols"><a aria-hidden="true" class="anchor-heading" href="#deletebucketownershipcontrols"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteBucketOwnershipControls</h3>
+<ul>
+<li>description: Grants permission to delete ownership controls on a bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletebucketpolicy"><a aria-hidden="true" class="anchor-heading" href="#deletebucketpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteBucketPolicy</h3>
+<ul>
+<li>description: Grants permission to delete the policy on a specified bucket</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletebucketwebsite"><a aria-hidden="true" class="anchor-heading" href="#deletebucketwebsite"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteBucketWebsite</h3>
+<ul>
+<li>description: Grants permission to remove the website configuration for a bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletejobtagging"><a aria-hidden="true" class="anchor-heading" href="#deletejobtagging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteJobTagging</h3>
+<ul>
+<li>description: Grants permission to remove tags from an existing Amazon S3 Batch Operations job</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256",
+            "s3:ExistingJobPriority",
+            "s3:ExistingJobOperation"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteobject"><a aria-hidden="true" class="anchor-heading" href="#deleteobject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteObject</h3>
+<ul>
+<li>description: Grants permission to remove the null version of an object and insert a delete marker, which becomes the current version of the object</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteobjecttagging"><a aria-hidden="true" class="anchor-heading" href="#deleteobjecttagging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteObjectTagging</h3>
+<ul>
+<li>description: Grants permission to use the tagging subresource to remove the entire tag set from the specified object</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:ExistingObjectTag/&#x3C;key>",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteobjectversion"><a aria-hidden="true" class="anchor-heading" href="#deleteobjectversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteObjectVersion</h3>
+<ul>
+<li>description: Grants permission to remove a specific version of an object</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:versionid",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteobjectversiontagging"><a aria-hidden="true" class="anchor-heading" href="#deleteobjectversiontagging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteObjectVersionTagging</h3>
+<ul>
+<li>description: Grants permission to remove the entire tag set for a specific version of the object</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:ExistingObjectTag/&#x3C;key>",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:versionid",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describejob"><a aria-hidden="true" class="anchor-heading" href="#describejob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeJob</h3>
+<ul>
+<li>description: Grants permission to retrieve the configuration parameters and status for a batch operations job</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaccelerateconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getaccelerateconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAccelerateConfiguration</h3>
+<ul>
+<li>description: Grants permission to uses the accelerate subresource to return the Transfer Acceleration state of a bucket, which is either Enabled or Suspended</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaccesspoint"><a aria-hidden="true" class="anchor-heading" href="#getaccesspoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAccessPoint</h3>
+<ul>
+<li>description: Grants permission to return configuration information about the specified access point</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaccesspointpolicy"><a aria-hidden="true" class="anchor-heading" href="#getaccesspointpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAccessPointPolicy</h3>
+<ul>
+<li>description: Grants permission to returns the access point policy associated with the specified access point</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "accesspoint": {
+        "resource_type": "accesspoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaccesspointpolicystatus"><a aria-hidden="true" class="anchor-heading" href="#getaccesspointpolicystatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAccessPointPolicyStatus</h3>
+<ul>
+<li>description: Grants permission to return the policy status for a specific access point policy</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "accesspoint": {
+        "resource_type": "accesspoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaccountpublicaccessblock"><a aria-hidden="true" class="anchor-heading" href="#getaccountpublicaccessblock"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAccountPublicAccessBlock</h3>
+<ul>
+<li>description: Grants permission to retrieve the PublicAccessBlock configuration for an AWS account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getanalyticsconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getanalyticsconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAnalyticsConfiguration</h3>
+<ul>
+<li>description: Grants permission to get an analytics configuration from an Amazon S3 bucket, identified by the analytics configuration ID</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketacl"><a aria-hidden="true" class="anchor-heading" href="#getbucketacl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketAcl</h3>
+<ul>
+<li>description: Grants permission to use the acl subresource to return the access control list (ACL) of an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketcors"><a aria-hidden="true" class="anchor-heading" href="#getbucketcors"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketCORS</h3>
+<ul>
+<li>description: Grants permission to return the CORS configuration information set for an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketlocation"><a aria-hidden="true" class="anchor-heading" href="#getbucketlocation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketLocation</h3>
+<ul>
+<li>description: Grants permission to return the Region that an Amazon S3 bucket resides in</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketlogging"><a aria-hidden="true" class="anchor-heading" href="#getbucketlogging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketLogging</h3>
+<ul>
+<li>description: Grants permission to return the logging status of an Amazon S3 bucket and the permissions users have to view or modify that status</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketnotification"><a aria-hidden="true" class="anchor-heading" href="#getbucketnotification"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketNotification</h3>
+<ul>
+<li>description: Grants permission to get the notification configuration of an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketobjectlockconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getbucketobjectlockconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketObjectLockConfiguration</h3>
+<ul>
+<li>description: Grants permission to get the Object Lock configuration of an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketownershipcontrols"><a aria-hidden="true" class="anchor-heading" href="#getbucketownershipcontrols"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketOwnershipControls</h3>
+<ul>
+<li>description: Grants permission to retrieve ownership controls on a bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketpolicy"><a aria-hidden="true" class="anchor-heading" href="#getbucketpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketPolicy</h3>
+<ul>
+<li>description: Grants permission to return the policy of the specified bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketpolicystatus"><a aria-hidden="true" class="anchor-heading" href="#getbucketpolicystatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketPolicyStatus</h3>
+<ul>
+<li>description: Grants permission to retrieve the policy status for a specific Amazon S3 bucket, which indicates whether the bucket is public</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketpublicaccessblock"><a aria-hidden="true" class="anchor-heading" href="#getbucketpublicaccessblock"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketPublicAccessBlock</h3>
+<ul>
+<li>description: Grants permission to retrieve the PublicAccessBlock configuration for an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketrequestpayment"><a aria-hidden="true" class="anchor-heading" href="#getbucketrequestpayment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketRequestPayment</h3>
+<ul>
+<li>description: Grants permission to return the request payment configuration for an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbuckettagging"><a aria-hidden="true" class="anchor-heading" href="#getbuckettagging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketTagging</h3>
+<ul>
+<li>description: Grants permission to return the tag set associated with an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketversioning"><a aria-hidden="true" class="anchor-heading" href="#getbucketversioning"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketVersioning</h3>
+<ul>
+<li>description: Grants permission to return the versioning state of an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbucketwebsite"><a aria-hidden="true" class="anchor-heading" href="#getbucketwebsite"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBucketWebsite</h3>
+<ul>
+<li>description: Grants permission to return the website configuration for an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getencryptionconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getencryptionconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetEncryptionConfiguration</h3>
+<ul>
+<li>description: Grants permission to return the default encryption configuration an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinventoryconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getinventoryconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInventoryConfiguration</h3>
+<ul>
+<li>description: Grants permission to return an inventory configuration from an Amazon S3 bucket, identified by the inventory configuration ID</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getjobtagging"><a aria-hidden="true" class="anchor-heading" href="#getjobtagging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetJobTagging</h3>
+<ul>
+<li>description: Grants permission to return the tag set of an existing Amazon S3 Batch Operations job</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getlifecycleconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getlifecycleconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetLifecycleConfiguration</h3>
+<ul>
+<li>description: Grants permission to return the lifecycle configuration information set on an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmetricsconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getmetricsconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMetricsConfiguration</h3>
+<ul>
+<li>description: Grants permission to get a metrics configuration from an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getobject"><a aria-hidden="true" class="anchor-heading" href="#getobject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetObject</h3>
+<ul>
+<li>description: Grants permission to retrieve objects from Amazon S3</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:ExistingObjectTag/&#x3C;key>",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getobjectacl"><a aria-hidden="true" class="anchor-heading" href="#getobjectacl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetObjectAcl</h3>
+<ul>
+<li>description: Grants permission to return the access control list (ACL) of an object</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:ExistingObjectTag/&#x3C;key>",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getobjectlegalhold"><a aria-hidden="true" class="anchor-heading" href="#getobjectlegalhold"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetObjectLegalHold</h3>
+<ul>
+<li>description: Grants permission to get an object's current Legal Hold status</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getobjectretention"><a aria-hidden="true" class="anchor-heading" href="#getobjectretention"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetObjectRetention</h3>
+<ul>
+<li>description: Grants permission to retrieve the retention settings for an object</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getobjecttagging"><a aria-hidden="true" class="anchor-heading" href="#getobjecttagging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetObjectTagging</h3>
+<ul>
+<li>description: Grants permission to return the tag set of an object</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:ExistingObjectTag/&#x3C;key>",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getobjecttorrent"><a aria-hidden="true" class="anchor-heading" href="#getobjecttorrent"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetObjectTorrent</h3>
+<ul>
+<li>description: Grants permission to return torrent files from an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getobjectversion"><a aria-hidden="true" class="anchor-heading" href="#getobjectversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetObjectVersion</h3>
+<ul>
+<li>description: Grants permission to retrieve a specific version of an object</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:ExistingObjectTag/&#x3C;key>",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:versionid",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getobjectversionacl"><a aria-hidden="true" class="anchor-heading" href="#getobjectversionacl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetObjectVersionAcl</h3>
+<ul>
+<li>description: Grants permission to return the access control list (ACL) of a specific object version</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:ExistingObjectTag/&#x3C;key>",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:versionid",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getobjectversionforreplication"><a aria-hidden="true" class="anchor-heading" href="#getobjectversionforreplication"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetObjectVersionForReplication</h3>
+<ul>
+<li>description: Grants permission to replicate both unencrypted objects and objects encrypted with SSE-S3 or SSE-KMS</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getobjectversiontagging"><a aria-hidden="true" class="anchor-heading" href="#getobjectversiontagging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetObjectVersionTagging</h3>
+<ul>
+<li>description: Grants permission to return the tag set for a specific version of the object</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:ExistingObjectTag/&#x3C;key>",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:versionid",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getobjectversiontorrent"><a aria-hidden="true" class="anchor-heading" href="#getobjectversiontorrent"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetObjectVersionTorrent</h3>
+<ul>
+<li>description: Grants permission to get Torrent files about a different version using the versionId subresource</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:versionid",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getreplicationconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getreplicationconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetReplicationConfiguration</h3>
+<ul>
+<li>description: Grants permission to get the replication configuration information set on an Amazon S3 bucket</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listaccesspoints"><a aria-hidden="true" class="anchor-heading" href="#listaccesspoints"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAccessPoints</h3>
+<ul>
+<li>description: Grants permission to list access points</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listallmybuckets"><a aria-hidden="true" class="anchor-heading" href="#listallmybuckets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAllMyBuckets</h3>
+<ul>
+<li>description: Grants permission to list all buckets owned by the authenticated sender of the request</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listbucket"><a aria-hidden="true" class="anchor-heading" href="#listbucket"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListBucket</h3>
+<ul>
+<li>description: Grants permission to list some or all of the objects in an Amazon S3 bucket (up to 1000)</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:delimiter",
+            "s3:max-keys",
+            "s3:prefix",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listbucketmultipartuploads"><a aria-hidden="true" class="anchor-heading" href="#listbucketmultipartuploads"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListBucketMultipartUploads</h3>
+<ul>
+<li>description: Grants permission to list in-progress multipart uploads</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listbucketversions"><a aria-hidden="true" class="anchor-heading" href="#listbucketversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListBucketVersions</h3>
+<ul>
+<li>description: Grants permission to list metadata about all the versions of objects in an Amazon S3 bucket</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:delimiter",
+            "s3:max-keys",
+            "s3:prefix",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listjobs"><a aria-hidden="true" class="anchor-heading" href="#listjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListJobs</h3>
+<ul>
+<li>description: Grants permission to list current jobs and jobs that have ended recently</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listmultipartuploadparts"><a aria-hidden="true" class="anchor-heading" href="#listmultipartuploadparts"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListMultipartUploadParts</h3>
+<ul>
+<li>description: Grants permission to list the parts that have been uploaded for a specific multipart upload</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="objectowneroverridetobucketowner"><a aria-hidden="true" class="anchor-heading" href="#objectowneroverridetobucketowner"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ObjectOwnerOverrideToBucketOwner</h3>
+<ul>
+<li>description: Grants permission to change replica ownership</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putaccelerateconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putaccelerateconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutAccelerateConfiguration</h3>
+<ul>
+<li>description: Grants permission to use the accelerate subresource to set the Transfer Acceleration state of an existing S3 bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putaccesspointpolicy"><a aria-hidden="true" class="anchor-heading" href="#putaccesspointpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutAccessPointPolicy</h3>
+<ul>
+<li>description: Grants permission to associate an access policy with a specified access point</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "accesspoint": {
+        "resource_type": "accesspoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putaccountpublicaccessblock"><a aria-hidden="true" class="anchor-heading" href="#putaccountpublicaccessblock"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutAccountPublicAccessBlock</h3>
+<ul>
+<li>description: Grants permission to create or modify the PublicAccessBlock configuration for an AWS account</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putanalyticsconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putanalyticsconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutAnalyticsConfiguration</h3>
+<ul>
+<li>description: Grants permission to set an analytics configuration for the bucket, specified by the analytics configuration ID</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putbucketacl"><a aria-hidden="true" class="anchor-heading" href="#putbucketacl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutBucketAcl</h3>
+<ul>
+<li>description: Grants permission to set the permissions on an existing bucket using access control lists (ACLs)</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-acl",
+            "s3:x-amz-content-sha256",
+            "s3:x-amz-grant-full-control",
+            "s3:x-amz-grant-read",
+            "s3:x-amz-grant-read-acp",
+            "s3:x-amz-grant-write",
+            "s3:x-amz-grant-write-acp"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putbucketcors"><a aria-hidden="true" class="anchor-heading" href="#putbucketcors"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutBucketCORS</h3>
+<ul>
+<li>description: Grants permission to set the CORS configuration for an Amazon S3 bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putbucketlogging"><a aria-hidden="true" class="anchor-heading" href="#putbucketlogging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutBucketLogging</h3>
+<ul>
+<li>description: Grants permission to set the logging parameters for an Amazon S3 bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putbucketnotification"><a aria-hidden="true" class="anchor-heading" href="#putbucketnotification"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutBucketNotification</h3>
+<ul>
+<li>description: Grants permission to receive notifications when certain events happen in an Amazon S3 bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putbucketobjectlockconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putbucketobjectlockconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutBucketObjectLockConfiguration</h3>
+<ul>
+<li>description: Grants permission to put Object Lock configuration on a specific bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putbucketownershipcontrols"><a aria-hidden="true" class="anchor-heading" href="#putbucketownershipcontrols"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutBucketOwnershipControls</h3>
+<ul>
+<li>description: Grants permission to add or replace ownership controls on a bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putbucketpolicy"><a aria-hidden="true" class="anchor-heading" href="#putbucketpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutBucketPolicy</h3>
+<ul>
+<li>description: Grants permission to add or replace a bucket policy on a bucket</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putbucketpublicaccessblock"><a aria-hidden="true" class="anchor-heading" href="#putbucketpublicaccessblock"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutBucketPublicAccessBlock</h3>
+<ul>
+<li>description: Grants permission to create or modify the PublicAccessBlock configuration for a specific Amazon S3 bucket</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putbucketrequestpayment"><a aria-hidden="true" class="anchor-heading" href="#putbucketrequestpayment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutBucketRequestPayment</h3>
+<ul>
+<li>description: Grants permission to set the request payment configuration of a bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putbuckettagging"><a aria-hidden="true" class="anchor-heading" href="#putbuckettagging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutBucketTagging</h3>
+<ul>
+<li>description: Grants permission to add a set of tags to an existing Amazon S3 bucket</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putbucketversioning"><a aria-hidden="true" class="anchor-heading" href="#putbucketversioning"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutBucketVersioning</h3>
+<ul>
+<li>description: Grants permission to set the versioning state of an existing Amazon S3 bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putbucketwebsite"><a aria-hidden="true" class="anchor-heading" href="#putbucketwebsite"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutBucketWebsite</h3>
+<ul>
+<li>description: Grants permission to set the configuration of the website that is specified in the website subresource</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putencryptionconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putencryptionconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutEncryptionConfiguration</h3>
+<ul>
+<li>description: Grants permission to set the encryption configuration for an Amazon S3 bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putinventoryconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putinventoryconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutInventoryConfiguration</h3>
+<ul>
+<li>description: Grants permission to add an inventory configuration to the bucket, identified by the inventory ID</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putjobtagging"><a aria-hidden="true" class="anchor-heading" href="#putjobtagging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutJobTagging</h3>
+<ul>
+<li>description: Grants permission to replace tags on an existing Amazon S3 Batch Operations job</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256",
+            "s3:ExistingJobPriority",
+            "s3:ExistingJobOperation",
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putlifecycleconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putlifecycleconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutLifecycleConfiguration</h3>
+<ul>
+<li>description: Grants permission to create a new lifecycle configuration for the bucket or replace an existing lifecycle configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putmetricsconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putmetricsconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutMetricsConfiguration</h3>
+<ul>
+<li>description: Grants permission to set or update a metrics configuration for the CloudWatch request metrics from an Amazon S3 bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putobject"><a aria-hidden="true" class="anchor-heading" href="#putobject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutObject</h3>
+<ul>
+<li>description: Grants permission to add an object to a bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:RequestObjectTag/&#x3C;key>",
+            "s3:RequestObjectTagKeys",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-acl",
+            "s3:x-amz-content-sha256",
+            "s3:x-amz-copy-source",
+            "s3:x-amz-grant-full-control",
+            "s3:x-amz-grant-read",
+            "s3:x-amz-grant-read-acp",
+            "s3:x-amz-grant-write",
+            "s3:x-amz-grant-write-acp",
+            "s3:x-amz-metadata-directive",
+            "s3:x-amz-server-side-encryption",
+            "s3:x-amz-server-side-encryption-aws-kms-key-id",
+            "s3:x-amz-storage-class",
+            "s3:x-amz-website-redirect-location",
+            "s3:object-lock-mode",
+            "s3:object-lock-retain-until-date",
+            "s3:object-lock-remaining-retention-days",
+            "s3:object-lock-legal-hold"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putobjectacl"><a aria-hidden="true" class="anchor-heading" href="#putobjectacl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutObjectAcl</h3>
+<ul>
+<li>description: Grants permission to set the access control list (ACL) permissions for new or existing objects in an S3 bucket.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:ExistingObjectTag/&#x3C;key>",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-acl",
+            "s3:x-amz-content-sha256",
+            "s3:x-amz-grant-full-control",
+            "s3:x-amz-grant-read",
+            "s3:x-amz-grant-read-acp",
+            "s3:x-amz-grant-write",
+            "s3:x-amz-grant-write-acp",
+            "s3:x-amz-storage-class"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putobjectlegalhold"><a aria-hidden="true" class="anchor-heading" href="#putobjectlegalhold"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutObjectLegalHold</h3>
+<ul>
+<li>description: Grants permission to apply a Legal Hold configuration to the specified object</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256",
+            "s3:object-lock-legal-hold"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putobjectretention"><a aria-hidden="true" class="anchor-heading" href="#putobjectretention"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutObjectRetention</h3>
+<ul>
+<li>description: Grants permission to place an Object Retention configuration on an object</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256",
+            "s3:object-lock-mode",
+            "s3:object-lock-retain-until-date",
+            "s3:object-lock-remaining-retention-days"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putobjecttagging"><a aria-hidden="true" class="anchor-heading" href="#putobjecttagging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutObjectTagging</h3>
+<ul>
+<li>description: Grants permission to set the supplied tag-set to an object that already exists in a bucket</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:ExistingObjectTag/&#x3C;key>",
+            "s3:RequestObjectTag/&#x3C;key>",
+            "s3:RequestObjectTagKeys",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putobjectversionacl"><a aria-hidden="true" class="anchor-heading" href="#putobjectversionacl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutObjectVersionAcl</h3>
+<ul>
+<li>description: Grants permission to use the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:ExistingObjectTag/&#x3C;key>",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:versionid",
+            "s3:x-amz-acl",
+            "s3:x-amz-content-sha256",
+            "s3:x-amz-grant-full-control",
+            "s3:x-amz-grant-read",
+            "s3:x-amz-grant-read-acp",
+            "s3:x-amz-grant-write",
+            "s3:x-amz-grant-write-acp",
+            "s3:x-amz-storage-class"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putobjectversiontagging"><a aria-hidden="true" class="anchor-heading" href="#putobjectversiontagging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutObjectVersionTagging</h3>
+<ul>
+<li>description: Grants permission to set the supplied tag-set for a specific version of an object</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:ExistingObjectTag/&#x3C;key>",
+            "s3:RequestObjectTag/&#x3C;key>",
+            "s3:RequestObjectTagKeys",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:versionid",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putreplicationconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putreplicationconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutReplicationConfiguration</h3>
+<ul>
+<li>description: Grants permission to create a new replication configuration or replace an existing one</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bucket": {
+        "resource_type": "bucket",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="replicatedelete"><a aria-hidden="true" class="anchor-heading" href="#replicatedelete"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ReplicateDelete</h3>
+<ul>
+<li>description: Grants permission to replicate delete markers to the destination bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="replicateobject"><a aria-hidden="true" class="anchor-heading" href="#replicateobject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ReplicateObject</h3>
+<ul>
+<li>description: Grants permission to replicate objects and object tags to the destination bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256",
+            "s3:x-amz-server-side-encryption",
+            "s3:x-amz-server-side-encryption-aws-kms-key-id"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="replicatetags"><a aria-hidden="true" class="anchor-heading" href="#replicatetags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ReplicateTags</h3>
+<ul>
+<li>description: Grants permission to replicate object tags to the destination bucket</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="restoreobject"><a aria-hidden="true" class="anchor-heading" href="#restoreobject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RestoreObject</h3>
+<ul>
+<li>description: Grants permission to restore an archived copy of an object back into Amazon S3</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "object": {
+        "resource_type": "object",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:DataAccessPointAccount",
+            "s3:DataAccessPointArn",
+            "s3:AccessPointNetworkOrigin",
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatejobpriority"><a aria-hidden="true" class="anchor-heading" href="#updatejobpriority"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateJobPriority</h3>
+<ul>
+<li>description: Grants permission to update the priority of an existing job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256",
+            "s3:RequestJobPriority",
+            "s3:ExistingJobPriority",
+            "s3:ExistingJobOperation"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatejobstatus"><a aria-hidden="true" class="anchor-heading" href="#updatejobstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateJobStatus</h3>
+<ul>
+<li>description: Grants permission to update the status for the specified job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "s3:authType",
+            "s3:signatureAge",
+            "s3:signatureversion",
+            "s3:x-amz-content-sha256",
+            "s3:ExistingJobPriority",
+            "s3:ExistingJobOperation",
+            "s3:JobSuspendedCause"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Simple Storage Service"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

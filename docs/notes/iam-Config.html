@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Config - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Config.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Config.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Config.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Config - undefined" />
+  <meta name="twitter:title" content="Config - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Config</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Config">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="config"><a aria-hidden="true" class="anchor-heading" href="#config"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Config</h1>
+<ul>
+<li>prefix: config</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="batchgetaggregateresourceconfig"><a aria-hidden="true" class="anchor-heading" href="#batchgetaggregateresourceconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchGetAggregateResourceConfig</h3>
+<ul>
+<li>description: Returns the current configuration items for resources that are present in your AWS Config aggregator</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchgetresourceconfig"><a aria-hidden="true" class="anchor-heading" href="#batchgetresourceconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchGetResourceConfig</h3>
+<ul>
+<li>description: Returns the current configuration for one or more requested resources</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteaggregationauthorization"><a aria-hidden="true" class="anchor-heading" href="#deleteaggregationauthorization"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAggregationAuthorization</h3>
+<ul>
+<li>description: Deletes the authorization granted to the specified configuration aggregator account in a specified region</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "AggregationAuthorization": {
+        "resource_type": "AggregationAuthorization",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteconfigrule"><a aria-hidden="true" class="anchor-heading" href="#deleteconfigrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteConfigRule</h3>
+<ul>
+<li>description: Deletes the specified AWS Config rule and all of its evaluation results</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigRule": {
+        "resource_type": "ConfigRule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteconfigurationaggregator"><a aria-hidden="true" class="anchor-heading" href="#deleteconfigurationaggregator"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteConfigurationAggregator</h3>
+<ul>
+<li>description: Deletes the specified configuration aggregator and the aggregated data associated with the aggregator</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteconfigurationrecorder"><a aria-hidden="true" class="anchor-heading" href="#deleteconfigurationrecorder"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteConfigurationRecorder</h3>
+<ul>
+<li>description: Deletes the configuration recorder</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteconformancepack"><a aria-hidden="true" class="anchor-heading" href="#deleteconformancepack"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteConformancePack</h3>
+<ul>
+<li>description: Deletes the specified conformance pack and all the AWS Config rules and all evaluation results within that conformance pack.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedeliverychannel"><a aria-hidden="true" class="anchor-heading" href="#deletedeliverychannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDeliveryChannel</h3>
+<ul>
+<li>description: Deletes the delivery channel</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteevaluationresults"><a aria-hidden="true" class="anchor-heading" href="#deleteevaluationresults"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEvaluationResults</h3>
+<ul>
+<li>description: Deletes the evaluation results for the specified Config rule</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigRule": {
+        "resource_type": "ConfigRule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteorganizationconfigrule"><a aria-hidden="true" class="anchor-heading" href="#deleteorganizationconfigrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteOrganizationConfigRule</h3>
+<ul>
+<li>description: Deletes the specified organization config rule and all of its evaluation results from all member accounts in that organization.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteorganizationconformancepack"><a aria-hidden="true" class="anchor-heading" href="#deleteorganizationconformancepack"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteOrganizationConformancePack</h3>
+<ul>
+<li>description: Deletes the specified organization conformance pack and all of its evaluation results from all member accounts in that organization.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletependingaggregationrequest"><a aria-hidden="true" class="anchor-heading" href="#deletependingaggregationrequest"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeletePendingAggregationRequest</h3>
+<ul>
+<li>description: Deletes pending authorization requests for a specified aggregator account in a specified region</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteremediationconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deleteremediationconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRemediationConfiguration</h3>
+<ul>
+<li>description: Deletes the remediation configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RemediationConfiguration": {
+        "resource_type": "RemediationConfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteremediationexceptions"><a aria-hidden="true" class="anchor-heading" href="#deleteremediationexceptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRemediationExceptions</h3>
+<ul>
+<li>description: Deletes one or more remediation exceptions for specific resource keys for a specific AWS Config Rule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteresourceconfig"><a aria-hidden="true" class="anchor-heading" href="#deleteresourceconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteResourceConfig</h3>
+<ul>
+<li>description: Records the configuration state for a custom resource that has been deleted.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteretentionconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deleteretentionconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRetentionConfiguration</h3>
+<ul>
+<li>description: Deletes the retention configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deliverconfigsnapshot"><a aria-hidden="true" class="anchor-heading" href="#deliverconfigsnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeliverConfigSnapshot</h3>
+<ul>
+<li>description: Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeaggregatecompliancebyconfigrules"><a aria-hidden="true" class="anchor-heading" href="#describeaggregatecompliancebyconfigrules"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAggregateComplianceByConfigRules</h3>
+<ul>
+<li>description: Returns a list of compliant and noncompliant rules with the number of resources for compliant and noncompliant rules</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeaggregationauthorizations"><a aria-hidden="true" class="anchor-heading" href="#describeaggregationauthorizations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAggregationAuthorizations</h3>
+<ul>
+<li>description: Returns a list of authorizations granted to various aggregator accounts and regions</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describecompliancebyconfigrule"><a aria-hidden="true" class="anchor-heading" href="#describecompliancebyconfigrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeComplianceByConfigRule</h3>
+<ul>
+<li>description: Indicates whether the specified AWS Config rules are compliant</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigRule": {
+        "resource_type": "ConfigRule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describecompliancebyresource"><a aria-hidden="true" class="anchor-heading" href="#describecompliancebyresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeComplianceByResource</h3>
+<ul>
+<li>description: Indicates whether the specified AWS resources are compliant</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconfigruleevaluationstatus"><a aria-hidden="true" class="anchor-heading" href="#describeconfigruleevaluationstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConfigRuleEvaluationStatus</h3>
+<ul>
+<li>description: Returns status information for each of your AWS managed Config rules</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigRule": {
+        "resource_type": "ConfigRule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconfigrules"><a aria-hidden="true" class="anchor-heading" href="#describeconfigrules"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConfigRules</h3>
+<ul>
+<li>description: Returns details about your AWS Config rules</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigRule": {
+        "resource_type": "ConfigRule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconfigurationaggregatorsourcesstatus"><a aria-hidden="true" class="anchor-heading" href="#describeconfigurationaggregatorsourcesstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConfigurationAggregatorSourcesStatus</h3>
+<ul>
+<li>description: Returns status information for sources within an aggregator</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconfigurationaggregators"><a aria-hidden="true" class="anchor-heading" href="#describeconfigurationaggregators"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConfigurationAggregators</h3>
+<ul>
+<li>description: Returns the details of one or more configuration aggregators</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconfigurationrecorderstatus"><a aria-hidden="true" class="anchor-heading" href="#describeconfigurationrecorderstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConfigurationRecorderStatus</h3>
+<ul>
+<li>description: Returns the current status of the specified configuration recorder</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconfigurationrecorders"><a aria-hidden="true" class="anchor-heading" href="#describeconfigurationrecorders"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConfigurationRecorders</h3>
+<ul>
+<li>description: Returns the name of one or more specified configuration recorders</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconformancepackcompliance"><a aria-hidden="true" class="anchor-heading" href="#describeconformancepackcompliance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConformancePackCompliance</h3>
+<ul>
+<li>description: Returns compliance information for each rule in that conformance pack.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconformancepackstatus"><a aria-hidden="true" class="anchor-heading" href="#describeconformancepackstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConformancePackStatus</h3>
+<ul>
+<li>description: Provides one or more conformance packs deployment status.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconformancepacks"><a aria-hidden="true" class="anchor-heading" href="#describeconformancepacks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConformancePacks</h3>
+<ul>
+<li>description: Returns a list of one or more conformance packs.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedeliverychannelstatus"><a aria-hidden="true" class="anchor-heading" href="#describedeliverychannelstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDeliveryChannelStatus</h3>
+<ul>
+<li>description: Returns the current status of the specified delivery channel</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedeliverychannels"><a aria-hidden="true" class="anchor-heading" href="#describedeliverychannels"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDeliveryChannels</h3>
+<ul>
+<li>description: Returns details about the specified delivery channel</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeorganizationconfigrulestatuses"><a aria-hidden="true" class="anchor-heading" href="#describeorganizationconfigrulestatuses"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeOrganizationConfigRuleStatuses</h3>
+<ul>
+<li>description: Provides organization config rule deployment status for an organization.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeorganizationconfigrules"><a aria-hidden="true" class="anchor-heading" href="#describeorganizationconfigrules"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeOrganizationConfigRules</h3>
+<ul>
+<li>description: Returns a list of organization config rules.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeorganizationconformancepackstatuses"><a aria-hidden="true" class="anchor-heading" href="#describeorganizationconformancepackstatuses"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeOrganizationConformancePackStatuses</h3>
+<ul>
+<li>description: Provides organization conformance pack deployment status for an organization.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeorganizationconformancepacks"><a aria-hidden="true" class="anchor-heading" href="#describeorganizationconformancepacks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeOrganizationConformancePacks</h3>
+<ul>
+<li>description: Returns a list of organization conformance packs.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describependingaggregationrequests"><a aria-hidden="true" class="anchor-heading" href="#describependingaggregationrequests"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribePendingAggregationRequests</h3>
+<ul>
+<li>description: Returns a list of all pending aggregation requests</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeremediationconfigurations"><a aria-hidden="true" class="anchor-heading" href="#describeremediationconfigurations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeRemediationConfigurations</h3>
+<ul>
+<li>description: Returns the details of one or more remediation configurations</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RemediationConfiguration": {
+        "resource_type": "RemediationConfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeremediationexceptions"><a aria-hidden="true" class="anchor-heading" href="#describeremediationexceptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeRemediationExceptions</h3>
+<ul>
+<li>description: Returns the details of one or more remediation exceptions.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeremediationexecutionstatus"><a aria-hidden="true" class="anchor-heading" href="#describeremediationexecutionstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeRemediationExecutionStatus</h3>
+<ul>
+<li>description: Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps and any error messages for steps that have failed</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RemediationConfiguration": {
+        "resource_type": "RemediationConfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeretentionconfigurations"><a aria-hidden="true" class="anchor-heading" href="#describeretentionconfigurations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeRetentionConfigurations</h3>
+<ul>
+<li>description: Returns the details of one or more retention configurations</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaggregatecompliancedetailsbyconfigrule"><a aria-hidden="true" class="anchor-heading" href="#getaggregatecompliancedetailsbyconfigrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAggregateComplianceDetailsByConfigRule</h3>
+<ul>
+<li>description: Returns the evaluation results for the specified AWS Config rule for a specific resource in a rule</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaggregateconfigrulecompliancesummary"><a aria-hidden="true" class="anchor-heading" href="#getaggregateconfigrulecompliancesummary"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAggregateConfigRuleComplianceSummary</h3>
+<ul>
+<li>description: Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaggregatediscoveredresourcecounts"><a aria-hidden="true" class="anchor-heading" href="#getaggregatediscoveredresourcecounts"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAggregateDiscoveredResourceCounts</h3>
+<ul>
+<li>description: Returns the resource counts across accounts and regions that are present in your AWS Config aggregator</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaggregateresourceconfig"><a aria-hidden="true" class="anchor-heading" href="#getaggregateresourceconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAggregateResourceConfig</h3>
+<ul>
+<li>description: Returns configuration item that is aggregated for your specific resource in a specific source account and region</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcompliancedetailsbyconfigrule"><a aria-hidden="true" class="anchor-heading" href="#getcompliancedetailsbyconfigrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetComplianceDetailsByConfigRule</h3>
+<ul>
+<li>description: Returns the evaluation results for the specified AWS Config rule</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigRule": {
+        "resource_type": "ConfigRule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcompliancedetailsbyresource"><a aria-hidden="true" class="anchor-heading" href="#getcompliancedetailsbyresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetComplianceDetailsByResource</h3>
+<ul>
+<li>description: Returns the evaluation results for the specified AWS resource</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcompliancesummarybyconfigrule"><a aria-hidden="true" class="anchor-heading" href="#getcompliancesummarybyconfigrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetComplianceSummaryByConfigRule</h3>
+<ul>
+<li>description: Returns the number of AWS Config rules that are compliant and noncompliant, up to a maximum of 25 for each</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcompliancesummarybyresourcetype"><a aria-hidden="true" class="anchor-heading" href="#getcompliancesummarybyresourcetype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetComplianceSummaryByResourceType</h3>
+<ul>
+<li>description: Returns the number of resources that are compliant and the number that are noncompliant</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getconformancepackcompliancedetails"><a aria-hidden="true" class="anchor-heading" href="#getconformancepackcompliancedetails"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetConformancePackComplianceDetails</h3>
+<ul>
+<li>description: Returns compliance details of a conformance pack for all AWS resources that are monitered by conformance pack.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getconformancepackcompliancesummary"><a aria-hidden="true" class="anchor-heading" href="#getconformancepackcompliancesummary"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetConformancePackComplianceSummary</h3>
+<ul>
+<li>description: Provides compliance summary for one or more conformance packs.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdiscoveredresourcecounts"><a aria-hidden="true" class="anchor-heading" href="#getdiscoveredresourcecounts"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDiscoveredResourceCounts</h3>
+<ul>
+<li>description: Returns the resource types, the number of each resource type, and the total number of resources that AWS Config is recording in this region for your AWS account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getorganizationconfigruledetailedstatus"><a aria-hidden="true" class="anchor-heading" href="#getorganizationconfigruledetailedstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetOrganizationConfigRuleDetailedStatus</h3>
+<ul>
+<li>description: Returns detailed status for each member account within an organization for a given organization config rule.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getorganizationconformancepackdetailedstatus"><a aria-hidden="true" class="anchor-heading" href="#getorganizationconformancepackdetailedstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetOrganizationConformancePackDetailedStatus</h3>
+<ul>
+<li>description: Returns detailed status for each member account within an organization for a given organization conformance pack.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getresourceconfighistory"><a aria-hidden="true" class="anchor-heading" href="#getresourceconfighistory"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetResourceConfigHistory</h3>
+<ul>
+<li>description: Returns a list of configuration items for the specified resource</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listaggregatediscoveredresources"><a aria-hidden="true" class="anchor-heading" href="#listaggregatediscoveredresources"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAggregateDiscoveredResources</h3>
+<ul>
+<li>description: Accepts a resource type and returns a list of resource identifiers that are aggregated for a specific resource type across accounts and regions</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdiscoveredresources"><a aria-hidden="true" class="anchor-heading" href="#listdiscoveredresources"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDiscoveredResources</h3>
+<ul>
+<li>description: Accepts a resource type and returns a list of resource identifiers for the resources of that type</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: List the tags for AWS Config resource</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "AggregationAuthorization": {
+        "resource_type": "AggregationAuthorization",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ConfigRule": {
+        "resource_type": "ConfigRule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putaggregationauthorization"><a aria-hidden="true" class="anchor-heading" href="#putaggregationauthorization"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutAggregationAuthorization</h3>
+<ul>
+<li>description: Authorizes the aggregator account and region to collect data from the source account and region</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "AggregationAuthorization": {
+        "resource_type": "AggregationAuthorization",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putconfigrule"><a aria-hidden="true" class="anchor-heading" href="#putconfigrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutConfigRule</h3>
+<ul>
+<li>description: Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your desired configurations</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigRule": {
+        "resource_type": "ConfigRule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putconfigurationaggregator"><a aria-hidden="true" class="anchor-heading" href="#putconfigurationaggregator"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutConfigurationAggregator</h3>
+<ul>
+<li>description: Creates and updates the configuration aggregator with the selected source accounts and regions</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putconfigurationrecorder"><a aria-hidden="true" class="anchor-heading" href="#putconfigurationrecorder"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutConfigurationRecorder</h3>
+<ul>
+<li>description: Creates a new configuration recorder to record the selected resource configurations</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putconformancepack"><a aria-hidden="true" class="anchor-heading" href="#putconformancepack"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutConformancePack</h3>
+<ul>
+<li>description: Creates or updates a conformance pack.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putdeliverychannel"><a aria-hidden="true" class="anchor-heading" href="#putdeliverychannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutDeliveryChannel</h3>
+<ul>
+<li>description: Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS topic</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putevaluations"><a aria-hidden="true" class="anchor-heading" href="#putevaluations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutEvaluations</h3>
+<ul>
+<li>description: Used by an AWS Lambda function to deliver evaluation results to AWS Config</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putorganizationconfigrule"><a aria-hidden="true" class="anchor-heading" href="#putorganizationconfigrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutOrganizationConfigRule</h3>
+<ul>
+<li>description: Adds or updates organization config rule for your entire organization evaluating whether your AWS resources comply with your desired configurations.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putorganizationconformancepack"><a aria-hidden="true" class="anchor-heading" href="#putorganizationconformancepack"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutOrganizationConformancePack</h3>
+<ul>
+<li>description: Adds or updates organization conformance pack for your entire organization evaluating whether your AWS resources comply with your desired configurations.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putremediationconfigurations"><a aria-hidden="true" class="anchor-heading" href="#putremediationconfigurations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutRemediationConfigurations</h3>
+<ul>
+<li>description: Adds or updates the remediation configuration with a specific AWS Config rule with the selected target or action</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RemediationConfiguration": {
+        "resource_type": "RemediationConfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putremediationexceptions"><a aria-hidden="true" class="anchor-heading" href="#putremediationexceptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutRemediationExceptions</h3>
+<ul>
+<li>description: Adds or updates remediation exceptions for specific resources for a specific AWS Config rule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putresourceconfig"><a aria-hidden="true" class="anchor-heading" href="#putresourceconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutResourceConfig</h3>
+<ul>
+<li>description: Records the configuration state for the resource provided in the request.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putretentionconfiguration"><a aria-hidden="true" class="anchor-heading" href="#putretentionconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutRetentionConfiguration</h3>
+<ul>
+<li>description: Creates and updates the retention configuration with details about retention period (number of days) that AWS Config stores your historical information</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="selectaggregateresourceconfig"><a aria-hidden="true" class="anchor-heading" href="#selectaggregateresourceconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SelectAggregateResourceConfig</h3>
+<ul>
+<li>description: Accepts a structured query language (SQL) SELECT command and an aggregator to query configuration state of AWS resources across multiple accounts and regions, performs the corresponding search, and returns resource configurations matching the properties.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="selectresourceconfig"><a aria-hidden="true" class="anchor-heading" href="#selectresourceconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SelectResourceConfig</h3>
+<ul>
+<li>description: Accepts a structured query language (SQL) SELECT command, performs the corresponding search, and returns resource configurations matching the properties</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startconfigrulesevaluation"><a aria-hidden="true" class="anchor-heading" href="#startconfigrulesevaluation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartConfigRulesEvaluation</h3>
+<ul>
+<li>description: Evaluates your resources against the specified Config rules</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ConfigRule": {
+        "resource_type": "ConfigRule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startconfigurationrecorder"><a aria-hidden="true" class="anchor-heading" href="#startconfigurationrecorder"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartConfigurationRecorder</h3>
+<ul>
+<li>description: Starts recording configurations of the AWS resources you have selected to record in your AWS account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startremediationexecution"><a aria-hidden="true" class="anchor-heading" href="#startremediationexecution"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartRemediationExecution</h3>
+<ul>
+<li>description: Runs an on-demand remediation for the specified AWS Config rules against the last known remediation configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RemediationConfiguration": {
+        "resource_type": "RemediationConfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopconfigurationrecorder"><a aria-hidden="true" class="anchor-heading" href="#stopconfigurationrecorder"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopConfigurationRecorder</h3>
+<ul>
+<li>description: Stops recording configurations of the AWS resources you have selected to record in your AWS account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Associates the specified tags to a resource with the specified resourceArn</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "AggregationAuthorization": {
+        "resource_type": "AggregationAuthorization",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ConfigRule": {
+        "resource_type": "ConfigRule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ConformancePack": {
+        "resource_type": "ConformancePack",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Deletes specified tags from a resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "AggregationAuthorization": {
+        "resource_type": "AggregationAuthorization",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ConfigRule": {
+        "resource_type": "ConfigRule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ConfigurationAggregator": {
+        "resource_type": "ConfigurationAggregator",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ConformancePack": {
+        "resource_type": "ConformancePack",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Config"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Device Farm - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Device Farm.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Device Farm.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Device Farm.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Device Farm - undefined" />
+  <meta name="twitter:title" content="Device Farm - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Device Farm</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Device Farm">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="device-farm"><a aria-hidden="true" class="anchor-heading" href="#device-farm"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Device Farm</h1>
+<ul>
+<li>prefix: devicefarm</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="createdevicepool"><a aria-hidden="true" class="anchor-heading" href="#createdevicepool"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDevicePool</h3>
+<ul>
+<li>description: Grants permission to create a device pool within a project</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createinstanceprofile"><a aria-hidden="true" class="anchor-heading" href="#createinstanceprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateInstanceProfile</h3>
+<ul>
+<li>description: Grants permission to create a device instance profile</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createnetworkprofile"><a aria-hidden="true" class="anchor-heading" href="#createnetworkprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateNetworkProfile</h3>
+<ul>
+<li>description: Grants permission to create a network profile within a project</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createproject"><a aria-hidden="true" class="anchor-heading" href="#createproject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateProject</h3>
+<ul>
+<li>description: Grants permission to create a project for mobile testing</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createremoteaccesssession"><a aria-hidden="true" class="anchor-heading" href="#createremoteaccesssession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRemoteAccessSession</h3>
+<ul>
+<li>description: Grants permission to start a remote access session to a device instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "device": {
+        "resource_type": "device",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "deviceinstance": {
+        "resource_type": "deviceinstance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "upload": {
+        "resource_type": "upload",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtestgridproject"><a aria-hidden="true" class="anchor-heading" href="#createtestgridproject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTestGridProject</h3>
+<ul>
+<li>description: Grants permission to create a project for desktop testing</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtestgridurl"><a aria-hidden="true" class="anchor-heading" href="#createtestgridurl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTestGridUrl</h3>
+<ul>
+<li>description: Grants permission to generate a new pre-signed url used to access our test grid service</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "testgrid-project": {
+        "resource_type": "testgrid-project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createupload"><a aria-hidden="true" class="anchor-heading" href="#createupload"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateUpload</h3>
+<ul>
+<li>description: Grants permission to upload a new file or app within a project</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createvpceconfiguration"><a aria-hidden="true" class="anchor-heading" href="#createvpceconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateVPCEConfiguration</h3>
+<ul>
+<li>description: Grants permission to create an Amazon Virtual Private Cloud (VPC) endpoint configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedevicepool"><a aria-hidden="true" class="anchor-heading" href="#deletedevicepool"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDevicePool</h3>
+<ul>
+<li>description: Grants permission to delete a user-generated device pool</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "devicepool": {
+        "resource_type": "devicepool",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteinstanceprofile"><a aria-hidden="true" class="anchor-heading" href="#deleteinstanceprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteInstanceProfile</h3>
+<ul>
+<li>description: Grants permission to delete a user-generated instance profile</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instanceprofile": {
+        "resource_type": "instanceprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletenetworkprofile"><a aria-hidden="true" class="anchor-heading" href="#deletenetworkprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteNetworkProfile</h3>
+<ul>
+<li>description: Grants permission to delete a user-generated network profile</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "networkprofile": {
+        "resource_type": "networkprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteproject"><a aria-hidden="true" class="anchor-heading" href="#deleteproject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteProject</h3>
+<ul>
+<li>description: Grants permission to delete a mobile testing project</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteremoteaccesssession"><a aria-hidden="true" class="anchor-heading" href="#deleteremoteaccesssession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRemoteAccessSession</h3>
+<ul>
+<li>description: Grants permission to delete a completed remote access session and its results</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "session": {
+        "resource_type": "session",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleterun"><a aria-hidden="true" class="anchor-heading" href="#deleterun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRun</h3>
+<ul>
+<li>description: Grants permission to delete a run</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "run": {
+        "resource_type": "run",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetestgridproject"><a aria-hidden="true" class="anchor-heading" href="#deletetestgridproject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTestGridProject</h3>
+<ul>
+<li>description: Grants permission to delete a desktop testing project</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "testgrid-project": {
+        "resource_type": "testgrid-project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteupload"><a aria-hidden="true" class="anchor-heading" href="#deleteupload"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteUpload</h3>
+<ul>
+<li>description: Grants permission to delete a user-uploaded file</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "upload": {
+        "resource_type": "upload",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevpceconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deletevpceconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVPCEConfiguration</h3>
+<ul>
+<li>description: Grants permission to delete an Amazon Virtual Private Cloud (VPC) endpoint configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "vpceconfiguration": {
+        "resource_type": "vpceconfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaccountsettings"><a aria-hidden="true" class="anchor-heading" href="#getaccountsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAccountSettings</h3>
+<ul>
+<li>description: Grants permission to retrieve the number of unmetered iOS and/or unmetered Android devices purchased by the account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdevice"><a aria-hidden="true" class="anchor-heading" href="#getdevice"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDevice</h3>
+<ul>
+<li>description: Grants permission to retrieve the information of a unique device type</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "device": {
+        "resource_type": "device",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdeviceinstance"><a aria-hidden="true" class="anchor-heading" href="#getdeviceinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDeviceInstance</h3>
+<ul>
+<li>description: Grants permission to retireve the information of a device instance</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deviceinstance": {
+        "resource_type": "deviceinstance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdevicepool"><a aria-hidden="true" class="anchor-heading" href="#getdevicepool"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDevicePool</h3>
+<ul>
+<li>description: Grants permission to retireve the information of a device pool</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "devicepool": {
+        "resource_type": "devicepool",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdevicepoolcompatibility"><a aria-hidden="true" class="anchor-heading" href="#getdevicepoolcompatibility"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDevicePoolCompatibility</h3>
+<ul>
+<li>description: Grants permission to retrieve information about the compatibility of a test and/or app with a device pool</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "devicepool": {
+        "resource_type": "devicepool",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "upload": {
+        "resource_type": "upload",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinstanceprofile"><a aria-hidden="true" class="anchor-heading" href="#getinstanceprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInstanceProfile</h3>
+<ul>
+<li>description: Grants permission to retireve the information of an instance profile</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instanceprofile": {
+        "resource_type": "instanceprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getjob"><a aria-hidden="true" class="anchor-heading" href="#getjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetJob</h3>
+<ul>
+<li>description: Grants permission to retireve the information of a job</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getnetworkprofile"><a aria-hidden="true" class="anchor-heading" href="#getnetworkprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetNetworkProfile</h3>
+<ul>
+<li>description: Grants permission to retireve the information of a network profile</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "networkprofile": {
+        "resource_type": "networkprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getofferingstatus"><a aria-hidden="true" class="anchor-heading" href="#getofferingstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetOfferingStatus</h3>
+<ul>
+<li>description: Grants permission to retrieve the current status and future status of all offerings purchased by an AWS account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getproject"><a aria-hidden="true" class="anchor-heading" href="#getproject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetProject</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a mobile testing project</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getremoteaccesssession"><a aria-hidden="true" class="anchor-heading" href="#getremoteaccesssession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRemoteAccessSession</h3>
+<ul>
+<li>description: Grants permission to retireve the link to a currently running remote access session</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "session": {
+        "resource_type": "session",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrun"><a aria-hidden="true" class="anchor-heading" href="#getrun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRun</h3>
+<ul>
+<li>description: Grants permission to retireve the information of a run</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "run": {
+        "resource_type": "run",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsuite"><a aria-hidden="true" class="anchor-heading" href="#getsuite"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSuite</h3>
+<ul>
+<li>description: Grants permission to retireve the information of a testing suite</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "suite": {
+        "resource_type": "suite",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettest"><a aria-hidden="true" class="anchor-heading" href="#gettest"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTest</h3>
+<ul>
+<li>description: Grants permission to retireve the information of a test case</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "test": {
+        "resource_type": "test",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettestgridproject"><a aria-hidden="true" class="anchor-heading" href="#gettestgridproject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTestGridProject</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a desktop testing project</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "testgrid-project": {
+        "resource_type": "testgrid-project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettestgridsession"><a aria-hidden="true" class="anchor-heading" href="#gettestgridsession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTestGridSession</h3>
+<ul>
+<li>description: Grants permission to retireve the information of a test grid session</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "testgrid-project": {
+        "resource_type": "testgrid-project",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "testgrid-session": {
+        "resource_type": "testgrid-session",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getupload"><a aria-hidden="true" class="anchor-heading" href="#getupload"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetUpload</h3>
+<ul>
+<li>description: Grants permission to retireve the information of an uploaded file</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "upload": {
+        "resource_type": "upload",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getvpceconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getvpceconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetVPCEConfiguration</h3>
+<ul>
+<li>description: Grants permission to retireve the information of an Amazon Virtual Private Cloud (VPC) endpoint configuration</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "vpceconfiguration": {
+        "resource_type": "vpceconfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="installtoremoteaccesssession"><a aria-hidden="true" class="anchor-heading" href="#installtoremoteaccesssession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>InstallToRemoteAccessSession</h3>
+<ul>
+<li>description: Grants permission to install an application to a device in a remote access session</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "session": {
+        "resource_type": "session",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "upload": {
+        "resource_type": "upload",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listartifacts"><a aria-hidden="true" class="anchor-heading" href="#listartifacts"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListArtifacts</h3>
+<ul>
+<li>description: Grants permission to list the artifacts in a project</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "run": {
+        "resource_type": "run",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "suite": {
+        "resource_type": "suite",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "test": {
+        "resource_type": "test",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdeviceinstances"><a aria-hidden="true" class="anchor-heading" href="#listdeviceinstances"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDeviceInstances</h3>
+<ul>
+<li>description: Grants permission to list the information of device instances</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdevicepools"><a aria-hidden="true" class="anchor-heading" href="#listdevicepools"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDevicePools</h3>
+<ul>
+<li>description: Grants permission to list the information of device pools</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdevices"><a aria-hidden="true" class="anchor-heading" href="#listdevices"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDevices</h3>
+<ul>
+<li>description: Grants permission to list the information of unique device types</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listinstanceprofiles"><a aria-hidden="true" class="anchor-heading" href="#listinstanceprofiles"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListInstanceProfiles</h3>
+<ul>
+<li>description: Grants permission to list the information of device instance profiles</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listjobs"><a aria-hidden="true" class="anchor-heading" href="#listjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListJobs</h3>
+<ul>
+<li>description: Grants permission to list the information of jobs within a run</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "run": {
+        "resource_type": "run",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listnetworkprofiles"><a aria-hidden="true" class="anchor-heading" href="#listnetworkprofiles"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListNetworkProfiles</h3>
+<ul>
+<li>description: Grants permission to list the information of network profiles within a project</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listofferingpromotions"><a aria-hidden="true" class="anchor-heading" href="#listofferingpromotions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListOfferingPromotions</h3>
+<ul>
+<li>description: Grants permission to list the offering promotions</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listofferingtransactions"><a aria-hidden="true" class="anchor-heading" href="#listofferingtransactions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListOfferingTransactions</h3>
+<ul>
+<li>description: Grants permission to list all of the historical purchases, renewals, and system renewal transactions for an AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listofferings"><a aria-hidden="true" class="anchor-heading" href="#listofferings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListOfferings</h3>
+<ul>
+<li>description: Grants permission to list the products or offerings that the user can manage through the API</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listprojects"><a aria-hidden="true" class="anchor-heading" href="#listprojects"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListProjects</h3>
+<ul>
+<li>description: Grants permission to list the information of mobile testing projects for an AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listremoteaccesssessions"><a aria-hidden="true" class="anchor-heading" href="#listremoteaccesssessions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRemoteAccessSessions</h3>
+<ul>
+<li>description: Grants permission to list the information of currently running remote access sessions</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listruns"><a aria-hidden="true" class="anchor-heading" href="#listruns"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRuns</h3>
+<ul>
+<li>description: Grants permission to list the information of runs within a project</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsamples"><a aria-hidden="true" class="anchor-heading" href="#listsamples"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSamples</h3>
+<ul>
+<li>description: Grants permission to list the information of samples within a project</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsuites"><a aria-hidden="true" class="anchor-heading" href="#listsuites"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSuites</h3>
+<ul>
+<li>description: Grants permission to list the information of testing suites within a job</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Grants permission to list the tags of a resource</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "device": {
+        "resource_type": "device",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "deviceinstance": {
+        "resource_type": "deviceinstance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "devicepool": {
+        "resource_type": "devicepool",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "instanceprofile": {
+        "resource_type": "instanceprofile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "networkprofile": {
+        "resource_type": "networkprofile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "project": {
+        "resource_type": "project",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "run": {
+        "resource_type": "run",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "session": {
+        "resource_type": "session",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "testgrid-project": {
+        "resource_type": "testgrid-project",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "testgrid-session": {
+        "resource_type": "testgrid-session",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "vpceconfiguration": {
+        "resource_type": "vpceconfiguration",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtestgridprojects"><a aria-hidden="true" class="anchor-heading" href="#listtestgridprojects"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTestGridProjects</h3>
+<ul>
+<li>description: Grants permission to list the information of desktop testing projects for an AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtestgridsessionactions"><a aria-hidden="true" class="anchor-heading" href="#listtestgridsessionactions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTestGridSessionActions</h3>
+<ul>
+<li>description: Grants permission to list the session actions performed during a test grid session</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "testgrid-session": {
+        "resource_type": "testgrid-session",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtestgridsessionartifacts"><a aria-hidden="true" class="anchor-heading" href="#listtestgridsessionartifacts"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTestGridSessionArtifacts</h3>
+<ul>
+<li>description: Grants permission to list the artifacts generated by a test grid session</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "testgrid-session": {
+        "resource_type": "testgrid-session",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtestgridsessions"><a aria-hidden="true" class="anchor-heading" href="#listtestgridsessions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTestGridSessions</h3>
+<ul>
+<li>description: Grants permission to list the sessions within a test grid project</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "testgrid-project": {
+        "resource_type": "testgrid-project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtests"><a aria-hidden="true" class="anchor-heading" href="#listtests"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTests</h3>
+<ul>
+<li>description: Grants permission to list the information of tests within a testing suite</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "suite": {
+        "resource_type": "suite",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listuniqueproblems"><a aria-hidden="true" class="anchor-heading" href="#listuniqueproblems"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListUniqueProblems</h3>
+<ul>
+<li>description: Grants permission to list the information of unique problems within a run</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "run": {
+        "resource_type": "run",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listuploads"><a aria-hidden="true" class="anchor-heading" href="#listuploads"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListUploads</h3>
+<ul>
+<li>description: Grants permission to list the information of uploads within a project</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listvpceconfigurations"><a aria-hidden="true" class="anchor-heading" href="#listvpceconfigurations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListVPCEConfigurations</h3>
+<ul>
+<li>description: Grants permission to list the information of Amazon Virtual Private Cloud (VPC) endpoint configurations</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="purchaseoffering"><a aria-hidden="true" class="anchor-heading" href="#purchaseoffering"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PurchaseOffering</h3>
+<ul>
+<li>description: Grants permission to purchase offerings for an AWS account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="renewoffering"><a aria-hidden="true" class="anchor-heading" href="#renewoffering"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RenewOffering</h3>
+<ul>
+<li>description: Grants permission to set the quantity of devices to renew for an offering</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="schedulerun"><a aria-hidden="true" class="anchor-heading" href="#schedulerun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ScheduleRun</h3>
+<ul>
+<li>description: Grants permission to schedule a run</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "devicepool": {
+        "resource_type": "devicepool",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "upload": {
+        "resource_type": "upload",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopjob"><a aria-hidden="true" class="anchor-heading" href="#stopjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopJob</h3>
+<ul>
+<li>description: Grants permission to terminate a running job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopremoteaccesssession"><a aria-hidden="true" class="anchor-heading" href="#stopremoteaccesssession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopRemoteAccessSession</h3>
+<ul>
+<li>description: Grants permission to terminate a running remote access session</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "session": {
+        "resource_type": "session",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stoprun"><a aria-hidden="true" class="anchor-heading" href="#stoprun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopRun</h3>
+<ul>
+<li>description: Grants permission to terminate a running test run</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "run": {
+        "resource_type": "run",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Grants permission to add tags to a resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "device": {
+        "resource_type": "device",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "deviceinstance": {
+        "resource_type": "deviceinstance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "devicepool": {
+        "resource_type": "devicepool",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "instanceprofile": {
+        "resource_type": "instanceprofile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "networkprofile": {
+        "resource_type": "networkprofile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "project": {
+        "resource_type": "project",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "run": {
+        "resource_type": "run",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "session": {
+        "resource_type": "session",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "testgrid-project": {
+        "resource_type": "testgrid-project",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "testgrid-session": {
+        "resource_type": "testgrid-session",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "vpceconfiguration": {
+        "resource_type": "vpceconfiguration",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Grants permission to remove tags from a resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "device": {
+        "resource_type": "device",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "deviceinstance": {
+        "resource_type": "deviceinstance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "devicepool": {
+        "resource_type": "devicepool",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "instanceprofile": {
+        "resource_type": "instanceprofile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "networkprofile": {
+        "resource_type": "networkprofile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "project": {
+        "resource_type": "project",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "run": {
+        "resource_type": "run",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "session": {
+        "resource_type": "session",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "testgrid-project": {
+        "resource_type": "testgrid-project",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "testgrid-session": {
+        "resource_type": "testgrid-session",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "vpceconfiguration": {
+        "resource_type": "vpceconfiguration",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedeviceinstance"><a aria-hidden="true" class="anchor-heading" href="#updatedeviceinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDeviceInstance</h3>
+<ul>
+<li>description: Grants permission to modify an existing device instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deviceinstance": {
+        "resource_type": "deviceinstance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "instanceprofile": {
+        "resource_type": "instanceprofile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedevicepool"><a aria-hidden="true" class="anchor-heading" href="#updatedevicepool"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDevicePool</h3>
+<ul>
+<li>description: Grants permission to modify an existing device pool</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "devicepool": {
+        "resource_type": "devicepool",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateinstanceprofile"><a aria-hidden="true" class="anchor-heading" href="#updateinstanceprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateInstanceProfile</h3>
+<ul>
+<li>description: Grants permission to modify an existing instance profile</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instanceprofile": {
+        "resource_type": "instanceprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatenetworkprofile"><a aria-hidden="true" class="anchor-heading" href="#updatenetworkprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateNetworkProfile</h3>
+<ul>
+<li>description: Grants permission to modify an existing network profile</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "networkprofile": {
+        "resource_type": "networkprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateproject"><a aria-hidden="true" class="anchor-heading" href="#updateproject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateProject</h3>
+<ul>
+<li>description: Grants permission to modify an existing mobile testing project</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatetestgridproject"><a aria-hidden="true" class="anchor-heading" href="#updatetestgridproject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateTestGridProject</h3>
+<ul>
+<li>description: Grants permission to modify an existing desktop testing project</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "testgrid-project": {
+        "resource_type": "testgrid-project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateupload"><a aria-hidden="true" class="anchor-heading" href="#updateupload"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateUpload</h3>
+<ul>
+<li>description: Grants permission to modify an existing upload</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "upload": {
+        "resource_type": "upload",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatevpceconfiguration"><a aria-hidden="true" class="anchor-heading" href="#updatevpceconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateVPCEConfiguration</h3>
+<ul>
+<li>description: Grants permission to modify an existing Amazon Virtual Private Cloud (VPC) endpoint configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "vpceconfiguration": {
+        "resource_type": "vpceconfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Device Farm"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

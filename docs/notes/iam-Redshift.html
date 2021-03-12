@@ -1,0 +1,2217 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Redshift - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Redshift.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Redshift.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Redshift.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Redshift - undefined" />
+  <meta name="twitter:title" content="Redshift - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Redshift</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Redshift">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="redshift"><a aria-hidden="true" class="anchor-heading" href="#redshift"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Redshift</h1>
+<ul>
+<li>prefix: redshift</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="acceptreservednodeexchange"><a aria-hidden="true" class="anchor-heading" href="#acceptreservednodeexchange"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AcceptReservedNodeExchange</h3>
+<ul>
+<li>description: Grants permission to exchange a DC1 reserved node for a DC2 reserved node with no changes to the configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="authorizeclustersecuritygroupingress"><a aria-hidden="true" class="anchor-heading" href="#authorizeclustersecuritygroupingress"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AuthorizeClusterSecurityGroupIngress</h3>
+<ul>
+<li>description: Grants permission to add an inbound (ingress) rule to an Amazon Redshift security group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securitygroup": {
+        "resource_type": "securitygroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securitygroupingress-ec2securitygroup": {
+        "resource_type": "securitygroupingress-ec2securitygroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="authorizesnapshotaccess"><a aria-hidden="true" class="anchor-heading" href="#authorizesnapshotaccess"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AuthorizeSnapshotAccess</h3>
+<ul>
+<li>description: Grants permission to the specified AWS account to restore a snapshot</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchdeleteclustersnapshots"><a aria-hidden="true" class="anchor-heading" href="#batchdeleteclustersnapshots"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchDeleteClusterSnapshots</h3>
+<ul>
+<li>description: Grants permission to delete snapshots in a batch of size upto 100</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchmodifyclustersnapshots"><a aria-hidden="true" class="anchor-heading" href="#batchmodifyclustersnapshots"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchModifyClusterSnapshots</h3>
+<ul>
+<li>description: Grants permission to modify settings for a list of snapshots</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelquery"><a aria-hidden="true" class="anchor-heading" href="#cancelquery"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelQuery</h3>
+<ul>
+<li>description: Grants permission to cancel a query through the Amazon Redshift console</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelquerysession"><a aria-hidden="true" class="anchor-heading" href="#cancelquerysession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelQuerySession</h3>
+<ul>
+<li>description: Grants permission to see queries in the Amazon Redshift console</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelresize"><a aria-hidden="true" class="anchor-heading" href="#cancelresize"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelResize</h3>
+<ul>
+<li>description: Grants permission to cancel a resize operation</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="copyclustersnapshot"><a aria-hidden="true" class="anchor-heading" href="#copyclustersnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CopyClusterSnapshot</h3>
+<ul>
+<li>description: Grants permission to copy a cluster snapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcluster"><a aria-hidden="true" class="anchor-heading" href="#createcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateCluster</h3>
+<ul>
+<li>description: Grants permission to create a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createclusterparametergroup"><a aria-hidden="true" class="anchor-heading" href="#createclusterparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateClusterParameterGroup</h3>
+<ul>
+<li>description: Grants permission to create an Amazon Redshift parameter group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parametergroup": {
+        "resource_type": "parametergroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createclustersecuritygroup"><a aria-hidden="true" class="anchor-heading" href="#createclustersecuritygroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateClusterSecurityGroup</h3>
+<ul>
+<li>description: Grants permission to create an Amazon Redshift security group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securitygroup": {
+        "resource_type": "securitygroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createclustersnapshot"><a aria-hidden="true" class="anchor-heading" href="#createclustersnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateClusterSnapshot</h3>
+<ul>
+<li>description: Grants permission to create a manual snapshot of the specified cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createclustersubnetgroup"><a aria-hidden="true" class="anchor-heading" href="#createclustersubnetgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateClusterSubnetGroup</h3>
+<ul>
+<li>description: Grants permission to create an Amazon Redshift subnet group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subnetgroup": {
+        "resource_type": "subnetgroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createclusteruser"><a aria-hidden="true" class="anchor-heading" href="#createclusteruser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateClusterUser</h3>
+<ul>
+<li>description: Grants permission to automatically create the specified Amazon Redshift user if it does not exist</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dbuser": {
+        "resource_type": "dbuser",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "redshift:DbUser"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createeventsubscription"><a aria-hidden="true" class="anchor-heading" href="#createeventsubscription"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateEventSubscription</h3>
+<ul>
+<li>description: Grants permission to create an Amazon Redshift event notification subscription</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "eventsubscription": {
+        "resource_type": "eventsubscription",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createhsmclientcertificate"><a aria-hidden="true" class="anchor-heading" href="#createhsmclientcertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateHsmClientCertificate</h3>
+<ul>
+<li>description: Grants permission to create an HSM client certificate that a cluster uses to connect to an HSM</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "hsmclientcertificate": {
+        "resource_type": "hsmclientcertificate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createhsmconfiguration"><a aria-hidden="true" class="anchor-heading" href="#createhsmconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateHsmConfiguration</h3>
+<ul>
+<li>description: Grants permission to create an HSM configuration that contains information required by a cluster to store and use database encryption keys in a hardware security module (HSM)</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "hsmconfiguration": {
+        "resource_type": "hsmconfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsavedquery"><a aria-hidden="true" class="anchor-heading" href="#createsavedquery"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSavedQuery</h3>
+<ul>
+<li>description: Grants permission to create saved SQL queries through the Amazon Redshift console</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createscheduledaction"><a aria-hidden="true" class="anchor-heading" href="#createscheduledaction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateScheduledAction</h3>
+<ul>
+<li>description: Grants permission to create an Amazon Redshift scheduled action</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsnapshotcopygrant"><a aria-hidden="true" class="anchor-heading" href="#createsnapshotcopygrant"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSnapshotCopyGrant</h3>
+<ul>
+<li>description: Grants permission to create a snapshot copy grant and encrypt copied snapshots in a destination AWS Region</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshotcopygrant": {
+        "resource_type": "snapshotcopygrant",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsnapshotschedule"><a aria-hidden="true" class="anchor-heading" href="#createsnapshotschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSnapshotSchedule</h3>
+<ul>
+<li>description: Grants permission to create a snapshot schedule</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshotschedule": {
+        "resource_type": "snapshotschedule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtags"><a aria-hidden="true" class="anchor-heading" href="#createtags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTags</h3>
+<ul>
+<li>description: Grants permission to add one or more tags to a specified resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dbgroup": {
+        "resource_type": "dbgroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dbname": {
+        "resource_type": "dbname",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dbuser": {
+        "resource_type": "dbuser",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "eventsubscription": {
+        "resource_type": "eventsubscription",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "hsmclientcertificate": {
+        "resource_type": "hsmclientcertificate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "hsmconfiguration": {
+        "resource_type": "hsmconfiguration",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "parametergroup": {
+        "resource_type": "parametergroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securitygroup": {
+        "resource_type": "securitygroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securitygroupingress-cidr": {
+        "resource_type": "securitygroupingress-cidr",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securitygroupingress-ec2securitygroup": {
+        "resource_type": "securitygroupingress-ec2securitygroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshotcopygrant": {
+        "resource_type": "snapshotcopygrant",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshotschedule": {
+        "resource_type": "snapshotschedule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subnetgroup": {
+        "resource_type": "subnetgroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletecluster"><a aria-hidden="true" class="anchor-heading" href="#deletecluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteCluster</h3>
+<ul>
+<li>description: Grants permission to delete a previously provisioned cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteclusterparametergroup"><a aria-hidden="true" class="anchor-heading" href="#deleteclusterparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteClusterParameterGroup</h3>
+<ul>
+<li>description: Grants permission to delete an Amazon Redshift parameter group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parametergroup": {
+        "resource_type": "parametergroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteclustersecuritygroup"><a aria-hidden="true" class="anchor-heading" href="#deleteclustersecuritygroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteClusterSecurityGroup</h3>
+<ul>
+<li>description: Grants permission to delete an Amazon Redshift security group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securitygroup": {
+        "resource_type": "securitygroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteclustersnapshot"><a aria-hidden="true" class="anchor-heading" href="#deleteclustersnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteClusterSnapshot</h3>
+<ul>
+<li>description: Grants permission to delete a manual snapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteclustersubnetgroup"><a aria-hidden="true" class="anchor-heading" href="#deleteclustersubnetgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteClusterSubnetGroup</h3>
+<ul>
+<li>description: Grants permission to delete a cluster subnet group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subnetgroup": {
+        "resource_type": "subnetgroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteeventsubscription"><a aria-hidden="true" class="anchor-heading" href="#deleteeventsubscription"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEventSubscription</h3>
+<ul>
+<li>description: Grants permission to delete an Amazon Redshift event notification subscription</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "eventsubscription": {
+        "resource_type": "eventsubscription",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletehsmclientcertificate"><a aria-hidden="true" class="anchor-heading" href="#deletehsmclientcertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteHsmClientCertificate</h3>
+<ul>
+<li>description: Grants permission to delete an HSM client certificate</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "hsmclientcertificate": {
+        "resource_type": "hsmclientcertificate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletehsmconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deletehsmconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteHsmConfiguration</h3>
+<ul>
+<li>description: Grants permission to delete an Amazon Redshift HSM configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "hsmconfiguration": {
+        "resource_type": "hsmconfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesavedqueries"><a aria-hidden="true" class="anchor-heading" href="#deletesavedqueries"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSavedQueries</h3>
+<ul>
+<li>description: Grants permission to delete saved SQL queries through the Amazon Redshift console</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletescheduledaction"><a aria-hidden="true" class="anchor-heading" href="#deletescheduledaction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteScheduledAction</h3>
+<ul>
+<li>description: Grants permission to delete an Amazon Redshift scheduled action</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesnapshotcopygrant"><a aria-hidden="true" class="anchor-heading" href="#deletesnapshotcopygrant"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSnapshotCopyGrant</h3>
+<ul>
+<li>description: Grants permission to delete a snapshot copy grant</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshotcopygrant": {
+        "resource_type": "snapshotcopygrant",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesnapshotschedule"><a aria-hidden="true" class="anchor-heading" href="#deletesnapshotschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSnapshotSchedule</h3>
+<ul>
+<li>description: Grants permission to delete a snapshot schedule</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshotschedule": {
+        "resource_type": "snapshotschedule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetags"><a aria-hidden="true" class="anchor-heading" href="#deletetags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTags</h3>
+<ul>
+<li>description: Grants permission to delete a tag or tags from a resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dbgroup": {
+        "resource_type": "dbgroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dbname": {
+        "resource_type": "dbname",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dbuser": {
+        "resource_type": "dbuser",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "eventsubscription": {
+        "resource_type": "eventsubscription",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "hsmclientcertificate": {
+        "resource_type": "hsmclientcertificate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "hsmconfiguration": {
+        "resource_type": "hsmconfiguration",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "parametergroup": {
+        "resource_type": "parametergroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securitygroup": {
+        "resource_type": "securitygroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securitygroupingress-cidr": {
+        "resource_type": "securitygroupingress-cidr",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securitygroupingress-ec2securitygroup": {
+        "resource_type": "securitygroupingress-ec2securitygroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshotcopygrant": {
+        "resource_type": "snapshotcopygrant",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshotschedule": {
+        "resource_type": "snapshotschedule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subnetgroup": {
+        "resource_type": "subnetgroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeaccountattributes"><a aria-hidden="true" class="anchor-heading" href="#describeaccountattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAccountAttributes</h3>
+<ul>
+<li>description: Grants permission to describe attributes attached to the specified AWS account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeclusterdbrevisions"><a aria-hidden="true" class="anchor-heading" href="#describeclusterdbrevisions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeClusterDbRevisions</h3>
+<ul>
+<li>description: Grants permission to describe database revisions for a cluster</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeclusterparametergroups"><a aria-hidden="true" class="anchor-heading" href="#describeclusterparametergroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeClusterParameterGroups</h3>
+<ul>
+<li>description: Grants permission to describe Amazon Redshift parameter groups, including parameter groups you created and the default parameter group</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeclusterparameters"><a aria-hidden="true" class="anchor-heading" href="#describeclusterparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeClusterParameters</h3>
+<ul>
+<li>description: Grants permission to describe parameters contained within an Amazon Redshift parameter group</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parametergroup": {
+        "resource_type": "parametergroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeclustersecuritygroups"><a aria-hidden="true" class="anchor-heading" href="#describeclustersecuritygroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeClusterSecurityGroups</h3>
+<ul>
+<li>description: Grants permission to describe Amazon Redshift security groups</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeclustersnapshots"><a aria-hidden="true" class="anchor-heading" href="#describeclustersnapshots"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeClusterSnapshots</h3>
+<ul>
+<li>description: Grants permission to describe one or more snapshot objects, which contain metadata about your cluster snapshots</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeclustersubnetgroups"><a aria-hidden="true" class="anchor-heading" href="#describeclustersubnetgroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeClusterSubnetGroups</h3>
+<ul>
+<li>description: Grants permission to describe one or more cluster subnet group objects, which contain metadata about your cluster subnet groups</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeclustertracks"><a aria-hidden="true" class="anchor-heading" href="#describeclustertracks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeClusterTracks</h3>
+<ul>
+<li>description: Grants permission to describe available maintenance tracks</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeclusterversions"><a aria-hidden="true" class="anchor-heading" href="#describeclusterversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeClusterVersions</h3>
+<ul>
+<li>description: Grants permission to describe available Amazon Redshift cluster versions</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeclusters"><a aria-hidden="true" class="anchor-heading" href="#describeclusters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeClusters</h3>
+<ul>
+<li>description: Grants permission to describe properties of provisioned clusters</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedefaultclusterparameters"><a aria-hidden="true" class="anchor-heading" href="#describedefaultclusterparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDefaultClusterParameters</h3>
+<ul>
+<li>description: Grants permission to describe parameter settings for a parameter group family</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeeventcategories"><a aria-hidden="true" class="anchor-heading" href="#describeeventcategories"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEventCategories</h3>
+<ul>
+<li>description: Grants permission to describe event categories for all event source types, or for a specified source type</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeeventsubscriptions"><a aria-hidden="true" class="anchor-heading" href="#describeeventsubscriptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEventSubscriptions</h3>
+<ul>
+<li>description: Grants permission to describe Amazon Redshift event notification subscriptions for the specified AWS account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeevents"><a aria-hidden="true" class="anchor-heading" href="#describeevents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEvents</h3>
+<ul>
+<li>description: Grants permission to describe events related to clusters, security groups, snapshots, and parameter groups for the past 14 days</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describehsmclientcertificates"><a aria-hidden="true" class="anchor-heading" href="#describehsmclientcertificates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeHsmClientCertificates</h3>
+<ul>
+<li>description: Grants permission to describe HSM client certificates</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describehsmconfigurations"><a aria-hidden="true" class="anchor-heading" href="#describehsmconfigurations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeHsmConfigurations</h3>
+<ul>
+<li>description: Grants permission to describe Amazon Redshift HSM configurations</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeloggingstatus"><a aria-hidden="true" class="anchor-heading" href="#describeloggingstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeLoggingStatus</h3>
+<ul>
+<li>description: Grants permission to describe whether information, such as queries and connection attempts, is being logged for a cluster</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describenodeconfigurationoptions"><a aria-hidden="true" class="anchor-heading" href="#describenodeconfigurationoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeNodeConfigurationOptions</h3>
+<ul>
+<li>description: Grants permission to describe properties of possible node configurations such as node type, number of nodes, and disk usage for the specified action type</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeorderableclusteroptions"><a aria-hidden="true" class="anchor-heading" href="#describeorderableclusteroptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeOrderableClusterOptions</h3>
+<ul>
+<li>description: Grants permission to describe orderable cluster options</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describequery"><a aria-hidden="true" class="anchor-heading" href="#describequery"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeQuery</h3>
+<ul>
+<li>description: Grants permission to describe a query through the Amazon Redshift console</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describereservednodeofferings"><a aria-hidden="true" class="anchor-heading" href="#describereservednodeofferings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeReservedNodeOfferings</h3>
+<ul>
+<li>description: Grants permission to describe available reserved node offerings by Amazon Redshift</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describereservednodes"><a aria-hidden="true" class="anchor-heading" href="#describereservednodes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeReservedNodes</h3>
+<ul>
+<li>description: Grants permission to describe the reserved nodes</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeresize"><a aria-hidden="true" class="anchor-heading" href="#describeresize"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeResize</h3>
+<ul>
+<li>description: Grants permission to describe the last resize operation for a cluster</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describesavedqueries"><a aria-hidden="true" class="anchor-heading" href="#describesavedqueries"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeSavedQueries</h3>
+<ul>
+<li>description: Grants permission to describe saved queries through the Amazon Redshift console</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describescheduledactions"><a aria-hidden="true" class="anchor-heading" href="#describescheduledactions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeScheduledActions</h3>
+<ul>
+<li>description: Grants permission to describe created Amazon Redshift scheduled actions</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describesnapshotcopygrants"><a aria-hidden="true" class="anchor-heading" href="#describesnapshotcopygrants"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeSnapshotCopyGrants</h3>
+<ul>
+<li>description: Grants permission to describe snapshot copy grants owned by the specified AWS account in the destination AWS Region</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describesnapshotschedules"><a aria-hidden="true" class="anchor-heading" href="#describesnapshotschedules"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeSnapshotSchedules</h3>
+<ul>
+<li>description: Grants permission to describe snapshot schedules</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshotschedule": {
+        "resource_type": "snapshotschedule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describestorage"><a aria-hidden="true" class="anchor-heading" href="#describestorage"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeStorage</h3>
+<ul>
+<li>description: Grants permission to describe account level backups storage size and provisional storage</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetable"><a aria-hidden="true" class="anchor-heading" href="#describetable"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTable</h3>
+<ul>
+<li>description: Grants permission to describe a table through the Amazon Redshift console</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetablerestorestatus"><a aria-hidden="true" class="anchor-heading" href="#describetablerestorestatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTableRestoreStatus</h3>
+<ul>
+<li>description: Grants permission to describe status of one or more table restore requests made using the RestoreTableFromClusterSnapshot API action</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetags"><a aria-hidden="true" class="anchor-heading" href="#describetags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTags</h3>
+<ul>
+<li>description: Grants permission to describe tags</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dbgroup": {
+        "resource_type": "dbgroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dbname": {
+        "resource_type": "dbname",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dbuser": {
+        "resource_type": "dbuser",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "eventsubscription": {
+        "resource_type": "eventsubscription",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "hsmclientcertificate": {
+        "resource_type": "hsmclientcertificate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "hsmconfiguration": {
+        "resource_type": "hsmconfiguration",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "parametergroup": {
+        "resource_type": "parametergroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securitygroup": {
+        "resource_type": "securitygroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securitygroupingress-cidr": {
+        "resource_type": "securitygroupingress-cidr",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securitygroupingress-ec2securitygroup": {
+        "resource_type": "securitygroupingress-ec2securitygroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshotcopygrant": {
+        "resource_type": "snapshotcopygrant",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshotschedule": {
+        "resource_type": "snapshotschedule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subnetgroup": {
+        "resource_type": "subnetgroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disablelogging"><a aria-hidden="true" class="anchor-heading" href="#disablelogging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisableLogging</h3>
+<ul>
+<li>description: Grants permission to disable logging information, such as queries and connection attempts, for a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disablesnapshotcopy"><a aria-hidden="true" class="anchor-heading" href="#disablesnapshotcopy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisableSnapshotCopy</h3>
+<ul>
+<li>description: Grants permission to disable the automatic copy of snapshots for a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="enablelogging"><a aria-hidden="true" class="anchor-heading" href="#enablelogging"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>EnableLogging</h3>
+<ul>
+<li>description: Grants permission to enable logging information, such as queries and connection attempts, for a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="enablesnapshotcopy"><a aria-hidden="true" class="anchor-heading" href="#enablesnapshotcopy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>EnableSnapshotCopy</h3>
+<ul>
+<li>description: Grants permission to enable the automatic copy of snapshots for a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="executequery"><a aria-hidden="true" class="anchor-heading" href="#executequery"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ExecuteQuery</h3>
+<ul>
+<li>description: Grants permission to execute a query through the Amazon Redshift console</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="fetchresults"><a aria-hidden="true" class="anchor-heading" href="#fetchresults"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>FetchResults</h3>
+<ul>
+<li>description: Grants permission to fetch query results through the Amazon Redshift console</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getclustercredentials"><a aria-hidden="true" class="anchor-heading" href="#getclustercredentials"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetClusterCredentials</h3>
+<ul>
+<li>description: Grants permission to get temporary credentials to access an Amazon Redshift database by the specified AWS account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dbuser": {
+        "resource_type": "dbuser",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dbgroup": {
+        "resource_type": "dbgroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dbname": {
+        "resource_type": "dbname",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "redshift:DbName",
+            "redshift:DbUser",
+            "redshift:DurationSeconds"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getreservednodeexchangeofferings"><a aria-hidden="true" class="anchor-heading" href="#getreservednodeexchangeofferings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetReservedNodeExchangeOfferings</h3>
+<ul>
+<li>description: Grants permission to get an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given DC1 reserved node</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="joingroup"><a aria-hidden="true" class="anchor-heading" href="#joingroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>JoinGroup</h3>
+<ul>
+<li>description: Grants permission to join the specified Amazon Redshift group</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dbgroup": {
+        "resource_type": "dbgroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdatabases"><a aria-hidden="true" class="anchor-heading" href="#listdatabases"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDatabases</h3>
+<ul>
+<li>description: Grants permission to list databases through the Amazon Redshift console</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsavedqueries"><a aria-hidden="true" class="anchor-heading" href="#listsavedqueries"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSavedQueries</h3>
+<ul>
+<li>description: Grants permission to list saved queries through the Amazon Redshift console</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listschemas"><a aria-hidden="true" class="anchor-heading" href="#listschemas"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSchemas</h3>
+<ul>
+<li>description: Grants permission to list schemas through the Amazon Redshift console</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtables"><a aria-hidden="true" class="anchor-heading" href="#listtables"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTables</h3>
+<ul>
+<li>description: Grants permission to list tables through the Amazon Redshift console</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifycluster"><a aria-hidden="true" class="anchor-heading" href="#modifycluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyCluster</h3>
+<ul>
+<li>description: Grants permission to modify the settings of a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyclusterdbrevision"><a aria-hidden="true" class="anchor-heading" href="#modifyclusterdbrevision"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyClusterDbRevision</h3>
+<ul>
+<li>description: Grants permission to modify the database revision of a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyclusteriamroles"><a aria-hidden="true" class="anchor-heading" href="#modifyclusteriamroles"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyClusterIamRoles</h3>
+<ul>
+<li>description: Grants permission to modify the list of AWS Identity and Access Management (IAM) roles that can be used by a cluster to access other AWS services</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyclustermaintenance"><a aria-hidden="true" class="anchor-heading" href="#modifyclustermaintenance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyClusterMaintenance</h3>
+<ul>
+<li>description: Grants permission to modify the maintenance settings of a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyclusterparametergroup"><a aria-hidden="true" class="anchor-heading" href="#modifyclusterparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyClusterParameterGroup</h3>
+<ul>
+<li>description: Grants permission to modify the parameters of a parameter group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parametergroup": {
+        "resource_type": "parametergroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyclustersnapshot"><a aria-hidden="true" class="anchor-heading" href="#modifyclustersnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyClusterSnapshot</h3>
+<ul>
+<li>description: Grants permission to modify the settings of a snapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyclustersnapshotschedule"><a aria-hidden="true" class="anchor-heading" href="#modifyclustersnapshotschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyClusterSnapshotSchedule</h3>
+<ul>
+<li>description: Grants permission to modify a snapshot schedule for a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyclustersubnetgroup"><a aria-hidden="true" class="anchor-heading" href="#modifyclustersubnetgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyClusterSubnetGroup</h3>
+<ul>
+<li>description: Grants permission to modify a cluster subnet group to include the specified list of VPC subnets</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subnetgroup": {
+        "resource_type": "subnetgroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyeventsubscription"><a aria-hidden="true" class="anchor-heading" href="#modifyeventsubscription"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyEventSubscription</h3>
+<ul>
+<li>description: Grants permission to modify an existing Amazon Redshift event notification subscription</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "eventsubscription": {
+        "resource_type": "eventsubscription",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifysavedquery"><a aria-hidden="true" class="anchor-heading" href="#modifysavedquery"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifySavedQuery</h3>
+<ul>
+<li>description: Grants permission to modify an existing saved query through the Amazon Redshift console</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyscheduledaction"><a aria-hidden="true" class="anchor-heading" href="#modifyscheduledaction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyScheduledAction</h3>
+<ul>
+<li>description: Grants permission to modify an existing Amazon Redshift scheduled action</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifysnapshotcopyretentionperiod"><a aria-hidden="true" class="anchor-heading" href="#modifysnapshotcopyretentionperiod"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifySnapshotCopyRetentionPeriod</h3>
+<ul>
+<li>description: Grants permission to modify the number of days to retain snapshots in the destination AWS Region after they are copied from the source AWS Region</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifysnapshotschedule"><a aria-hidden="true" class="anchor-heading" href="#modifysnapshotschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifySnapshotSchedule</h3>
+<ul>
+<li>description: Grants permission to modify a snapshot schedule</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshotschedule": {
+        "resource_type": "snapshotschedule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="pausecluster"><a aria-hidden="true" class="anchor-heading" href="#pausecluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PauseCluster</h3>
+<ul>
+<li>description: Grants permission to pause a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="purchasereservednodeoffering"><a aria-hidden="true" class="anchor-heading" href="#purchasereservednodeoffering"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PurchaseReservedNodeOffering</h3>
+<ul>
+<li>description: Grants permission to purchase a reserved node</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="rebootcluster"><a aria-hidden="true" class="anchor-heading" href="#rebootcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RebootCluster</h3>
+<ul>
+<li>description: Grants permission to reboot a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resetclusterparametergroup"><a aria-hidden="true" class="anchor-heading" href="#resetclusterparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResetClusterParameterGroup</h3>
+<ul>
+<li>description: Grants permission to set one or more parameters of a parameter group to their default values and set the source values of the parameters to "engine-default"</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parametergroup": {
+        "resource_type": "parametergroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resizecluster"><a aria-hidden="true" class="anchor-heading" href="#resizecluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResizeCluster</h3>
+<ul>
+<li>description: Grants permission to change the size of a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="restorefromclustersnapshot"><a aria-hidden="true" class="anchor-heading" href="#restorefromclustersnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RestoreFromClusterSnapshot</h3>
+<ul>
+<li>description: Grants permission to create a cluster from a snapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="restoretablefromclustersnapshot"><a aria-hidden="true" class="anchor-heading" href="#restoretablefromclustersnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RestoreTableFromClusterSnapshot</h3>
+<ul>
+<li>description: Grants permission to create a table from a table in an Amazon Redshift cluster snapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resumecluster"><a aria-hidden="true" class="anchor-heading" href="#resumecluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResumeCluster</h3>
+<ul>
+<li>description: Grants permission to resume a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="revokeclustersecuritygroupingress"><a aria-hidden="true" class="anchor-heading" href="#revokeclustersecuritygroupingress"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RevokeClusterSecurityGroupIngress</h3>
+<ul>
+<li>description: Grants permission to revoke an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securitygroup": {
+        "resource_type": "securitygroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securitygroupingress-ec2securitygroup": {
+        "resource_type": "securitygroupingress-ec2securitygroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="revokesnapshotaccess"><a aria-hidden="true" class="anchor-heading" href="#revokesnapshotaccess"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RevokeSnapshotAccess</h3>
+<ul>
+<li>description: Grants permission to revoke access from the specified AWS account to restore a snapshot</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="rotateencryptionkey"><a aria-hidden="true" class="anchor-heading" href="#rotateencryptionkey"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RotateEncryptionKey</h3>
+<ul>
+<li>description: Grants permission to rotate an encryption key for a cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="viewqueriesfromconsole"><a aria-hidden="true" class="anchor-heading" href="#viewqueriesfromconsole"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ViewQueriesFromConsole</h3>
+<ul>
+<li>description: Grants permission to view query results through the Amazon Redshift console</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="viewqueriesinconsole"><a aria-hidden="true" class="anchor-heading" href="#viewqueriesinconsole"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ViewQueriesInConsole</h3>
+<ul>
+<li>description: Grants permission to terminate running queries and loads through the Amazon Redshift console</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Redshift"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

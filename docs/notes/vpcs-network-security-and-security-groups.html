@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>VPCs, Network Security, and Security Groups - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/vpcs-network-security-and-security-groups.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/vpcs-network-security-and-security-groups.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/vpcs-network-security-and-security-groups.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="VPCs, Network Security, and Security Groups - undefined" />
+  <meta name="twitter:title" content="VPCs, Network Security, and Security Groups - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/1f759d8c-cca7-4fc4-9aa2-6dbf6e596abf.html">Services</a></li><li class="breadcrumb-nav-list-item">VPCs, Network Security, and Security Groups</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="VPCs, Network Security, and Security Groups">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="vpcs-network-security-and-security-groups"><a aria-hidden="true" class="anchor-heading" href="#vpcs-network-security-and-security-groups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>VPCs, Network Security, and Security Groups</h1>
+<h3 id="vpc-basics"><a aria-hidden="true" class="anchor-heading" href="#vpc-basics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>VPC Basics</h3>
+<ul>
+<li>📒 <a href="https://aws.amazon.com/vpc/">Homepage</a> ∙ <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide">User guide</a> ∙ <a href="https://aws.amazon.com/vpc/faqs/">FAQ</a> ∙ <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security groups</a> ∙ <a href="https://aws.amazon.com/vpc/pricing/">Pricing</a></li>
+<li><strong>VPC</strong> (Virtual Private Cloud) is the virtualized networking layer of your AWS systems.</li>
+<li>Most AWS users should have a basic understanding of VPC concepts, but few need to get into all the details. VPC configurations can be trivial or extremely complex, depending on the extent of your network and security needs.</li>
+<li>All modern AWS accounts (those created <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html">after 2013-12-04</a>) are “EC2-VPC” accounts that support VPCs, and all instances will be in a default VPC. Older accounts may still be using “EC2-Classic” mode. Some features don’t work without VPCs, so you probably will want to <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">migrate</a>.</li>
+</ul>
+<h3 id="vpc-and-network-security-tips"><a aria-hidden="true" class="anchor-heading" href="#vpc-and-network-security-tips"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>VPC and Network Security Tips</h3>
+<ul>
+<li>
+<p>❗<strong>Security groups</strong> are your first line of defense for your servers. Be extremely restrictive of what ports are open to all incoming connections. In general, if you use CLBs, ALBs or other load balancing, the only ports that need to be open to incoming traffic would be port 22 and whatever port your application uses. Security groups access policy is 'deny by default'.</p>
+</li>
+<li>
+<p><strong>Port hygiene:</strong> A good habit is to pick unique ports within an unusual range for each different kind of production service. For example, your web frontend might use 3010, your backend services 3020 and 3021, and your Postgres instances the usual 5432. Then make sure you have fine-grained security groups for each set of servers. This makes you disciplined about listing out your services, but also is more error-proof. For example, should you accidentally have an extra Apache server running on the default port 80 on a backend server, it will not be exposed.</p>
+</li>
+<li>
+<p><strong>Migrating from Classic</strong>: For migrating from older EC2-Classic deployments to modern EC2-VPC setup, <a href="http://blog.kiip.me/engineering/ec2-to-vpc-executing-a-zero-downtime-migration/">this article</a> may be of help.</p>
+<ul>
+<li>You can <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#using-eip-migration">migrate Elastic IPs between EC2-Classic and EC2-VPC</a>.</li>
+</ul>
+</li>
+<li>
+<p>For basic AWS use, one default VPC may be sufficient. But as you scale up, you should consider mapping out network topology more thoroughly. A good overview of best practices is <a href="http://blog.flux7.com/blogs/aws/vpc-best-configuration-practices">here</a>.</p>
+</li>
+<li>
+<p>Consider controlling access to you private AWS resources through a <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpn-connections.html">VPN</a>.</p>
+<ul>
+<li>You get better visibility into and control of connection and connection attempts.</li>
+<li>You expose a smaller surface area for attack compared to exposing separate (potentially authenticated) services over the public internet.
+<ul>
+<li>e.g. A bug in the YAML parser used by the Ruby on Rails admin site is much less serious when the admin site is only visible to the private network and accessed through VPN.</li>
+</ul>
+</li>
+<li>Another common pattern (especially as deployments get larger, security or regulatory requirements get more stringent, or team sizes increase) is to provide a <a href="https://www.pandastrike.com/posts/20141113-bastion-hosts">bastion host</a> behind a VPN through which all SSH connections need to transit.</li>
+<li>For a cheap VPN to access private AWS resources, consider using a point-to-site software VPN such as <a href="https://openvpn.net/">OpenVPN</a>. It can either be installed using the <a href="https://docs.openvpn.net/how-to-tutorialsguides/virtual-platforms/amazon-ec2-appliance-ami-quick-start-guide/">official AMI</a>, though you are limited to 2 concurrent users on the free license, or it can be installed using the openvpn package on linux. The linux package allows for unlimited concurrent users but the installation is less straightforward. This <a href="https://github.com/Nyr/openvpn-install">OpenVPN installer script</a> can help you install it and add client keys easily.</li>
+</ul>
+</li>
+<li>
+<p>🔹Consider using other security groups as sources for security group rules instead of using CIDRs — that way, all hosts in the source security group and only hosts in that security group are allowed access. This is a much more dynamic and secure way of managing security group rules.</p>
+</li>
+<li>
+<p><strong>VPC Flow Logs</strong> allow you to monitor the network traffic to, from, and within your VPC. Logs are stored in CloudWatch Logs groups, and can be used for security monitoring (with third party tools), performance evaluation, and forensic investigation.</p>
+<ul>
+<li>See the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC Flow Logs User Guide</a> for basic information.</li>
+<li>See the <a href="https://github.com/obsrvbl/flowlogs-reader">flowlogs-reader</a> CLI tool and Python library to retrieve and work with VPC Flow Logs.</li>
+</ul>
+</li>
+<li>
+<p><strong>IPv6</strong> <a href="https://aws.amazon.com/blogs/aws/new-ipv6-support-for-ec2-instances-in-virtual-private-clouds/">is available in VPC</a>. Along with this announcement came the introduction of the <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/egress-only-internet-gateway.html">Egress-Only Internet Gateway</a>. In cases where one would use NAT Gateways to enable egress-only traffic for their VPC in IPv4, one can use an Egress-Only Internet Gateway for the same purpose in IPv6.</p>
+</li>
+<li>
+<p>Amazon provides an IPv6 CIDR block for your VPC at your request - at present you cannot implement your own IPv6 block if you happen to own one already.</p>
+</li>
+<li>
+<p>New and existing VPCs can both use IPv6. Existing VPCs will need to be configured to have an IPv6 CIDR block associated with them, just as new VPCs do.</p>
+</li>
+</ul>
+<h3 id="privatelink"><a aria-hidden="true" class="anchor-heading" href="#privatelink"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PrivateLink</h3>
+<ul>
+<li>📒<a href="https://aws.amazon.com/privatelink/">Homepage</a> ∙ <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html">User Guide</a> ∙  <a href="https://aws.amazon.com/privatelink/pricing/">Pricing</a></li>
+<li>One of the uses for Private link is <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html">Interface VPC Endpoints</a> deploys an ENI into your VPC and subnets which allows you direct access to the AWS API's as if the were accessible locally in your VPC without having to go out to the internet.</li>
+<li>Another use case would be to expose a service of your own to other accounts in AWS through a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC Endpoint Service</a></li>
+</ul>
+<h3 id="vpc-and-network-security-gotchas-and-limitations"><a aria-hidden="true" class="anchor-heading" href="#vpc-and-network-security-gotchas-and-limitations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>VPC and Network Security Gotchas and Limitations</h3>
+<ul>
+<li>🔸VPCs are tied to one Region in one Account. Subnets are tied to one VPC and limited to one Availability Zone.</li>
+<li>🔸Security groups are tied to one VPC. If you are utilizing infrastructure in multiple VPCs you should make sure your configuration/deployment tools take that into account.</li>
+<li>🔸<a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC Endpoints</a> are currently only available for S3 and DynamoDB. If you have a security requirement to lockdown outbound traffic from your VPC you may want to use <a href="https://aws.amazon.com/blogs/security/how-to-add-dns-filtering-to-your-nat-instance-with-squid/">DNS filtering</a> to control outbound traffic to other services.</li>
+<li>❗Be careful when choosing your VPC IP CIDR block: If you are going to need to make use of <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>, make sure that your private IP range <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html#classiclink-limitations">doesn’t overlap</a> with that of EC2 Classic.</li>
+<li>❗If you are going to peer VPCs, carefully consider the cost of <a href="https://aws.amazon.com/vpc/faqs/#Peering_Connections">data transfer between VPCs</a>, since for some workloads and integrations, this can be prohibitively expensive.</li>
+<li>❗New RDS instances require a <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Subnets">subnet group</a> within your VPC. If you’re using the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">default VPC</a> this isn’t a concern, it will contain a subnet for each availability zone in your region. However, if you’re creating your own VPC and plan on using RDS, make sure you have at least two subnets within the VPC to act as the subnet group.</li>
+<li>❗If you delete the default VPC, you can <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#create-default-vpc">recreate it via the CLI or the console</a>.</li>
+<li>❗Be careful with VPC VPN credentials! If lost or compromised, the VPN endpoint must be deleted and recreated. See the instructions for <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#CompromisedCredentials">Replacing Compromised Credentials</a>.</li>
+<li>❗Security Groups and Route Tables apply entries separately for IPv4 and IPv6, so one must ensure they add entries for both protocols accordingly.</li>
+<li>
+<pre><code>💸Managed NAT gateways are a convenient alternative to
+</code></pre>
+manually managing <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPCNATInstance.html">NAT instances</a>, but they do come at a cost per gigabyte. Consider <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-comparison.html">alternatives</a> if you're transferring many terabytes from private subnets to the internet. If you transfer terabytes/petabytes of data from EC2 instances in private subnets to S3, avoid the <a href="https://aws.amazon.com/vpc/pricing/">NAT gateway data processing charge</a> by setting up a Gateway Type VPC Endpoint and route the traffic to/from S3 through the VPC endpoints instead of going through the NAT gateways.</li>
+</ul><span id="navId" data="vpcs-network-security-and-security-groups"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

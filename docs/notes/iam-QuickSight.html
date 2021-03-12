@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>QuickSight - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-QuickSight.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-QuickSight.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-QuickSight.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="QuickSight - undefined" />
+  <meta name="twitter:title" content="QuickSight - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">QuickSight</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="QuickSight">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="quicksight"><a aria-hidden="true" class="anchor-heading" href="#quicksight"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>QuickSight</h1>
+<ul>
+<li>prefix: quicksight</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="createaccountcustomization"><a aria-hidden="true" class="anchor-heading" href="#createaccountcustomization"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAccountCustomization</h3>
+<ul>
+<li>description: Grants permission to create an account customization for QuickSight account or namespace</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createadmin"><a aria-hidden="true" class="anchor-heading" href="#createadmin"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAdmin</h3>
+<ul>
+<li>description: CreateAdmin enables the user to provision Amazon QuickSight administrators, authors, and readers.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcustompermissions"><a aria-hidden="true" class="anchor-heading" href="#createcustompermissions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateCustomPermissions</h3>
+<ul>
+<li>description: Grants permission to create a custom permissions resource for restricting user access</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdashboard"><a aria-hidden="true" class="anchor-heading" href="#createdashboard"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDashboard</h3>
+<ul>
+<li>description: Creates a dashboard from a template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creategroup"><a aria-hidden="true" class="anchor-heading" href="#creategroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateGroup</h3>
+<ul>
+<li>description: Create a QuickSight group.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creategroupmembership"><a aria-hidden="true" class="anchor-heading" href="#creategroupmembership"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateGroupMembership</h3>
+<ul>
+<li>description: Add a QuickSight user to a QuickSight group.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [
+            "quicksight:UserName"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createiampolicyassignment"><a aria-hidden="true" class="anchor-heading" href="#createiampolicyassignment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateIAMPolicyAssignment</h3>
+<ul>
+<li>description: Creates an assignment with one specified IAM Policy ARN that will be assigned to specified groups or users of QuickSight.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "assignment": {
+        "resource_type": "assignment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createnamespace"><a aria-hidden="true" class="anchor-heading" href="#createnamespace"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateNamespace</h3>
+<ul>
+<li>description: Grants permission to create an QuickSight namespace</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "namespace": {
+        "resource_type": "namespace",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createreader"><a aria-hidden="true" class="anchor-heading" href="#createreader"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateReader</h3>
+<ul>
+<li>description: CreateReader enables the user to provision Amazon QuickSight readers.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtemplate"><a aria-hidden="true" class="anchor-heading" href="#createtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTemplate</h3>
+<ul>
+<li>description: Creates a template from an existing QuickSight analysis or template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtemplatealias"><a aria-hidden="true" class="anchor-heading" href="#createtemplatealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTemplateAlias</h3>
+<ul>
+<li>description: Creates a template alias for a template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtheme"><a aria-hidden="true" class="anchor-heading" href="#createtheme"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTheme</h3>
+<ul>
+<li>description: Creates a QuickSight theme</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createthemealias"><a aria-hidden="true" class="anchor-heading" href="#createthemealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateThemeAlias</h3>
+<ul>
+<li>description: Creates a theme alias for a theme</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createuser"><a aria-hidden="true" class="anchor-heading" href="#createuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateUser</h3>
+<ul>
+<li>description: CreateUser enables the user to provision Amazon QuickSight authors and readers.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteaccountcustomization"><a aria-hidden="true" class="anchor-heading" href="#deleteaccountcustomization"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAccountCustomization</h3>
+<ul>
+<li>description: Grants permission to delete an account customization for QuickSight account or namespace</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "customization": {
+        "resource_type": "customization",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedashboard"><a aria-hidden="true" class="anchor-heading" href="#deletedashboard"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDashboard</h3>
+<ul>
+<li>description: Deletes a dashboard</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletegroup"><a aria-hidden="true" class="anchor-heading" href="#deletegroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteGroup</h3>
+<ul>
+<li>description: Remove a user group from QuickSight.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletegroupmembership"><a aria-hidden="true" class="anchor-heading" href="#deletegroupmembership"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteGroupMembership</h3>
+<ul>
+<li>description: Remove a user from a group so that he/she is no longer a member of the group.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [
+            "quicksight:UserName"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteiampolicyassignment"><a aria-hidden="true" class="anchor-heading" href="#deleteiampolicyassignment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteIAMPolicyAssignment</h3>
+<ul>
+<li>description: Update an existing assignment.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "assignment": {
+        "resource_type": "assignment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletenamespace"><a aria-hidden="true" class="anchor-heading" href="#deletenamespace"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteNamespace</h3>
+<ul>
+<li>description: Grants permission to delete a QuickSight namespace</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "namespace": {
+        "resource_type": "namespace",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetemplate"><a aria-hidden="true" class="anchor-heading" href="#deletetemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTemplate</h3>
+<ul>
+<li>description: Deletes a template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetemplatealias"><a aria-hidden="true" class="anchor-heading" href="#deletetemplatealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTemplateAlias</h3>
+<ul>
+<li>description: Deletes the item that the specified template alias points to</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetheme"><a aria-hidden="true" class="anchor-heading" href="#deletetheme"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTheme</h3>
+<ul>
+<li>description: Deletes a theme</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletethemealias"><a aria-hidden="true" class="anchor-heading" href="#deletethemealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteThemeAlias</h3>
+<ul>
+<li>description: Deletes the item that the specified theme alias points to</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteuser"><a aria-hidden="true" class="anchor-heading" href="#deleteuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteUser</h3>
+<ul>
+<li>description: Delete the QuickSight user that is associated with the identity of the IAM user/role making the call. The IAM user is not deleted as a result of this call.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteuserbyprincipalid"><a aria-hidden="true" class="anchor-heading" href="#deleteuserbyprincipalid"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteUserByPrincipalId</h3>
+<ul>
+<li>description: Deletes a user identified by its principal ID.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeaccountcustomization"><a aria-hidden="true" class="anchor-heading" href="#describeaccountcustomization"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAccountCustomization</h3>
+<ul>
+<li>description: Grants permission to describe an account customization for QuickSight account or namespace</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "customization": {
+        "resource_type": "customization",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeaccountsettings"><a aria-hidden="true" class="anchor-heading" href="#describeaccountsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAccountSettings</h3>
+<ul>
+<li>description: Grants permission to describe the administrative account settings for QuickSight account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describecustompermissions"><a aria-hidden="true" class="anchor-heading" href="#describecustompermissions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeCustomPermissions</h3>
+<ul>
+<li>description: Grants permission to describe a custom permissions resource in a QuickSight account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedashboard"><a aria-hidden="true" class="anchor-heading" href="#describedashboard"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDashboard</h3>
+<ul>
+<li>description: Provides a summary for a dashboard</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedashboardpermissions"><a aria-hidden="true" class="anchor-heading" href="#describedashboardpermissions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDashboardPermissions</h3>
+<ul>
+<li>description: Describes read and write permissions for a dashboard</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describegroup"><a aria-hidden="true" class="anchor-heading" href="#describegroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeGroup</h3>
+<ul>
+<li>description: Return a QuickSight group’s description and ARN.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeiampolicyassignment"><a aria-hidden="true" class="anchor-heading" href="#describeiampolicyassignment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeIAMPolicyAssignment</h3>
+<ul>
+<li>description: Describe an existing assignment.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "assignment": {
+        "resource_type": "assignment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describenamespace"><a aria-hidden="true" class="anchor-heading" href="#describenamespace"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeNamespace</h3>
+<ul>
+<li>description: Grants permission to describe a QuickSight namespace</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "namespace": {
+        "resource_type": "namespace",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetemplate"><a aria-hidden="true" class="anchor-heading" href="#describetemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTemplate</h3>
+<ul>
+<li>description: Describes a template's metadata</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetemplatealias"><a aria-hidden="true" class="anchor-heading" href="#describetemplatealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTemplateAlias</h3>
+<ul>
+<li>description: Describes the template alias for a template</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetemplatepermissions"><a aria-hidden="true" class="anchor-heading" href="#describetemplatepermissions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTemplatePermissions</h3>
+<ul>
+<li>description: Describes read and write permissions on a template</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetheme"><a aria-hidden="true" class="anchor-heading" href="#describetheme"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTheme</h3>
+<ul>
+<li>description: Describes a theme's metadata</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describethemealias"><a aria-hidden="true" class="anchor-heading" href="#describethemealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeThemeAlias</h3>
+<ul>
+<li>description: Describes the theme alias for a theme</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describethemepermissions"><a aria-hidden="true" class="anchor-heading" href="#describethemepermissions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeThemePermissions</h3>
+<ul>
+<li>description: Describes read and write permissions on a theme</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeuser"><a aria-hidden="true" class="anchor-heading" href="#describeuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeUser</h3>
+<ul>
+<li>description: Return information about a user, given the user name.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getauthcode"><a aria-hidden="true" class="anchor-heading" href="#getauthcode"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAuthCode</h3>
+<ul>
+<li>description: Return an auth code representing a QuickSight user.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdashboardembedurl"><a aria-hidden="true" class="anchor-heading" href="#getdashboardembedurl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDashboardEmbedUrl</h3>
+<ul>
+<li>description: Return a QuickSight dashboard embedding URL.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getgroupmapping"><a aria-hidden="true" class="anchor-heading" href="#getgroupmapping"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetGroupMapping</h3>
+<ul>
+<li>description: GetGroupMapping is used only in Amazon QuickSight Enterprise edition accounts. It enables the user to use Amazon QuickSight to identify and display the Microsoft Active Directory (Microsoft Active Directory) directory groups that are mapped to roles in Amazon QuickSight.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsessionembedurl"><a aria-hidden="true" class="anchor-heading" href="#getsessionembedurl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSessionEmbedUrl</h3>
+<ul>
+<li>description: Grants permission to get a URL to embed QuickSight console experience.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcustompermissions"><a aria-hidden="true" class="anchor-heading" href="#listcustompermissions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCustomPermissions</h3>
+<ul>
+<li>description: Grants permission to list custom permissions resources in QuickSight account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdashboardversions"><a aria-hidden="true" class="anchor-heading" href="#listdashboardversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDashboardVersions</h3>
+<ul>
+<li>description: Lists all the versions of the dashboards in the QuickSight subscription</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdashboards"><a aria-hidden="true" class="anchor-heading" href="#listdashboards"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDashboards</h3>
+<ul>
+<li>description: Lists dashboards in an AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listgroupmemberships"><a aria-hidden="true" class="anchor-heading" href="#listgroupmemberships"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListGroupMemberships</h3>
+<ul>
+<li>description: Return a list of member users in a group.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listgroups"><a aria-hidden="true" class="anchor-heading" href="#listgroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListGroups</h3>
+<ul>
+<li>description: Get a list of all user groups in QuickSight.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listiampolicyassignments"><a aria-hidden="true" class="anchor-heading" href="#listiampolicyassignments"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListIAMPolicyAssignments</h3>
+<ul>
+<li>description: List all assignments in the current Amazon QuickSight account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "assignment": {
+        "resource_type": "assignment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listiampolicyassignmentsforuser"><a aria-hidden="true" class="anchor-heading" href="#listiampolicyassignmentsforuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListIAMPolicyAssignmentsForUser</h3>
+<ul>
+<li>description: List all assignments assigned to a user and the groups it belongs</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "assignment": {
+        "resource_type": "assignment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listnamespaces"><a aria-hidden="true" class="anchor-heading" href="#listnamespaces"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListNamespaces</h3>
+<ul>
+<li>description: Grants permission to lists all namespaces in a QuickSight account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: List tags of a QuickSight resource.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "customization": {
+        "resource_type": "customization",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "template": {
+        "resource_type": "template",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "theme": {
+        "resource_type": "theme",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtemplatealiases"><a aria-hidden="true" class="anchor-heading" href="#listtemplatealiases"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTemplateAliases</h3>
+<ul>
+<li>description: Lists all the aliases of a template</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtemplateversions"><a aria-hidden="true" class="anchor-heading" href="#listtemplateversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTemplateVersions</h3>
+<ul>
+<li>description: Lists all the versions of the templates in the current Amazon QuickSight account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtemplates"><a aria-hidden="true" class="anchor-heading" href="#listtemplates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTemplates</h3>
+<ul>
+<li>description: Lists all the templates in the current Amazon QuickSight account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listthemealiases"><a aria-hidden="true" class="anchor-heading" href="#listthemealiases"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListThemeAliases</h3>
+<ul>
+<li>description: Lists all the aliases of a theme</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listthemeversions"><a aria-hidden="true" class="anchor-heading" href="#listthemeversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListThemeVersions</h3>
+<ul>
+<li>description: Lists all the versions of a theme</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listthemes"><a aria-hidden="true" class="anchor-heading" href="#listthemes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListThemes</h3>
+<ul>
+<li>description: Lists all the themes in the current Amazon QuickSight account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listusergroups"><a aria-hidden="true" class="anchor-heading" href="#listusergroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListUserGroups</h3>
+<ul>
+<li>description: Return a list of groups that a given user is a member of.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listusers"><a aria-hidden="true" class="anchor-heading" href="#listusers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListUsers</h3>
+<ul>
+<li>description: Return a list of all of the QuickSight users belonging to this account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="registeruser"><a aria-hidden="true" class="anchor-heading" href="#registeruser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegisterUser</h3>
+<ul>
+<li>description: Create a QuickSight user, whose identity is associated with the IAM identity/role specified in the request.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [
+            "quicksight:IamArn",
+            "quicksight:SessionName"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="searchdirectorygroups"><a aria-hidden="true" class="anchor-heading" href="#searchdirectorygroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SearchDirectoryGroups</h3>
+<ul>
+<li>description: SearchDirectoryGroups is used only in Amazon QuickSight Enterprise edition accounts. It enables the user to use Amazon QuickSight to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setgroupmapping"><a aria-hidden="true" class="anchor-heading" href="#setgroupmapping"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetGroupMapping</h3>
+<ul>
+<li>description: SearchDirectoryGroups is used only in Amazon QuickSight Enterprise edition accounts. It enables the user to use Amazon QuickSight to display your Microsoft Active Directory directory groups so that you can choose which ones to map to roles in Amazon QuickSight.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="subscribe"><a aria-hidden="true" class="anchor-heading" href="#subscribe"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Subscribe</h3>
+<ul>
+<li>description: Subscribe enables the user to subscribe to Amazon QuickSight. Enabling this action also allows the user to upgrade the subscription to Enterprise edition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Add tags to a QuickSight resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "customization": {
+        "resource_type": "customization",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "template": {
+        "resource_type": "template",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "theme": {
+        "resource_type": "theme",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="unsubscribe"><a aria-hidden="true" class="anchor-heading" href="#unsubscribe"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Unsubscribe</h3>
+<ul>
+<li>description: Unsubscribe enables the user to unsubscribe from Amazon QuickSight, which permanently deletes all users and their resources from Amazon QuickSight.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Remove tags from a QuickSight resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "customization": {
+        "resource_type": "customization",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "template": {
+        "resource_type": "template",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "theme": {
+        "resource_type": "theme",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateaccountcustomization"><a aria-hidden="true" class="anchor-heading" href="#updateaccountcustomization"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAccountCustomization</h3>
+<ul>
+<li>description: Grants permission to update an account customization for QuickSight account or namespace</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "customization": {
+        "resource_type": "customization",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateaccountsettings"><a aria-hidden="true" class="anchor-heading" href="#updateaccountsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAccountSettings</h3>
+<ul>
+<li>description: Grants permission to update the administrative account settings for QuickSight account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecustompermissions"><a aria-hidden="true" class="anchor-heading" href="#updatecustompermissions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateCustomPermissions</h3>
+<ul>
+<li>description: Grants permission to update a custom permissions resource</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedashboard"><a aria-hidden="true" class="anchor-heading" href="#updatedashboard"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDashboard</h3>
+<ul>
+<li>description: Updates a dashboard in an AWS account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedashboardpermissions"><a aria-hidden="true" class="anchor-heading" href="#updatedashboardpermissions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDashboardPermissions</h3>
+<ul>
+<li>description: Updates read and write permissions on a dashboard</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedashboardpublishedversion"><a aria-hidden="true" class="anchor-heading" href="#updatedashboardpublishedversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDashboardPublishedVersion</h3>
+<ul>
+<li>description: Updates the published version of a dashboard</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updategroup"><a aria-hidden="true" class="anchor-heading" href="#updategroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateGroup</h3>
+<ul>
+<li>description: Change group description.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateiampolicyassignment"><a aria-hidden="true" class="anchor-heading" href="#updateiampolicyassignment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateIAMPolicyAssignment</h3>
+<ul>
+<li>description: Update an existing assignment.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "assignment": {
+        "resource_type": "assignment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatetemplate"><a aria-hidden="true" class="anchor-heading" href="#updatetemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateTemplate</h3>
+<ul>
+<li>description: Updates a template from an existing Amazon QuickSight analysis or another template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatetemplatealias"><a aria-hidden="true" class="anchor-heading" href="#updatetemplatealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateTemplateAlias</h3>
+<ul>
+<li>description: Updates the template alias of a template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatetemplatepermissions"><a aria-hidden="true" class="anchor-heading" href="#updatetemplatepermissions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateTemplatePermissions</h3>
+<ul>
+<li>description: Updates the resource permissions for a template</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "template": {
+        "resource_type": "template",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatetheme"><a aria-hidden="true" class="anchor-heading" href="#updatetheme"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateTheme</h3>
+<ul>
+<li>description: Updates a theme</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatethemealias"><a aria-hidden="true" class="anchor-heading" href="#updatethemealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateThemeAlias</h3>
+<ul>
+<li>description: Updates the theme alias of a theme</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatethemepermissions"><a aria-hidden="true" class="anchor-heading" href="#updatethemepermissions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateThemePermissions</h3>
+<ul>
+<li>description: Updates the resource permissions for a theme</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "theme": {
+        "resource_type": "theme",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateuser"><a aria-hidden="true" class="anchor-heading" href="#updateuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateUser</h3>
+<ul>
+<li>description: Updates an Amazon QuickSight user.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-QuickSight"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

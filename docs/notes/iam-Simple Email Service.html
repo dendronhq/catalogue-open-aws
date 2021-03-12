@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Simple Email Service - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Simple Email Service.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Simple Email Service.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Simple Email Service.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Simple Email Service - undefined" />
+  <meta name="twitter:title" content="Simple Email Service - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Simple Email Service</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Simple Email Service">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="simple-email-service"><a aria-hidden="true" class="anchor-heading" href="#simple-email-service"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Simple Email Service</h1>
+<ul>
+<li>prefix: ses</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="clonereceiptruleset"><a aria-hidden="true" class="anchor-heading" href="#clonereceiptruleset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CloneReceiptRuleSet</h3>
+<ul>
+<li>description: Creates a receipt rule set by cloning an existing one</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createconfigurationset"><a aria-hidden="true" class="anchor-heading" href="#createconfigurationset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateConfigurationSet</h3>
+<ul>
+<li>description: Creates a new configuration set</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createconfigurationseteventdestination"><a aria-hidden="true" class="anchor-heading" href="#createconfigurationseteventdestination"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateConfigurationSetEventDestination</h3>
+<ul>
+<li>description: Creates a configuration set event destination</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createconfigurationsettrackingoptions"><a aria-hidden="true" class="anchor-heading" href="#createconfigurationsettrackingoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateConfigurationSetTrackingOptions</h3>
+<ul>
+<li>description: Creates an association between a configuration set and a custom domain for open and click event tracking</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcustomverificationemailtemplate"><a aria-hidden="true" class="anchor-heading" href="#createcustomverificationemailtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateCustomVerificationEmailTemplate</h3>
+<ul>
+<li>description: Creates a new custom verification email template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createreceiptfilter"><a aria-hidden="true" class="anchor-heading" href="#createreceiptfilter"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateReceiptFilter</h3>
+<ul>
+<li>description: Creates a new IP address filter</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createreceiptrule"><a aria-hidden="true" class="anchor-heading" href="#createreceiptrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateReceiptRule</h3>
+<ul>
+<li>description: Creates a receipt rule</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createreceiptruleset"><a aria-hidden="true" class="anchor-heading" href="#createreceiptruleset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateReceiptRuleSet</h3>
+<ul>
+<li>description: Creates an empty receipt rule set</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtemplate"><a aria-hidden="true" class="anchor-heading" href="#createtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTemplate</h3>
+<ul>
+<li>description: Creates an email template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteconfigurationset"><a aria-hidden="true" class="anchor-heading" href="#deleteconfigurationset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteConfigurationSet</h3>
+<ul>
+<li>description: Deletes the configuration set</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteconfigurationseteventdestination"><a aria-hidden="true" class="anchor-heading" href="#deleteconfigurationseteventdestination"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteConfigurationSetEventDestination</h3>
+<ul>
+<li>description: Deletes a configuration set event destination</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteconfigurationsettrackingoptions"><a aria-hidden="true" class="anchor-heading" href="#deleteconfigurationsettrackingoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteConfigurationSetTrackingOptions</h3>
+<ul>
+<li>description: Deletes an association between a configuration set and a custom domain for open and click event tracking</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletecustomverificationemailtemplate"><a aria-hidden="true" class="anchor-heading" href="#deletecustomverificationemailtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteCustomVerificationEmailTemplate</h3>
+<ul>
+<li>description: Deletes an existing custom verification email template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteidentity"><a aria-hidden="true" class="anchor-heading" href="#deleteidentity"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteIdentity</h3>
+<ul>
+<li>description: Deletes the specified identity (an email address or a domain) from the list of verified identities</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteidentitypolicy"><a aria-hidden="true" class="anchor-heading" href="#deleteidentitypolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteIdentityPolicy</h3>
+<ul>
+<li>description: Deletes the specified identity (an email address or a domain) from the list of verified identities</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletereceiptfilter"><a aria-hidden="true" class="anchor-heading" href="#deletereceiptfilter"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteReceiptFilter</h3>
+<ul>
+<li>description: Deletes the specified IP address filter</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletereceiptrule"><a aria-hidden="true" class="anchor-heading" href="#deletereceiptrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteReceiptRule</h3>
+<ul>
+<li>description: Deletes the specified receipt rule</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletereceiptruleset"><a aria-hidden="true" class="anchor-heading" href="#deletereceiptruleset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteReceiptRuleSet</h3>
+<ul>
+<li>description: Deletes the specified receipt rule set and all of the receipt rules it contains</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetemplate"><a aria-hidden="true" class="anchor-heading" href="#deletetemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTemplate</h3>
+<ul>
+<li>description: Deletes an email template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteverifiedemailaddress"><a aria-hidden="true" class="anchor-heading" href="#deleteverifiedemailaddress"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVerifiedEmailAddress</h3>
+<ul>
+<li>description: Deletes the specified email address from the list of verified addresses</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeactivereceiptruleset"><a aria-hidden="true" class="anchor-heading" href="#describeactivereceiptruleset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeActiveReceiptRuleSet</h3>
+<ul>
+<li>description: Returns the metadata and receipt rules for the receipt rule set that is currently active</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeconfigurationset"><a aria-hidden="true" class="anchor-heading" href="#describeconfigurationset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeConfigurationSet</h3>
+<ul>
+<li>description: Returns the details of the specified configuration set</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describereceiptrule"><a aria-hidden="true" class="anchor-heading" href="#describereceiptrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeReceiptRule</h3>
+<ul>
+<li>description: Returns the details of the specified receipt rule</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describereceiptruleset"><a aria-hidden="true" class="anchor-heading" href="#describereceiptruleset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeReceiptRuleSet</h3>
+<ul>
+<li>description: Returns the details of the specified receipt rule set</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getaccountsendingenabled"><a aria-hidden="true" class="anchor-heading" href="#getaccountsendingenabled"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAccountSendingEnabled</h3>
+<ul>
+<li>description: Returns the email sending status of the Amazon SES account for the current region</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcustomverificationemailtemplate"><a aria-hidden="true" class="anchor-heading" href="#getcustomverificationemailtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCustomVerificationEmailTemplate</h3>
+<ul>
+<li>description: Returns the custom email verification template for the template name you specify</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getidentitydkimattributes"><a aria-hidden="true" class="anchor-heading" href="#getidentitydkimattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetIdentityDkimAttributes</h3>
+<ul>
+<li>description: Returns the current status of Easy DKIM signing for an entity</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getidentitymailfromdomainattributes"><a aria-hidden="true" class="anchor-heading" href="#getidentitymailfromdomainattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetIdentityMailFromDomainAttributes</h3>
+<ul>
+<li>description: Returns the custom MAIL FROM attributes for a list of identities (email addresses and/or domains)</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getidentitynotificationattributes"><a aria-hidden="true" class="anchor-heading" href="#getidentitynotificationattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetIdentityNotificationAttributes</h3>
+<ul>
+<li>description: Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getidentitypolicies"><a aria-hidden="true" class="anchor-heading" href="#getidentitypolicies"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetIdentityPolicies</h3>
+<ul>
+<li>description: Returns the requested sending authorization policies for the given identity (an email address or a domain)</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getidentityverificationattributes"><a aria-hidden="true" class="anchor-heading" href="#getidentityverificationattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetIdentityVerificationAttributes</h3>
+<ul>
+<li>description: Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the verification token for each identity</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsendquota"><a aria-hidden="true" class="anchor-heading" href="#getsendquota"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSendQuota</h3>
+<ul>
+<li>description: Returns the user's current sending limits</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsendstatistics"><a aria-hidden="true" class="anchor-heading" href="#getsendstatistics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSendStatistics</h3>
+<ul>
+<li>description: Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettemplate"><a aria-hidden="true" class="anchor-heading" href="#gettemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTemplate</h3>
+<ul>
+<li>description: Returns the template object (which includes the Subject line, HTML part and text part) for the template you specify</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listconfigurationsets"><a aria-hidden="true" class="anchor-heading" href="#listconfigurationsets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListConfigurationSets</h3>
+<ul>
+<li>description: Returns a list of the configuration sets associated with your Amazon SES account in the current AWS Region</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcustomverificationemailtemplates"><a aria-hidden="true" class="anchor-heading" href="#listcustomverificationemailtemplates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCustomVerificationEmailTemplates</h3>
+<ul>
+<li>description: Lists the existing custom verification email templates for your account in the current AWS Region</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listidentities"><a aria-hidden="true" class="anchor-heading" href="#listidentities"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListIdentities</h3>
+<ul>
+<li>description: Returns a list containing all of the identities (email addresses and domains) for your AWS account, regardless of verification status</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listidentitypolicies"><a aria-hidden="true" class="anchor-heading" href="#listidentitypolicies"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListIdentityPolicies</h3>
+<ul>
+<li>description: Returns a list of sending authorization policies that are attached to the given identity (an email address or a domain)</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listreceiptfilters"><a aria-hidden="true" class="anchor-heading" href="#listreceiptfilters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListReceiptFilters</h3>
+<ul>
+<li>description: Lists the IP address filters associated with your AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listreceiptrulesets"><a aria-hidden="true" class="anchor-heading" href="#listreceiptrulesets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListReceiptRuleSets</h3>
+<ul>
+<li>description: Lists the receipt rule sets that exist under your AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtemplates"><a aria-hidden="true" class="anchor-heading" href="#listtemplates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTemplates</h3>
+<ul>
+<li>description: Lists the email templates present in your Amazon SES account in the current AWS Region</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listverifiedemailaddresses"><a aria-hidden="true" class="anchor-heading" href="#listverifiedemailaddresses"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListVerifiedEmailAddresses</h3>
+<ul>
+<li>description: Returns a list containing all of the email addresses that have been verified</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putidentitypolicy"><a aria-hidden="true" class="anchor-heading" href="#putidentitypolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutIdentityPolicy</h3>
+<ul>
+<li>description: Adds or updates a sending authorization policy for the specified identity (an email address or a domain)</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="reorderreceiptruleset"><a aria-hidden="true" class="anchor-heading" href="#reorderreceiptruleset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ReorderReceiptRuleSet</h3>
+<ul>
+<li>description: Reorders the receipt rules within a receipt rule set</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="sendbounce"><a aria-hidden="true" class="anchor-heading" href="#sendbounce"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SendBounce</h3>
+<ul>
+<li>description: Generates and sends a bounce message to the sender of an email you received through Amazon SES</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "ses:FromAddress"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="sendbulktemplatedemail"><a aria-hidden="true" class="anchor-heading" href="#sendbulktemplatedemail"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SendBulkTemplatedEmail</h3>
+<ul>
+<li>description: Composes an email message to multiple destinations</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "identity": {
+        "resource_type": "identity",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "ses:FeedbackAddress",
+            "ses:FromAddress",
+            "ses:FromDisplayName",
+            "ses:Recipients"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="sendcustomverificationemail"><a aria-hidden="true" class="anchor-heading" href="#sendcustomverificationemail"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SendCustomVerificationEmail</h3>
+<ul>
+<li>description: Adds an email address to the list of identities for your Amazon SES account in the current AWS Region and attempts to verify it</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "identity": {
+        "resource_type": "identity",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "ses:FeedbackAddress",
+            "ses:FromAddress",
+            "ses:FromDisplayName",
+            "ses:Recipients"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="sendemail"><a aria-hidden="true" class="anchor-heading" href="#sendemail"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SendEmail</h3>
+<ul>
+<li>description: Composes an email message based on input data, and then immediately queues the message for sending</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "identity": {
+        "resource_type": "identity",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "ses:FeedbackAddress",
+            "ses:FromAddress",
+            "ses:FromDisplayName",
+            "ses:Recipients"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="sendrawemail"><a aria-hidden="true" class="anchor-heading" href="#sendrawemail"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SendRawEmail</h3>
+<ul>
+<li>description: Sends an email message, with header and content specified by the client</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "identity": {
+        "resource_type": "identity",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "ses:FeedbackAddress",
+            "ses:FromAddress",
+            "ses:FromDisplayName",
+            "ses:Recipients"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="sendtemplatedemail"><a aria-hidden="true" class="anchor-heading" href="#sendtemplatedemail"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SendTemplatedEmail</h3>
+<ul>
+<li>description: Composes an email message using an email template and immediately queues it for sending</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "identity": {
+        "resource_type": "identity",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "ses:FeedbackAddress",
+            "ses:FromAddress",
+            "ses:FromDisplayName",
+            "ses:Recipients"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setactivereceiptruleset"><a aria-hidden="true" class="anchor-heading" href="#setactivereceiptruleset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetActiveReceiptRuleSet</h3>
+<ul>
+<li>description: Sets the specified receipt rule set as the active receipt rule set</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setidentitydkimenabled"><a aria-hidden="true" class="anchor-heading" href="#setidentitydkimenabled"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetIdentityDkimEnabled</h3>
+<ul>
+<li>description: Enables or disables Easy DKIM signing of email sent from an identity</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setidentityfeedbackforwardingenabled"><a aria-hidden="true" class="anchor-heading" href="#setidentityfeedbackforwardingenabled"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetIdentityFeedbackForwardingEnabled</h3>
+<ul>
+<li>description: Given an identity (an email address or a domain), enables or disables whether Amazon SES forwards bounce and complaint notifications as email</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setidentityheadersinnotificationsenabled"><a aria-hidden="true" class="anchor-heading" href="#setidentityheadersinnotificationsenabled"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetIdentityHeadersInNotificationsEnabled</h3>
+<ul>
+<li>description: Given an identity (an email address or a domain), sets whether Amazon SES includes the original email headers in the Amazon Simple Notification Service (Amazon SNS) notifications of a specified type</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setidentitymailfromdomain"><a aria-hidden="true" class="anchor-heading" href="#setidentitymailfromdomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetIdentityMailFromDomain</h3>
+<ul>
+<li>description: Enables or disables the custom MAIL FROM domain setup for a verified identity (an email address or a domain)</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setidentitynotificationtopic"><a aria-hidden="true" class="anchor-heading" href="#setidentitynotificationtopic"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetIdentityNotificationTopic</h3>
+<ul>
+<li>description: Given an identity (an email address or a domain), sets the Amazon Simple Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery notifications for emails sent with that identity as the Source</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setreceiptruleposition"><a aria-hidden="true" class="anchor-heading" href="#setreceiptruleposition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetReceiptRulePosition</h3>
+<ul>
+<li>description: Sets the position of the specified receipt rule in the receipt rule set</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="testrendertemplate"><a aria-hidden="true" class="anchor-heading" href="#testrendertemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TestRenderTemplate</h3>
+<ul>
+<li>description: Creates a preview of the MIME content of an email when provided with a template and a set of replacement data</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateaccountsendingenabled"><a aria-hidden="true" class="anchor-heading" href="#updateaccountsendingenabled"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAccountSendingEnabled</h3>
+<ul>
+<li>description: Enables or disables email sending across your entire Amazon SES account in the current AWS Region</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateconfigurationseteventdestination"><a aria-hidden="true" class="anchor-heading" href="#updateconfigurationseteventdestination"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateConfigurationSetEventDestination</h3>
+<ul>
+<li>description: Updates the event destination of a configuration set</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateconfigurationsetreputationmetricsenabled"><a aria-hidden="true" class="anchor-heading" href="#updateconfigurationsetreputationmetricsenabled"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateConfigurationSetReputationMetricsEnabled</h3>
+<ul>
+<li>description: Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set in a given AWS Region</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateconfigurationsetsendingenabled"><a aria-hidden="true" class="anchor-heading" href="#updateconfigurationsetsendingenabled"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateConfigurationSetSendingEnabled</h3>
+<ul>
+<li>description: Enables or disables email sending for messages sent using a specific configuration set in a given AWS Region</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateconfigurationsettrackingoptions"><a aria-hidden="true" class="anchor-heading" href="#updateconfigurationsettrackingoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateConfigurationSetTrackingOptions</h3>
+<ul>
+<li>description: Modifies an association between a configuration set and a custom domain for open and click event tracking</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecustomverificationemailtemplate"><a aria-hidden="true" class="anchor-heading" href="#updatecustomverificationemailtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateCustomVerificationEmailTemplate</h3>
+<ul>
+<li>description: Updates an existing custom verification email template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatereceiptrule"><a aria-hidden="true" class="anchor-heading" href="#updatereceiptrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateReceiptRule</h3>
+<ul>
+<li>description: Updates a receipt rule</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatetemplate"><a aria-hidden="true" class="anchor-heading" href="#updatetemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateTemplate</h3>
+<ul>
+<li>description: Updates an email template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="verifydomaindkim"><a aria-hidden="true" class="anchor-heading" href="#verifydomaindkim"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>VerifyDomainDkim</h3>
+<ul>
+<li>description: Returns a set of DKIM tokens for a domain</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="verifydomainidentity"><a aria-hidden="true" class="anchor-heading" href="#verifydomainidentity"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>VerifyDomainIdentity</h3>
+<ul>
+<li>description: Verifies a domain</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="verifyemailaddress"><a aria-hidden="true" class="anchor-heading" href="#verifyemailaddress"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>VerifyEmailAddress</h3>
+<ul>
+<li>description: Verifies an email address. This action causes a confirmation email message to be sent to the specified address. This action is throttled at one request per second</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="verifyemailidentity"><a aria-hidden="true" class="anchor-heading" href="#verifyemailidentity"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>VerifyEmailIdentity</h3>
+<ul>
+<li>description: Verifies an email address. This action causes a confirmation email message to be sent to the specified address. This action is throttled at one request per second</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Simple Email Service"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

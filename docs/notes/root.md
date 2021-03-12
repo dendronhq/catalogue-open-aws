@@ -20,9 +20,9 @@ permalink: /
 ---
 # The Open AWS Catalogue
 
-<iframe src="https://ghbtns.com/github-btn.html?user=dendronhq&repo=catalogue-open-aws&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+<iframe src="https://ghbtns.com/github-btn.html?user=dendronhq&repo=catalogue-open-aws&type=star&count=false&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
 
-This site is meant to be a reference of all things AWS. It is compiled from the [highest quality open sources of information](notes/dd5fcf14-9678-4f38-acec-4b8965c8c568) available about AWS. It is generated and published using [Dendron](http://dendron.so/), the open source note taking tool. 
+This site is meant to be a reference of all things AWS. It is compiled from the [highest quality open sources of information](notes/dd5fcf14-9678-4f38-acec-4b8965c8c568) available about AWS. It is generated and published using [Dendron](http://dendron.so/), the open source note taking tool.
 
 You can find a rough roadmap of what we're working on [here](notes/6cd09d9c-6929-423c-9bb0-a117e8215473).
 

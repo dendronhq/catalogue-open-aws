@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Greengrass - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Greengrass.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Greengrass.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Greengrass.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Greengrass - undefined" />
+  <meta name="twitter:title" content="Greengrass - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Greengrass</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Greengrass">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="greengrass"><a aria-hidden="true" class="anchor-heading" href="#greengrass"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Greengrass</h1>
+<ul>
+<li>prefix: greengrass</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="associateroletogroup"><a aria-hidden="true" class="anchor-heading" href="#associateroletogroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociateRoleToGroup</h3>
+<ul>
+<li>description: Grants permission to associate a role with a group. The role's permissions must allow Greengrass core Lambda functions and connectors to perform actions in other AWS services.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="associateserviceroletoaccount"><a aria-hidden="true" class="anchor-heading" href="#associateserviceroletoaccount"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociateServiceRoleToAccount</h3>
+<ul>
+<li>description: Grants permission to associate a role with your account. AWS IoT Greengrass uses this role to access your Lambda functions and AWS IoT resources.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createconnectordefinition"><a aria-hidden="true" class="anchor-heading" href="#createconnectordefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateConnectorDefinition</h3>
+<ul>
+<li>description: Grants permission to create a connector definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createconnectordefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#createconnectordefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateConnectorDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to create a version of an existing connector definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "connectorDefinition": {
+        "resource_type": "connectorDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcoredefinition"><a aria-hidden="true" class="anchor-heading" href="#createcoredefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateCoreDefinition</h3>
+<ul>
+<li>description: Grants permission to create a core definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcoredefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#createcoredefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateCoreDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to create a version of an existing core definition. Greengrass groups must each contain exactly one Greengrass core.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "coreDefinition": {
+        "resource_type": "coreDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdeployment"><a aria-hidden="true" class="anchor-heading" href="#createdeployment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDeployment</h3>
+<ul>
+<li>description: Grants permission to create a deployment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdevicedefinition"><a aria-hidden="true" class="anchor-heading" href="#createdevicedefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDeviceDefinition</h3>
+<ul>
+<li>description: Grants permission to create a device definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdevicedefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#createdevicedefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDeviceDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to create a version of an existing device definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deviceDefinition": {
+        "resource_type": "deviceDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createfunctiondefinition"><a aria-hidden="true" class="anchor-heading" href="#createfunctiondefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateFunctionDefinition</h3>
+<ul>
+<li>description: Grants permission to create a Lambda function definition to be used in a group that contains a list of Lambda functions and their configurations.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createfunctiondefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#createfunctiondefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateFunctionDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to create a version of an existing Lambda function definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "functionDefinition": {
+        "resource_type": "functionDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creategroup"><a aria-hidden="true" class="anchor-heading" href="#creategroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateGroup</h3>
+<ul>
+<li>description: Grants permission to create a group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creategroupcertificateauthority"><a aria-hidden="true" class="anchor-heading" href="#creategroupcertificateauthority"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateGroupCertificateAuthority</h3>
+<ul>
+<li>description: Grants permission to create a CA for the group, or rotate the existing CA.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creategroupversion"><a aria-hidden="true" class="anchor-heading" href="#creategroupversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateGroupVersion</h3>
+<ul>
+<li>description: Grants permission to create a version of a group that has already been defined.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createloggerdefinition"><a aria-hidden="true" class="anchor-heading" href="#createloggerdefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateLoggerDefinition</h3>
+<ul>
+<li>description: Grants permission to create a logger definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createloggerdefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#createloggerdefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateLoggerDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to create a version of an existing logger definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "loggerDefinition": {
+        "resource_type": "loggerDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createresourcedefinition"><a aria-hidden="true" class="anchor-heading" href="#createresourcedefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateResourceDefinition</h3>
+<ul>
+<li>description: Grants permission to create a resource definition that contains a list of resources to be used in a group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createresourcedefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#createresourcedefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateResourceDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to create a version of an existing resource definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resourceDefinition": {
+        "resource_type": "resourceDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsoftwareupdatejob"><a aria-hidden="true" class="anchor-heading" href="#createsoftwareupdatejob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSoftwareUpdateJob</h3>
+<ul>
+<li>description: Grants permission to create an AWS IoT job that will trigger your Greengrass cores to update the software they are running.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsubscriptiondefinition"><a aria-hidden="true" class="anchor-heading" href="#createsubscriptiondefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSubscriptionDefinition</h3>
+<ul>
+<li>description: Grants permission to create a subscription definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsubscriptiondefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#createsubscriptiondefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSubscriptionDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to create a version of an existing subscription definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subscriptionDefinition": {
+        "resource_type": "subscriptionDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteconnectordefinition"><a aria-hidden="true" class="anchor-heading" href="#deleteconnectordefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteConnectorDefinition</h3>
+<ul>
+<li>description: Grants permission to delete a connector definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "connectorDefinition": {
+        "resource_type": "connectorDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletecoredefinition"><a aria-hidden="true" class="anchor-heading" href="#deletecoredefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteCoreDefinition</h3>
+<ul>
+<li>description: Grants permission to delete a core definition. Deleting a definition that is currently in use in a deployment affects future deployments.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "coreDefinition": {
+        "resource_type": "coreDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedevicedefinition"><a aria-hidden="true" class="anchor-heading" href="#deletedevicedefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDeviceDefinition</h3>
+<ul>
+<li>description: Grants permission to delete a device definition. Deleting a definition that is currently in use in a deployment affects future deployments.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deviceDefinition": {
+        "resource_type": "deviceDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletefunctiondefinition"><a aria-hidden="true" class="anchor-heading" href="#deletefunctiondefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteFunctionDefinition</h3>
+<ul>
+<li>description: Grants permission to delete a Lambda function definition. Deleting a definition that is currently in use in a deployment affects future deployments.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "functionDefinition": {
+        "resource_type": "functionDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletegroup"><a aria-hidden="true" class="anchor-heading" href="#deletegroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteGroup</h3>
+<ul>
+<li>description: Grants permission to delete a group that is not currently in use in a deployment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteloggerdefinition"><a aria-hidden="true" class="anchor-heading" href="#deleteloggerdefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteLoggerDefinition</h3>
+<ul>
+<li>description: Grants permission to delete a logger definition. Deleting a definition that is currently in use in a deployment affects future deployments.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "loggerDefinition": {
+        "resource_type": "loggerDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteresourcedefinition"><a aria-hidden="true" class="anchor-heading" href="#deleteresourcedefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteResourceDefinition</h3>
+<ul>
+<li>description: Grants permission to delete a resource definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resourceDefinition": {
+        "resource_type": "resourceDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesubscriptiondefinition"><a aria-hidden="true" class="anchor-heading" href="#deletesubscriptiondefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSubscriptionDefinition</h3>
+<ul>
+<li>description: Grants permission to delete a subscription definition. Deleting a definition that is currently in use in a deployment affects future deployments.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subscriptionDefinition": {
+        "resource_type": "subscriptionDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociaterolefromgroup"><a aria-hidden="true" class="anchor-heading" href="#disassociaterolefromgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociateRoleFromGroup</h3>
+<ul>
+<li>description: Grants permission to disassociate the role from a group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociateservicerolefromaccount"><a aria-hidden="true" class="anchor-heading" href="#disassociateservicerolefromaccount"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociateServiceRoleFromAccount</h3>
+<ul>
+<li>description: Grants permission to disassociate the service role from an account. Without a service role, deployments will not work.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="discover"><a aria-hidden="true" class="anchor-heading" href="#discover"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Discover</h3>
+<ul>
+<li>description: Grants permission to retrieve information required to connect to a Greengrass core.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getassociatedrole"><a aria-hidden="true" class="anchor-heading" href="#getassociatedrole"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAssociatedRole</h3>
+<ul>
+<li>description: Grants permission to retrieve the role associated with a group.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbulkdeploymentstatus"><a aria-hidden="true" class="anchor-heading" href="#getbulkdeploymentstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBulkDeploymentStatus</h3>
+<ul>
+<li>description: Grants permission to return the status of a bulk deployment.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bulkDeployment": {
+        "resource_type": "bulkDeployment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getconnectivityinfo"><a aria-hidden="true" class="anchor-heading" href="#getconnectivityinfo"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetConnectivityInfo</h3>
+<ul>
+<li>description: Grants permission to retrieve the connectivity information for a core.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "connectivityInfo": {
+        "resource_type": "connectivityInfo",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getconnectordefinition"><a aria-hidden="true" class="anchor-heading" href="#getconnectordefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetConnectorDefinition</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a connector definition.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "connectorDefinition": {
+        "resource_type": "connectorDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getconnectordefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#getconnectordefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetConnectorDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a connector definition version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "connectorDefinition": {
+        "resource_type": "connectorDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "connectorDefinitionVersion": {
+        "resource_type": "connectorDefinitionVersion",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcoredefinition"><a aria-hidden="true" class="anchor-heading" href="#getcoredefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCoreDefinition</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a core definition.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "coreDefinition": {
+        "resource_type": "coreDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcoredefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#getcoredefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCoreDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a core definition version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "coreDefinition": {
+        "resource_type": "coreDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "coreDefinitionVersion": {
+        "resource_type": "coreDefinitionVersion",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdeploymentstatus"><a aria-hidden="true" class="anchor-heading" href="#getdeploymentstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDeploymentStatus</h3>
+<ul>
+<li>description: Grants permission to return the status of a deployment.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deployment": {
+        "resource_type": "deployment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdevicedefinition"><a aria-hidden="true" class="anchor-heading" href="#getdevicedefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDeviceDefinition</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a device definition.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deviceDefinition": {
+        "resource_type": "deviceDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdevicedefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#getdevicedefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDeviceDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a device definition version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deviceDefinition": {
+        "resource_type": "deviceDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "deviceDefinitionVersion": {
+        "resource_type": "deviceDefinitionVersion",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getfunctiondefinition"><a aria-hidden="true" class="anchor-heading" href="#getfunctiondefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetFunctionDefinition</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a Lambda function definition, such as its creation time and latest version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "functionDefinition": {
+        "resource_type": "functionDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getfunctiondefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#getfunctiondefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetFunctionDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a Lambda function definition version, such as which Lambda functions are included in the version and their configurations.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "functionDefinition": {
+        "resource_type": "functionDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "functionDefinitionVersion": {
+        "resource_type": "functionDefinitionVersion",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getgroup"><a aria-hidden="true" class="anchor-heading" href="#getgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetGroup</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a group.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getgroupcertificateauthority"><a aria-hidden="true" class="anchor-heading" href="#getgroupcertificateauthority"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetGroupCertificateAuthority</h3>
+<ul>
+<li>description: Grants permission to return the public key of the CA associated with a group.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "certificateAuthority": {
+        "resource_type": "certificateAuthority",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getgroupcertificateconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getgroupcertificateconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetGroupCertificateConfiguration</h3>
+<ul>
+<li>description: Grants permission to retrieve the current configuration for the CA used by a group.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getgroupversion"><a aria-hidden="true" class="anchor-heading" href="#getgroupversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetGroupVersion</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a group version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "groupVersion": {
+        "resource_type": "groupVersion",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getloggerdefinition"><a aria-hidden="true" class="anchor-heading" href="#getloggerdefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetLoggerDefinition</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a logger definition.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "loggerDefinition": {
+        "resource_type": "loggerDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getloggerdefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#getloggerdefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetLoggerDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a logger definition version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "loggerDefinition": {
+        "resource_type": "loggerDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "loggerDefinitionVersion": {
+        "resource_type": "loggerDefinitionVersion",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getresourcedefinition"><a aria-hidden="true" class="anchor-heading" href="#getresourcedefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetResourceDefinition</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a resource definition, such as its creation time and latest version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resourceDefinition": {
+        "resource_type": "resourceDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getresourcedefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#getresourcedefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetResourceDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a resource definition version, such as which resources are included in the version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resourceDefinition": {
+        "resource_type": "resourceDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "resourceDefinitionVersion": {
+        "resource_type": "resourceDefinitionVersion",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getserviceroleforaccount"><a aria-hidden="true" class="anchor-heading" href="#getserviceroleforaccount"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetServiceRoleForAccount</h3>
+<ul>
+<li>description: Grants permission to retrieve the service role that is attached to an account.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsubscriptiondefinition"><a aria-hidden="true" class="anchor-heading" href="#getsubscriptiondefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSubscriptionDefinition</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a subscription definition.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subscriptionDefinition": {
+        "resource_type": "subscriptionDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsubscriptiondefinitionversion"><a aria-hidden="true" class="anchor-heading" href="#getsubscriptiondefinitionversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSubscriptionDefinitionVersion</h3>
+<ul>
+<li>description: Grants permission to retrieve information about a subscription definition version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subscriptionDefinition": {
+        "resource_type": "subscriptionDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subscriptionDefinitionVersion": {
+        "resource_type": "subscriptionDefinitionVersion",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listbulkdeploymentdetailedreports"><a aria-hidden="true" class="anchor-heading" href="#listbulkdeploymentdetailedreports"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListBulkDeploymentDetailedReports</h3>
+<ul>
+<li>description: Grants permission to retrieve a paginated list of the deployments that have been started in a bulk deployment operation and their current deployment status.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bulkDeployment": {
+        "resource_type": "bulkDeployment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listbulkdeployments"><a aria-hidden="true" class="anchor-heading" href="#listbulkdeployments"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListBulkDeployments</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of bulk deployments.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listconnectordefinitionversions"><a aria-hidden="true" class="anchor-heading" href="#listconnectordefinitionversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListConnectorDefinitionVersions</h3>
+<ul>
+<li>description: Grants permission to list the versions of a connector definition.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "connectorDefinition": {
+        "resource_type": "connectorDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listconnectordefinitions"><a aria-hidden="true" class="anchor-heading" href="#listconnectordefinitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListConnectorDefinitions</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of connector definitions.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcoredefinitionversions"><a aria-hidden="true" class="anchor-heading" href="#listcoredefinitionversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCoreDefinitionVersions</h3>
+<ul>
+<li>description: Grants permission to list the versions of a core definition.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "coreDefinition": {
+        "resource_type": "coreDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcoredefinitions"><a aria-hidden="true" class="anchor-heading" href="#listcoredefinitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCoreDefinitions</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of core definitions.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdeployments"><a aria-hidden="true" class="anchor-heading" href="#listdeployments"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDeployments</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of all deployments for a group.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdevicedefinitionversions"><a aria-hidden="true" class="anchor-heading" href="#listdevicedefinitionversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDeviceDefinitionVersions</h3>
+<ul>
+<li>description: Grants permission to list the versions of a device definition.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deviceDefinition": {
+        "resource_type": "deviceDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdevicedefinitions"><a aria-hidden="true" class="anchor-heading" href="#listdevicedefinitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDeviceDefinitions</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of device definitions.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listfunctiondefinitionversions"><a aria-hidden="true" class="anchor-heading" href="#listfunctiondefinitionversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListFunctionDefinitionVersions</h3>
+<ul>
+<li>description: Grants permission to list the versions of a Lambda function definition.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "functionDefinition": {
+        "resource_type": "functionDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listfunctiondefinitions"><a aria-hidden="true" class="anchor-heading" href="#listfunctiondefinitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListFunctionDefinitions</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of Lambda function definitions.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listgroupcertificateauthorities"><a aria-hidden="true" class="anchor-heading" href="#listgroupcertificateauthorities"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListGroupCertificateAuthorities</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of current CAs for a group.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listgroupversions"><a aria-hidden="true" class="anchor-heading" href="#listgroupversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListGroupVersions</h3>
+<ul>
+<li>description: Grants permission to list the versions of a group.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listgroups"><a aria-hidden="true" class="anchor-heading" href="#listgroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListGroups</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of groups.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listloggerdefinitionversions"><a aria-hidden="true" class="anchor-heading" href="#listloggerdefinitionversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListLoggerDefinitionVersions</h3>
+<ul>
+<li>description: Grants permission to list the versions of a logger definition.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "loggerDefinition": {
+        "resource_type": "loggerDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listloggerdefinitions"><a aria-hidden="true" class="anchor-heading" href="#listloggerdefinitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListLoggerDefinitions</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of logger definitions.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listresourcedefinitionversions"><a aria-hidden="true" class="anchor-heading" href="#listresourcedefinitionversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListResourceDefinitionVersions</h3>
+<ul>
+<li>description: Grants permission to list the versions of a resource definition.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resourceDefinition": {
+        "resource_type": "resourceDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listresourcedefinitions"><a aria-hidden="true" class="anchor-heading" href="#listresourcedefinitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListResourceDefinitions</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of resource definitions.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsubscriptiondefinitionversions"><a aria-hidden="true" class="anchor-heading" href="#listsubscriptiondefinitionversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSubscriptionDefinitionVersions</h3>
+<ul>
+<li>description: Grants permission to list the versions of a subscription definition.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subscriptionDefinition": {
+        "resource_type": "subscriptionDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsubscriptiondefinitions"><a aria-hidden="true" class="anchor-heading" href="#listsubscriptiondefinitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSubscriptionDefinitions</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of subscription definitions.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Grants permission to list the tags for a resource.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bulkDeployment": {
+        "resource_type": "bulkDeployment",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "connectorDefinition": {
+        "resource_type": "connectorDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "coreDefinition": {
+        "resource_type": "coreDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "deviceDefinition": {
+        "resource_type": "deviceDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "functionDefinition": {
+        "resource_type": "functionDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "group": {
+        "resource_type": "group",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "loggerDefinition": {
+        "resource_type": "loggerDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "resourceDefinition": {
+        "resource_type": "resourceDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subscriptionDefinition": {
+        "resource_type": "subscriptionDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resetdeployments"><a aria-hidden="true" class="anchor-heading" href="#resetdeployments"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResetDeployments</h3>
+<ul>
+<li>description: Grants permission to reset a group's deployments.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startbulkdeployment"><a aria-hidden="true" class="anchor-heading" href="#startbulkdeployment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartBulkDeployment</h3>
+<ul>
+<li>description: Grants permission to deploy multiple groups in one operation.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopbulkdeployment"><a aria-hidden="true" class="anchor-heading" href="#stopbulkdeployment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopBulkDeployment</h3>
+<ul>
+<li>description: Grants permission to stop the execution of a bulk deployment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bulkDeployment": {
+        "resource_type": "bulkDeployment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Grants permission to add tags to a resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bulkDeployment": {
+        "resource_type": "bulkDeployment",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "connectorDefinition": {
+        "resource_type": "connectorDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "coreDefinition": {
+        "resource_type": "coreDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "deviceDefinition": {
+        "resource_type": "deviceDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "functionDefinition": {
+        "resource_type": "functionDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "group": {
+        "resource_type": "group",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "loggerDefinition": {
+        "resource_type": "loggerDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "resourceDefinition": {
+        "resource_type": "resourceDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subscriptionDefinition": {
+        "resource_type": "subscriptionDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Grants permission to remove tags from a resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "bulkDeployment": {
+        "resource_type": "bulkDeployment",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "connectorDefinition": {
+        "resource_type": "connectorDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "coreDefinition": {
+        "resource_type": "coreDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "deviceDefinition": {
+        "resource_type": "deviceDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "functionDefinition": {
+        "resource_type": "functionDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "group": {
+        "resource_type": "group",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "loggerDefinition": {
+        "resource_type": "loggerDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "resourceDefinition": {
+        "resource_type": "resourceDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subscriptionDefinition": {
+        "resource_type": "subscriptionDefinition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateconnectivityinfo"><a aria-hidden="true" class="anchor-heading" href="#updateconnectivityinfo"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateConnectivityInfo</h3>
+<ul>
+<li>description: Grants permission to update the connectivity information for a Greengrass core. Any devices that belong to the group that has this core will receive this information in order to find the location of the core and connect to it.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "connectivityInfo": {
+        "resource_type": "connectivityInfo",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateconnectordefinition"><a aria-hidden="true" class="anchor-heading" href="#updateconnectordefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateConnectorDefinition</h3>
+<ul>
+<li>description: Grants permission to update a connector definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "connectorDefinition": {
+        "resource_type": "connectorDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecoredefinition"><a aria-hidden="true" class="anchor-heading" href="#updatecoredefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateCoreDefinition</h3>
+<ul>
+<li>description: Grants permission to update a core definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "coreDefinition": {
+        "resource_type": "coreDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedevicedefinition"><a aria-hidden="true" class="anchor-heading" href="#updatedevicedefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDeviceDefinition</h3>
+<ul>
+<li>description: Grants permission to update a device definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deviceDefinition": {
+        "resource_type": "deviceDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatefunctiondefinition"><a aria-hidden="true" class="anchor-heading" href="#updatefunctiondefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateFunctionDefinition</h3>
+<ul>
+<li>description: Grants permission to update a Lambda function definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "functionDefinition": {
+        "resource_type": "functionDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updategroup"><a aria-hidden="true" class="anchor-heading" href="#updategroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateGroup</h3>
+<ul>
+<li>description: Grants permission to update a group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updategroupcertificateconfiguration"><a aria-hidden="true" class="anchor-heading" href="#updategroupcertificateconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateGroupCertificateConfiguration</h3>
+<ul>
+<li>description: Grants permission to update the certificate expiry time for a group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "group": {
+        "resource_type": "group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateloggerdefinition"><a aria-hidden="true" class="anchor-heading" href="#updateloggerdefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateLoggerDefinition</h3>
+<ul>
+<li>description: Grants permission to update a logger definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "loggerDefinition": {
+        "resource_type": "loggerDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateresourcedefinition"><a aria-hidden="true" class="anchor-heading" href="#updateresourcedefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateResourceDefinition</h3>
+<ul>
+<li>description: Grants permission to update a resource definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resourceDefinition": {
+        "resource_type": "resourceDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatesubscriptiondefinition"><a aria-hidden="true" class="anchor-heading" href="#updatesubscriptiondefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateSubscriptionDefinition</h3>
+<ul>
+<li>description: Grants permission to update a subscription definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subscriptionDefinition": {
+        "resource_type": "subscriptionDefinition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Greengrass"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

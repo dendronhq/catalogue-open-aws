@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Simple Storage Service - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/simple-storage-service.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/simple-storage-service.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/simple-storage-service.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Simple Storage Service - undefined" />
+  <meta name="twitter:title" content="Simple Storage Service - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/1f759d8c-cca7-4fc4-9aa2-6dbf6e596abf.html">Services</a></li><li class="breadcrumb-nav-list-item">Simple Storage Service</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Simple Storage Service">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <p><img src="/assets/images/Amazon-S3_en.jpg"></p>
+<blockquote>
+<p>Image from <a href="https://www.awsgeek.com/Amazon-S3/">@awsgeek</a></p>
+</blockquote>
+<h1 id="simple-storage-service"><a aria-hidden="true" class="anchor-heading" href="#simple-storage-service"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Simple Storage Service</h1>
+<h3 id="s3-basics"><a aria-hidden="true" class="anchor-heading" href="#s3-basics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>S3 Basics</h3>
+<ul>
+<li>📒 <a href="https://aws.amazon.com/s3/">Homepage</a> ∙ <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html">Developer guide</a> ∙ <a href="https://aws.amazon.com/s3/faqs/">FAQ</a> ∙ <a href="https://aws.amazon.com/s3/pricing/">Pricing</a></li>
+<li><strong>S3</strong> (Simple Storage Service) is AWS’ standard cloud storage service, offering file (opaque “blob”) storage of arbitrary numbers of files of almost any size, from 0 to <strong>5TB</strong>. (Prior to <a href="https://aws.amazon.com/releasenotes/Amazon-S3/1917932037969964">2011</a> the maximum size was 5 GB; larger sizes are now well supported via <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">multipart support</a>.)</li>
+<li>Items, or <strong>objects</strong>, are placed into named <strong>buckets</strong> stored with names which are usually called <strong>keys</strong>. The main content is the <strong>value</strong>.</li>
+<li>Objects are created, deleted, or updated. Large objects can be streamed, but you cannot modify parts of a value; you need to update the whole object. Partial data access can work via <a href="https://aws.amazon.com/blogs/aws/s3-glacier-select/">S3 Select</a>.</li>
+<li>Every object also has <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html"><strong>metadata</strong></a>, which includes arbitrary key-value pairs, and is used in a way similar to HTTP headers. Some metadata is system-defined, some are significant when serving HTTP content from buckets or CloudFront, and you can also define arbitrary metadata for your own use.</li>
+<li><strong>S3 URIs:</strong> Although often bucket and key names are provided in APIs individually, it’s also common practice to write an S3 location in the form 's3://bucket-name/path/to/key' (where the key here is 'path/to/key'). (You’ll also see 's3n://' and 's3a://' prefixes <a href="https://cwiki.apache.org/confluence/display/HADOOP2/AmazonS3">in Hadoop systems</a>.)</li>
+<li><strong>S3 vs Glacier, EBS, and EFS:</strong> AWS offers many storage services, and several besides S3 offer file-type abstractions. <a href="#glacier">Glacier</a> is for cheaper and infrequently accessed archival storage. <a href="#ebs">EBS</a>, unlike S3, allows random access to file contents via a traditional filesystem, but can only be attached to one EC2 instance at a time. <a href="#efs">EFS</a> is a network filesystem many instances can connect to, but at higher cost. See the <a href="#storage-durability-availability-and-price">comparison table</a>.</li>
+</ul>
+<h3 id="s3-tips"><a aria-hidden="true" class="anchor-heading" href="#s3-tips"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>S3 Tips</h3>
+<ul>
+<li>For most practical purposes, you can consider S3 capacity unlimited, both in total size of files and number of objects. The number of objects in a bucket is essentially also unlimited. Customers routinely have millions of objects.</li>
+<li>❗<strong>Permissions:</strong>
+<ul>
+<li>🔸If you're storing business data on Amazon S3, it’s important to manage permissions sensibly. In 2017 companies like <a href="http://www.techrepublic.com/article/massive-amazon-s3-breaches-highlight-blind-spots-in-enterprise-race-to-the-cloud/">Dow Jones and Verizon</a> saw data breaches due to poorly-chosen S3 configuration for sensitive data. Fixing this later can be a difficult task if you have a lot of assets and internal users.</li>
+<li>🔸There are 3 different ways to grant permissions to access Amazon S3 content in your buckets.
+<ul>
+<li><strong>IAM policies</strong> use the familiar <a href="#security-and-iam">Identity and Authentication Management</a> permission scheme to control access to specific operations.</li>
+<li><strong>Bucket policies</strong> grant or deny permissions to an entire bucket. You might use this when hosting a website in S3, to make the bucket publicly readable, or to restrict access to a bucket by IP address. Amazon's <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html">sample bucket policies</a> show a number of use cases where these policies come in handy.</li>
+<li><strong><a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control Lists</a></strong> (ACLs) can also be applied to every bucket and object stored in S3. ACLs grant additional permissions beyond those specified in IAM or bucket policies. ACLs can be used to grant access to another AWS user, or to predefined groups like the general public. This is powerful but can be dangerous, because you need to inspect every object to see who has access.</li>
+</ul>
+</li>
+<li>🔸AWS' <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#specifying-grantee-predefined-groups">predefined access control groups</a> allow access that may not be what you'd expect from their names:
+<ul>
+<li><strong>"All Users", or "Everyone", grants permission to the general public</strong>, not only to users defined in your own AWS account. If an object is available to All Users, then it can be retrieved with a simple HTTP request of the form <code>http://s3.amazonaws.com/bucket-name/filename</code>. No authorization or signature is required to access data in this category.</li>
+<li><strong>"Authenticated Users" grants permissions to anyone with an AWS account</strong>, again not limited to your own users. Because anyone can sign up for AWS, for all intents and purposes <strong>this is also open to the general public</strong>.</li>
+<li><strong>"Log Delivery" group is used by AWS to write logs to buckets</strong> and should be safe to enable on the buckets that need it.</li>
+<li>A typical use case of this ACL is used in conjunction with the <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">requester pays</a> functionality of S3.</li>
+</ul>
+</li>
+<li>❗ Bucket permissions and object permissions are two different things and independent of each other. A private object in a public bucket can be seen when listing the bucket, but not downloaded. At the same time, a public object in a private bucket won't be seen because the bucket contents can't be listed, but can still be downloaded by anyone who knows its exact key. Users that don't have access to set bucket permissions can still make objects public if they have <code>s3:PutObjectAcl</code> or <code>s3:PutObjectVersionAcl</code> <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">permissions</a>.</li>
+<li>🐥In August 2017, AWS added <a href="https://aws.amazon.com/blogs/aws/aws-config-update-new-managed-rules-to-secure-s3-buckets/">AWS Config rules to ensure your S3 buckets are secure</a>.
+<ul>
+<li>❗These AWS Config rules only check the security of your bucket policy and bucket-level ACLs. You can still create object ACLs that grant additional permissions, including opening files to the whole world.</li>
+</ul>
+</li>
+<li>🔹Do create new buckets if you have different types of data with different sensitivity levels. This is much less error prone than complex permissions rules. For example, if data is for administrators only, like log data, put it in a new bucket that only administrators can access.</li>
+<li>For more guidance, see:
+<ul>
+<li><a href="https://read.acloud.guru/how-to-secure-an-s3-bucket-7e2dbd34e81b">How to Secure an Amazon S3 Bucket</a></li>
+<li><a href="https://labs.detectify.com/2017/07/13/a-deep-dive-into-aws-s3-access-controls-taking-full-control-over-your-assets/">Deep dive into S3 access controls</a>.</li>
+<li><a href="https://brandonwamboldt.ca/understanding-s3-permissions-1662/">How do S3 permissions work?</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Bucket naming:</strong> Buckets are chosen from a global namespace (across all regions, even though S3 itself stores data in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">whichever S3 region</a> you select), so you’ll find many bucket names are already taken. Creating a bucket means taking ownership of the name until you delete it. Bucket names have <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">a few restrictions</a> on them.
+<ul>
+<li>Bucket names can be used as part of the hostname when accessing the bucket or its contents, like <code>&#x3C;bucket_name>.s3-us-east-1.amazonaws.com</code>, as long as the name is <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">DNS compliant</a>.</li>
+<li>A common practice is to use the company name acronym or abbreviation to prefix (or suffix, if you prefer DNS-style hierarchy) all bucket names (but please, don’t use a check on this as a security measure — this is highly insecure and easily circumvented!).</li>
+<li>🔸Bucket names with '.' (periods) in them <a href="https://forums.aws.amazon.com/thread.jspa?threadID=169951">can cause certificate mismatches</a> when used with SSL. Use '-' instead, since this then conforms with both SSL expectations and is DNS compliant.</li>
+</ul>
+</li>
+<li><strong>Versioning:</strong> S3 has <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectVersioning.html">optional versioning support</a>, so that all versions of objects are preserved on a bucket. This is mostly useful if you want an archive of changes or the ability to back out mistakes (caution: it lacks the featureset of full version control systems like Git).</li>
+<li><strong>Durability:</strong> Durability of S3 is extremely high, since internally it keeps several replicas. If you don’t delete it by accident, you can count on S3 not losing your data. (AWS offers the seemingly improbable durability rate of <a href="https://aws.amazon.com/s3/faqs/#How_durable_is_Amazon_S3">99.999999999%</a>, but this is a mathematical calculation based on independent failure rates and levels of replication — not a true probability estimate. Either way, S3 has had <a href="https://www.quora.com/Has-Amazon-S3-ever-lost-data-permanently">a very good record</a> of durability.) Note this is <em>much</em> higher durability than EBS!</li>
+<li>💸<strong>S3 pricing</strong> depends on <a href="https://aws.amazon.com/s3/pricing/">storage, requests, and transfer</a>.
+<ul>
+<li>For transfer, putting data into AWS is free, but you’ll pay on the way out. Transfer from S3 to EC2 in the <em>same region</em> is free. Transfer to other regions or the Internet in general is not free.</li>
+<li>Deletes are free.</li>
+</ul>
+</li>
+<li><strong>S3 Reduced Redundancy and Infrequent Access:</strong> Most people use the Standard storage class in S3, but there are other storage classes with lower cost:
+<ul>
+<li>🔸<a href="https://aws.amazon.com/s3/reduced-redundancy/">Reduced Redundancy Storage (RRS)</a> has been <a href="https://www.lastweekinaws.com/blog/s3-reduced-redundancy-storage-is-dead/">effectively deprecated</a>, and has lower durability (99.99%, so just four nines) than standard S3. Note that it no longer participates in S3 price reductions, so it offers worse redundancy for more money than standard S3. As a result, there's no reason to use it.</li>
+<li><a href="https://aws.amazon.com/s3/storage-classes/#Infrequent_Access">Infrequent Access (IA)</a> lets you get cheaper storage in exchange for more expensive access. This is great for archives like logs you already processed, but might want to look at later. To get an idea of the cost savings when using Infrequent Access (IA), you can use this <a href="http://www.gulamshakir.com/apps/s3calc/index.html">S3 Infrequent Access Calculator</a>.</li>
+<li><a href="https://aws.amazon.com/about-aws/whats-new/2018/11/s3-intelligent-tiering/">S3 - Intelligent Tiering</a> storage class is designed to optimize costs by automatically moving data to the most cost-effective access tier, without performance impact or operational overhead.</li>
+<li><a href="https://aws.amazon.com/s3/storage-classes/#__">S3 - One Zone - IA</a> is for data that is accessed less frequently, but requires rapid access when needed. Unlike other S3 Storage Classes which store data in a minimum of three Availability Zones (AZs), S3 One Zone-IA stores data in a single AZ and costs 20% less than S3 Standard-IA.</li>
+<li><a href="#glacier">Glacier</a> is a third alternative discussed as a separate product.</li>
+<li>See <a href="#storage-durability-availability-and-price">the comparison table</a>.</li>
+</ul>
+</li>
+<li>⏱<strong>Performance:</strong> Maximizing S3 performance means improving overall throughput in terms of bandwidth and number of operations per second.
+<ul>
+<li>S3 is highly scalable, so in principle you can get arbitrarily high throughput. (A good example of this is <a href="https://docs.aws.amazon.com/ElasticMapReduce/latest/ReleaseGuide/UsingEMR_s3distcp.html">S3DistCp</a>.)</li>
+<li>But usually you are constrained by the pipe between the source and S3 and/or the level of concurrency of operations.</li>
+<li>Throughput is of course highest from within AWS to S3, and between EC2 instances and S3 buckets that are in the same region.</li>
+<li>Bandwidth from EC2 depends on instance type. See the “Network Performance” column at <a href="http://www.ec2instances.info/">ec2instances.info</a>.</li>
+<li>Throughput of many objects is extremely high when data is accessed in a distributed way, from many EC2 instances. It’s possible to read or write objects from S3 from hundreds or thousands of instances at once.</li>
+<li>However, throughput is very limited when objects accessed sequentially from a single instance. Individual operations take many milliseconds, and bandwidth to and from instances is limited.</li>
+<li>Therefore, to perform large numbers of operations, it’s necessary to use multiple worker threads and connections on individual instances, and for larger jobs, multiple EC2 instances as well.</li>
+<li><strong>Multi-part uploads:</strong> For large objects you want to take advantage of the multi-part uploading capabilities (starting with minimum chunk sizes of 5 MB).</li>
+<li><strong>Large downloads:</strong> Also you can download chunks of a single large object in parallel by exploiting the HTTP GET range-header capability.</li>
+<li>🔸<strong>List pagination:</strong> Listing contents happens at 1000 responses per request, so for buckets with many millions of objects listings will take time.</li>
+<li>❗<strong>Key prefixes:</strong> Previously randomness in the beginning of key names was necessary in order to avoid hot spots, but that is <a href="https://aws.amazon.com/about-aws/whats-new/2018/07/amazon-s3-announces-increased-request-rate-performance/">no longer necessary</a> as of July, 2018.</li>
+<li>For data outside AWS, <a href="https://aws.amazon.com/directconnect/"><strong>DirectConnect</strong></a> and <a href="https://aws.amazon.com/blogs/aws/aws-storage-update-amazon-s3-transfer-acceleration-larger-snowballs-in-more-regions/"><strong>S3 Transfer Acceleration</strong></a> can help. For S3 Transfer Acceleration, you <a href="https://aws.amazon.com/s3/pricing/">pay</a> about the equivalent of 1-2 months of storage for the transfer in either direction for using nearer endpoints.</li>
+</ul>
+</li>
+<li><strong>Command-line applications:</strong> There are a few ways to use S3 from the command line:
+<ul>
+<li>Originally, <a href="https://github.com/s3tools/s3cmd"><strong>s3cmd</strong></a> was the best tool for the job. It’s still used heavily by many.</li>
+<li>The regular <a href="https://aws.amazon.com/cli/"><strong>aws</strong></a> command-line interface now supports S3 well, and is useful for most situations.</li>
+<li><a href="https://github.com/bloomreach/s4cmd"><strong>s4cmd</strong></a> is a replacement, with greater emphasis on performance via multi-threading, which is helpful for large files and large sets of files, and also offers Unix-like globbing support.</li>
+</ul>
+</li>
+<li><strong>GUI applications:</strong> You may prefer a GUI, or wish to support GUI access for less technical users. Some options:
+<ul>
+<li>The <a href="https://aws.amazon.com/console/">AWS Console</a> does offer a graphical way to use S3. Use caution telling non-technical people to use it, however, since without tight permissions, it offers access to many other AWS features.</li>
+<li><a href="https://panic.com/transmit/">Transmit</a> is a good option on macOS for most use cases.</li>
+<li><a href="https://cyberduck.io/">Cyberduck</a> is a good option on macOS and Windows with support for multipart uploads, ACLs, versioning, lifecycle configuration, storage classes and server side encryption (SSE-S3 and SSE-KMS).</li>
+</ul>
+</li>
+<li><strong>S3 and CloudFront:</strong> S3 is tightly integrated with the CloudFront CDN. See the CloudFront section for more information, as well as <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">S3 transfer acceleration</a>.</li>
+<li><strong>Static website hosting:</strong>
+<ul>
+<li>S3 has a <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">static website hosting option</a> that is simply a setting that enables configurable HTTP index and error pages and <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">HTTP redirect support</a> to <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteAccessPermissionsReqd.html">public content</a> in S3. It’s a simple way to host static assets or a fully static website.</li>
+<li>Consider using CloudFront in front of most or all assets:
+<ul>
+<li>Like any CDN, CloudFront improves performance significantly.</li>
+<li>🔸SSL is only supported on the built-in amazonaws.com domain for S3. S3 supports serving these sites through a <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html">custom domain</a>, but <a href="http://stackoverflow.com/questions/11201316/how-to-configure-ssl-for-amazon-s3-bucket">not over SSL on a custom domain</a>. However, <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-cf.html">CloudFront allows you to serve a custom domain over https</a>. Amazon provides free SNI SSL/TLS certificates via Amazon Certificate Manager. <a href="https://en.wikipedia.org/wiki/Server_Name_Indication#Support">SNI does not work on very outdated browsers/operating systems</a>. Alternatively, you can provide your own certificate to use on CloudFront to support all browsers/operating systems for a fee.</li>
+<li>🔸If you are including resources across domains, such as fonts inside CSS files, you may need to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">configure CORS</a> for the bucket serving those resources.</li>
+<li>Since pretty much everything is moving to SSL nowadays, and you likely want control over the domain, you probably want to set up CloudFront with your own certificate in front of S3 (and to ignore the <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html">AWS example on this</a> as it is non-SSL only).</li>
+<li>That said, if you do, you’ll need to think through invalidation or updates on CloudFront. You may wish to <a href="https://abhishek-tiwari.com/CloudFront-design-patterns-and-best-practices">include versions or hashes in filenames</a> so invalidation is not necessary.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Data lifecycles:</strong>
+<ul>
+<li>When managing data, the understanding the lifecycle of the data is as important as understanding the data itself. When putting data into a bucket, think about its lifecycle — its end of life, not just its beginning.</li>
+<li>🔹In general, data with different expiration policies should be stored under separate prefixes at the top level. For example, some voluminous logs might need to be deleted automatically monthly, while other data is critical and should never be deleted. Having the former in a separate bucket or at least a separate folder is wise.</li>
+<li>🔸Thinking about this up front will save you pain. It’s very hard to clean up large collections of files created by many engineers with varying lifecycles and no coherent organization.</li>
+<li>Alternatively you can set a lifecycle policy to archive old data to Glacier. <a href="https://alestic.com/2012/12/s3-glacier-costs/">Be careful</a> with archiving large numbers of small objects to Glacier, since it may actually cost more.</li>
+<li>There is also a storage class called <a href="https://aws.amazon.com/s3/storage-classes/#Infrequent_Access"><strong>Infrequent Access</strong></a> that has the same durability as Standard S3, but is discounted per GB. It is suitable for objects that are infrequently accessed.</li>
+</ul>
+</li>
+<li><strong>Data consistency:</strong> Understanding <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#ConsistencyModel">data consistency</a> is critical for any use of S3 where there are multiple producers and consumers of data.
+<ul>
+<li>Creation and updates to individual objects in S3 are <strong>atomic</strong>, in that you’ll never upload a new object or change an object and have another client see only part half the change.</li>
+<li>The uncertainty lies with <em>when</em> your clients and other clients see updates.</li>
+<li><strong>New objects:</strong> If you create a new object, you’ll be able to read it instantly, which is called <strong>read-after-write consistency</strong>.
+<ul>
+<li>Well, with the additional caveat that if you do a read on an object before it exists, then create it, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#ConsistencyModel">you get eventual consistency</a> (not read-after-write).</li>
+<li>This does not apply to any list operations; newly created objects are <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#ConsistencyModel">not guaranteed to appear in a list operation right away</a></li>
+</ul>
+</li>
+<li><strong>Updates to objects:</strong> If you overwrite or delete an object, you’re only guaranteed <strong>eventual consistency</strong>, i.e. the change will happen but you have no guarantee of when.</li>
+<li>🔹For many use cases, treating S3 objects as <strong>immutable</strong> (i.e. deciding by convention they will be created or deleted but not updated) can greatly simplify the code that uses them, avoiding complex state management.</li>
+<li>🔹Note that <a href="https://aws.amazon.com/about-aws/whats-new/2015/08/amazon-s3-introduces-new-usability-enhancements/">until 2015</a>, 'us-standard' region had had a weaker eventual consistency model, and the other (newer) regions were read-after-write. This was finally corrected — but watch for many old blogs mentioning this!</li>
+<li><strong>Slow updates:</strong> In practice, “eventual consistency” usually means within seconds, but expect rare cases of minutes or <a href="http://www.stackdriver.com/eventual-consistency-really-eventual/">hours</a>.</li>
+</ul>
+</li>
+<li><strong>S3 as a filesystem:</strong>
+<ul>
+<li>In general S3’s APIs have inherent limitations that make S3 hard to use directly as a POSIX-style filesystem while still preserving S3’s own object format. For example, appending to a file requires rewriting, which cripples performance, and atomic rename of directories, mutual exclusion on opening files, and hardlinks are impossible.</li>
+<li><a href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs</a> is a FUSE filesystem that goes ahead and tries anyway, but it has performance limitations and surprises for these reasons.</li>
+<li><a href="https://github.com/skoobe/riofs">Riofs</a> (C) and <a href="https://github.com/kahing/goofys">Goofys</a> (Go) are more recent efforts that attempt adopt a different data storage format to address those issues, and so are likely improvements on s3fs.</li>
+<li><a href="https://github.com/s3ql/s3ql">S3QL</a> (<a href="https://news.ycombinator.com/item?id=10150684">discussion</a>) is a Python implementation that offers data de-duplication, snap-shotting, and encryption, but only one client at a time.</li>
+<li><a href="https://objectivefs.com/">ObjectiveFS</a> (<a href="https://news.ycombinator.com/item?id=10117506">discussion</a>) is a commercial solution that supports filesystem features and concurrent clients.</li>
+</ul>
+</li>
+<li>If you are primarily using a VPC, consider setting up a <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC Endpoint</a> for S3 in order to allow your VPC-hosted resources to easily access it without the need for extra network configuration or hops.</li>
+<li><strong>Cross-region replication:</strong> S3 has <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">a feature</a> for replicating a bucket between one region and another. Note that S3 is already highly replicated within one region, so usually this isn’t necessary for durability, but it could be useful for compliance (geographically distributed data storage), lower latency, or as a strategy to reduce region-to-region bandwidth costs by mirroring heavily used data in a second region.</li>
+<li><strong>IPv4 vs IPv6:</strong> For a long time S3 only supported IPv4 at the default endpoint <code>https://BUCKET.s3.amazonaws.com</code>. However, <a href="https://aws.amazon.com/blogs/aws/now-available-ipv6-support-for-amazon-s3/">as of Aug 11, 2016</a> it now supports both IPv4 &#x26; IPv6! To use both, you have to <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/dual-stack-endpoints.html">enable dualstack</a> either in your preferred API client or by directly using this url scheme <code>https://BUCKET.s3.dualstack.REGION.amazonaws.com</code>. This extends to S3 Transfer Acceleration as well.</li>
+<li><strong>S3 event notifications:</strong> S3 can be configured to send an <a href="https://aws.amazon.com/blogs/aws/introducing-the-amazon-simple-notification-service/">SNS notification</a>, <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/Welcome.html">SQS message</a>, or <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda function</a> on <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">bucket events</a>.</li>
+<li>💸Limit your individual users (or IAM roles) to the minimal required S3 locations, and catalog the “approved” locations. Otherwise, S3 tends to become the dumping ground where people put data to random locations that are not cleaned up for years, costing you big bucks.</li>
+<li>If a bucket is deleted in S3, it can take up to 10 hours before a bucket with the same name can be created again. (<a href="https://forums.aws.amazon.com/thread.jspa?threadID=37532">discussion</a>)</li>
+</ul>
+<h3 id="s3-gotchas-and-limitations"><a aria-hidden="true" class="anchor-heading" href="#s3-gotchas-and-limitations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>S3 Gotchas and Limitations</h3>
+<ul>
+<li>❗S3 buckets sit outside the VPC and can be accessed from anywhere in the world if bucket policies are not set to deny it. Read the permissions section above carefully, there are countless cases of buckets exposed to the public.</li>
+<li>🔸For many years, there was a notorious <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_s3"><strong>100-bucket limit</strong></a> per account, which could not be raised and caused many companies significant pain. As of 2015, you can <a href="https://aws.amazon.com/about-aws/whats-new/2015/08/amazon-s3-introduces-new-usability-enhancements/">request increases</a>. You can ask to increase the limit, but it will still be capped (generally below ~1000 per account).</li>
+<li>🔸Be careful not to make implicit assumptions about transactionality or sequencing of updates to objects. Never assume that if you modify a sequence of objects, the clients will see the same modifications in the same sequence, or if you upload a whole bunch of files, that they will all appear at once to all clients.</li>
+<li>🔸S3 has an <a href="https://aws.amazon.com/s3/sla/"><strong>SLA</strong></a> with 99.9% uptime. If you use S3 heavily, you’ll inevitably see occasional error accessing or storing data as disks or other infrastructure fail. Availability is usually restored in seconds or minutes. Although availability is not extremely high, as mentioned above, durability is excellent.</li>
+<li>🔸After uploading, any change that you make to the object causes a full rewrite of the object, so avoid appending-like behavior with regular files.</li>
+<li>🔸Eventual data consistency, as discussed above, can be surprising sometimes. If S3 suffers from internal replication issues, an object may be visible from a subset of the machines, depending on which S3 endpoint they hit. Those usually resolve within seconds; however, we’ve seen isolated cases when the issue lingered for 20-30 hours.</li>
+<li>🔸<strong>MD5s and multi-part uploads:</strong> In S3, the <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonResponseHeaders.html">ETag header in S3</a> is a hash on the object. And in many cases, it is the MD5 hash. However, this <a href="http://stackoverflow.com/questions/12186993/what-is-the-algorithm-to-compute-the-amazon-s3-etag-for-a-file-larger-than-5gb">is not the case in general</a> when you use multi-part uploads. One workaround is to compute MD5s yourself and put them in a custom header (such as is done by <a href="https://github.com/bloomreach/s4cmd">s4cmd</a>).</li>
+<li>🔸<strong>Incomplete multi-part upload costs:</strong> Incomplete multi-part uploads accrue <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpuploadpricing">storage charges</a> even if the upload fails and no S3 object is created. <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Amazon</a> (<a href="http://www.deplication.net/2016/06/aws-tip-save-s3-costs-with-abort.html">and</a> <a href="https://www.sumologic.com/aws/s3/s3-cost-optimization/">others</a>) recommend using a lifecycle policy to clean up incomplete uploads and save on storage costs. Note that if you have many of these, it may be worth investigating whatever's failing regularly.</li>
+<li>🔸<strong>US Standard region:</strong> Previously, the us-east-1 region (also known as the US Standard region) was replicated across coasts, which led to greater variability of latency. Effective Jun 19, 2015 this is <a href="https://forums.aws.amazon.com/ann.jspa?annID=3112">no longer the case</a>. All Amazon S3 regions now support read-after-write consistency. Amazon S3 also renamed the US Standard region to the US East (N. Virginia) region to be consistent with AWS regional naming conventions.</li>
+<li>🔸<strong>S3 authentication versions and regions:</strong> In newer regions, S3 <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">only supports the latest authentication</a>. If an S3 file operation using CLI or SDK doesn't work in one region, but works correctly in another region, make sure you are using the latest <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">authentication signature</a>.</li>
+</ul>
+<h3 id="storage-durability-availability-and-price"><a aria-hidden="true" class="anchor-heading" href="#storage-durability-availability-and-price"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Storage Durability, Availability, and Price</h3>
+<p>As an illustration of comparative features and price, the table below gives S3 Standard, RRS, IA, in comparison with <a href="#glacier">Glacier</a>, <a href="#ebs">EBS</a>, <a href="#efs">EFS</a>, and EC2 d2.xlarge instance store using <strong>Virginia region</strong> as of <strong>Sept 2017</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Durability (per year)</th><th>Availability “designed”</th><th>Availability SLA</th><th>Storage (per TB per month)</th><th>GET or retrieve (per million)</th><th>Write or archive (per million)</th></tr></thead><tbody><tr><td><strong>Glacier</strong></td><td>Eleven 9s</td><td>Sloooow</td><td>–</td><td>$4</td><td>$50</td><td>$50</td></tr><tr><td><strong>S3 IA</strong></td><td>Eleven 9s</td><td>99.9%</td><td><strong>99%</strong></td><td>$12.50</td><td>$1</td><td>$10</td></tr><tr><td><del><strong>S3 RRS</strong></del></td><td><del><strong>99.99%</strong></del></td><td><del>99.99%</del></td><td><del>99.9%</del></td><td><del>$24 (first TB)</del></td><td><del>$0.40</del></td><td><del>$5</del></td></tr><tr><td><strong>S3 Standard</strong></td><td>Eleven 9s</td><td>99.99%</td><td>99.9%</td><td>$23</td><td>$0.40</td><td>$5</td></tr><tr><td><strong>EBS</strong></td><td><strong>99.8%</strong></td><td>Unstated</td><td>99.99%</td><td>$25/$45/<strong>$100</strong>/$125+ (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">sc1/st1/<strong>gp2</strong>/io1</a>)</td><td></td><td></td></tr><tr><td><strong>EFS</strong></td><td>“High”</td><td>“High”</td><td>–</td><td>$300</td><td></td><td></td></tr><tr><td><strong>EC2 d2.xlarge instance store</strong></td><td>Unstated</td><td>Unstated</td><td>–</td><td>$25.44</td><td>$0</td><td>$0</td></tr></tbody></table>
+<p>Especially notable items are in <strong>boldface</strong>. Sources: <a href="https://aws.amazon.com/s3/pricing/">S3 pricing</a>, <a href="https://aws.amazon.com/s3/sla/">S3 SLA</a>, <a href="https://aws.amazon.com/s3/faqs/">S3 FAQ</a>, <a href="https://aws.amazon.com/s3/reduced-redundancy/">RRS info</a> (note that this is considered deprecated), <a href="https://aws.amazon.com/glacier/pricing/">Glacier pricing</a>, <a href="https://aws.amazon.com/ebs/details/#Amazon_EBS_Availability_and_Durability">EBS availability and durability</a>, <a href="https://aws.amazon.com/ebs/pricing/">EBS pricing</a>, <a href="https://aws.amazon.com/efs/pricing/">EFS pricing</a>, <a href="https://aws.amazon.com/ec2/sla/">EC2 SLA</a></p><span id="navId" data="simple-storage-service"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

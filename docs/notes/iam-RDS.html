@@ -1,0 +1,2756 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>RDS - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-RDS.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-RDS.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-RDS.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="RDS - undefined" />
+  <meta name="twitter:title" content="RDS - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">RDS</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="RDS">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="rds"><a aria-hidden="true" class="anchor-heading" href="#rds"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RDS</h1>
+<ul>
+<li>prefix: rds</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="addroletodbcluster"><a aria-hidden="true" class="anchor-heading" href="#addroletodbcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddRoleToDBCluster</h3>
+<ul>
+<li>description: Grants permission to associate an Identity and Access Management (IAM) role from an Aurora DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="addroletodbinstance"><a aria-hidden="true" class="anchor-heading" href="#addroletodbinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddRoleToDBInstance</h3>
+<ul>
+<li>description: Grants permission to associate an AWS Identity and Access Management (IAM) role with a DB instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="addsourceidentifiertosubscription"><a aria-hidden="true" class="anchor-heading" href="#addsourceidentifiertosubscription"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddSourceIdentifierToSubscription</h3>
+<ul>
+<li>description: Grants permission to add a source identifier to an existing RDS event notification subscription</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "es": {
+        "resource_type": "es",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="addtagstoresource"><a aria-hidden="true" class="anchor-heading" href="#addtagstoresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddTagsToResource</h3>
+<ul>
+<li>description: Grants permission to add metadata tags to an Amazon RDS resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "es": {
+        "resource_type": "es",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "og": {
+        "resource_type": "og",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "pg": {
+        "resource_type": "pg",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "proxy": {
+        "resource_type": "proxy",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ri": {
+        "resource_type": "ri",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "secgrp": {
+        "resource_type": "secgrp",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "target-group": {
+        "resource_type": "target-group",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="applypendingmaintenanceaction"><a aria-hidden="true" class="anchor-heading" href="#applypendingmaintenanceaction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ApplyPendingMaintenanceAction</h3>
+<ul>
+<li>description: Grants permission to apply a pending maintenance action to a resource</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "db": {
+        "resource_type": "db",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="authorizedbsecuritygroupingress"><a aria-hidden="true" class="anchor-heading" href="#authorizedbsecuritygroupingress"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AuthorizeDBSecurityGroupIngress</h3>
+<ul>
+<li>description: Grants permission to enable ingress to a DBSecurityGroup using one of two forms of authorization</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "secgrp": {
+        "resource_type": "secgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="backtrackdbcluster"><a aria-hidden="true" class="anchor-heading" href="#backtrackdbcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BacktrackDBCluster</h3>
+<ul>
+<li>description: Grants permission to backtrack a DB cluster to a specific time, without creating a new DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelexporttask"><a aria-hidden="true" class="anchor-heading" href="#cancelexporttask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelExportTask</h3>
+<ul>
+<li>description: Grants permission to cancel an export task in progress</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="copydbclusterparametergroup"><a aria-hidden="true" class="anchor-heading" href="#copydbclusterparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CopyDBClusterParameterGroup</h3>
+<ul>
+<li>description: Grants permission to copy the specified DB cluster parameter group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-pg": {
+        "resource_type": "cluster-pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="copydbclustersnapshot"><a aria-hidden="true" class="anchor-heading" href="#copydbclustersnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CopyDBClusterSnapshot</h3>
+<ul>
+<li>description: Grants permission to create a snapshot of a DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-snapshot": {
+        "resource_type": "cluster-snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="copydbparametergroup"><a aria-hidden="true" class="anchor-heading" href="#copydbparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CopyDBParameterGroup</h3>
+<ul>
+<li>description: Grants permission to copy the specified DB parameter group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "pg": {
+        "resource_type": "pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="copydbsnapshot"><a aria-hidden="true" class="anchor-heading" href="#copydbsnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CopyDBSnapshot</h3>
+<ul>
+<li>description: Grants permission to copy the specified DB snapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="copyoptiongroup"><a aria-hidden="true" class="anchor-heading" href="#copyoptiongroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CopyOptionGroup</h3>
+<ul>
+<li>description: Grants permission to copy the specified option group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdbcluster"><a aria-hidden="true" class="anchor-heading" href="#createdbcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDBCluster</h3>
+<ul>
+<li>description: Grants permission to create a new Amazon Aurora DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "cluster-pg": {
+        "resource_type": "cluster-pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}",
+            "rds:DatabaseEngine",
+            "rds:DatabaseName",
+            "rds:StorageEncrypted"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdbclusterendpoint"><a aria-hidden="true" class="anchor-heading" href="#createdbclusterendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDBClusterEndpoint</h3>
+<ul>
+<li>description: Grants permission to create a new custom endpoint and associates it with an Amazon Aurora DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "cluster-endpoint": {
+        "resource_type": "cluster-endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "rds:EndpointType",
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdbclusterparametergroup"><a aria-hidden="true" class="anchor-heading" href="#createdbclusterparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDBClusterParameterGroup</h3>
+<ul>
+<li>description: Grants permission to create a new DB cluster parameter group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-pg": {
+        "resource_type": "cluster-pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdbclustersnapshot"><a aria-hidden="true" class="anchor-heading" href="#createdbclustersnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDBClusterSnapshot</h3>
+<ul>
+<li>description: Grants permission to create a snapshot of a DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "cluster-snapshot": {
+        "resource_type": "cluster-snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdbinstance"><a aria-hidden="true" class="anchor-heading" href="#createdbinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDBInstance</h3>
+<ul>
+<li>description: Grants permission to create a new DB instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "pg": {
+        "resource_type": "pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "secgrp": {
+        "resource_type": "secgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdbinstancereadreplica"><a aria-hidden="true" class="anchor-heading" href="#createdbinstancereadreplica"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDBInstanceReadReplica</h3>
+<ul>
+<li>description: Grants permission to create a DB instance that acts as a Read Replica of a source DB instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdbparametergroup"><a aria-hidden="true" class="anchor-heading" href="#createdbparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDBParameterGroup</h3>
+<ul>
+<li>description: Grants permission to create a new DB parameter group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "pg": {
+        "resource_type": "pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdbproxy"><a aria-hidden="true" class="anchor-heading" href="#createdbproxy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDBProxy</h3>
+<ul>
+<li>description: Grants permission to create a database proxy</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="createdbsecuritygroup"><a aria-hidden="true" class="anchor-heading" href="#createdbsecuritygroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDBSecurityGroup</h3>
+<ul>
+<li>description: Grants permission to create a new DB security group. DB security groups control access to a DB instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "secgrp": {
+        "resource_type": "secgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdbsnapshot"><a aria-hidden="true" class="anchor-heading" href="#createdbsnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDBSnapshot</h3>
+<ul>
+<li>description: Grants permission to create a DBSnapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdbsubnetgroup"><a aria-hidden="true" class="anchor-heading" href="#createdbsubnetgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDBSubnetGroup</h3>
+<ul>
+<li>description: Grants permission to create a new DB subnet group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createeventsubscription"><a aria-hidden="true" class="anchor-heading" href="#createeventsubscription"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateEventSubscription</h3>
+<ul>
+<li>description: Grants permission to create an RDS event notification subscription</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "es": {
+        "resource_type": "es",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createglobalcluster"><a aria-hidden="true" class="anchor-heading" href="#createglobalcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateGlobalCluster</h3>
+<ul>
+<li>description: Grants permission to create an Aurora global database spread across multiple regions</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "global-cluster": {
+        "resource_type": "global-cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createoptiongroup"><a aria-hidden="true" class="anchor-heading" href="#createoptiongroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateOptionGroup</h3>
+<ul>
+<li>description: Grants permission to create a new option group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedbcluster"><a aria-hidden="true" class="anchor-heading" href="#deletedbcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDBCluster</h3>
+<ul>
+<li>description: Grants permission to delete a previously provisioned DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "cluster-snapshot": {
+        "resource_type": "cluster-snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedbclusterendpoint"><a aria-hidden="true" class="anchor-heading" href="#deletedbclusterendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDBClusterEndpoint</h3>
+<ul>
+<li>description: Grants permission to delete a custom endpoint and removes it from an Amazon Aurora DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-endpoint": {
+        "resource_type": "cluster-endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedbclusterparametergroup"><a aria-hidden="true" class="anchor-heading" href="#deletedbclusterparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDBClusterParameterGroup</h3>
+<ul>
+<li>description: Grants permission to delete a specified DB cluster parameter group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-pg": {
+        "resource_type": "cluster-pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedbclustersnapshot"><a aria-hidden="true" class="anchor-heading" href="#deletedbclustersnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDBClusterSnapshot</h3>
+<ul>
+<li>description: Grants permission to delete a DB cluster snapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-snapshot": {
+        "resource_type": "cluster-snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedbinstance"><a aria-hidden="true" class="anchor-heading" href="#deletedbinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDBInstance</h3>
+<ul>
+<li>description: Grants permission to delete a previously provisioned DB instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedbinstanceautomatedbackup"><a aria-hidden="true" class="anchor-heading" href="#deletedbinstanceautomatedbackup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDBInstanceAutomatedBackup</h3>
+<ul>
+<li>description: Grants permission to deletes automated backups based on the source instance's DbiResourceId value or the restorable instance's resource ID</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedbparametergroup"><a aria-hidden="true" class="anchor-heading" href="#deletedbparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDBParameterGroup</h3>
+<ul>
+<li>description: Grants permission to delete a specified DBParameterGroup</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "pg": {
+        "resource_type": "pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedbproxy"><a aria-hidden="true" class="anchor-heading" href="#deletedbproxy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDBProxy</h3>
+<ul>
+<li>description: Grants permission to delete a database proxy</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "proxy": {
+        "resource_type": "proxy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedbsecuritygroup"><a aria-hidden="true" class="anchor-heading" href="#deletedbsecuritygroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDBSecurityGroup</h3>
+<ul>
+<li>description: Grants permission to delete a DB security group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "secgrp": {
+        "resource_type": "secgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedbsnapshot"><a aria-hidden="true" class="anchor-heading" href="#deletedbsnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDBSnapshot</h3>
+<ul>
+<li>description: Grants permission to delete a DBSnapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedbsubnetgroup"><a aria-hidden="true" class="anchor-heading" href="#deletedbsubnetgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDBSubnetGroup</h3>
+<ul>
+<li>description: Grants permission to delete a DB subnet group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteeventsubscription"><a aria-hidden="true" class="anchor-heading" href="#deleteeventsubscription"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEventSubscription</h3>
+<ul>
+<li>description: Grants permission to delete an RDS event notification subscription</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "es": {
+        "resource_type": "es",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteglobalcluster"><a aria-hidden="true" class="anchor-heading" href="#deleteglobalcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteGlobalCluster</h3>
+<ul>
+<li>description: Grants permission to delete a global database cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "global-cluster": {
+        "resource_type": "global-cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteoptiongroup"><a aria-hidden="true" class="anchor-heading" href="#deleteoptiongroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteOptionGroup</h3>
+<ul>
+<li>description: Grants permission to delete an existing option group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deregisterdbproxytargets"><a aria-hidden="true" class="anchor-heading" href="#deregisterdbproxytargets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeregisterDBProxyTargets</h3>
+<ul>
+<li>description: Grants permission to remove targets from a database proxy target group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "proxy": {
+        "resource_type": "proxy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "target-group": {
+        "resource_type": "target-group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeaccountattributes"><a aria-hidden="true" class="anchor-heading" href="#describeaccountattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAccountAttributes</h3>
+<ul>
+<li>description: Grants permission to list all of the attributes for a customer account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describecertificates"><a aria-hidden="true" class="anchor-heading" href="#describecertificates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeCertificates</h3>
+<ul>
+<li>description: Lists the set of CA certificates provided by Amazon RDS for this AWS account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbclusterbacktracks"><a aria-hidden="true" class="anchor-heading" href="#describedbclusterbacktracks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBClusterBacktracks</h3>
+<ul>
+<li>description: Grants permission to return information about backtracks for a DB cluster</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbclusterendpoints"><a aria-hidden="true" class="anchor-heading" href="#describedbclusterendpoints"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBClusterEndpoints</h3>
+<ul>
+<li>description: Grants permission to return information about endpoints for an Amazon Aurora DB cluster</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-endpoint": {
+        "resource_type": "cluster-endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "cluster": {
+        "resource_type": "cluster",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbclusterparametergroups"><a aria-hidden="true" class="anchor-heading" href="#describedbclusterparametergroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBClusterParameterGroups</h3>
+<ul>
+<li>description: Grants permission to return a list of DBClusterParameterGroup descriptions</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-pg": {
+        "resource_type": "cluster-pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbclusterparameters"><a aria-hidden="true" class="anchor-heading" href="#describedbclusterparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBClusterParameters</h3>
+<ul>
+<li>description: Grants permission to return the detailed parameter list for a particular DB cluster parameter group</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-pg": {
+        "resource_type": "cluster-pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbclustersnapshotattributes"><a aria-hidden="true" class="anchor-heading" href="#describedbclustersnapshotattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBClusterSnapshotAttributes</h3>
+<ul>
+<li>description: Grants permission to return a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-snapshot": {
+        "resource_type": "cluster-snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbclustersnapshots"><a aria-hidden="true" class="anchor-heading" href="#describedbclustersnapshots"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBClusterSnapshots</h3>
+<ul>
+<li>description: Grants permission to return information about DB cluster snapshots</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-snapshot": {
+        "resource_type": "cluster-snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbclusters"><a aria-hidden="true" class="anchor-heading" href="#describedbclusters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBClusters</h3>
+<ul>
+<li>description: Grants permission to return information about provisioned Aurora DB clusters</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbengineversions"><a aria-hidden="true" class="anchor-heading" href="#describedbengineversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBEngineVersions</h3>
+<ul>
+<li>description: Grants permission to return a list of the available DB engines</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbinstanceautomatedbackups"><a aria-hidden="true" class="anchor-heading" href="#describedbinstanceautomatedbackups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBInstanceAutomatedBackups</h3>
+<ul>
+<li>description: Grants permission to return a list of automated backups for both current and deleted instances</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbinstances"><a aria-hidden="true" class="anchor-heading" href="#describedbinstances"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBInstances</h3>
+<ul>
+<li>description: Grants permission to return information about provisioned RDS instances</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedblogfiles"><a aria-hidden="true" class="anchor-heading" href="#describedblogfiles"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBLogFiles</h3>
+<ul>
+<li>description: Grants permission to return a list of DB log files for the DB instance</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbparametergroups"><a aria-hidden="true" class="anchor-heading" href="#describedbparametergroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBParameterGroups</h3>
+<ul>
+<li>description: Grants permission to return a list of DBParameterGroup descriptions</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "pg": {
+        "resource_type": "pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbparameters"><a aria-hidden="true" class="anchor-heading" href="#describedbparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBParameters</h3>
+<ul>
+<li>description: Grants permission to return the detailed parameter list for a particular DB parameter group</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "pg": {
+        "resource_type": "pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbproxies"><a aria-hidden="true" class="anchor-heading" href="#describedbproxies"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBProxies</h3>
+<ul>
+<li>description: Grants permission to view proxies</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "proxy": {
+        "resource_type": "proxy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbproxytargetgroups"><a aria-hidden="true" class="anchor-heading" href="#describedbproxytargetgroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBProxyTargetGroups</h3>
+<ul>
+<li>description: Grants permission to view database proxy target group details</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "proxy": {
+        "resource_type": "proxy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbproxytargets"><a aria-hidden="true" class="anchor-heading" href="#describedbproxytargets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBProxyTargets</h3>
+<ul>
+<li>description: Grants permission to view database proxy target details</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "proxy": {
+        "resource_type": "proxy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "target-group": {
+        "resource_type": "target-group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbsecuritygroups"><a aria-hidden="true" class="anchor-heading" href="#describedbsecuritygroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBSecurityGroups</h3>
+<ul>
+<li>description: Grants permission to return a list of DBSecurityGroup descriptions</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "secgrp": {
+        "resource_type": "secgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbsnapshotattributes"><a aria-hidden="true" class="anchor-heading" href="#describedbsnapshotattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBSnapshotAttributes</h3>
+<ul>
+<li>description: Grants permission to return a list of DB snapshot attribute names and values for a manual DB snapshot</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbsnapshots"><a aria-hidden="true" class="anchor-heading" href="#describedbsnapshots"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBSnapshots</h3>
+<ul>
+<li>description: Grants permission to return information about DB snapshots</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "db": {
+        "resource_type": "db",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedbsubnetgroups"><a aria-hidden="true" class="anchor-heading" href="#describedbsubnetgroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDBSubnetGroups</h3>
+<ul>
+<li>description: Grants permission to return a list of DBSubnetGroup descriptions</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeenginedefaultclusterparameters"><a aria-hidden="true" class="anchor-heading" href="#describeenginedefaultclusterparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEngineDefaultClusterParameters</h3>
+<ul>
+<li>description: Grants permission to return the default engine and system parameter information for the cluster database engine</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeenginedefaultparameters"><a aria-hidden="true" class="anchor-heading" href="#describeenginedefaultparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEngineDefaultParameters</h3>
+<ul>
+<li>description: Grants permission to return the default engine and system parameter information for the specified database engine</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeeventcategories"><a aria-hidden="true" class="anchor-heading" href="#describeeventcategories"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEventCategories</h3>
+<ul>
+<li>description: Grants permission to display a list of categories for all event source types, or, if specified, for a specified source type</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeeventsubscriptions"><a aria-hidden="true" class="anchor-heading" href="#describeeventsubscriptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEventSubscriptions</h3>
+<ul>
+<li>description: Grants permission to list all the subscription descriptions for a customer account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "es": {
+        "resource_type": "es",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeevents"><a aria-hidden="true" class="anchor-heading" href="#describeevents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEvents</h3>
+<ul>
+<li>description: Grants permission to return events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeexporttasks"><a aria-hidden="true" class="anchor-heading" href="#describeexporttasks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeExportTasks</h3>
+<ul>
+<li>description: Grants permission to return information about the export tasks</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeglobalclusters"><a aria-hidden="true" class="anchor-heading" href="#describeglobalclusters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeGlobalClusters</h3>
+<ul>
+<li>description: Grants permission to return information about Aurora global database clusters</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "global-cluster": {
+        "resource_type": "global-cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeoptiongroupoptions"><a aria-hidden="true" class="anchor-heading" href="#describeoptiongroupoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeOptionGroupOptions</h3>
+<ul>
+<li>description: Grants permission to describe all available options</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeoptiongroups"><a aria-hidden="true" class="anchor-heading" href="#describeoptiongroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeOptionGroups</h3>
+<ul>
+<li>description: Grants permission to describe the available option groups</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeorderabledbinstanceoptions"><a aria-hidden="true" class="anchor-heading" href="#describeorderabledbinstanceoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeOrderableDBInstanceOptions</h3>
+<ul>
+<li>description: Grants permission to return a list of orderable DB instance options for the specified engine</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describependingmaintenanceactions"><a aria-hidden="true" class="anchor-heading" href="#describependingmaintenanceactions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribePendingMaintenanceActions</h3>
+<ul>
+<li>description: Grants permission to return a list of resources (for example, DB instances) that have at least one pending maintenance action</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "db": {
+        "resource_type": "db",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describereserveddbinstances"><a aria-hidden="true" class="anchor-heading" href="#describereserveddbinstances"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeReservedDBInstances</h3>
+<ul>
+<li>description: Grants permission to return information about reserved DB instances for this account, or about a specified reserved DB instance</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ri": {
+        "resource_type": "ri",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describereserveddbinstancesofferings"><a aria-hidden="true" class="anchor-heading" href="#describereserveddbinstancesofferings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeReservedDBInstancesOfferings</h3>
+<ul>
+<li>description: Grants permission to list available reserved DB instance offerings</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describesourceregions"><a aria-hidden="true" class="anchor-heading" href="#describesourceregions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeSourceRegions</h3>
+<ul>
+<li>description: Grants permission to return a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB snapshot from</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describevaliddbinstancemodifications"><a aria-hidden="true" class="anchor-heading" href="#describevaliddbinstancemodifications"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeValidDBInstanceModifications</h3>
+<ul>
+<li>description: Grants permission to list available modifications you can make to your DB instance</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="downloaddblogfileportion"><a aria-hidden="true" class="anchor-heading" href="#downloaddblogfileportion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DownloadDBLogFilePortion</h3>
+<ul>
+<li>description: Grants permission to download all or a portion of the specified log file, up to 1 MB in size</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="failoverdbcluster"><a aria-hidden="true" class="anchor-heading" href="#failoverdbcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>FailoverDBCluster</h3>
+<ul>
+<li>description: Grants permission to force a failover for a DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Grants permission to list all tags on an Amazon RDS resource</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "es": {
+        "resource_type": "es",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "og": {
+        "resource_type": "og",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "pg": {
+        "resource_type": "pg",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "proxy": {
+        "resource_type": "proxy",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ri": {
+        "resource_type": "ri",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "secgrp": {
+        "resource_type": "secgrp",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "target-group": {
+        "resource_type": "target-group",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifycurrentdbclustercapacity"><a aria-hidden="true" class="anchor-heading" href="#modifycurrentdbclustercapacity"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyCurrentDBClusterCapacity</h3>
+<ul>
+<li>description: Grants permission to modify current cluster capacity for an Amazon Aurora Severless DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifydbcluster"><a aria-hidden="true" class="anchor-heading" href="#modifydbcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyDBCluster</h3>
+<ul>
+<li>description: Grants permission to modify a setting for an Amazon Aurora DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "cluster-pg": {
+        "resource_type": "cluster-pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifydbclusterendpoint"><a aria-hidden="true" class="anchor-heading" href="#modifydbclusterendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyDBClusterEndpoint</h3>
+<ul>
+<li>description: Grants permission to modify the properties of an endpoint in an Amazon Aurora DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-endpoint": {
+        "resource_type": "cluster-endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifydbclusterparametergroup"><a aria-hidden="true" class="anchor-heading" href="#modifydbclusterparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyDBClusterParameterGroup</h3>
+<ul>
+<li>description: Grants permission to modify the parameters of a DB cluster parameter group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-pg": {
+        "resource_type": "cluster-pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifydbclustersnapshotattribute"><a aria-hidden="true" class="anchor-heading" href="#modifydbclustersnapshotattribute"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyDBClusterSnapshotAttribute</h3>
+<ul>
+<li>description: Grants permission to add an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-snapshot": {
+        "resource_type": "cluster-snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifydbinstance"><a aria-hidden="true" class="anchor-heading" href="#modifydbinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyDBInstance</h3>
+<ul>
+<li>description: Grants permission to modify settings for a DB instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "pg": {
+        "resource_type": "pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "secgrp": {
+        "resource_type": "secgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifydbparametergroup"><a aria-hidden="true" class="anchor-heading" href="#modifydbparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyDBParameterGroup</h3>
+<ul>
+<li>description: Grants permission to modify the parameters of a DB parameter group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "pg": {
+        "resource_type": "pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifydbproxy"><a aria-hidden="true" class="anchor-heading" href="#modifydbproxy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyDBProxy</h3>
+<ul>
+<li>description: Grants permission to modify database proxy</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "proxy": {
+        "resource_type": "proxy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="modifydbproxytargetgroup"><a aria-hidden="true" class="anchor-heading" href="#modifydbproxytargetgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyDBProxyTargetGroup</h3>
+<ul>
+<li>description: Grants permission to modify target group for a database proxy</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "target-group": {
+        "resource_type": "target-group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifydbsnapshot"><a aria-hidden="true" class="anchor-heading" href="#modifydbsnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyDBSnapshot</h3>
+<ul>
+<li>description: Grants permission to update a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifydbsnapshotattribute"><a aria-hidden="true" class="anchor-heading" href="#modifydbsnapshotattribute"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyDBSnapshotAttribute</h3>
+<ul>
+<li>description: Grants permission to add an attribute and values to, or removes an attribute and values from, a manual DB snapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifydbsubnetgroup"><a aria-hidden="true" class="anchor-heading" href="#modifydbsubnetgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyDBSubnetGroup</h3>
+<ul>
+<li>description: Grants permission to modify an existing DB subnet group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyeventsubscription"><a aria-hidden="true" class="anchor-heading" href="#modifyeventsubscription"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyEventSubscription</h3>
+<ul>
+<li>description: Grants permission to modify an existing RDS event notification subscription</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "es": {
+        "resource_type": "es",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyglobalcluster"><a aria-hidden="true" class="anchor-heading" href="#modifyglobalcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyGlobalCluster</h3>
+<ul>
+<li>description: Grants permission to modify a setting for an Amazon Aurora global cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "global-cluster": {
+        "resource_type": "global-cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyoptiongroup"><a aria-hidden="true" class="anchor-heading" href="#modifyoptiongroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyOptionGroup</h3>
+<ul>
+<li>description: Grants permission to modify an existing option group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="promotereadreplica"><a aria-hidden="true" class="anchor-heading" href="#promotereadreplica"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PromoteReadReplica</h3>
+<ul>
+<li>description: Grants permission to promote a Read Replica DB instance to a standalone DB instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="promotereadreplicadbcluster"><a aria-hidden="true" class="anchor-heading" href="#promotereadreplicadbcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PromoteReadReplicaDBCluster</h3>
+<ul>
+<li>description: Grants permission to promote a Read Replica DB cluster to a standalone DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="purchasereserveddbinstancesoffering"><a aria-hidden="true" class="anchor-heading" href="#purchasereserveddbinstancesoffering"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PurchaseReservedDBInstancesOffering</h3>
+<ul>
+<li>description: Grants permission to purchase a reserved DB instance offering</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ri": {
+        "resource_type": "ri",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="rebootdbinstance"><a aria-hidden="true" class="anchor-heading" href="#rebootdbinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RebootDBInstance</h3>
+<ul>
+<li>description: Grants permission to restart the database engine service</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="registerdbproxytargets"><a aria-hidden="true" class="anchor-heading" href="#registerdbproxytargets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegisterDBProxyTargets</h3>
+<ul>
+<li>description: Grants permission to add targets to a database proxy target group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "target-group": {
+        "resource_type": "target-group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="removefromglobalcluster"><a aria-hidden="true" class="anchor-heading" href="#removefromglobalcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RemoveFromGlobalCluster</h3>
+<ul>
+<li>description: Grants permission to detach an Aurora secondary cluster from an Aurora global database cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "global-cluster": {
+        "resource_type": "global-cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="removerolefromdbcluster"><a aria-hidden="true" class="anchor-heading" href="#removerolefromdbcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RemoveRoleFromDBCluster</h3>
+<ul>
+<li>description: Grants permission to disassociate an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="removerolefromdbinstance"><a aria-hidden="true" class="anchor-heading" href="#removerolefromdbinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RemoveRoleFromDBInstance</h3>
+<ul>
+<li>description: Grants permission to disassociate an AWS Identity and Access Management (IAM) role from a DB instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="removesourceidentifierfromsubscription"><a aria-hidden="true" class="anchor-heading" href="#removesourceidentifierfromsubscription"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RemoveSourceIdentifierFromSubscription</h3>
+<ul>
+<li>description: Grants permission to remove a source identifier from an existing RDS event notification subscription</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "es": {
+        "resource_type": "es",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="removetagsfromresource"><a aria-hidden="true" class="anchor-heading" href="#removetagsfromresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RemoveTagsFromResource</h3>
+<ul>
+<li>description: Grants permission to remove metadata tags from an Amazon RDS resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "es": {
+        "resource_type": "es",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "og": {
+        "resource_type": "og",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "pg": {
+        "resource_type": "pg",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "proxy": {
+        "resource_type": "proxy",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "ri": {
+        "resource_type": "ri",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "secgrp": {
+        "resource_type": "secgrp",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "target-group": {
+        "resource_type": "target-group",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resetdbclusterparametergroup"><a aria-hidden="true" class="anchor-heading" href="#resetdbclusterparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResetDBClusterParameterGroup</h3>
+<ul>
+<li>description: Grants permission to modify the parameters of a DB cluster parameter group to the default value</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster-pg": {
+        "resource_type": "cluster-pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resetdbparametergroup"><a aria-hidden="true" class="anchor-heading" href="#resetdbparametergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResetDBParameterGroup</h3>
+<ul>
+<li>description: Grants permission to modify the parameters of a DB parameter group to the engine/system default value</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "pg": {
+        "resource_type": "pg",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="restoredbclusterfroms3"><a aria-hidden="true" class="anchor-heading" href="#restoredbclusterfroms3"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RestoreDBClusterFromS3</h3>
+<ul>
+<li>description: Grants permission to create an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}",
+            "rds:DatabaseEngine",
+            "rds:DatabaseName",
+            "rds:StorageEncrypted"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="restoredbclusterfromsnapshot"><a aria-hidden="true" class="anchor-heading" href="#restoredbclusterfromsnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RestoreDBClusterFromSnapshot</h3>
+<ul>
+<li>description: Grants permission to create a new DB cluster from a DB cluster snapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "cluster-snapshot": {
+        "resource_type": "cluster-snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="restoredbclustertopointintime"><a aria-hidden="true" class="anchor-heading" href="#restoredbclustertopointintime"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RestoreDBClusterToPointInTime</h3>
+<ul>
+<li>description: Grants permission to restore a DB cluster to an arbitrary point in time</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="restoredbinstancefromdbsnapshot"><a aria-hidden="true" class="anchor-heading" href="#restoredbinstancefromdbsnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RestoreDBInstanceFromDBSnapshot</h3>
+<ul>
+<li>description: Grants permission to create a new DB instance from a DB snapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "snapshot": {
+        "resource_type": "snapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="restoredbinstancefroms3"><a aria-hidden="true" class="anchor-heading" href="#restoredbinstancefroms3"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RestoreDBInstanceFromS3</h3>
+<ul>
+<li>description: Grants permission to create a new DB instance from an Amazon S3 bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="restoredbinstancetopointintime"><a aria-hidden="true" class="anchor-heading" href="#restoredbinstancetopointintime"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RestoreDBInstanceToPointInTime</h3>
+<ul>
+<li>description: Grants permission to restore a DB instance to an arbitrary point in time</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "og": {
+        "resource_type": "og",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "subgrp": {
+        "resource_type": "subgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "rds:req-tag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="revokedbsecuritygroupingress"><a aria-hidden="true" class="anchor-heading" href="#revokedbsecuritygroupingress"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RevokeDBSecurityGroupIngress</h3>
+<ul>
+<li>description: Grants permission to revoke ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "secgrp": {
+        "resource_type": "secgrp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startactivitystream"><a aria-hidden="true" class="anchor-heading" href="#startactivitystream"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartActivityStream</h3>
+<ul>
+<li>description: Grants permission to start Activity Stream</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startdbcluster"><a aria-hidden="true" class="anchor-heading" href="#startdbcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartDBCluster</h3>
+<ul>
+<li>description: Starts the DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startdbinstance"><a aria-hidden="true" class="anchor-heading" href="#startdbinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartDBInstance</h3>
+<ul>
+<li>description: Grants permission to start the DB instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startexporttask"><a aria-hidden="true" class="anchor-heading" href="#startexporttask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartExportTask</h3>
+<ul>
+<li>description: Grants permission to start a new Export task for a DB snapshot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="stopactivitystream"><a aria-hidden="true" class="anchor-heading" href="#stopactivitystream"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopActivityStream</h3>
+<ul>
+<li>description: Grants permission to stop Activity Stream</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopdbcluster"><a aria-hidden="true" class="anchor-heading" href="#stopdbcluster"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopDBCluster</h3>
+<ul>
+<li>description: Grants permission to stop the DB cluster</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cluster": {
+        "resource_type": "cluster",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopdbinstance"><a aria-hidden="true" class="anchor-heading" href="#stopdbinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopDBInstance</h3>
+<ul>
+<li>description: Grants permission to stop the DB instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "db": {
+        "resource_type": "db",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-RDS"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,4166 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>IoT - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-IoT.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-IoT.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-IoT.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="IoT - undefined" />
+  <meta name="twitter:title" content="IoT - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">IoT</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="IoT">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="iot"><a aria-hidden="true" class="anchor-heading" href="#iot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>IoT</h1>
+<ul>
+<li>prefix: iot</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="acceptcertificatetransfer"><a aria-hidden="true" class="anchor-heading" href="#acceptcertificatetransfer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AcceptCertificateTransfer</h3>
+<ul>
+<li>description: Accepts a pending certificate transfer.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="addthingtobillinggroup"><a aria-hidden="true" class="anchor-heading" href="#addthingtobillinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddThingToBillingGroup</h3>
+<ul>
+<li>description: Adds a thing to the specified billing group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "billinggroup": {
+        "resource_type": "billinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="addthingtothinggroup"><a aria-hidden="true" class="anchor-heading" href="#addthingtothinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddThingToThingGroup</h3>
+<ul>
+<li>description: Adds a thing to the specified thing group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="associatetargetswithjob"><a aria-hidden="true" class="anchor-heading" href="#associatetargetswithjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociateTargetsWithJob</h3>
+<ul>
+<li>description: Associates a group with a continuous job.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="attachpolicy"><a aria-hidden="true" class="anchor-heading" href="#attachpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AttachPolicy</h3>
+<ul>
+<li>description: Attaches a policy to the specified target.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="attachprincipalpolicy"><a aria-hidden="true" class="anchor-heading" href="#attachprincipalpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AttachPrincipalPolicy</h3>
+<ul>
+<li>description: Attaches the specified policy to the specified principal (certificate or other credential).</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="attachsecurityprofile"><a aria-hidden="true" class="anchor-heading" href="#attachsecurityprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AttachSecurityProfile</h3>
+<ul>
+<li>description: Associates a Device Defender security profile with a thing group or with this account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securityprofile": {
+        "resource_type": "securityprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dimension": {
+        "resource_type": "dimension",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="attachthingprincipal"><a aria-hidden="true" class="anchor-heading" href="#attachthingprincipal"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AttachThingPrincipal</h3>
+<ul>
+<li>description: Attaches the specified principal to the specified thing.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelauditmitigationactionstask"><a aria-hidden="true" class="anchor-heading" href="#cancelauditmitigationactionstask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelAuditMitigationActionsTask</h3>
+<ul>
+<li>description: Cancels a mitigation action task that is in progress.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelaudittask"><a aria-hidden="true" class="anchor-heading" href="#cancelaudittask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelAuditTask</h3>
+<ul>
+<li>description: Cancels an audit that is in progress. The audit can be either scheduled or on-demand.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelcertificatetransfer"><a aria-hidden="true" class="anchor-heading" href="#cancelcertificatetransfer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelCertificateTransfer</h3>
+<ul>
+<li>description: Cancels a pending transfer for the specified certificate.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="canceljob"><a aria-hidden="true" class="anchor-heading" href="#canceljob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelJob</h3>
+<ul>
+<li>description: Cancels a job.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="canceljobexecution"><a aria-hidden="true" class="anchor-heading" href="#canceljobexecution"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelJobExecution</h3>
+<ul>
+<li>description: Cancels a job execution on a particular device.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cleardefaultauthorizer"><a aria-hidden="true" class="anchor-heading" href="#cleardefaultauthorizer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ClearDefaultAuthorizer</h3>
+<ul>
+<li>description: Clears the default authorizer.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="closetunnel"><a aria-hidden="true" class="anchor-heading" href="#closetunnel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CloseTunnel</h3>
+<ul>
+<li>description: Closes a tunnel.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "tunnel": {
+        "resource_type": "tunnel",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "iot:Delete"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="connect"><a aria-hidden="true" class="anchor-heading" href="#connect"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Connect</h3>
+<ul>
+<li>description: Connect as the specified client</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "client": {
+        "resource_type": "client",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createauditsuppression"><a aria-hidden="true" class="anchor-heading" href="#createauditsuppression"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAuditSuppression</h3>
+<ul>
+<li>description: Creates a Device Defender audit suppression.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createauthorizer"><a aria-hidden="true" class="anchor-heading" href="#createauthorizer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAuthorizer</h3>
+<ul>
+<li>description: Creates an authorizer.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "authorizer": {
+        "resource_type": "authorizer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createbillinggroup"><a aria-hidden="true" class="anchor-heading" href="#createbillinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateBillingGroup</h3>
+<ul>
+<li>description: Creates a billing group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "billinggroup": {
+        "resource_type": "billinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcertificatefromcsr"><a aria-hidden="true" class="anchor-heading" href="#createcertificatefromcsr"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateCertificateFromCsr</h3>
+<ul>
+<li>description: Creates an X.509 certificate using the specified certificate signing request.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdimension"><a aria-hidden="true" class="anchor-heading" href="#createdimension"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDimension</h3>
+<ul>
+<li>description: Defines a dimension that can be used to to limit the scope of a metric used in a security profile.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dimension": {
+        "resource_type": "dimension",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdomainconfiguration"><a aria-hidden="true" class="anchor-heading" href="#createdomainconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDomainConfiguration</h3>
+<ul>
+<li>description: Creates a domain configuration.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domainconfiguration": {
+        "resource_type": "domainconfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "iot:DomainName"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdynamicthinggroup"><a aria-hidden="true" class="anchor-heading" href="#createdynamicthinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDynamicThingGroup</h3>
+<ul>
+<li>description: Creates a Dynamic Thing Group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dynamicthinggroup": {
+        "resource_type": "dynamicthinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createjob"><a aria-hidden="true" class="anchor-heading" href="#createjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateJob</h3>
+<ul>
+<li>description: Creates a job.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createkeysandcertificate"><a aria-hidden="true" class="anchor-heading" href="#createkeysandcertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateKeysAndCertificate</h3>
+<ul>
+<li>description: Creates a 2048 bit RSA key pair and issues an X.509 certificate using the issued public key.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createmitigationaction"><a aria-hidden="true" class="anchor-heading" href="#createmitigationaction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateMitigationAction</h3>
+<ul>
+<li>description: Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mitigationaction": {
+        "resource_type": "mitigationaction",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createotaupdate"><a aria-hidden="true" class="anchor-heading" href="#createotaupdate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateOTAUpdate</h3>
+<ul>
+<li>description: Creates an OTA update job.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "otaupdate": {
+        "resource_type": "otaupdate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createpolicy"><a aria-hidden="true" class="anchor-heading" href="#createpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreatePolicy</h3>
+<ul>
+<li>description: Creates an AWS IoT policy.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "policy": {
+        "resource_type": "policy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createpolicyversion"><a aria-hidden="true" class="anchor-heading" href="#createpolicyversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreatePolicyVersion</h3>
+<ul>
+<li>description: Creates a new version of the specified AWS IoT policy.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "policy": {
+        "resource_type": "policy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createprovisioningclaim"><a aria-hidden="true" class="anchor-heading" href="#createprovisioningclaim"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateProvisioningClaim</h3>
+<ul>
+<li>description: Creates a provisioning claim.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "provisioningtemplate": {
+        "resource_type": "provisioningtemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createprovisioningtemplate"><a aria-hidden="true" class="anchor-heading" href="#createprovisioningtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateProvisioningTemplate</h3>
+<ul>
+<li>description: Creates a fleet provisioning template.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "provisioningtemplate": {
+        "resource_type": "provisioningtemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createprovisioningtemplateversion"><a aria-hidden="true" class="anchor-heading" href="#createprovisioningtemplateversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateProvisioningTemplateVersion</h3>
+<ul>
+<li>description: Creates a new version of a fleet provisioning template.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "provisioningtemplate": {
+        "resource_type": "provisioningtemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createrolealias"><a aria-hidden="true" class="anchor-heading" href="#createrolealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRoleAlias</h3>
+<ul>
+<li>description: Creates a role alias.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rolealias": {
+        "resource_type": "rolealias",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createscheduledaudit"><a aria-hidden="true" class="anchor-heading" href="#createscheduledaudit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateScheduledAudit</h3>
+<ul>
+<li>description: Creates a scheduled audit that is run at a specified time interval.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "scheduledaudit": {
+        "resource_type": "scheduledaudit",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsecurityprofile"><a aria-hidden="true" class="anchor-heading" href="#createsecurityprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSecurityProfile</h3>
+<ul>
+<li>description: Creates a Device Defender security profile.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securityprofile": {
+        "resource_type": "securityprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dimension": {
+        "resource_type": "dimension",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createstream"><a aria-hidden="true" class="anchor-heading" href="#createstream"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateStream</h3>
+<ul>
+<li>description: Creates a new AWS IoT stream</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "stream": {
+        "resource_type": "stream",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creatething"><a aria-hidden="true" class="anchor-heading" href="#creatething"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateThing</h3>
+<ul>
+<li>description: Creates a thing in the thing registry.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "billinggroup": {
+        "resource_type": "billinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createthinggroup"><a aria-hidden="true" class="anchor-heading" href="#createthinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateThingGroup</h3>
+<ul>
+<li>description: Creates a thing group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createthingtype"><a aria-hidden="true" class="anchor-heading" href="#createthingtype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateThingType</h3>
+<ul>
+<li>description: Creates a new thing type.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thingtype": {
+        "resource_type": "thingtype",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtopicrule"><a aria-hidden="true" class="anchor-heading" href="#createtopicrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTopicRule</h3>
+<ul>
+<li>description: Creates a rule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rule": {
+        "resource_type": "rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteaccountauditconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deleteaccountauditconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAccountAuditConfiguration</h3>
+<ul>
+<li>description: Deletes the audit configuration associated with the account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteauditsuppression"><a aria-hidden="true" class="anchor-heading" href="#deleteauditsuppression"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAuditSuppression</h3>
+<ul>
+<li>description: Deletes a Device Defender audit suppression.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteauthorizer"><a aria-hidden="true" class="anchor-heading" href="#deleteauthorizer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAuthorizer</h3>
+<ul>
+<li>description: Deletes the specified authorizer.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "authorizer": {
+        "resource_type": "authorizer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletebillinggroup"><a aria-hidden="true" class="anchor-heading" href="#deletebillinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteBillingGroup</h3>
+<ul>
+<li>description: Deletes the specified billing group.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "billinggroup": {
+        "resource_type": "billinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletecacertificate"><a aria-hidden="true" class="anchor-heading" href="#deletecacertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteCACertificate</h3>
+<ul>
+<li>description: Deletes a registered CA certificate.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cacert": {
+        "resource_type": "cacert",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletecertificate"><a aria-hidden="true" class="anchor-heading" href="#deletecertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteCertificate</h3>
+<ul>
+<li>description: Deletes the specified certificate.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedimension"><a aria-hidden="true" class="anchor-heading" href="#deletedimension"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDimension</h3>
+<ul>
+<li>description: Removes the specified dimension from your AWS account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dimension": {
+        "resource_type": "dimension",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedomainconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deletedomainconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDomainConfiguration</h3>
+<ul>
+<li>description: Deletes a domain configuration.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domainconfiguration": {
+        "resource_type": "domainconfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedynamicthinggroup"><a aria-hidden="true" class="anchor-heading" href="#deletedynamicthinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDynamicThingGroup</h3>
+<ul>
+<li>description: Deletes the specified Dynamic Thing Group</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dynamicthinggroup": {
+        "resource_type": "dynamicthinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletejob"><a aria-hidden="true" class="anchor-heading" href="#deletejob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteJob</h3>
+<ul>
+<li>description: Deletes a job and its related job executions.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletejobexecution"><a aria-hidden="true" class="anchor-heading" href="#deletejobexecution"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteJobExecution</h3>
+<ul>
+<li>description: Deletes a job execution.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletemitigationaction"><a aria-hidden="true" class="anchor-heading" href="#deletemitigationaction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteMitigationAction</h3>
+<ul>
+<li>description: Deletes a defined mitigation action from your AWS account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mitigationaction": {
+        "resource_type": "mitigationaction",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteotaupdate"><a aria-hidden="true" class="anchor-heading" href="#deleteotaupdate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteOTAUpdate</h3>
+<ul>
+<li>description: Deletes an OTA update job.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "otaupdate": {
+        "resource_type": "otaupdate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletepolicy"><a aria-hidden="true" class="anchor-heading" href="#deletepolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeletePolicy</h3>
+<ul>
+<li>description: Deletes the specified policy.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "policy": {
+        "resource_type": "policy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletepolicyversion"><a aria-hidden="true" class="anchor-heading" href="#deletepolicyversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeletePolicyVersion</h3>
+<ul>
+<li>description: Deletes the specified version of the specified policy.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "policy": {
+        "resource_type": "policy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteprovisioningtemplate"><a aria-hidden="true" class="anchor-heading" href="#deleteprovisioningtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteProvisioningTemplate</h3>
+<ul>
+<li>description: Deletes a fleet provisioning template.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "provisioningtemplate": {
+        "resource_type": "provisioningtemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteprovisioningtemplateversion"><a aria-hidden="true" class="anchor-heading" href="#deleteprovisioningtemplateversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteProvisioningTemplateVersion</h3>
+<ul>
+<li>description: Deletes a fleet provisioning template version.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "provisioningtemplate": {
+        "resource_type": "provisioningtemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteregistrationcode"><a aria-hidden="true" class="anchor-heading" href="#deleteregistrationcode"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRegistrationCode</h3>
+<ul>
+<li>description: Deletes a CA certificate registration code.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleterolealias"><a aria-hidden="true" class="anchor-heading" href="#deleterolealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRoleAlias</h3>
+<ul>
+<li>description: Deletes the specified role alias.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rolealias": {
+        "resource_type": "rolealias",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletescheduledaudit"><a aria-hidden="true" class="anchor-heading" href="#deletescheduledaudit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteScheduledAudit</h3>
+<ul>
+<li>description: Deletes a scheduled audit.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "scheduledaudit": {
+        "resource_type": "scheduledaudit",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesecurityprofile"><a aria-hidden="true" class="anchor-heading" href="#deletesecurityprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSecurityProfile</h3>
+<ul>
+<li>description: Deletes a Device Defender security profile.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securityprofile": {
+        "resource_type": "securityprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dimension": {
+        "resource_type": "dimension",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletestream"><a aria-hidden="true" class="anchor-heading" href="#deletestream"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteStream</h3>
+<ul>
+<li>description: Deletes a specified stream.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "stream": {
+        "resource_type": "stream",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletething"><a aria-hidden="true" class="anchor-heading" href="#deletething"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteThing</h3>
+<ul>
+<li>description: Deletes the specified thing.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletethinggroup"><a aria-hidden="true" class="anchor-heading" href="#deletethinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteThingGroup</h3>
+<ul>
+<li>description: Deletes the specified thing group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletethingshadow"><a aria-hidden="true" class="anchor-heading" href="#deletethingshadow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteThingShadow</h3>
+<ul>
+<li>description: Deletes the specified thing shadow.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletethingtype"><a aria-hidden="true" class="anchor-heading" href="#deletethingtype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteThingType</h3>
+<ul>
+<li>description: Deletes the specified thing type.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thingtype": {
+        "resource_type": "thingtype",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetopicrule"><a aria-hidden="true" class="anchor-heading" href="#deletetopicrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTopicRule</h3>
+<ul>
+<li>description: Deletes the specified rule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rule": {
+        "resource_type": "rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletev2logginglevel"><a aria-hidden="true" class="anchor-heading" href="#deletev2logginglevel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteV2LoggingLevel</h3>
+<ul>
+<li>description: Deletes the specified v2 logging level.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deprecatethingtype"><a aria-hidden="true" class="anchor-heading" href="#deprecatethingtype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeprecateThingType</h3>
+<ul>
+<li>description: Deprecates the specified thing type.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thingtype": {
+        "resource_type": "thingtype",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeaccountauditconfiguration"><a aria-hidden="true" class="anchor-heading" href="#describeaccountauditconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAccountAuditConfiguration</h3>
+<ul>
+<li>description: Gets information about audit configurations for the account.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeauditfinding"><a aria-hidden="true" class="anchor-heading" href="#describeauditfinding"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAuditFinding</h3>
+<ul>
+<li>description: Gets information about a single audit finding. Properties include the reason for noncompliance, the severity of the issue, and when the audit that returned the finding was started.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeauditmitigationactionstask"><a aria-hidden="true" class="anchor-heading" href="#describeauditmitigationactionstask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAuditMitigationActionsTask</h3>
+<ul>
+<li>description: Gets information about an audit mitigation task that is used to apply mitigation actions to a set of audit findings.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeauditsuppression"><a aria-hidden="true" class="anchor-heading" href="#describeauditsuppression"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAuditSuppression</h3>
+<ul>
+<li>description: Gets information about a Device Defender audit suppression.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeaudittask"><a aria-hidden="true" class="anchor-heading" href="#describeaudittask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAuditTask</h3>
+<ul>
+<li>description: Gets information about a Device Defender audit.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeauthorizer"><a aria-hidden="true" class="anchor-heading" href="#describeauthorizer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAuthorizer</h3>
+<ul>
+<li>description: Describes an authorizer.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "authorizer": {
+        "resource_type": "authorizer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describebillinggroup"><a aria-hidden="true" class="anchor-heading" href="#describebillinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeBillingGroup</h3>
+<ul>
+<li>description: Gets information about the specified billing group.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "billinggroup": {
+        "resource_type": "billinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describecacertificate"><a aria-hidden="true" class="anchor-heading" href="#describecacertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeCACertificate</h3>
+<ul>
+<li>description: Describes a registered CA certificate.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cacert": {
+        "resource_type": "cacert",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describecertificate"><a aria-hidden="true" class="anchor-heading" href="#describecertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeCertificate</h3>
+<ul>
+<li>description: Gets information about the specified certificate.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedefaultauthorizer"><a aria-hidden="true" class="anchor-heading" href="#describedefaultauthorizer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDefaultAuthorizer</h3>
+<ul>
+<li>description: Describes the default authorizer.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedimension"><a aria-hidden="true" class="anchor-heading" href="#describedimension"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDimension</h3>
+<ul>
+<li>description: Provides details about a dimension that is defined in your AWS account.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dimension": {
+        "resource_type": "dimension",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedomainconfiguration"><a aria-hidden="true" class="anchor-heading" href="#describedomainconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDomainConfiguration</h3>
+<ul>
+<li>description: Gets information about the domain configuration.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domainconfiguration": {
+        "resource_type": "domainconfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeendpoint"><a aria-hidden="true" class="anchor-heading" href="#describeendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEndpoint</h3>
+<ul>
+<li>description: Returns a unique endpoint specific to the AWS account making the call.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeeventconfigurations"><a aria-hidden="true" class="anchor-heading" href="#describeeventconfigurations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEventConfigurations</h3>
+<ul>
+<li>description: Returns account event configurations.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeindex"><a aria-hidden="true" class="anchor-heading" href="#describeindex"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeIndex</h3>
+<ul>
+<li>description: Gets information about the specified index.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "index": {
+        "resource_type": "index",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describejob"><a aria-hidden="true" class="anchor-heading" href="#describejob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeJob</h3>
+<ul>
+<li>description: Describes a job.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describejobexecution"><a aria-hidden="true" class="anchor-heading" href="#describejobexecution"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeJobExecution</h3>
+<ul>
+<li>description: Describes a job execution.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thing": {
+        "resource_type": "thing",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describemitigationaction"><a aria-hidden="true" class="anchor-heading" href="#describemitigationaction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMitigationAction</h3>
+<ul>
+<li>description: Gets information about a mitigation action.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mitigationaction": {
+        "resource_type": "mitigationaction",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeprovisioningtemplate"><a aria-hidden="true" class="anchor-heading" href="#describeprovisioningtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeProvisioningTemplate</h3>
+<ul>
+<li>description: Returns information about a fleet provisioning template.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "provisioningtemplate": {
+        "resource_type": "provisioningtemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeprovisioningtemplateversion"><a aria-hidden="true" class="anchor-heading" href="#describeprovisioningtemplateversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeProvisioningTemplateVersion</h3>
+<ul>
+<li>description: Returns information about a fleet provisioning template version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "provisioningtemplate": {
+        "resource_type": "provisioningtemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describerolealias"><a aria-hidden="true" class="anchor-heading" href="#describerolealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeRoleAlias</h3>
+<ul>
+<li>description: Describes a role alias.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rolealias": {
+        "resource_type": "rolealias",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describescheduledaudit"><a aria-hidden="true" class="anchor-heading" href="#describescheduledaudit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeScheduledAudit</h3>
+<ul>
+<li>description: Gets information about a scheduled audit.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "scheduledaudit": {
+        "resource_type": "scheduledaudit",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describesecurityprofile"><a aria-hidden="true" class="anchor-heading" href="#describesecurityprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeSecurityProfile</h3>
+<ul>
+<li>description: Gets information about a Device Defender security profile.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securityprofile": {
+        "resource_type": "securityprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describestream"><a aria-hidden="true" class="anchor-heading" href="#describestream"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeStream</h3>
+<ul>
+<li>description: Gets information about the specified stream.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "stream": {
+        "resource_type": "stream",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describething"><a aria-hidden="true" class="anchor-heading" href="#describething"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeThing</h3>
+<ul>
+<li>description: Gets information about the specified thing.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describethinggroup"><a aria-hidden="true" class="anchor-heading" href="#describethinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeThingGroup</h3>
+<ul>
+<li>description: Gets information about the specified thing group.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describethingregistrationtask"><a aria-hidden="true" class="anchor-heading" href="#describethingregistrationtask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeThingRegistrationTask</h3>
+<ul>
+<li>description: Gets information about the bulk thing registration task.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describethingtype"><a aria-hidden="true" class="anchor-heading" href="#describethingtype"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeThingType</h3>
+<ul>
+<li>description: Gets information about the specified thing type.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thingtype": {
+        "resource_type": "thingtype",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetunnel"><a aria-hidden="true" class="anchor-heading" href="#describetunnel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTunnel</h3>
+<ul>
+<li>description: Describes a tunnel.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "tunnel": {
+        "resource_type": "tunnel",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="detachpolicy"><a aria-hidden="true" class="anchor-heading" href="#detachpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DetachPolicy</h3>
+<ul>
+<li>description: Detaches a policy from the specified target.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="detachprincipalpolicy"><a aria-hidden="true" class="anchor-heading" href="#detachprincipalpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DetachPrincipalPolicy</h3>
+<ul>
+<li>description: Removes the specified policy from the specified certificate.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="detachsecurityprofile"><a aria-hidden="true" class="anchor-heading" href="#detachsecurityprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DetachSecurityProfile</h3>
+<ul>
+<li>description: Disassociates a Device Defender security profile from a thing group or from this account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securityprofile": {
+        "resource_type": "securityprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dimension": {
+        "resource_type": "dimension",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="detachthingprincipal"><a aria-hidden="true" class="anchor-heading" href="#detachthingprincipal"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DetachThingPrincipal</h3>
+<ul>
+<li>description: Detaches the specified principal from the specified thing.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disabletopicrule"><a aria-hidden="true" class="anchor-heading" href="#disabletopicrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisableTopicRule</h3>
+<ul>
+<li>description: Disables the specified rule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rule": {
+        "resource_type": "rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="enabletopicrule"><a aria-hidden="true" class="anchor-heading" href="#enabletopicrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>EnableTopicRule</h3>
+<ul>
+<li>description: Enables the specified rule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rule": {
+        "resource_type": "rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcardinality"><a aria-hidden="true" class="anchor-heading" href="#getcardinality"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCardinality</h3>
+<ul>
+<li>description: Get cardinality for IoT fleet index</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "index": {
+        "resource_type": "index",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="geteffectivepolicies"><a aria-hidden="true" class="anchor-heading" href="#geteffectivepolicies"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetEffectivePolicies</h3>
+<ul>
+<li>description: Gets effective policies.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getindexingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getindexingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetIndexingConfiguration</h3>
+<ul>
+<li>description: Gets current fleet indexing configuration</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getjobdocument"><a aria-hidden="true" class="anchor-heading" href="#getjobdocument"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetJobDocument</h3>
+<ul>
+<li>description: Gets a job document.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getloggingoptions"><a aria-hidden="true" class="anchor-heading" href="#getloggingoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetLoggingOptions</h3>
+<ul>
+<li>description: Gets the logging options.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getotaupdate"><a aria-hidden="true" class="anchor-heading" href="#getotaupdate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetOTAUpdate</h3>
+<ul>
+<li>description: Gets the information about the OTA update job.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "otaupdate": {
+        "resource_type": "otaupdate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getpendingjobexecutions"><a aria-hidden="true" class="anchor-heading" href="#getpendingjobexecutions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPendingJobExecutions</h3>
+<ul>
+<li>description: Gets the list of all jobs for a thing that are not in a terminal state.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getpercentiles"><a aria-hidden="true" class="anchor-heading" href="#getpercentiles"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPercentiles</h3>
+<ul>
+<li>description: Get percentiles for IoT fleet index</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "index": {
+        "resource_type": "index",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getpolicy"><a aria-hidden="true" class="anchor-heading" href="#getpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPolicy</h3>
+<ul>
+<li>description: Gets information about the specified policy with the policy document of the default version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "policy": {
+        "resource_type": "policy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getpolicyversion"><a aria-hidden="true" class="anchor-heading" href="#getpolicyversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPolicyVersion</h3>
+<ul>
+<li>description: Gets information about the specified policy version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "policy": {
+        "resource_type": "policy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getregistrationcode"><a aria-hidden="true" class="anchor-heading" href="#getregistrationcode"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRegistrationCode</h3>
+<ul>
+<li>description: Gets a registration code used to register a CA certificate with AWS IoT.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getstatistics"><a aria-hidden="true" class="anchor-heading" href="#getstatistics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetStatistics</h3>
+<ul>
+<li>description: Get statistics for IoT fleet index</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "index": {
+        "resource_type": "index",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getthingshadow"><a aria-hidden="true" class="anchor-heading" href="#getthingshadow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetThingShadow</h3>
+<ul>
+<li>description: Gets the thing shadow.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettopicrule"><a aria-hidden="true" class="anchor-heading" href="#gettopicrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTopicRule</h3>
+<ul>
+<li>description: Gets information about the specified rule.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rule": {
+        "resource_type": "rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getv2loggingoptions"><a aria-hidden="true" class="anchor-heading" href="#getv2loggingoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetV2LoggingOptions</h3>
+<ul>
+<li>description: Gets v2 logging options.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listactiveviolations"><a aria-hidden="true" class="anchor-heading" href="#listactiveviolations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListActiveViolations</h3>
+<ul>
+<li>description: Lists the active violations for a given Device Defender security profile or Thing.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securityprofile": {
+        "resource_type": "securityprofile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thing": {
+        "resource_type": "thing",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listattachedpolicies"><a aria-hidden="true" class="anchor-heading" href="#listattachedpolicies"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAttachedPolicies</h3>
+<ul>
+<li>description: Lists the policies attached to the specified thing group.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listauditfindings"><a aria-hidden="true" class="anchor-heading" href="#listauditfindings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAuditFindings</h3>
+<ul>
+<li>description: Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time period.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listauditmitigationactionsexecutions"><a aria-hidden="true" class="anchor-heading" href="#listauditmitigationactionsexecutions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAuditMitigationActionsExecutions</h3>
+<ul>
+<li>description: Gets the status of audit mitigation action tasks that were executed.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listauditmitigationactionstasks"><a aria-hidden="true" class="anchor-heading" href="#listauditmitigationactionstasks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAuditMitigationActionsTasks</h3>
+<ul>
+<li>description: Gets a list of audit mitigation action tasks that match the specified filters.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listauditsuppressions"><a aria-hidden="true" class="anchor-heading" href="#listauditsuppressions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAuditSuppressions</h3>
+<ul>
+<li>description: Lists your Device Defender audit suppressions.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listaudittasks"><a aria-hidden="true" class="anchor-heading" href="#listaudittasks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAuditTasks</h3>
+<ul>
+<li>description: Lists the Device Defender audits that have been performed during a given time period.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listauthorizers"><a aria-hidden="true" class="anchor-heading" href="#listauthorizers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAuthorizers</h3>
+<ul>
+<li>description: Lists the authorizers registered in your account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listbillinggroups"><a aria-hidden="true" class="anchor-heading" href="#listbillinggroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListBillingGroups</h3>
+<ul>
+<li>description: Lists all billing groups.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcacertificates"><a aria-hidden="true" class="anchor-heading" href="#listcacertificates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCACertificates</h3>
+<ul>
+<li>description: Lists the CA certificates registered for your AWS account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcertificates"><a aria-hidden="true" class="anchor-heading" href="#listcertificates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCertificates</h3>
+<ul>
+<li>description: Lists your certificates.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcertificatesbyca"><a aria-hidden="true" class="anchor-heading" href="#listcertificatesbyca"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCertificatesByCA</h3>
+<ul>
+<li>description: List the device certificates signed by the specified CA certificate.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdimensions"><a aria-hidden="true" class="anchor-heading" href="#listdimensions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDimensions</h3>
+<ul>
+<li>description: Lists the dimensions that are defined for your AWS account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdomainconfigurations"><a aria-hidden="true" class="anchor-heading" href="#listdomainconfigurations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDomainConfigurations</h3>
+<ul>
+<li>description: Lists the domain configuration created by your AWS account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listindices"><a aria-hidden="true" class="anchor-heading" href="#listindices"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListIndices</h3>
+<ul>
+<li>description: Lists all indices for fleet index</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listjobexecutionsforjob"><a aria-hidden="true" class="anchor-heading" href="#listjobexecutionsforjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListJobExecutionsForJob</h3>
+<ul>
+<li>description: Lists the job executions for a job.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listjobexecutionsforthing"><a aria-hidden="true" class="anchor-heading" href="#listjobexecutionsforthing"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListJobExecutionsForThing</h3>
+<ul>
+<li>description: Lists the job executions for the specified thing.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listjobs"><a aria-hidden="true" class="anchor-heading" href="#listjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListJobs</h3>
+<ul>
+<li>description: Lists jobs.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listmitigationactions"><a aria-hidden="true" class="anchor-heading" href="#listmitigationactions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListMitigationActions</h3>
+<ul>
+<li>description: Gets a list of all mitigation actions that match the specified filter criteria.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listnamedshadowsforthing"><a aria-hidden="true" class="anchor-heading" href="#listnamedshadowsforthing"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListNamedShadowsForThing</h3>
+<ul>
+<li>description: Lists all named shadows for a given thing.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listotaupdates"><a aria-hidden="true" class="anchor-heading" href="#listotaupdates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListOTAUpdates</h3>
+<ul>
+<li>description: Lists OTA update jobs in the account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listoutgoingcertificates"><a aria-hidden="true" class="anchor-heading" href="#listoutgoingcertificates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListOutgoingCertificates</h3>
+<ul>
+<li>description: Lists certificates that are being transfered but not yet accepted.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listpolicies"><a aria-hidden="true" class="anchor-heading" href="#listpolicies"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListPolicies</h3>
+<ul>
+<li>description: Lists your policies.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listpolicyprincipals"><a aria-hidden="true" class="anchor-heading" href="#listpolicyprincipals"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListPolicyPrincipals</h3>
+<ul>
+<li>description: Lists the principals associated with the specified policy.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listpolicyversions"><a aria-hidden="true" class="anchor-heading" href="#listpolicyversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListPolicyVersions</h3>
+<ul>
+<li>description: Lists the versions of the specified policy, and identifies the default version.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "policy": {
+        "resource_type": "policy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listprincipalpolicies"><a aria-hidden="true" class="anchor-heading" href="#listprincipalpolicies"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListPrincipalPolicies</h3>
+<ul>
+<li>description: Lists the policies attached to the specified principal. If you use an Amazon Cognito identity, the ID needs to be in Amazon Cognito Identity format.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listprincipalthings"><a aria-hidden="true" class="anchor-heading" href="#listprincipalthings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListPrincipalThings</h3>
+<ul>
+<li>description: Lists the things associated with the specified principal.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listprovisioningtemplateversions"><a aria-hidden="true" class="anchor-heading" href="#listprovisioningtemplateversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListProvisioningTemplateVersions</h3>
+<ul>
+<li>description: A list of fleet provisioning template versions.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "provisioningtemplate": {
+        "resource_type": "provisioningtemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listprovisioningtemplates"><a aria-hidden="true" class="anchor-heading" href="#listprovisioningtemplates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListProvisioningTemplates</h3>
+<ul>
+<li>description: Lists the fleet provisioning templates in your AWS account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listrolealiases"><a aria-hidden="true" class="anchor-heading" href="#listrolealiases"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRoleAliases</h3>
+<ul>
+<li>description: Lists role aliases.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listscheduledaudits"><a aria-hidden="true" class="anchor-heading" href="#listscheduledaudits"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListScheduledAudits</h3>
+<ul>
+<li>description: Lists all of your scheduled audits.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsecurityprofiles"><a aria-hidden="true" class="anchor-heading" href="#listsecurityprofiles"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSecurityProfiles</h3>
+<ul>
+<li>description: Lists the Device Defender security profiles you have created.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dimension": {
+        "resource_type": "dimension",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsecurityprofilesfortarget"><a aria-hidden="true" class="anchor-heading" href="#listsecurityprofilesfortarget"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSecurityProfilesForTarget</h3>
+<ul>
+<li>description: Lists the Device Defender security profiles attached to a target.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="liststreams"><a aria-hidden="true" class="anchor-heading" href="#liststreams"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListStreams</h3>
+<ul>
+<li>description: Lists the streams in your account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Lists all tags for a given resource.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "authorizer": {
+        "resource_type": "authorizer",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "billinggroup": {
+        "resource_type": "billinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "cacert": {
+        "resource_type": "cacert",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dimension": {
+        "resource_type": "dimension",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "domainconfiguration": {
+        "resource_type": "domainconfiguration",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dynamicthinggroup": {
+        "resource_type": "dynamicthinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "job": {
+        "resource_type": "job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "mitigationaction": {
+        "resource_type": "mitigationaction",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "otaupdate": {
+        "resource_type": "otaupdate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "policy": {
+        "resource_type": "policy",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "provisioningtemplate": {
+        "resource_type": "provisioningtemplate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "rolealias": {
+        "resource_type": "rolealias",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "rule": {
+        "resource_type": "rule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "scheduledaudit": {
+        "resource_type": "scheduledaudit",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securityprofile": {
+        "resource_type": "securityprofile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "stream": {
+        "resource_type": "stream",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thingtype": {
+        "resource_type": "thingtype",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtargetsforpolicy"><a aria-hidden="true" class="anchor-heading" href="#listtargetsforpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTargetsForPolicy</h3>
+<ul>
+<li>description: List targets for the specified policy.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "policy": {
+        "resource_type": "policy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtargetsforsecurityprofile"><a aria-hidden="true" class="anchor-heading" href="#listtargetsforsecurityprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTargetsForSecurityProfile</h3>
+<ul>
+<li>description: Lists the targets associated with a given Device Defender security profile.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securityprofile": {
+        "resource_type": "securityprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listthinggroups"><a aria-hidden="true" class="anchor-heading" href="#listthinggroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListThingGroups</h3>
+<ul>
+<li>description: Lists all thing groups.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listthinggroupsforthing"><a aria-hidden="true" class="anchor-heading" href="#listthinggroupsforthing"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListThingGroupsForThing</h3>
+<ul>
+<li>description: List thing groups to which the specified thing belongs.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listthingprincipals"><a aria-hidden="true" class="anchor-heading" href="#listthingprincipals"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListThingPrincipals</h3>
+<ul>
+<li>description: Lists the principals associated with the specified thing.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listthingregistrationtaskreports"><a aria-hidden="true" class="anchor-heading" href="#listthingregistrationtaskreports"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListThingRegistrationTaskReports</h3>
+<ul>
+<li>description: Lists information about bulk thing registration tasks.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listthingregistrationtasks"><a aria-hidden="true" class="anchor-heading" href="#listthingregistrationtasks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListThingRegistrationTasks</h3>
+<ul>
+<li>description: Lists bulk thing registration tasks.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listthingtypes"><a aria-hidden="true" class="anchor-heading" href="#listthingtypes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListThingTypes</h3>
+<ul>
+<li>description: Lists all thing types.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listthings"><a aria-hidden="true" class="anchor-heading" href="#listthings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListThings</h3>
+<ul>
+<li>description: Lists all things.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listthingsinbillinggroup"><a aria-hidden="true" class="anchor-heading" href="#listthingsinbillinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListThingsInBillingGroup</h3>
+<ul>
+<li>description: Lists all things in the specified billing group.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "billinggroup": {
+        "resource_type": "billinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listthingsinthinggroup"><a aria-hidden="true" class="anchor-heading" href="#listthingsinthinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListThingsInThingGroup</h3>
+<ul>
+<li>description: Lists all things in the specified thing group.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtopicrules"><a aria-hidden="true" class="anchor-heading" href="#listtopicrules"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTopicRules</h3>
+<ul>
+<li>description: Lists the rules for the specific topic.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtunnels"><a aria-hidden="true" class="anchor-heading" href="#listtunnels"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTunnels</h3>
+<ul>
+<li>description: Lists tunnels.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listv2logginglevels"><a aria-hidden="true" class="anchor-heading" href="#listv2logginglevels"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListV2LoggingLevels</h3>
+<ul>
+<li>description: Lists the v2 logging levels.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listviolationevents"><a aria-hidden="true" class="anchor-heading" href="#listviolationevents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListViolationEvents</h3>
+<ul>
+<li>description: Lists the Device Defender security profile violations discovered during the given time period.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securityprofile": {
+        "resource_type": "securityprofile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thing": {
+        "resource_type": "thing",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="opentunnel"><a aria-hidden="true" class="anchor-heading" href="#opentunnel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>OpenTunnel</h3>
+<ul>
+<li>description: Opens a tunnel.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "iot:ThingGroupArn",
+            "iot:TunnelDestinationService"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="publish"><a aria-hidden="true" class="anchor-heading" href="#publish"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Publish</h3>
+<ul>
+<li>description: Publish to the specified topic.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "topic": {
+        "resource_type": "topic",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="receive"><a aria-hidden="true" class="anchor-heading" href="#receive"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Receive</h3>
+<ul>
+<li>description: Receive from the specified topic.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "topic": {
+        "resource_type": "topic",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="registercacertificate"><a aria-hidden="true" class="anchor-heading" href="#registercacertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegisterCACertificate</h3>
+<ul>
+<li>description: Registers a CA certificate with AWS IoT.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="registercertificate"><a aria-hidden="true" class="anchor-heading" href="#registercertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegisterCertificate</h3>
+<ul>
+<li>description: Registers a device certificate with AWS IoT.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="registercertificatewithoutca"><a aria-hidden="true" class="anchor-heading" href="#registercertificatewithoutca"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegisterCertificateWithoutCA</h3>
+<ul>
+<li>description: Registers a device certificate with AWS IoT without a registered CA (certificate authority).</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="registerthing"><a aria-hidden="true" class="anchor-heading" href="#registerthing"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegisterThing</h3>
+<ul>
+<li>description: Registers your thing.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="rejectcertificatetransfer"><a aria-hidden="true" class="anchor-heading" href="#rejectcertificatetransfer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RejectCertificateTransfer</h3>
+<ul>
+<li>description: Rejects a pending certificate transfer.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="removethingfrombillinggroup"><a aria-hidden="true" class="anchor-heading" href="#removethingfrombillinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RemoveThingFromBillingGroup</h3>
+<ul>
+<li>description: Removes thing from the specified billing group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "billinggroup": {
+        "resource_type": "billinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="removethingfromthinggroup"><a aria-hidden="true" class="anchor-heading" href="#removethingfromthinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RemoveThingFromThingGroup</h3>
+<ul>
+<li>description: Removes thing from the specified thing group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="replacetopicrule"><a aria-hidden="true" class="anchor-heading" href="#replacetopicrule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ReplaceTopicRule</h3>
+<ul>
+<li>description: Replaces the specified rule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rule": {
+        "resource_type": "rule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="searchindex"><a aria-hidden="true" class="anchor-heading" href="#searchindex"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SearchIndex</h3>
+<ul>
+<li>description: Search IoT fleet index</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "index": {
+        "resource_type": "index",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setdefaultauthorizer"><a aria-hidden="true" class="anchor-heading" href="#setdefaultauthorizer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetDefaultAuthorizer</h3>
+<ul>
+<li>description: Sets the default authorizer. This will be used if a websocket connection is made without specifying an authorizer.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "authorizer": {
+        "resource_type": "authorizer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setdefaultpolicyversion"><a aria-hidden="true" class="anchor-heading" href="#setdefaultpolicyversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetDefaultPolicyVersion</h3>
+<ul>
+<li>description: Sets the specified version of the specified policy as the policy's default (operative) version.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "policy": {
+        "resource_type": "policy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setloggingoptions"><a aria-hidden="true" class="anchor-heading" href="#setloggingoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetLoggingOptions</h3>
+<ul>
+<li>description: Sets the logging options.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setv2logginglevel"><a aria-hidden="true" class="anchor-heading" href="#setv2logginglevel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetV2LoggingLevel</h3>
+<ul>
+<li>description: Sets the v2 logging level.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="setv2loggingoptions"><a aria-hidden="true" class="anchor-heading" href="#setv2loggingoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SetV2LoggingOptions</h3>
+<ul>
+<li>description: Sets the v2 logging options.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startauditmitigationactionstask"><a aria-hidden="true" class="anchor-heading" href="#startauditmitigationactionstask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartAuditMitigationActionsTask</h3>
+<ul>
+<li>description: Starts a task that applies a set of mitigation actions to the specified target.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startnextpendingjobexecution"><a aria-hidden="true" class="anchor-heading" href="#startnextpendingjobexecution"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartNextPendingJobExecution</h3>
+<ul>
+<li>description: Gets and starts the next pending job execution for a thing.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startondemandaudittask"><a aria-hidden="true" class="anchor-heading" href="#startondemandaudittask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartOnDemandAuditTask</h3>
+<ul>
+<li>description: Starts an on-demand Device Defender audit.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startthingregistrationtask"><a aria-hidden="true" class="anchor-heading" href="#startthingregistrationtask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartThingRegistrationTask</h3>
+<ul>
+<li>description: Starts a bulk thing registration task.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopthingregistrationtask"><a aria-hidden="true" class="anchor-heading" href="#stopthingregistrationtask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopThingRegistrationTask</h3>
+<ul>
+<li>description: Stops a bulk thing registration task.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="subscribe"><a aria-hidden="true" class="anchor-heading" href="#subscribe"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Subscribe</h3>
+<ul>
+<li>description: Subscribe to the specified TopicFilter.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "topicfilter": {
+        "resource_type": "topicfilter",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Tag a specified resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "authorizer": {
+        "resource_type": "authorizer",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "billinggroup": {
+        "resource_type": "billinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "cacert": {
+        "resource_type": "cacert",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dimension": {
+        "resource_type": "dimension",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "domainconfiguration": {
+        "resource_type": "domainconfiguration",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dynamicthinggroup": {
+        "resource_type": "dynamicthinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "job": {
+        "resource_type": "job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "mitigationaction": {
+        "resource_type": "mitigationaction",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "otaupdate": {
+        "resource_type": "otaupdate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "policy": {
+        "resource_type": "policy",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "provisioningtemplate": {
+        "resource_type": "provisioningtemplate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "rolealias": {
+        "resource_type": "rolealias",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "rule": {
+        "resource_type": "rule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "scheduledaudit": {
+        "resource_type": "scheduledaudit",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securityprofile": {
+        "resource_type": "securityprofile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "stream": {
+        "resource_type": "stream",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thingtype": {
+        "resource_type": "thingtype",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="testauthorization"><a aria-hidden="true" class="anchor-heading" href="#testauthorization"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TestAuthorization</h3>
+<ul>
+<li>description: Test the policies evaluation for group policies</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="testinvokeauthorizer"><a aria-hidden="true" class="anchor-heading" href="#testinvokeauthorizer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TestInvokeAuthorizer</h3>
+<ul>
+<li>description: Invoke the specified custom authorizer for testing purposes.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "authorizer": {
+        "resource_type": "authorizer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="transfercertificate"><a aria-hidden="true" class="anchor-heading" href="#transfercertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TransferCertificate</h3>
+<ul>
+<li>description: Transfers the specified certificate to the specified AWS account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Untag a specified resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "authorizer": {
+        "resource_type": "authorizer",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "billinggroup": {
+        "resource_type": "billinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "cacert": {
+        "resource_type": "cacert",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dimension": {
+        "resource_type": "dimension",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "domainconfiguration": {
+        "resource_type": "domainconfiguration",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dynamicthinggroup": {
+        "resource_type": "dynamicthinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "job": {
+        "resource_type": "job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "mitigationaction": {
+        "resource_type": "mitigationaction",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "otaupdate": {
+        "resource_type": "otaupdate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "policy": {
+        "resource_type": "policy",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "provisioningtemplate": {
+        "resource_type": "provisioningtemplate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "rolealias": {
+        "resource_type": "rolealias",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "rule": {
+        "resource_type": "rule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "scheduledaudit": {
+        "resource_type": "scheduledaudit",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "securityprofile": {
+        "resource_type": "securityprofile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "stream": {
+        "resource_type": "stream",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thingtype": {
+        "resource_type": "thingtype",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateaccountauditconfiguration"><a aria-hidden="true" class="anchor-heading" href="#updateaccountauditconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAccountAuditConfiguration</h3>
+<ul>
+<li>description: Configures or reconfigures the Device Defender audit settings for this account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateauditsuppression"><a aria-hidden="true" class="anchor-heading" href="#updateauditsuppression"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAuditSuppression</h3>
+<ul>
+<li>description: Updates a Device Defender audit suppression.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateauthorizer"><a aria-hidden="true" class="anchor-heading" href="#updateauthorizer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAuthorizer</h3>
+<ul>
+<li>description: Updates an authorizer</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "authorizer": {
+        "resource_type": "authorizer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatebillinggroup"><a aria-hidden="true" class="anchor-heading" href="#updatebillinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateBillingGroup</h3>
+<ul>
+<li>description: Updates information associated with the specified billing group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "billinggroup": {
+        "resource_type": "billinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecacertificate"><a aria-hidden="true" class="anchor-heading" href="#updatecacertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateCACertificate</h3>
+<ul>
+<li>description: Updates a registered CA certificate.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cacert": {
+        "resource_type": "cacert",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecertificate"><a aria-hidden="true" class="anchor-heading" href="#updatecertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateCertificate</h3>
+<ul>
+<li>description: Updates the status of the specified certificate. This operation is idempotent.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "cert": {
+        "resource_type": "cert",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedimension"><a aria-hidden="true" class="anchor-heading" href="#updatedimension"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDimension</h3>
+<ul>
+<li>description: Updates the definition for a dimension.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dimension": {
+        "resource_type": "dimension",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedomainconfiguration"><a aria-hidden="true" class="anchor-heading" href="#updatedomainconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDomainConfiguration</h3>
+<ul>
+<li>description: Updates a domain configuration.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domainconfiguration": {
+        "resource_type": "domainconfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedynamicthinggroup"><a aria-hidden="true" class="anchor-heading" href="#updatedynamicthinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDynamicThingGroup</h3>
+<ul>
+<li>description: Updates a Dynamic Thing Group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dynamicthinggroup": {
+        "resource_type": "dynamicthinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateeventconfigurations"><a aria-hidden="true" class="anchor-heading" href="#updateeventconfigurations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateEventConfigurations</h3>
+<ul>
+<li>description: Updates event configurations.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateindexingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#updateindexingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateIndexingConfiguration</h3>
+<ul>
+<li>description: Updates fleet indexing configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatejob"><a aria-hidden="true" class="anchor-heading" href="#updatejob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateJob</h3>
+<ul>
+<li>description: Updates a job.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "job": {
+        "resource_type": "job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatejobexecution"><a aria-hidden="true" class="anchor-heading" href="#updatejobexecution"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateJobExecution</h3>
+<ul>
+<li>description: Updates a job execution.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatemitigationaction"><a aria-hidden="true" class="anchor-heading" href="#updatemitigationaction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateMitigationAction</h3>
+<ul>
+<li>description: Updates the definition for the specified mitigation action.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mitigationaction": {
+        "resource_type": "mitigationaction",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateprovisioningtemplate"><a aria-hidden="true" class="anchor-heading" href="#updateprovisioningtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateProvisioningTemplate</h3>
+<ul>
+<li>description: Updates a fleet provisioning template.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "provisioningtemplate": {
+        "resource_type": "provisioningtemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updaterolealias"><a aria-hidden="true" class="anchor-heading" href="#updaterolealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRoleAlias</h3>
+<ul>
+<li>description: Updates the role alias</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "rolealias": {
+        "resource_type": "rolealias",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatescheduledaudit"><a aria-hidden="true" class="anchor-heading" href="#updatescheduledaudit"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateScheduledAudit</h3>
+<ul>
+<li>description: Updates a scheduled audit, including what checks are performed and how often the audit takes place.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "scheduledaudit": {
+        "resource_type": "scheduledaudit",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatesecurityprofile"><a aria-hidden="true" class="anchor-heading" href="#updatesecurityprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateSecurityProfile</h3>
+<ul>
+<li>description: Updates a Device Defender security profile.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "securityprofile": {
+        "resource_type": "securityprofile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dimension": {
+        "resource_type": "dimension",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatestream"><a aria-hidden="true" class="anchor-heading" href="#updatestream"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateStream</h3>
+<ul>
+<li>description: Updates the data for a stream.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "stream": {
+        "resource_type": "stream",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatething"><a aria-hidden="true" class="anchor-heading" href="#updatething"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateThing</h3>
+<ul>
+<li>description: Updates information associated with the specified thing.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatethinggroup"><a aria-hidden="true" class="anchor-heading" href="#updatethinggroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateThingGroup</h3>
+<ul>
+<li>description: Updates information associated with the specified thing group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatethinggroupsforthing"><a aria-hidden="true" class="anchor-heading" href="#updatethinggroupsforthing"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateThingGroupsForThing</h3>
+<ul>
+<li>description: Updates the thing groups to which the thing belongs.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "thinggroup": {
+        "resource_type": "thinggroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatethingshadow"><a aria-hidden="true" class="anchor-heading" href="#updatethingshadow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateThingShadow</h3>
+<ul>
+<li>description: Updates the thing shadow.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "thing": {
+        "resource_type": "thing",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="validatesecurityprofilebehaviors"><a aria-hidden="true" class="anchor-heading" href="#validatesecurityprofilebehaviors"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ValidateSecurityProfileBehaviors</h3>
+<ul>
+<li>description: Validates a Device Defender security profile behaviors specification.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-IoT"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

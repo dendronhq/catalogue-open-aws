@@ -1,0 +1,3102 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>SageMaker - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-SageMaker.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-SageMaker.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-SageMaker.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="SageMaker - undefined" />
+  <meta name="twitter:title" content="SageMaker - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">SageMaker</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="SageMaker">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="sagemaker"><a aria-hidden="true" class="anchor-heading" href="#sagemaker"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SageMaker</h1>
+<ul>
+<li>prefix: sagemaker</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="addtags"><a aria-hidden="true" class="anchor-heading" href="#addtags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddTags</h3>
+<ul>
+<li>description: Adds or overwrites one or more tags for the specified Amazon SageMaker resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "app": {
+        "resource_type": "app",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "automl-job": {
+        "resource_type": "automl-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "domain": {
+        "resource_type": "domain",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "endpoint": {
+        "resource_type": "endpoint",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "endpoint-config": {
+        "resource_type": "endpoint-config",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "experiment": {
+        "resource_type": "experiment",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "experiment-trial": {
+        "resource_type": "experiment-trial",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "experiment-trial-component": {
+        "resource_type": "experiment-trial-component",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "flow-definition": {
+        "resource_type": "flow-definition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "human-task-ui": {
+        "resource_type": "human-task-ui",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "hyper-parameter-tuning-job": {
+        "resource_type": "hyper-parameter-tuning-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "labeling-job": {
+        "resource_type": "labeling-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "model": {
+        "resource_type": "model",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "monitoring-schedule": {
+        "resource_type": "monitoring-schedule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "notebook-instance": {
+        "resource_type": "notebook-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "processing-job": {
+        "resource_type": "processing-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "training-job": {
+        "resource_type": "training-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "transform-job": {
+        "resource_type": "transform-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "user-profile": {
+        "resource_type": "user-profile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "workteam": {
+        "resource_type": "workteam",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="associatetrialcomponent"><a aria-hidden="true" class="anchor-heading" href="#associatetrialcomponent"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociateTrialComponent</h3>
+<ul>
+<li>description: Associate a trial component with a trial.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment-trial": {
+        "resource_type": "experiment-trial",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "experiment-trial-component": {
+        "resource_type": "experiment-trial-component",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchgetmetrics"><a aria-hidden="true" class="anchor-heading" href="#batchgetmetrics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchGetMetrics</h3>
+<ul>
+<li>description: Retrieve metrics associated with SageMaker Resources such as Training Jobs. This API is not publicly exposed at this point, however admins can control this action</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "training-job": {
+        "resource_type": "training-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchputmetrics"><a aria-hidden="true" class="anchor-heading" href="#batchputmetrics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchPutMetrics</h3>
+<ul>
+<li>description: Publish metrics associated with a SageMaker Resource such as a Training Job. This API is not publicly exposed at this point, however admins can control this action</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "training-job": {
+        "resource_type": "training-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createalgorithm"><a aria-hidden="true" class="anchor-heading" href="#createalgorithm"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAlgorithm</h3>
+<ul>
+<li>description: Create an algorithm.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "algorithm": {
+        "resource_type": "algorithm",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createapp"><a aria-hidden="true" class="anchor-heading" href="#createapp"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateApp</h3>
+<ul>
+<li>description: Grants permission to create an App for a SageMaker Studio UserProfile</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "app": {
+        "resource_type": "app",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:InstanceTypes"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createautomljob"><a aria-hidden="true" class="anchor-heading" href="#createautomljob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAutoMLJob</h3>
+<ul>
+<li>description: Creates automl job.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "automl-job": {
+        "resource_type": "automl-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:InterContainerTrafficEncryption",
+            "sagemaker:OutputKmsKey",
+            "sagemaker:VolumeKmsKey",
+            "sagemaker:VpcSecurityGroupIds",
+            "sagemaker:VpcSubnets"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcoderepository"><a aria-hidden="true" class="anchor-heading" href="#createcoderepository"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateCodeRepository</h3>
+<ul>
+<li>description: Create a code repository.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "code-repository": {
+        "resource_type": "code-repository",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcompilationjob"><a aria-hidden="true" class="anchor-heading" href="#createcompilationjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateCompilationJob</h3>
+<ul>
+<li>description: Create a compilation job.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "compilation-job": {
+        "resource_type": "compilation-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="createdomain"><a aria-hidden="true" class="anchor-heading" href="#createdomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDomain</h3>
+<ul>
+<li>description: Grants permission to create a Domain for SageMaker Studio</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:CreateServiceLinkedRole",
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:AppNetworkAccess",
+            "sagemaker:InstanceTypes",
+            "sagemaker:VpcSecurityGroupIds",
+            "sagemaker:VpcSubnets",
+            "sagemaker:DomainSharingOutputKmsKey",
+            "sagemaker:HomeEfsFileSystemKmsKey"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createendpoint"><a aria-hidden="true" class="anchor-heading" href="#createendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateEndpoint</h3>
+<ul>
+<li>description: Creates an endpoint using the endpoint configuration specified in the request.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "endpoint": {
+        "resource_type": "endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createendpointconfig"><a aria-hidden="true" class="anchor-heading" href="#createendpointconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateEndpointConfig</h3>
+<ul>
+<li>description: Creates an endpoint configuration that can be deployed using Amazon SageMaker hosting services.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "endpoint-config": {
+        "resource_type": "endpoint-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:AcceleratorTypes",
+            "sagemaker:InstanceTypes",
+            "sagemaker:ModelArn",
+            "sagemaker:VolumeKmsKey"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createexperiment"><a aria-hidden="true" class="anchor-heading" href="#createexperiment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateExperiment</h3>
+<ul>
+<li>description: Create an experiment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment": {
+        "resource_type": "experiment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createflowdefinition"><a aria-hidden="true" class="anchor-heading" href="#createflowdefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateFlowDefinition</h3>
+<ul>
+<li>description: Creates a flow definition, which defines settings for a human workflow.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "flow-definition": {
+        "resource_type": "flow-definition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "sagemaker:WorkteamArn",
+            "sagemaker:WorkteamType",
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createhumantaskui"><a aria-hidden="true" class="anchor-heading" href="#createhumantaskui"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateHumanTaskUi</h3>
+<ul>
+<li>description: Defines the settings you will use for the human review workflow user interface.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "human-task-ui": {
+        "resource_type": "human-task-ui",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createhyperparametertuningjob"><a aria-hidden="true" class="anchor-heading" href="#createhyperparametertuningjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateHyperParameterTuningJob</h3>
+<ul>
+<li>description: Creates hyper parameter tuning job that can be deployed using Amazon SageMaker.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "hyper-parameter-tuning-job": {
+        "resource_type": "hyper-parameter-tuning-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:FileSystemAccessMode",
+            "sagemaker:FileSystemDirectoryPath",
+            "sagemaker:FileSystemId",
+            "sagemaker:FileSystemType",
+            "sagemaker:InstanceTypes",
+            "sagemaker:InterContainerTrafficEncryption",
+            "sagemaker:MaxRuntimeInSeconds",
+            "sagemaker:NetworkIsolation",
+            "sagemaker:OutputKmsKey",
+            "sagemaker:VolumeKmsKey",
+            "sagemaker:VpcSecurityGroupIds",
+            "sagemaker:VpcSubnets"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createlabelingjob"><a aria-hidden="true" class="anchor-heading" href="#createlabelingjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateLabelingJob</h3>
+<ul>
+<li>description: Starts a labeling job. A labeling job takes unlabeled data in and produces labeled data as output, which can be used for training SageMaker models.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "labeling-job": {
+        "resource_type": "labeling-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "sagemaker:WorkteamArn",
+            "sagemaker:WorkteamType",
+            "sagemaker:VolumeKmsKey",
+            "sagemaker:OutputKmsKey",
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createmodel"><a aria-hidden="true" class="anchor-heading" href="#createmodel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateModel</h3>
+<ul>
+<li>description: Creates a model in Amazon SageMaker. In the request, you specify a name for the model and describe one or more containers.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "model": {
+        "resource_type": "model",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:NetworkIsolation",
+            "sagemaker:VpcSecurityGroupIds",
+            "sagemaker:VpcSubnets"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createmodelpackage"><a aria-hidden="true" class="anchor-heading" href="#createmodelpackage"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateModelPackage</h3>
+<ul>
+<li>description: Create a model package.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "model-package": {
+        "resource_type": "model-package",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createmonitoringschedule"><a aria-hidden="true" class="anchor-heading" href="#createmonitoringschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateMonitoringSchedule</h3>
+<ul>
+<li>description: Creates a monitoring schedule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "monitoring-schedule": {
+        "resource_type": "monitoring-schedule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:InstanceTypes",
+            "sagemaker:MaxRuntimeInSeconds",
+            "sagemaker:NetworkIsolation",
+            "sagemaker:OutputKmsKey",
+            "sagemaker:VolumeKmsKey",
+            "sagemaker:VpcSecurityGroupIds",
+            "sagemaker:VpcSubnets"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createnotebookinstance"><a aria-hidden="true" class="anchor-heading" href="#createnotebookinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateNotebookInstance</h3>
+<ul>
+<li>description: Creates an Amazon SageMaker notebook instance. A notebook instance is an Amazon EC2 instance running on a Jupyter Notebook.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "notebook-instance": {
+        "resource_type": "notebook-instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:AcceleratorTypes",
+            "sagemaker:DirectInternetAccess",
+            "sagemaker:InstanceTypes",
+            "sagemaker:RootAccess",
+            "sagemaker:VolumeKmsKey",
+            "sagemaker:VpcSecurityGroupIds",
+            "sagemaker:VpcSubnets"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createnotebookinstancelifecycleconfig"><a aria-hidden="true" class="anchor-heading" href="#createnotebookinstancelifecycleconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateNotebookInstanceLifecycleConfig</h3>
+<ul>
+<li>description: Creates an notebook instance lifecycle configuration that can be deployed using Amazon SageMaker.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "notebook-instance-lifecycle-config": {
+        "resource_type": "notebook-instance-lifecycle-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createpresigneddomainurl"><a aria-hidden="true" class="anchor-heading" href="#createpresigneddomainurl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreatePresignedDomainUrl</h3>
+<ul>
+<li>description: Grants permission to return a URL that you can use from your browser to connect to the Domain as a specified UserProfile when AuthMode is 'IAM'</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user-profile": {
+        "resource_type": "user-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createpresignednotebookinstanceurl"><a aria-hidden="true" class="anchor-heading" href="#createpresignednotebookinstanceurl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreatePresignedNotebookInstanceUrl</h3>
+<ul>
+<li>description: Returns a URL that you can use from your browser to connect to the Notebook Instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "notebook-instance": {
+        "resource_type": "notebook-instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createprocessingjob"><a aria-hidden="true" class="anchor-heading" href="#createprocessingjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateProcessingJob</h3>
+<ul>
+<li>description: Starts a processing job. After processing completes, Amazon SageMaker saves the resulting artifacts and other optional output to an Amazon S3 location that you specify.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "processing-job": {
+        "resource_type": "processing-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:InstanceTypes",
+            "sagemaker:MaxRuntimeInSeconds",
+            "sagemaker:NetworkIsolation",
+            "sagemaker:OutputKmsKey",
+            "sagemaker:VolumeKmsKey",
+            "sagemaker:VpcSecurityGroupIds",
+            "sagemaker:VpcSubnets",
+            "sagemaker:InterContainerTrafficEncryption"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtrainingjob"><a aria-hidden="true" class="anchor-heading" href="#createtrainingjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTrainingJob</h3>
+<ul>
+<li>description: Starts a model training job. After training completes, Amazon SageMaker saves the resulting model artifacts and other optional output to an Amazon S3 location that you specify.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "training-job": {
+        "resource_type": "training-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:FileSystemAccessMode",
+            "sagemaker:FileSystemDirectoryPath",
+            "sagemaker:FileSystemId",
+            "sagemaker:FileSystemType",
+            "sagemaker:InstanceTypes",
+            "sagemaker:InterContainerTrafficEncryption",
+            "sagemaker:MaxRuntimeInSeconds",
+            "sagemaker:NetworkIsolation",
+            "sagemaker:OutputKmsKey",
+            "sagemaker:VolumeKmsKey",
+            "sagemaker:VpcSecurityGroupIds",
+            "sagemaker:VpcSubnets"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtransformjob"><a aria-hidden="true" class="anchor-heading" href="#createtransformjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTransformJob</h3>
+<ul>
+<li>description: Starts a transform job. After the results are obtained, Amazon SageMaker saves them to an Amazon S3 location that you specify.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "transform-job": {
+        "resource_type": "transform-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:InstanceTypes",
+            "sagemaker:ModelArn",
+            "sagemaker:OutputKmsKey",
+            "sagemaker:VolumeKmsKey"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtrial"><a aria-hidden="true" class="anchor-heading" href="#createtrial"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTrial</h3>
+<ul>
+<li>description: Create a trial.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment-trial": {
+        "resource_type": "experiment-trial",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtrialcomponent"><a aria-hidden="true" class="anchor-heading" href="#createtrialcomponent"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTrialComponent</h3>
+<ul>
+<li>description: Create a trial component.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment-trial-component": {
+        "resource_type": "experiment-trial-component",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createuserprofile"><a aria-hidden="true" class="anchor-heading" href="#createuserprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateUserProfile</h3>
+<ul>
+<li>description: Grants permission to create a UserProfile for a SageMaker Studio Domain</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user-profile": {
+        "resource_type": "user-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:VpcSecurityGroupIds",
+            "sagemaker:InstanceTypes",
+            "sagemaker:DomainSharingOutputKmsKey"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createworkforce"><a aria-hidden="true" class="anchor-heading" href="#createworkforce"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateWorkforce</h3>
+<ul>
+<li>description: Create a workforce.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "workforce": {
+        "resource_type": "workforce",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createworkteam"><a aria-hidden="true" class="anchor-heading" href="#createworkteam"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateWorkteam</h3>
+<ul>
+<li>description: Create a workteam.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "workteam": {
+        "resource_type": "workteam",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletealgorithm"><a aria-hidden="true" class="anchor-heading" href="#deletealgorithm"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAlgorithm</h3>
+<ul>
+<li>description: Deletes an algorithm.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "algorithm": {
+        "resource_type": "algorithm",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteapp"><a aria-hidden="true" class="anchor-heading" href="#deleteapp"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteApp</h3>
+<ul>
+<li>description: Grants permission to delete an App</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "app": {
+        "resource_type": "app",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletecoderepository"><a aria-hidden="true" class="anchor-heading" href="#deletecoderepository"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteCodeRepository</h3>
+<ul>
+<li>description: Deletes a code repository.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "code-repository": {
+        "resource_type": "code-repository",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedomain"><a aria-hidden="true" class="anchor-heading" href="#deletedomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDomain</h3>
+<ul>
+<li>description: Grants permission to delete a Domain</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteendpoint"><a aria-hidden="true" class="anchor-heading" href="#deleteendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEndpoint</h3>
+<ul>
+<li>description: Deletes an endpoint. Amazon SageMaker frees up all the resources that were deployed when the endpoint was created.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "endpoint": {
+        "resource_type": "endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteendpointconfig"><a aria-hidden="true" class="anchor-heading" href="#deleteendpointconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEndpointConfig</h3>
+<ul>
+<li>description: Deletes the endpoint configuration created using the CreateEndpointConfig API. The DeleteEndpointConfig API deletes only the specified configuration. It does not delete any endpoints created using the configuration.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "endpoint-config": {
+        "resource_type": "endpoint-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteexperiment"><a aria-hidden="true" class="anchor-heading" href="#deleteexperiment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteExperiment</h3>
+<ul>
+<li>description: Deletes an experiment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment": {
+        "resource_type": "experiment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteflowdefinition"><a aria-hidden="true" class="anchor-heading" href="#deleteflowdefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteFlowDefinition</h3>
+<ul>
+<li>description: Deltes the specified flow definition.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "flow-definition": {
+        "resource_type": "flow-definition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletehumanloop"><a aria-hidden="true" class="anchor-heading" href="#deletehumanloop"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteHumanLoop</h3>
+<ul>
+<li>description: Deletes the specified human loop.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "human-loop": {
+        "resource_type": "human-loop",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletemodel"><a aria-hidden="true" class="anchor-heading" href="#deletemodel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteModel</h3>
+<ul>
+<li>description: Deletes a model created using the CreateModel API. The DeleteModel API deletes only the model entry in Amazon SageMaker that you created by calling the CreateModel API. It does not delete model artifacts, inference code, or the IAM role that you specified when creating the model.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "model": {
+        "resource_type": "model",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletemodelpackage"><a aria-hidden="true" class="anchor-heading" href="#deletemodelpackage"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteModelPackage</h3>
+<ul>
+<li>description: Deletes a model package.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "model-package": {
+        "resource_type": "model-package",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletemonitoringschedule"><a aria-hidden="true" class="anchor-heading" href="#deletemonitoringschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteMonitoringSchedule</h3>
+<ul>
+<li>description: Deletes a monitoring schedule. Amazon SageMaker will no longer run the scheduled monitoring.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "monitoring-schedule": {
+        "resource_type": "monitoring-schedule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletenotebookinstance"><a aria-hidden="true" class="anchor-heading" href="#deletenotebookinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteNotebookInstance</h3>
+<ul>
+<li>description: Deletes an Amazon SageMaker notebook instance. Before you can delete a notebook instance, you must call the StopNotebookInstance API.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "notebook-instance": {
+        "resource_type": "notebook-instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletenotebookinstancelifecycleconfig"><a aria-hidden="true" class="anchor-heading" href="#deletenotebookinstancelifecycleconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteNotebookInstanceLifecycleConfig</h3>
+<ul>
+<li>description: Deletes an notebook instance lifecycle configuration that can be deployed using Amazon SageMaker.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "notebook-instance-lifecycle-config": {
+        "resource_type": "notebook-instance-lifecycle-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetags"><a aria-hidden="true" class="anchor-heading" href="#deletetags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTags</h3>
+<ul>
+<li>description: Deletes the specified set of tags from an Amazon SageMaker resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "app": {
+        "resource_type": "app",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "automl-job": {
+        "resource_type": "automl-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "compilation-job": {
+        "resource_type": "compilation-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "domain": {
+        "resource_type": "domain",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "endpoint": {
+        "resource_type": "endpoint",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "endpoint-config": {
+        "resource_type": "endpoint-config",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "experiment": {
+        "resource_type": "experiment",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "experiment-trial": {
+        "resource_type": "experiment-trial",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "experiment-trial-component": {
+        "resource_type": "experiment-trial-component",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "flow-definition": {
+        "resource_type": "flow-definition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "human-task-ui": {
+        "resource_type": "human-task-ui",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "hyper-parameter-tuning-job": {
+        "resource_type": "hyper-parameter-tuning-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "labeling-job": {
+        "resource_type": "labeling-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "model": {
+        "resource_type": "model",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "monitoring-schedule": {
+        "resource_type": "monitoring-schedule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "notebook-instance": {
+        "resource_type": "notebook-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "processing-job": {
+        "resource_type": "processing-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "training-job": {
+        "resource_type": "training-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "transform-job": {
+        "resource_type": "transform-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "user-profile": {
+        "resource_type": "user-profile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "workteam": {
+        "resource_type": "workteam",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetrial"><a aria-hidden="true" class="anchor-heading" href="#deletetrial"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTrial</h3>
+<ul>
+<li>description: Deletes a trial.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment-trial": {
+        "resource_type": "experiment-trial",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetrialcomponent"><a aria-hidden="true" class="anchor-heading" href="#deletetrialcomponent"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTrialComponent</h3>
+<ul>
+<li>description: Deletes a trial component.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment-trial-component": {
+        "resource_type": "experiment-trial-component",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteuserprofile"><a aria-hidden="true" class="anchor-heading" href="#deleteuserprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteUserProfile</h3>
+<ul>
+<li>description: Grants permission to delete a UserProfile</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user-profile": {
+        "resource_type": "user-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteworkforce"><a aria-hidden="true" class="anchor-heading" href="#deleteworkforce"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteWorkforce</h3>
+<ul>
+<li>description: Deletes a workforce.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "workforce": {
+        "resource_type": "workforce",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteworkteam"><a aria-hidden="true" class="anchor-heading" href="#deleteworkteam"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteWorkteam</h3>
+<ul>
+<li>description: Deletes a workteam.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "workteam": {
+        "resource_type": "workteam",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describealgorithm"><a aria-hidden="true" class="anchor-heading" href="#describealgorithm"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAlgorithm</h3>
+<ul>
+<li>description: Returns information about an algorithm.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "algorithm": {
+        "resource_type": "algorithm",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeapp"><a aria-hidden="true" class="anchor-heading" href="#describeapp"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeApp</h3>
+<ul>
+<li>description: Grants permission to describe an App</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "app": {
+        "resource_type": "app",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeautomljob"><a aria-hidden="true" class="anchor-heading" href="#describeautomljob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAutoMLJob</h3>
+<ul>
+<li>description: Describes an automl job that was created via CreateAutoMLJob API.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "automl-job": {
+        "resource_type": "automl-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describecoderepository"><a aria-hidden="true" class="anchor-heading" href="#describecoderepository"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeCodeRepository</h3>
+<ul>
+<li>description: Returns information about a code repository.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "code-repository": {
+        "resource_type": "code-repository",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describecompilationjob"><a aria-hidden="true" class="anchor-heading" href="#describecompilationjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeCompilationJob</h3>
+<ul>
+<li>description: Returns information about a compilation job.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "compilation-job": {
+        "resource_type": "compilation-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedomain"><a aria-hidden="true" class="anchor-heading" href="#describedomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDomain</h3>
+<ul>
+<li>description: Grants permission to describe a Domain</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeendpoint"><a aria-hidden="true" class="anchor-heading" href="#describeendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEndpoint</h3>
+<ul>
+<li>description: Returns the description of an endpoint.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "endpoint": {
+        "resource_type": "endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeendpointconfig"><a aria-hidden="true" class="anchor-heading" href="#describeendpointconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEndpointConfig</h3>
+<ul>
+<li>description: Returns the description of an endpoint configuration, which was created using the CreateEndpointConfig API.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "endpoint-config": {
+        "resource_type": "endpoint-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeexperiment"><a aria-hidden="true" class="anchor-heading" href="#describeexperiment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeExperiment</h3>
+<ul>
+<li>description: Returns information about an experiment.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment": {
+        "resource_type": "experiment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeflowdefinition"><a aria-hidden="true" class="anchor-heading" href="#describeflowdefinition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeFlowDefinition</h3>
+<ul>
+<li>description: Returns detailed information about the specified flow definition.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "flow-definition": {
+        "resource_type": "flow-definition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describehumanloop"><a aria-hidden="true" class="anchor-heading" href="#describehumanloop"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeHumanLoop</h3>
+<ul>
+<li>description: Returns detailed information about the specified human loop.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "human-loop": {
+        "resource_type": "human-loop",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describehumantaskui"><a aria-hidden="true" class="anchor-heading" href="#describehumantaskui"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeHumanTaskUi</h3>
+<ul>
+<li>description: Returns detailed information about the specified human review workflow user interface.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "human-task-ui": {
+        "resource_type": "human-task-ui",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describehyperparametertuningjob"><a aria-hidden="true" class="anchor-heading" href="#describehyperparametertuningjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeHyperParameterTuningJob</h3>
+<ul>
+<li>description: Describes a hyper parameter tuning job that was created via CreateHyperParameterTuningJob API.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "hyper-parameter-tuning-job": {
+        "resource_type": "hyper-parameter-tuning-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describelabelingjob"><a aria-hidden="true" class="anchor-heading" href="#describelabelingjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeLabelingJob</h3>
+<ul>
+<li>description: Returns information about a labeling job.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "labeling-job": {
+        "resource_type": "labeling-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describemodel"><a aria-hidden="true" class="anchor-heading" href="#describemodel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeModel</h3>
+<ul>
+<li>description: Describes a model that you created using the CreateModel API.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "model": {
+        "resource_type": "model",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describemodelpackage"><a aria-hidden="true" class="anchor-heading" href="#describemodelpackage"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeModelPackage</h3>
+<ul>
+<li>description: Returns information about a model package.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "model-package": {
+        "resource_type": "model-package",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describemonitoringschedule"><a aria-hidden="true" class="anchor-heading" href="#describemonitoringschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMonitoringSchedule</h3>
+<ul>
+<li>description: Returns information about a monitoring schedule.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "monitoring-schedule": {
+        "resource_type": "monitoring-schedule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describenotebookinstance"><a aria-hidden="true" class="anchor-heading" href="#describenotebookinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeNotebookInstance</h3>
+<ul>
+<li>description: Returns information about a notebook instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "notebook-instance": {
+        "resource_type": "notebook-instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describenotebookinstancelifecycleconfig"><a aria-hidden="true" class="anchor-heading" href="#describenotebookinstancelifecycleconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeNotebookInstanceLifecycleConfig</h3>
+<ul>
+<li>description: Describes an notebook instance lifecycle configuration that was created via CreateNotebookInstanceLifecycleConfig API.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "notebook-instance-lifecycle-config": {
+        "resource_type": "notebook-instance-lifecycle-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeprocessingjob"><a aria-hidden="true" class="anchor-heading" href="#describeprocessingjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeProcessingJob</h3>
+<ul>
+<li>description: Returns information about a processing job.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "processing-job": {
+        "resource_type": "processing-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describesubscribedworkteam"><a aria-hidden="true" class="anchor-heading" href="#describesubscribedworkteam"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeSubscribedWorkteam</h3>
+<ul>
+<li>description: Returns information about a subscribed workteam.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "workteam": {
+        "resource_type": "workteam",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetrainingjob"><a aria-hidden="true" class="anchor-heading" href="#describetrainingjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTrainingJob</h3>
+<ul>
+<li>description: Returns information about a training job.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "training-job": {
+        "resource_type": "training-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetransformjob"><a aria-hidden="true" class="anchor-heading" href="#describetransformjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTransformJob</h3>
+<ul>
+<li>description: Returns information about a transform job.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "transform-job": {
+        "resource_type": "transform-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetrial"><a aria-hidden="true" class="anchor-heading" href="#describetrial"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTrial</h3>
+<ul>
+<li>description: Returns information about a trial.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment-trial": {
+        "resource_type": "experiment-trial",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describetrialcomponent"><a aria-hidden="true" class="anchor-heading" href="#describetrialcomponent"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeTrialComponent</h3>
+<ul>
+<li>description: Returns information about a trial component.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment-trial-component": {
+        "resource_type": "experiment-trial-component",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeuserprofile"><a aria-hidden="true" class="anchor-heading" href="#describeuserprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeUserProfile</h3>
+<ul>
+<li>description: Grants permission to describe a UserProfile</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user-profile": {
+        "resource_type": "user-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeworkforce"><a aria-hidden="true" class="anchor-heading" href="#describeworkforce"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeWorkforce</h3>
+<ul>
+<li>description: Returns information about a workforce.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "workforce": {
+        "resource_type": "workforce",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeworkteam"><a aria-hidden="true" class="anchor-heading" href="#describeworkteam"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeWorkteam</h3>
+<ul>
+<li>description: Returns information about a workteam.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "workteam": {
+        "resource_type": "workteam",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociatetrialcomponent"><a aria-hidden="true" class="anchor-heading" href="#disassociatetrialcomponent"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociateTrialComponent</h3>
+<ul>
+<li>description: Disassociate a trial component with a trial.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment-trial": {
+        "resource_type": "experiment-trial",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "experiment-trial-component": {
+        "resource_type": "experiment-trial-component",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "processing-job": {
+        "resource_type": "processing-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsearchsuggestions"><a aria-hidden="true" class="anchor-heading" href="#getsearchsuggestions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSearchSuggestions</h3>
+<ul>
+<li>description: Get search suggestions when provided with keyword.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="invokeendpoint"><a aria-hidden="true" class="anchor-heading" href="#invokeendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>InvokeEndpoint</h3>
+<ul>
+<li>description: After you deploy a model into production using Amazon SageMaker hosting services, your client applications use this API to get inferences from the model hosted at the specified endpoint.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "endpoint": {
+        "resource_type": "endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "sagemaker:TargetModel"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listalgorithms"><a aria-hidden="true" class="anchor-heading" href="#listalgorithms"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAlgorithms</h3>
+<ul>
+<li>description: Lists algorithms.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listapps"><a aria-hidden="true" class="anchor-heading" href="#listapps"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListApps</h3>
+<ul>
+<li>description: Grants permission to list the Apps in your account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listautomljobs"><a aria-hidden="true" class="anchor-heading" href="#listautomljobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAutoMLJobs</h3>
+<ul>
+<li>description: Lists automl jobs created via the CreateAutoMLJob.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcandidatesforautomljob"><a aria-hidden="true" class="anchor-heading" href="#listcandidatesforautomljob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCandidatesForAutoMLJob</h3>
+<ul>
+<li>description: Lists candidates for automl job created via the CreateAutoMLJob.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcoderepositories"><a aria-hidden="true" class="anchor-heading" href="#listcoderepositories"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCodeRepositories</h3>
+<ul>
+<li>description: Lists code repositories.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcompilationjobs"><a aria-hidden="true" class="anchor-heading" href="#listcompilationjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCompilationJobs</h3>
+<ul>
+<li>description: Lists compilation jobs.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdomains"><a aria-hidden="true" class="anchor-heading" href="#listdomains"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDomains</h3>
+<ul>
+<li>description: Grants permission to list the Domains in your account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listendpointconfigs"><a aria-hidden="true" class="anchor-heading" href="#listendpointconfigs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListEndpointConfigs</h3>
+<ul>
+<li>description: Lists endpoint configurations.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listendpoints"><a aria-hidden="true" class="anchor-heading" href="#listendpoints"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListEndpoints</h3>
+<ul>
+<li>description: Lists endpoints.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listexperiments"><a aria-hidden="true" class="anchor-heading" href="#listexperiments"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListExperiments</h3>
+<ul>
+<li>description: Lists experiments.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listflowdefinitions"><a aria-hidden="true" class="anchor-heading" href="#listflowdefinitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListFlowDefinitions</h3>
+<ul>
+<li>description: Returns summary information about flow definitions, given the specified parameters.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listhumanloops"><a aria-hidden="true" class="anchor-heading" href="#listhumanloops"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListHumanLoops</h3>
+<ul>
+<li>description: Returns summary information about human loops, given the specified parameters.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listhumantaskuis"><a aria-hidden="true" class="anchor-heading" href="#listhumantaskuis"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListHumanTaskUis</h3>
+<ul>
+<li>description: Returns summary information about human review workflow user interfaces, given the specified parameters.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listhyperparametertuningjobs"><a aria-hidden="true" class="anchor-heading" href="#listhyperparametertuningjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListHyperParameterTuningJobs</h3>
+<ul>
+<li>description: Lists hyper parameter tuning jobs that was created using Amazon SageMaker.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listlabelingjobs"><a aria-hidden="true" class="anchor-heading" href="#listlabelingjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListLabelingJobs</h3>
+<ul>
+<li>description: Lists labeling jobs.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listlabelingjobsforworkteam"><a aria-hidden="true" class="anchor-heading" href="#listlabelingjobsforworkteam"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListLabelingJobsForWorkteam</h3>
+<ul>
+<li>description: Lists labeling jobs for workteam.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "workteam": {
+        "resource_type": "workteam",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listmodelpackages"><a aria-hidden="true" class="anchor-heading" href="#listmodelpackages"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListModelPackages</h3>
+<ul>
+<li>description: Lists model packages.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listmodels"><a aria-hidden="true" class="anchor-heading" href="#listmodels"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListModels</h3>
+<ul>
+<li>description: Lists the models created with the CreateModel API.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listmonitoringexecutions"><a aria-hidden="true" class="anchor-heading" href="#listmonitoringexecutions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListMonitoringExecutions</h3>
+<ul>
+<li>description: Lists monitoring executions.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listmonitoringschedules"><a aria-hidden="true" class="anchor-heading" href="#listmonitoringschedules"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListMonitoringSchedules</h3>
+<ul>
+<li>description: Lists monitoring schedules.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listnotebookinstancelifecycleconfigs"><a aria-hidden="true" class="anchor-heading" href="#listnotebookinstancelifecycleconfigs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListNotebookInstanceLifecycleConfigs</h3>
+<ul>
+<li>description: Lists notebook instance lifecycle configurations that can be deployed using Amazon SageMaker.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listnotebookinstances"><a aria-hidden="true" class="anchor-heading" href="#listnotebookinstances"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListNotebookInstances</h3>
+<ul>
+<li>description: Returns a list of the Amazon SageMaker notebook instances in the requester's account in an AWS Region.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listprocessingjobs"><a aria-hidden="true" class="anchor-heading" href="#listprocessingjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListProcessingJobs</h3>
+<ul>
+<li>description: Lists processing jobs.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsubscribedworkteams"><a aria-hidden="true" class="anchor-heading" href="#listsubscribedworkteams"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSubscribedWorkteams</h3>
+<ul>
+<li>description: Lists subscribed workteams.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtags"><a aria-hidden="true" class="anchor-heading" href="#listtags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTags</h3>
+<ul>
+<li>description: Returns the tag set associated with the specified resource.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "app": {
+        "resource_type": "app",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "automl-job": {
+        "resource_type": "automl-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "domain": {
+        "resource_type": "domain",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "endpoint": {
+        "resource_type": "endpoint",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "endpoint-config": {
+        "resource_type": "endpoint-config",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "experiment": {
+        "resource_type": "experiment",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "experiment-trial": {
+        "resource_type": "experiment-trial",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "experiment-trial-component": {
+        "resource_type": "experiment-trial-component",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "flow-definition": {
+        "resource_type": "flow-definition",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "human-task-ui": {
+        "resource_type": "human-task-ui",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "hyper-parameter-tuning-job": {
+        "resource_type": "hyper-parameter-tuning-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "labeling-job": {
+        "resource_type": "labeling-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "model": {
+        "resource_type": "model",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "monitoring-schedule": {
+        "resource_type": "monitoring-schedule",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "notebook-instance": {
+        "resource_type": "notebook-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "training-job": {
+        "resource_type": "training-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "transform-job": {
+        "resource_type": "transform-job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "user-profile": {
+        "resource_type": "user-profile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "workteam": {
+        "resource_type": "workteam",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtrainingjobs"><a aria-hidden="true" class="anchor-heading" href="#listtrainingjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTrainingJobs</h3>
+<ul>
+<li>description: Lists training jobs.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtrainingjobsforhyperparametertuningjob"><a aria-hidden="true" class="anchor-heading" href="#listtrainingjobsforhyperparametertuningjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTrainingJobsForHyperParameterTuningJob</h3>
+<ul>
+<li>description: Lists training jobs for a hyper parameter tuning job that was created using Amazon SageMaker.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "hyper-parameter-tuning-job": {
+        "resource_type": "hyper-parameter-tuning-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtransformjobs"><a aria-hidden="true" class="anchor-heading" href="#listtransformjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTransformJobs</h3>
+<ul>
+<li>description: Lists transform jobs.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtrialcomponents"><a aria-hidden="true" class="anchor-heading" href="#listtrialcomponents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTrialComponents</h3>
+<ul>
+<li>description: Lists trial components.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtrials"><a aria-hidden="true" class="anchor-heading" href="#listtrials"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTrials</h3>
+<ul>
+<li>description: Lists trials.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listuserprofiles"><a aria-hidden="true" class="anchor-heading" href="#listuserprofiles"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListUserProfiles</h3>
+<ul>
+<li>description: Grants permission to list the UserProfiles in your account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listworkforces"><a aria-hidden="true" class="anchor-heading" href="#listworkforces"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListWorkforces</h3>
+<ul>
+<li>description: Lists workforces.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listworkteams"><a aria-hidden="true" class="anchor-heading" href="#listworkteams"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListWorkteams</h3>
+<ul>
+<li>description: Lists workteams.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="renderuitemplate"><a aria-hidden="true" class="anchor-heading" href="#renderuitemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RenderUiTemplate</h3>
+<ul>
+<li>description: Render a UI template used for a human annotation task.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="search"><a aria-hidden="true" class="anchor-heading" href="#search"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Search</h3>
+<ul>
+<li>description: Search for SageMaker objects.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="starthumanloop"><a aria-hidden="true" class="anchor-heading" href="#starthumanloop"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartHumanLoop</h3>
+<ul>
+<li>description: Starts a human loop.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "flow-definition": {
+        "resource_type": "flow-definition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startmonitoringschedule"><a aria-hidden="true" class="anchor-heading" href="#startmonitoringschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartMonitoringSchedule</h3>
+<ul>
+<li>description: Starts a monitoring schedule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "monitoring-schedule": {
+        "resource_type": "monitoring-schedule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startnotebookinstance"><a aria-hidden="true" class="anchor-heading" href="#startnotebookinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartNotebookInstance</h3>
+<ul>
+<li>description: Launches an EC2 instance with the latest version of the libraries and attaches your EBS volume.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "notebook-instance": {
+        "resource_type": "notebook-instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopautomljob"><a aria-hidden="true" class="anchor-heading" href="#stopautomljob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopAutoMLJob</h3>
+<ul>
+<li>description: Stops a running automl job created via the CreateAutoMLJob.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "automl-job": {
+        "resource_type": "automl-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopcompilationjob"><a aria-hidden="true" class="anchor-heading" href="#stopcompilationjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopCompilationJob</h3>
+<ul>
+<li>description: Stops a compilation job.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "compilation-job": {
+        "resource_type": "compilation-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stophumanloop"><a aria-hidden="true" class="anchor-heading" href="#stophumanloop"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopHumanLoop</h3>
+<ul>
+<li>description: Stops the specified human loop.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "human-loop": {
+        "resource_type": "human-loop",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stophyperparametertuningjob"><a aria-hidden="true" class="anchor-heading" href="#stophyperparametertuningjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopHyperParameterTuningJob</h3>
+<ul>
+<li>description: Stops a running hyper parameter tuning job create via the CreateHyperParameterTuningJob.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "hyper-parameter-tuning-job": {
+        "resource_type": "hyper-parameter-tuning-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stoplabelingjob"><a aria-hidden="true" class="anchor-heading" href="#stoplabelingjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopLabelingJob</h3>
+<ul>
+<li>description: Stops a labeling job. Any labels already generated will be exported before stopping.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "labeling-job": {
+        "resource_type": "labeling-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopmonitoringschedule"><a aria-hidden="true" class="anchor-heading" href="#stopmonitoringschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopMonitoringSchedule</h3>
+<ul>
+<li>description: Stops a monitoring schedule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "monitoring-schedule": {
+        "resource_type": "monitoring-schedule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopnotebookinstance"><a aria-hidden="true" class="anchor-heading" href="#stopnotebookinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopNotebookInstance</h3>
+<ul>
+<li>description: Terminates the EC2 instance. Before terminating the instance, Amazon SageMaker disconnects the EBS volume from it. Amazon SageMaker preserves the EBS volume.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "notebook-instance": {
+        "resource_type": "notebook-instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopprocessingjob"><a aria-hidden="true" class="anchor-heading" href="#stopprocessingjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopProcessingJob</h3>
+<ul>
+<li>description: Stops a processing job. To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "processing-job": {
+        "resource_type": "processing-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stoptrainingjob"><a aria-hidden="true" class="anchor-heading" href="#stoptrainingjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopTrainingJob</h3>
+<ul>
+<li>description: Stops a training job. To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "training-job": {
+        "resource_type": "training-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stoptransformjob"><a aria-hidden="true" class="anchor-heading" href="#stoptransformjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopTransformJob</h3>
+<ul>
+<li>description: Stops a transform job. When Amazon SageMaker receives a StopTransformJob request, the status of the job changes to Stopping. After Amazon SageMaker stops the job, the status is set to Stopped</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "transform-job": {
+        "resource_type": "transform-job",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecoderepository"><a aria-hidden="true" class="anchor-heading" href="#updatecoderepository"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateCodeRepository</h3>
+<ul>
+<li>description: Updates a code repository.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "code-repository": {
+        "resource_type": "code-repository",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedomain"><a aria-hidden="true" class="anchor-heading" href="#updatedomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDomain</h3>
+<ul>
+<li>description: Grants permission to update a Domain</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "domain": {
+        "resource_type": "domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "sagemaker:VpcSecurityGroupIds",
+            "sagemaker:InstanceTypes",
+            "sagemaker:DomainSharingOutputKmsKey"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateendpoint"><a aria-hidden="true" class="anchor-heading" href="#updateendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateEndpoint</h3>
+<ul>
+<li>description: Updates an endpoint to use the endpoint configuration specified in the request.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "endpoint": {
+        "resource_type": "endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateendpointweightsandcapacities"><a aria-hidden="true" class="anchor-heading" href="#updateendpointweightsandcapacities"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateEndpointWeightsAndCapacities</h3>
+<ul>
+<li>description: Updates variant weight, capacity, or both of one or more variants associated with an endpoint.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "endpoint": {
+        "resource_type": "endpoint",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateexperiment"><a aria-hidden="true" class="anchor-heading" href="#updateexperiment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateExperiment</h3>
+<ul>
+<li>description: Updates an experiment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment": {
+        "resource_type": "experiment",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatemonitoringschedule"><a aria-hidden="true" class="anchor-heading" href="#updatemonitoringschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateMonitoringSchedule</h3>
+<ul>
+<li>description: Updates a monitoring schedule.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "monitoring-schedule": {
+        "resource_type": "monitoring-schedule",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "sagemaker:InstanceTypes",
+            "sagemaker:MaxRuntimeInSeconds",
+            "sagemaker:NetworkIsolation",
+            "sagemaker:OutputKmsKey",
+            "sagemaker:VolumeKmsKey",
+            "sagemaker:VpcSecurityGroupIds",
+            "sagemaker:VpcSubnets"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatenotebookinstance"><a aria-hidden="true" class="anchor-heading" href="#updatenotebookinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateNotebookInstance</h3>
+<ul>
+<li>description: Updates a notebook instance. Notebook instance updates include upgrading or downgrading the EC2 instance used for your notebook instance to accommodate changes in your workload requirements. You can also update the VPC security groups.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "notebook-instance": {
+        "resource_type": "notebook-instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "sagemaker:AcceleratorTypes",
+            "sagemaker:InstanceTypes",
+            "sagemaker:RootAccess"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatenotebookinstancelifecycleconfig"><a aria-hidden="true" class="anchor-heading" href="#updatenotebookinstancelifecycleconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateNotebookInstanceLifecycleConfig</h3>
+<ul>
+<li>description: Updates a notebook instance lifecycle configuration created with the CreateNotebookInstanceLifecycleConfig API.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "notebook-instance-lifecycle-config": {
+        "resource_type": "notebook-instance-lifecycle-config",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatetrial"><a aria-hidden="true" class="anchor-heading" href="#updatetrial"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateTrial</h3>
+<ul>
+<li>description: Updates a trial.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment-trial": {
+        "resource_type": "experiment-trial",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatetrialcomponent"><a aria-hidden="true" class="anchor-heading" href="#updatetrialcomponent"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateTrialComponent</h3>
+<ul>
+<li>description: Updates a trial component.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "experiment-trial-component": {
+        "resource_type": "experiment-trial-component",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateuserprofile"><a aria-hidden="true" class="anchor-heading" href="#updateuserprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateUserProfile</h3>
+<ul>
+<li>description: Grants permission to update a UserProfile</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user-profile": {
+        "resource_type": "user-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "sagemaker:InstanceTypes",
+            "sagemaker:VpcSecurityGroupIds",
+            "sagemaker:InstanceTypes",
+            "sagemaker:DomainSharingOutputKmsKey"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateworkforce"><a aria-hidden="true" class="anchor-heading" href="#updateworkforce"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateWorkforce</h3>
+<ul>
+<li>description: Updates a workforce.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "workforce": {
+        "resource_type": "workforce",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateworkteam"><a aria-hidden="true" class="anchor-heading" href="#updateworkteam"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateWorkteam</h3>
+<ul>
+<li>description: Updates a workteam.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "workteam": {
+        "resource_type": "workteam",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-SageMaker"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

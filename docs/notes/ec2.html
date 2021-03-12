@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>EC2 - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/ec2.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/ec2.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/ec2.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="EC2 - undefined" />
+  <meta name="twitter:title" content="EC2 - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/1f759d8c-cca7-4fc4-9aa2-6dbf6e596abf.html">Services</a></li><li class="breadcrumb-nav-list-item">EC2</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="EC2">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="ec2"><a aria-hidden="true" class="anchor-heading" href="#ec2"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>EC2</h1>
+<h3 id="ec2-basics"><a aria-hidden="true" class="anchor-heading" href="#ec2-basics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>EC2 Basics</h3>
+<ul>
+<li>📒 <a href="https://aws.amazon.com/ec2/">Homepage</a> ∙ <a href="https://aws.amazon.com/documentation/ec2/">Documentation</a> ∙ <a href="https://aws.amazon.com/ec2/faqs/">FAQ</a> ∙ <a href="https://aws.amazon.com/ec2/pricing/">Pricing</a> (see also <a href="http://www.ec2instances.info/">ec2instances.info</a>)</li>
+<li><strong>EC2</strong> (Elastic Compute Cloud) is AWS’ offering of the most fundamental piece of cloud computing: A <a href="https://en.wikipedia.org/wiki/Virtual_private_server">virtual private server</a>. These “instances” can run <a href="https://aws.amazon.com/ec2/faqs/#What_operating_system_environments_are_supported">most Linux, BSD, and Windows operating systems</a>. Internally, they've used a heavily modified <a href="https://en.wikipedia.org/wiki/Xen">Xen</a> virtualization. That said, new instance classes are being introduced with a KVM derived hypervisor instead, called <a href="http://www.brendangregg.com/blog/2017-11-29/aws-ec2-virtualization-2017.html">Nitro</a>. So far, this is limited to the C5 and M5 instance types. Lastly, there's a "bare metal hypervisor" available for <a href="https://aws.amazon.com/about-aws/whats-new/2018/05/announcing-general-availability-of-amazon-ec2-bare-metal-instances/">i3.metal instances</a></li>
+<li>The term “EC2” is sometimes used to refer to the servers themselves, but technically refers more broadly to a whole collection of supporting services, too, like load balancing (CLBs/ALBs/NLBs), IP addresses (EIPs), bootable images (AMIs), security groups, and network drives (EBS) (which we discuss individually in this guide).</li>
+<li><strong>💸<a href="https://aws.amazon.com/ec2/pricing/">EC2 pricing</a></strong> and <strong><a href="#ec2-cost-management">cost management</a></strong> is a complicated topic. It can range from free (on the <a href="https://aws.amazon.com/free/">AWS free tier</a>) to a lot, depending on your usage. Pricing is by instance type, by second or hour, and changes depending on AWS region and whether you are purchasing your instances <a href="https://aws.amazon.com/ec2/pricing/on-demand/">On-Demand</a>, on the <a href="https://aws.amazon.com/ec2/spot/">Spot market</a> or pre-purchasing (<a href="https://aws.amazon.com/ec2/pricing/reserved-instances/">Reserved Instances</a>).</li>
+<li><strong>Network Performance:</strong> For some instance types, AWS uses general terms like Low, Medium, and High to refer to network performance. Users have done <a href="http://stackoverflow.com/questions/18507405/ec2-instance-typess-exact-network-performance">benchmarking</a> to provide expectations for what these terms can mean.</li>
+</ul>
+<h3 id="ec2-alternatives-and-lock-in"><a aria-hidden="true" class="anchor-heading" href="#ec2-alternatives-and-lock-in"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>EC2 Alternatives and Lock-In</h3>
+<ul>
+<li>Running EC2 is akin to running a set of physical servers, as long as you don’t do automatic scaling or tooled cluster setup. If you just run a set of static instances, migrating to another VPS or dedicated server provider should not be too hard.</li>
+<li>🚪<strong>Alternatives to EC2:</strong> The direct alternatives are Google Cloud, Microsoft Azure, Rackspace, DigitalOcean, AWS's own Lightsail offering, and other VPS providers, some of which offer similar APIs for setting up and removing instances. (See the comparisons <a href="#when-to-use-aws">above</a>.)</li>
+<li><strong>Should you use Amazon Linux?</strong> AWS encourages use of their own <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux</a>, which is evolved from <a href="https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux">Red Hat Enterprise Linux (RHEL)</a> and <a href="https://en.wikipedia.org/wiki/CentOS">CentOS</a>. It’s used by many, but <a href="https://www.exratione.com/2014/08/do-not-use-amazon-linux/">others are skeptical</a>. Whatever you do, think this decision through carefully. It’s true Amazon Linux is heavily tested and better supported in the unlikely event you have deeper issues with OS and virtualization on EC2. But in general, many companies do just fine using a standard, non-Amazon Linux distribution, such as Ubuntu or CentOS. Using a standard Linux distribution means you have an exactly replicable environment should you use another hosting provider instead of (or in addition to) AWS. It’s also helpful if you wish to test deployments on local developer machines running the same standard Linux distribution (a practice that’s getting more common with Docker, too. Amazon now supports an official <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/amazon_linux_container_image.html">Amazon Linux Docker image</a>, aimed at assisting with local development on a comparable environment, though this is new enough that it should be considered experimental). Note that the currently-in-testing <a href="https://aws.amazon.com/about-aws/whats-new/2017/12/introducing-amazon-linux-2/">Amazon Linux 2</a> supports on-premise deployments explicitly.</li>
+<li><strong>EC2 costs:</strong> See the <a href="#ec2-cost-management">section on this</a>.</li>
+</ul>
+<h3 id="ec2-tips"><a aria-hidden="true" class="anchor-heading" href="#ec2-tips"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>EC2 Tips</h3>
+<ul>
+<li>
+<p>🔹<strong>Picking regions:</strong> When you first set up, consider which <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">regions</a> you want to use first. Many people in North America just automatically set up in the us-east-1 (N. Virginia) region, which is the default, but it’s worth considering if this is best up front. You'll want to evaluate service availability (some services <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/">are not available in all regions</a>), costing (baseline costs also <a href="https://aws.amazon.com/ec2/pricing/">vary by region</a> by up to 10-30% (generally lowest in us-east-1 for comparison purposes)), and compliance (various countries have differing regulations with regard to data privacy, for example).</p>
+</li>
+<li>
+<p><strong>Instance types:</strong> EC2 instances come in many types, corresponding to the capabilities of the virtual machine in CPU architecture and speed, RAM, disk sizes and types (SSD or magnetic), and network bandwidth.</p>
+<ul>
+<li>Selecting instance types is complex since there are so many types. Additionally there are different generations, released <a href="https://aws.amazon.com/blogs/aws/ec2-instance-history/">over the years</a>.</li>
+<li>🔹Use the list at <a href="http://www.ec2instances.info/"><strong>ec2instances.info</strong></a> to review costs and features. <a href="https://aws.amazon.com/ec2/instance-types/">Amazon’s own list</a> of instance types is hard to use, and doesn’t list features and price together, which makes it doubly difficult.</li>
+<li>Prices vary a lot, so use <a href="http://www.ec2instances.info/"><strong>ec2instances.info</strong></a> to determine the set of machines that meet your needs and <a href="http://ec2price.com/"><strong>ec2price.com</strong></a> to find the cheapest type in the region you’re working in. Depending on the timing and region, it might be much cheaper to rent an instance with <em>more</em> memory or CPU than the bare minimum.</li>
+</ul>
+</li>
+<li>
+<p><strong>Turn off</strong> your instances when they aren’t in use. For many situations such as testing or staging resources, you may not need your instances on 24/7, and you won’t need to pay EC2 running costs when they are suspended. Given that costs are calculated based on usage, this is a simple mechanism for cost savings. This can be achieved using <a href="https://aws.amazon.com/premiumsupport/knowledge-center/start-stop-lambda-cloudwatch/">Lambda and CloudWatch</a>, an open source option like <a href="https://github.com/fairfaxmedia/cloudcycler">cloudcycler</a>, or a SaaS provider like <a href="https://www.gorillastack.com">GorillaStack</a>. (Note: if you turn off instances with an ephemeral root volume, any state will be lost when the instance is turned off. Therefore, for stateful applications it is safer to turn off EBS backed instances).</p>
+</li>
+<li>
+<p><a href="https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"><strong>Dedicated instances</strong></a> and <a href="https://aws.amazon.com/ec2/dedicated-hosts/"><strong>dedicated hosts</strong></a> are assigned hardware, instead of usual virtual instances. They are more expensive than virtual instances but <a href="https://aws.amazon.com/ec2/dedicated-hosts/">can be preferable</a> for performance, compliance, financial modeling, or licensing reasons.</p>
+</li>
+<li>
+<p><strong>32 bit vs 64 bit:</strong> A few micro, small, and medium instances are still available to use as 32-bit architecture. You’ll be using 64-bit EC2 (“amd64”) instances nowadays, though smaller instances still support 32 bit (“i386”). Use 64 bit unless you have legacy constraints or other good reasons to use 32.</p>
+</li>
+<li>
+<p><strong>HVM vs PV:</strong> There are two kinds of virtualization technology used by EC2, <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html">hardware virtual machine (HVM) and paravirtual (PV)</a>. Historically, PV was the usual type, but <a href="https://www.opswat.com/blog/aws-2015-why-you-need-switch-pv-hvm">now HVM is becoming the standard</a>. If you want to use the newest instance types, you must use HVM. See the <a href="https://aws.amazon.com/amazon-linux-ami/instance-type-matrix/">instance type matrix</a> for details.</p>
+</li>
+<li>
+<p><strong>Operating system:</strong> To use EC2, you’ll need to pick a base operating system. It can be Windows or Linux, such as Ubuntu or <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon Linux</a>. You do this with AMIs, which are covered in more detail in their own section below.</p>
+</li>
+<li>
+<p><strong>Limits:</strong> You can’t create arbitrary numbers of instances. Default limits on numbers of EC2 instances per account vary by instance type, as described in <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">this list</a>.</p>
+</li>
+<li>
+<p>❗<strong>Use termination protection:</strong> For any instances that are important and long-lived (in particular, aren't part of auto-scaling), <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#Using_ChangingDisableAPITermination">enable termination protection</a>. This is an important line of defense against user mistakes, such as accidentally terminating many instances instead of just one due to human error.</p>
+</li>
+<li>
+<p><strong>SSH key management:</strong></p>
+<ul>
+<li>When you start an instance, you need to have at least one <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">ssh key pair</a> set up, to bootstrap, i.e., allow you to ssh in the first time.</li>
+<li>Aside from bootstrapping, you should manage keys yourself on the instances, assigning individual keys to individual users or services as appropriate.</li>
+<li>Avoid reusing the original boot keys except by administrators when creating new instances.</li>
+<li>Avoid sharing keys and <a href="http://security.stackexchange.com/questions/87480/managing-multiple-ssh-private-keys-for-a-team">add individual ssh keys</a> for individual users.</li>
+</ul>
+</li>
+<li>
+<p><strong>GPU support:</strong> You can rent GPU-enabled instances on EC2 for use in machine learning or graphics rendering workloads.</p>
+<ul>
+<li>There are <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">three types</a> of GPU-enabled instances currently available:
+<ul>
+<li>The P3 series offers NVIDIA Tesla V100 GPUs in 1, 4 and 8 GPU configurations targeting machine learning, scientific workloads, and other high performance computing applications.</li>
+<li>The P2 series offers NVIDIA Tesla K80 GPUs in 1, 8 and 16 GPU configurations targeting machine learning, scientific workloads, and other high performance computing applications.</li>
+<li>The G3 series offers NVIDIA Tesla M60 GPUs in 1, 2, or 4 GPU configurations targeting graphics and video encoding.</li>
+</ul>
+</li>
+<li>AWS offers two different AMIs that are targeted to GPU applications. In particular, they target deep learning workloads, but also provide access to more stripped-down driver-only base images.
+<ul>
+<li>AWS offers both an Amazon Linux <a href="https://aws.amazon.com/marketplace/pp/B077GF11NF?qid=1536363169916&#x26;sr=0-3&#x26;ref_=srh_res_product_title">Deep Learning AMI</a> (based on Amazon Linux) as well as an Ubuntu <a href="https://aws.amazon.com/marketplace/pp/B077GCH38C">Deep Learning AMI</a>. Both come with most NVIDIA drivers and ancillary software (CUDA, CUBLAS, CuDNN, TensorFlow, PyTorch, etc.) installed to lower the barrier to usage.</li>
+<li>⛓ Note that using these AMIs can lead to lock in due to the fact that you have no direct access to software configuration or versioning.</li>
+<li>🔸 The compendium of frameworks included can lead to long instance startup times and difficult-to-reason-about environments.</li>
+</ul>
+</li>
+<li>🔹As with any expensive EC2 instance types, <a href="#ec2-cost-management">Spot instances can offer significant savings</a> with GPU workloads when interruptions are tolerable.</li>
+</ul>
+</li>
+<li>
+<p>All current EC2 instance types can take advantage of IPv6 addressing, so long as they are launched in a subnet with an allocated CIDR range in an IPv6-enabled VPC.</p>
+</li>
+</ul>
+<h3 id="ec2-gotchas-and-limitations"><a aria-hidden="true" class="anchor-heading" href="#ec2-gotchas-and-limitations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>EC2 Gotchas and Limitations</h3>
+<ul>
+<li>❗Never use ssh passwords. Just don’t do it; they are too insecure, and consequences of compromise too severe. Use keys instead. <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2">Read up on this</a> and fully disable ssh password access to your ssh server by making sure 'PasswordAuthentication no' is in your /etc/ssh/sshd_config file. If you’re careful about managing ssh private keys everywhere they are stored, it is a major improvement on security over password-based authentication.</li>
+<li>🔸For all <a href="https://aws.amazon.com/amazon-linux-ami/instance-type-matrix/">newer instance types</a>, when selecting the AMI to use, be sure you select the HVM AMI, or it just won’t work.</li>
+<li>❗When creating an instance and using a new ssh key pair, <a href="http://stackoverflow.com/questions/1454629/aws-ssh-access-permission-denied-publickey-issue">make sure the ssh key permissions are correct</a>.</li>
+<li>🔸Sometimes certain EC2 instances can get scheduled for retirement by AWS due to “detected degradation of the underlying hardware,” in which case you are given a couple of weeks to migrate to a new instance
+<ul>
+<li>If your instance root device is an EBS volume, you can typically stop and then start the instance which moves it to healthy host hardware, giving you control over timing of this event. Note however that you will lose any instance store volume data (<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">ephemeral drives</a>) if your instance type has instance store volumes.</li>
+<li>The instance public IP (if it has one) will likely change unless you're using Elastic IPs. This could be a problem if other systems depend on the IP address.</li>
+</ul>
+</li>
+<li>🔸Periodically you may find that your server or load balancer is receiving traffic for (presumably) a previous EC2 server that was running at the same IP address that you are handed out now (this may not matter, or it can be fixed by migrating to another new instance).</li>
+<li>❗If the EC2 API itself is a critical dependency of your infrastructure (e.g. for automated server replacement, custom scaling algorithms, etc.) and you are running at a large scale or making many EC2 API calls, make sure that you understand when they might fail (calls to it are <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#api-request-rate">rate limited</a> and the limits are not published and subject to change) and code and test against that possibility.</li>
+<li>❗Many newer EC2 instance types are either EBS-only, or backed by local NVMe disks assigned to the instance. Make sure to factor in EBS performance and costs when planning to use them.</li>
+<li>❗If you're operating at significant scale, you may wish to break apart API calls that enumerate all of your resources, and instead operate either on individual resources, or a subset of the entire list. EC2 APIs will time out! Consider using <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">filters</a> to restrict what gets returned.</li>
+<li>❗⏱ Instances come in two types: <strong>Fixed Performance Instances</strong> (e.g. M3, C3, and R3) and <a href="https://aws.amazon.com/ec2/instance-types/#burst"><strong>Burstable Performance Instances</strong></a> (e.g. T2). A T2 instance receives CPU credits continuously, the rate of which depends on the instance size. T2 instances accrue CPU credits when they are idle, and use CPU credits when they are active. However, once an instance runs out of credits, you'll notice a severe degradation in performance. If you need consistently high CPU performance for applications such as video encoding, high volume websites or HPC applications, it is recommended to use Fixed Performance Instances.</li>
+<li>Instance user-data is <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html#instancedata-add-user-data">limited to 16 KB</a>. (This limit applies to the data in raw form, not base64-encoded form.) If more data is needed, it can be downloaded from S3 by a user-data script.</li>
+<li>Very new accounts may not be able to launch some instance types, such as GPU instances, because of an initially imposed “soft limit” of zero. This limit can be raised by making a support request. See <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> for the method to make the support request. Note that this limit of zero is <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ec2">not currently documented</a>.</li>
+<li>Since multiple AWS instances all run on the same physical hardware, early cloud adopters encountered what became known as the <a href="https://searchcloudcomputing.techtarget.com/definition/noisy-neighbor-cloud-computing-performance">Noisy Neighbor problem</a>. This feeling of not getting what you are paying for led to <a href="https://twitter.com/technicallyjosh/status/668963405831651328">user frustration</a>, however "steal" may not be the best word to describe what's actually happening based on a <a href="https://support.cloud.engineyard.com/hc/en-us/community/posts/203751578-Explanation-of-Steal-Time">detailed explanation of how the kernel determine steal time</a>. Avoiding having CPU steal affect your application in the cloud may be best handled by <a href="https://www.infoworld.com/article/3073503/cloud-computing/debunking-the-clouds-noisy-neighbor-myth.html">properly designing your cloud architecture</a>.</li>
+<li>AWS <a href="https://aws.amazon.com/blogs/aws/amazon-ec2-dedicated-instances/">introduced Dedicated Tenancy</a> in 2011. This allows customers to have all resources from a single server. Some saw this as a way to solve the <a href="https://www.infoworld.com/article/3008225/cloud-computing/amazon-dedicated-hosts-bye-bye-to-noisy-cloud-neighbors.html">noisy neighbor problem</a> since only that customer uses the CPU. This approach comes with a significant risk if that physical system needed any type of maintenance. If a customer had 20 instances running using shared tenancy and one underlying server needed maintenance, only the instance on that server would go offline. If that customer had 20 instances running using dedicated tenancy, when the underlying server needs maintenance, all 20 instances would go offline.</li>
+<li>🔸Only <strong>i3.metal</strong> type instances providing an ability to run Android x86 emulators on AWS at the moment.</li>
+</ul><span id="navId" data="ec2"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

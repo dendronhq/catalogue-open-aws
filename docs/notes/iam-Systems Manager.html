@@ -1,0 +1,2474 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Systems Manager - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Systems Manager.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Systems Manager.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Systems Manager.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Systems Manager - undefined" />
+  <meta name="twitter:title" content="Systems Manager - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Systems Manager</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Systems Manager">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="systems-manager"><a aria-hidden="true" class="anchor-heading" href="#systems-manager"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Systems Manager</h1>
+<ul>
+<li>prefix: ssm</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="addtagstoresource"><a aria-hidden="true" class="anchor-heading" href="#addtagstoresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AddTagsToResource</h3>
+<ul>
+<li>description: Grants permission to add or overwrite one or more tags for a specified AWS resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "parameter": {
+        "resource_type": "parameter",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "patchbaseline": {
+        "resource_type": "patchbaseline",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelcommand"><a aria-hidden="true" class="anchor-heading" href="#cancelcommand"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelCommand</h3>
+<ul>
+<li>description: Grants permission to cancel a specified Run Command command</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelmaintenancewindowexecution"><a aria-hidden="true" class="anchor-heading" href="#cancelmaintenancewindowexecution"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelMaintenanceWindowExecution</h3>
+<ul>
+<li>description: Grants permission to cancel an in-progress maintenance window execution</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createactivation"><a aria-hidden="true" class="anchor-heading" href="#createactivation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateActivation</h3>
+<ul>
+<li>description: Grants permission to create an activation that is used to register on-premises servers and virtual machines (VMs) with Systems Manager</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createassociation"><a aria-hidden="true" class="anchor-heading" href="#createassociation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAssociation</h3>
+<ul>
+<li>description: Grants permission to associate a specified Systems Manager document with specified instances or other targets</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "instance": {
+        "resource_type": "instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createassociationbatch"><a aria-hidden="true" class="anchor-heading" href="#createassociationbatch"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAssociationBatch</h3>
+<ul>
+<li>description: Grants permission to combine entries for multiple CreateAssociation operations in a single command</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "instance": {
+        "resource_type": "instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdocument"><a aria-hidden="true" class="anchor-heading" href="#createdocument"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDocument</h3>
+<ul>
+<li>description: Grants permission to create a Systems Manager SSM document</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:PassRole"
+        ]
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createmaintenancewindow"><a aria-hidden="true" class="anchor-heading" href="#createmaintenancewindow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateMaintenanceWindow</h3>
+<ul>
+<li>description: Grants permission to create a maintenance window</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createopsitem"><a aria-hidden="true" class="anchor-heading" href="#createopsitem"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateOpsItem</h3>
+<ul>
+<li>description: Grants permission to create an OpsItem in OpsCenter</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createpatchbaseline"><a aria-hidden="true" class="anchor-heading" href="#createpatchbaseline"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreatePatchBaseline</h3>
+<ul>
+<li>description: Grants permission to create a patch baseline</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createresourcedatasync"><a aria-hidden="true" class="anchor-heading" href="#createresourcedatasync"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateResourceDataSync</h3>
+<ul>
+<li>description: Grants permission to create a resource data sync configuration, which regularly collects inventory data from managed instances and updates the data in an Amazon S3 bucket</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resourcedatasync": {
+        "resource_type": "resourcedatasync",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "ssm:SyncType"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteactivation"><a aria-hidden="true" class="anchor-heading" href="#deleteactivation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteActivation</h3>
+<ul>
+<li>description: Grants permission to delete a specified activation for managed instances</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteassociation"><a aria-hidden="true" class="anchor-heading" href="#deleteassociation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAssociation</h3>
+<ul>
+<li>description: Grants permission to disassociate a specified SSM document from a specified instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "association": {
+        "resource_type": "association",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "document": {
+        "resource_type": "document",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "instance": {
+        "resource_type": "instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedocument"><a aria-hidden="true" class="anchor-heading" href="#deletedocument"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDocument</h3>
+<ul>
+<li>description: Grants permission to delete a specified SSM document and its instance associations</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteinventory"><a aria-hidden="true" class="anchor-heading" href="#deleteinventory"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteInventory</h3>
+<ul>
+<li>description: Grants permission to delete a specified custom inventory type, or the data associated with a custom inventory type</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletemaintenancewindow"><a aria-hidden="true" class="anchor-heading" href="#deletemaintenancewindow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteMaintenanceWindow</h3>
+<ul>
+<li>description: Grants permission to delete a specified maintenance window</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteparameter"><a aria-hidden="true" class="anchor-heading" href="#deleteparameter"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteParameter</h3>
+<ul>
+<li>description: Grants permission to delete a specified SSM parameter</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parameter": {
+        "resource_type": "parameter",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteparameters"><a aria-hidden="true" class="anchor-heading" href="#deleteparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteParameters</h3>
+<ul>
+<li>description: Grants permission to delete multiple specified SSM parameters</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parameter": {
+        "resource_type": "parameter",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletepatchbaseline"><a aria-hidden="true" class="anchor-heading" href="#deletepatchbaseline"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeletePatchBaseline</h3>
+<ul>
+<li>description: Grants permission to delete a specified patch baseline</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "patchbaseline": {
+        "resource_type": "patchbaseline",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteresourcedatasync"><a aria-hidden="true" class="anchor-heading" href="#deleteresourcedatasync"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteResourceDataSync</h3>
+<ul>
+<li>description: Grants permission to delete a specified resource data sync</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resourcedatasync": {
+        "resource_type": "resourcedatasync",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "ssm:SyncType"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deregistermanagedinstance"><a aria-hidden="true" class="anchor-heading" href="#deregistermanagedinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeregisterManagedInstance</h3>
+<ul>
+<li>description: Grants permission to deregister a specified on-premises server or virtual machine (VM) from Systems Manager</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deregisterpatchbaselineforpatchgroup"><a aria-hidden="true" class="anchor-heading" href="#deregisterpatchbaselineforpatchgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeregisterPatchBaselineForPatchGroup</h3>
+<ul>
+<li>description: Grants permission to deregister a specified patch baseline from being the default patch baseline for a specified patch group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "patchbaseline": {
+        "resource_type": "patchbaseline",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deregistertargetfrommaintenancewindow"><a aria-hidden="true" class="anchor-heading" href="#deregistertargetfrommaintenancewindow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeregisterTargetFromMaintenanceWindow</h3>
+<ul>
+<li>description: Grants permission to deregister a specified target from a maintenance window</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deregistertaskfrommaintenancewindow"><a aria-hidden="true" class="anchor-heading" href="#deregistertaskfrommaintenancewindow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeregisterTaskFromMaintenanceWindow</h3>
+<ul>
+<li>description: Grants permission to deregister a specified task from a maintenance window</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeactivations"><a aria-hidden="true" class="anchor-heading" href="#describeactivations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeActivations</h3>
+<ul>
+<li>description: Grants permission to view details about a specified managed instance activation, such as when it was created and the number of instances registered using the activation</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeassociation"><a aria-hidden="true" class="anchor-heading" href="#describeassociation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAssociation</h3>
+<ul>
+<li>description: Grants permission to view details about the specified association for a specified instance or target</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "association": {
+        "resource_type": "association",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "document": {
+        "resource_type": "document",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "instance": {
+        "resource_type": "instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeassociationexecutiontargets"><a aria-hidden="true" class="anchor-heading" href="#describeassociationexecutiontargets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAssociationExecutionTargets</h3>
+<ul>
+<li>description: Grants permission to view information about a specified association execution</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeassociationexecutions"><a aria-hidden="true" class="anchor-heading" href="#describeassociationexecutions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAssociationExecutions</h3>
+<ul>
+<li>description: Grants permission to view all executions for a specified association</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeautomationexecutions"><a aria-hidden="true" class="anchor-heading" href="#describeautomationexecutions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAutomationExecutions</h3>
+<ul>
+<li>description: Grants permission to view details about all active and terminated Automation executions</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeautomationstepexecutions"><a aria-hidden="true" class="anchor-heading" href="#describeautomationstepexecutions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAutomationStepExecutions</h3>
+<ul>
+<li>description: Grants permission to view information about all active and terminated step executions in an Automation workflow</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeavailablepatches"><a aria-hidden="true" class="anchor-heading" href="#describeavailablepatches"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAvailablePatches</h3>
+<ul>
+<li>description: Grants permission to view all patches eligible to include in a patch baseline</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedocument"><a aria-hidden="true" class="anchor-heading" href="#describedocument"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDocument</h3>
+<ul>
+<li>description: Grants permission to view details about a specified SSM document</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedocumentparameters"><a aria-hidden="true" class="anchor-heading" href="#describedocumentparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDocumentParameters</h3>
+<ul>
+<li>description: Grants permission to display information about SSM document parameters in the Systems Manager console (internal Systems Manager action)</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedocumentpermission"><a aria-hidden="true" class="anchor-heading" href="#describedocumentpermission"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDocumentPermission</h3>
+<ul>
+<li>description: Grants permission to view the permissions for a specified SSM document</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeeffectiveinstanceassociations"><a aria-hidden="true" class="anchor-heading" href="#describeeffectiveinstanceassociations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEffectiveInstanceAssociations</h3>
+<ul>
+<li>description: Grants permission to view all current associations for a specified instance</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeeffectivepatchesforpatchbaseline"><a aria-hidden="true" class="anchor-heading" href="#describeeffectivepatchesforpatchbaseline"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEffectivePatchesForPatchBaseline</h3>
+<ul>
+<li>description: Grants permission to view details about the patches currently associated with the specified patch baseline (Windows only)</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "patchbaseline": {
+        "resource_type": "patchbaseline",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeinstanceassociationsstatus"><a aria-hidden="true" class="anchor-heading" href="#describeinstanceassociationsstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeInstanceAssociationsStatus</h3>
+<ul>
+<li>description: Grants permission to view the status of the associations for a specified instance</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeinstanceinformation"><a aria-hidden="true" class="anchor-heading" href="#describeinstanceinformation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeInstanceInformation</h3>
+<ul>
+<li>description: Grants permission to view details about a specified instance</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeinstancepatchstates"><a aria-hidden="true" class="anchor-heading" href="#describeinstancepatchstates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeInstancePatchStates</h3>
+<ul>
+<li>description: Grants permission to view status details about patches on a specified instance</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeinstancepatchstatesforpatchgroup"><a aria-hidden="true" class="anchor-heading" href="#describeinstancepatchstatesforpatchgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeInstancePatchStatesForPatchGroup</h3>
+<ul>
+<li>description: Grants permission to describe the high-level patch state for the instances in the specified patch group</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeinstancepatches"><a aria-hidden="true" class="anchor-heading" href="#describeinstancepatches"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeInstancePatches</h3>
+<ul>
+<li>description: Grants permission to view general details about the patches on a specified instance</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeinstanceproperties"><a aria-hidden="true" class="anchor-heading" href="#describeinstanceproperties"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeInstanceProperties</h3>
+<ul>
+<li>description: Grants permission to user's Amazon EC2 console to render managed instances' nodes</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeinventorydeletions"><a aria-hidden="true" class="anchor-heading" href="#describeinventorydeletions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeInventoryDeletions</h3>
+<ul>
+<li>description: Grants permission to view details about a specified inventory deletion</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describemaintenancewindowexecutiontaskinvocations"><a aria-hidden="true" class="anchor-heading" href="#describemaintenancewindowexecutiontaskinvocations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMaintenanceWindowExecutionTaskInvocations</h3>
+<ul>
+<li>description: Grants permission to view details of a specified task execution for a maintenance window</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describemaintenancewindowexecutiontasks"><a aria-hidden="true" class="anchor-heading" href="#describemaintenancewindowexecutiontasks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMaintenanceWindowExecutionTasks</h3>
+<ul>
+<li>description: Grants permission to view details about the tasks that ran during a specified maintenance window execution</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describemaintenancewindowexecutions"><a aria-hidden="true" class="anchor-heading" href="#describemaintenancewindowexecutions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMaintenanceWindowExecutions</h3>
+<ul>
+<li>description: Grants permission to view the executions of a specified maintenance window</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describemaintenancewindowschedule"><a aria-hidden="true" class="anchor-heading" href="#describemaintenancewindowschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMaintenanceWindowSchedule</h3>
+<ul>
+<li>description: Grants permission to view details about upcoming executions of a specified maintenance window</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describemaintenancewindowtargets"><a aria-hidden="true" class="anchor-heading" href="#describemaintenancewindowtargets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMaintenanceWindowTargets</h3>
+<ul>
+<li>description: Grants permission to view a list of the targets associated with a specified maintenance window</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describemaintenancewindowtasks"><a aria-hidden="true" class="anchor-heading" href="#describemaintenancewindowtasks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMaintenanceWindowTasks</h3>
+<ul>
+<li>description: Grants permission to view a list of the tasks associated with a specified maintenance window</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describemaintenancewindows"><a aria-hidden="true" class="anchor-heading" href="#describemaintenancewindows"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMaintenanceWindows</h3>
+<ul>
+<li>description: Grants permission to view information about all or specified maintenance windows</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describemaintenancewindowsfortarget"><a aria-hidden="true" class="anchor-heading" href="#describemaintenancewindowsfortarget"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMaintenanceWindowsForTarget</h3>
+<ul>
+<li>description: Grants permission to view information about the maintenance window targets and tasks associated with a specified instance</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeopsitems"><a aria-hidden="true" class="anchor-heading" href="#describeopsitems"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeOpsItems</h3>
+<ul>
+<li>description: Grants permission to view details about specified OpsItems</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeparameters"><a aria-hidden="true" class="anchor-heading" href="#describeparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeParameters</h3>
+<ul>
+<li>description: Grants permission to view details about a specified SSM parameter</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describepatchbaselines"><a aria-hidden="true" class="anchor-heading" href="#describepatchbaselines"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribePatchBaselines</h3>
+<ul>
+<li>description: Grants permission to view information about patch baselines that meet the specified criteria</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describepatchgroupstate"><a aria-hidden="true" class="anchor-heading" href="#describepatchgroupstate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribePatchGroupState</h3>
+<ul>
+<li>description: Grants permission to view aggregated status details for patches for a specified patch group</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describepatchgroups"><a aria-hidden="true" class="anchor-heading" href="#describepatchgroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribePatchGroups</h3>
+<ul>
+<li>description: Grants permission to view information about the patch baseline for a specified patch group</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describepatchproperties"><a aria-hidden="true" class="anchor-heading" href="#describepatchproperties"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribePatchProperties</h3>
+<ul>
+<li>description: Grants permission to view details of available patches for a specified operating system and patch property</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describesessions"><a aria-hidden="true" class="anchor-heading" href="#describesessions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeSessions</h3>
+<ul>
+<li>description: Grants permission to view a list of recent Session Manager sessions that meet the specified search criteria</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getautomationexecution"><a aria-hidden="true" class="anchor-heading" href="#getautomationexecution"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAutomationExecution</h3>
+<ul>
+<li>description: Grants permission to view details of a specified Automation execution</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcalendarstate"><a aria-hidden="true" class="anchor-heading" href="#getcalendarstate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCalendarState</h3>
+<ul>
+<li>description: Grants permission to view the calendar state for a change calendar or a list of change calendars</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcommandinvocation"><a aria-hidden="true" class="anchor-heading" href="#getcommandinvocation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCommandInvocation</h3>
+<ul>
+<li>description: Grants permission to view details about the command execution of a specified invocation or plugin</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getconnectionstatus"><a aria-hidden="true" class="anchor-heading" href="#getconnectionstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetConnectionStatus</h3>
+<ul>
+<li>description: Grants permission to view the Session Manager connection status for a specified managed instance</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdefaultpatchbaseline"><a aria-hidden="true" class="anchor-heading" href="#getdefaultpatchbaseline"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDefaultPatchBaseline</h3>
+<ul>
+<li>description: Grants permission to view the current default patch baseline for a specified operating system type</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "patchbaseline": {
+        "resource_type": "patchbaseline",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdeployablepatchsnapshotforinstance"><a aria-hidden="true" class="anchor-heading" href="#getdeployablepatchsnapshotforinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDeployablePatchSnapshotForInstance</h3>
+<ul>
+<li>description: Grants permission to retrieve the current patch baseline snapshot for a specified instance</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdocument"><a aria-hidden="true" class="anchor-heading" href="#getdocument"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDocument</h3>
+<ul>
+<li>description: Grants permission to view the contents of a specified SSM document</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinventory"><a aria-hidden="true" class="anchor-heading" href="#getinventory"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInventory</h3>
+<ul>
+<li>description: Grants permission to view instance inventory details per the specified criteria</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinventoryschema"><a aria-hidden="true" class="anchor-heading" href="#getinventoryschema"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInventorySchema</h3>
+<ul>
+<li>description: Grants permission to view a list of inventory types or attribute names for a specified inventory item type</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmaintenancewindow"><a aria-hidden="true" class="anchor-heading" href="#getmaintenancewindow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMaintenanceWindow</h3>
+<ul>
+<li>description: Grants permission to view details about a specified maintenance window</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmaintenancewindowexecution"><a aria-hidden="true" class="anchor-heading" href="#getmaintenancewindowexecution"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMaintenanceWindowExecution</h3>
+<ul>
+<li>description: Grants permission to view details about a specified maintenance window execution</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmaintenancewindowexecutiontask"><a aria-hidden="true" class="anchor-heading" href="#getmaintenancewindowexecutiontask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMaintenanceWindowExecutionTask</h3>
+<ul>
+<li>description: Grants permission to view details about a specified maintenance window execution task</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmaintenancewindowexecutiontaskinvocation"><a aria-hidden="true" class="anchor-heading" href="#getmaintenancewindowexecutiontaskinvocation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMaintenanceWindowExecutionTaskInvocation</h3>
+<ul>
+<li>description: Grants permission to view details about a specific maintenance window task running on a specific target</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmaintenancewindowtask"><a aria-hidden="true" class="anchor-heading" href="#getmaintenancewindowtask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMaintenanceWindowTask</h3>
+<ul>
+<li>description: Grants permission to view details about tasks registered with a specified maintenance window</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmanifest"><a aria-hidden="true" class="anchor-heading" href="#getmanifest"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetManifest</h3>
+<ul>
+<li>description: Used by Systems Manager and SSM Agent to determine package installation requirements for an instance (internal Systems Manager call)</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getopsitem"><a aria-hidden="true" class="anchor-heading" href="#getopsitem"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetOpsItem</h3>
+<ul>
+<li>description: Grants permission to view information about a specified OpsItem</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getopssummary"><a aria-hidden="true" class="anchor-heading" href="#getopssummary"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetOpsSummary</h3>
+<ul>
+<li>description: Grants permission to view summary information about OpsItems based on specified filters and aggregators</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resourcedatasync": {
+        "resource_type": "resourcedatasync",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getparameter"><a aria-hidden="true" class="anchor-heading" href="#getparameter"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetParameter</h3>
+<ul>
+<li>description: Grants permission to view information about a specified parameter</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parameter": {
+        "resource_type": "parameter",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getparameterhistory"><a aria-hidden="true" class="anchor-heading" href="#getparameterhistory"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetParameterHistory</h3>
+<ul>
+<li>description: Grants permission to view details and changes for a specified parameter</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parameter": {
+        "resource_type": "parameter",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getparameters"><a aria-hidden="true" class="anchor-heading" href="#getparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetParameters</h3>
+<ul>
+<li>description: Grants permission to view information about multiple specified parameters</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parameter": {
+        "resource_type": "parameter",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getparametersbypath"><a aria-hidden="true" class="anchor-heading" href="#getparametersbypath"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetParametersByPath</h3>
+<ul>
+<li>description: Grants permission to view information about parameters in a specified hierarchy</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parameter": {
+        "resource_type": "parameter",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getpatchbaseline"><a aria-hidden="true" class="anchor-heading" href="#getpatchbaseline"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPatchBaseline</h3>
+<ul>
+<li>description: Grants permission to view information about a specified patch baseline</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "patchbaseline": {
+        "resource_type": "patchbaseline",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getpatchbaselineforpatchgroup"><a aria-hidden="true" class="anchor-heading" href="#getpatchbaselineforpatchgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPatchBaselineForPatchGroup</h3>
+<ul>
+<li>description: Grants permission to view the ID of the current patch baseline for a specified patch group</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "patchbaseline": {
+        "resource_type": "patchbaseline",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getservicesetting"><a aria-hidden="true" class="anchor-heading" href="#getservicesetting"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetServiceSetting</h3>
+<ul>
+<li>description: Grants permission to view the account-level setting for an AWS service</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "servicesetting": {
+        "resource_type": "servicesetting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="labelparameterversion"><a aria-hidden="true" class="anchor-heading" href="#labelparameterversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>LabelParameterVersion</h3>
+<ul>
+<li>description: Grants permission to apply an identifying label to a specified version of a parameter</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parameter": {
+        "resource_type": "parameter",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listassociationversions"><a aria-hidden="true" class="anchor-heading" href="#listassociationversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAssociationVersions</h3>
+<ul>
+<li>description: Grants permission to list versions of the specified association</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listassociations"><a aria-hidden="true" class="anchor-heading" href="#listassociations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAssociations</h3>
+<ul>
+<li>description: Grants permission to list the associations for a specified SSM document or managed instance</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcommandinvocations"><a aria-hidden="true" class="anchor-heading" href="#listcommandinvocations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCommandInvocations</h3>
+<ul>
+<li>description: Grants permission to list information about command invocations sent to a specified instance</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcommands"><a aria-hidden="true" class="anchor-heading" href="#listcommands"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCommands</h3>
+<ul>
+<li>description: Grants permission to list the commands sent to a specified instance</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcomplianceitems"><a aria-hidden="true" class="anchor-heading" href="#listcomplianceitems"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListComplianceItems</h3>
+<ul>
+<li>description: Grants permission to list compliance status for specified resource types on a specified resource</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcompliancesummaries"><a aria-hidden="true" class="anchor-heading" href="#listcompliancesummaries"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListComplianceSummaries</h3>
+<ul>
+<li>description: Grants permission to list a summary count of compliant and noncompliant resources for a specified compliance type</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdocumentversions"><a aria-hidden="true" class="anchor-heading" href="#listdocumentversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDocumentVersions</h3>
+<ul>
+<li>description: Grants permission to list all versions of a specified document</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdocuments"><a aria-hidden="true" class="anchor-heading" href="#listdocuments"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDocuments</h3>
+<ul>
+<li>description: Grants permission to view information about a specified SSM document</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listinstanceassociations"><a aria-hidden="true" class="anchor-heading" href="#listinstanceassociations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListInstanceAssociations</h3>
+<ul>
+<li>description: Used by SSM Agent to check for new State Manager associations (internal Systems Manager call)</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listinventoryentries"><a aria-hidden="true" class="anchor-heading" href="#listinventoryentries"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListInventoryEntries</h3>
+<ul>
+<li>description: Grants permission to view a list of specified inventory types for a specified instance</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listresourcecompliancesummaries"><a aria-hidden="true" class="anchor-heading" href="#listresourcecompliancesummaries"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListResourceComplianceSummaries</h3>
+<ul>
+<li>description: Grants permission to list resource-level summary count</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listresourcedatasync"><a aria-hidden="true" class="anchor-heading" href="#listresourcedatasync"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListResourceDataSync</h3>
+<ul>
+<li>description: Grants permission to list information about resource data sync configurations in an account</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "ssm:SyncType"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Grants permission to view a list of resource tags for a specified resource</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "parameter": {
+        "resource_type": "parameter",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "patchbaseline": {
+        "resource_type": "patchbaseline",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifydocumentpermission"><a aria-hidden="true" class="anchor-heading" href="#modifydocumentpermission"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyDocumentPermission</h3>
+<ul>
+<li>description: Grants permission to share a custom SSM document publicly or privately with specified AWS accounts</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putcomplianceitems"><a aria-hidden="true" class="anchor-heading" href="#putcomplianceitems"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutComplianceItems</h3>
+<ul>
+<li>description: Grants permission to register a compliance type and other compliance details on a specified resource</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putconfigurepackageresult"><a aria-hidden="true" class="anchor-heading" href="#putconfigurepackageresult"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutConfigurePackageResult</h3>
+<ul>
+<li>description: Used by SSM Agent to generate a report of the results of specific agent requests (internal Systems Manager call)</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putinventory"><a aria-hidden="true" class="anchor-heading" href="#putinventory"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutInventory</h3>
+<ul>
+<li>description: Grants permission to add or update inventory items on multiple specified managed instances</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putparameter"><a aria-hidden="true" class="anchor-heading" href="#putparameter"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutParameter</h3>
+<ul>
+<li>description: Grants permission to create an SSM parameter</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "parameter": {
+        "resource_type": "parameter",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="registerdefaultpatchbaseline"><a aria-hidden="true" class="anchor-heading" href="#registerdefaultpatchbaseline"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegisterDefaultPatchBaseline</h3>
+<ul>
+<li>description: Grants permission to specify the default patch baseline for an operating system type</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "patchbaseline": {
+        "resource_type": "patchbaseline",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="registerpatchbaselineforpatchgroup"><a aria-hidden="true" class="anchor-heading" href="#registerpatchbaselineforpatchgroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegisterPatchBaselineForPatchGroup</h3>
+<ul>
+<li>description: Grants permission to specify the default patch baseline for a specified patch group</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "patchbaseline": {
+        "resource_type": "patchbaseline",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="registertargetwithmaintenancewindow"><a aria-hidden="true" class="anchor-heading" href="#registertargetwithmaintenancewindow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegisterTargetWithMaintenanceWindow</h3>
+<ul>
+<li>description: Grants permission to register a target with a specified maintenance window</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="registertaskwithmaintenancewindow"><a aria-hidden="true" class="anchor-heading" href="#registertaskwithmaintenancewindow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegisterTaskWithMaintenanceWindow</h3>
+<ul>
+<li>description: Grants permission to register a task with a specified maintenance window</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="removetagsfromresource"><a aria-hidden="true" class="anchor-heading" href="#removetagsfromresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RemoveTagsFromResource</h3>
+<ul>
+<li>description: Grants permission to remove a specified tag key from a specified resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "parameter": {
+        "resource_type": "parameter",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "patchbaseline": {
+        "resource_type": "patchbaseline",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resetservicesetting"><a aria-hidden="true" class="anchor-heading" href="#resetservicesetting"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResetServiceSetting</h3>
+<ul>
+<li>description: Grants permission to reset the service setting for an AWS account to the default value</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "servicesetting": {
+        "resource_type": "servicesetting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resumesession"><a aria-hidden="true" class="anchor-heading" href="#resumesession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResumeSession</h3>
+<ul>
+<li>description: Grants permission to reconnect a Session Manager session to a managed instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "session": {
+        "resource_type": "session",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="sendautomationsignal"><a aria-hidden="true" class="anchor-heading" href="#sendautomationsignal"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SendAutomationSignal</h3>
+<ul>
+<li>description: Grants permission to send a signal to change the current behavior or status of a specified Automation execution</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="sendcommand"><a aria-hidden="true" class="anchor-heading" href="#sendcommand"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SendCommand</h3>
+<ul>
+<li>description: Grants permission to run commands on one or more specified managed instances</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "instance": {
+        "resource_type": "instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}",
+            "ssm:resourceTag/tag-key"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startassociationsonce"><a aria-hidden="true" class="anchor-heading" href="#startassociationsonce"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartAssociationsOnce</h3>
+<ul>
+<li>description: Grants permission to run a specified association manually</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "association": {
+        "resource_type": "association",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startautomationexecution"><a aria-hidden="true" class="anchor-heading" href="#startautomationexecution"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartAutomationExecution</h3>
+<ul>
+<li>description: Grants permission to initiate the execution of an Automation document</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "automation-definition": {
+        "resource_type": "automation-definition",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startsession"><a aria-hidden="true" class="anchor-heading" href="#startsession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartSession</h3>
+<ul>
+<li>description: Grants permission to initiate a connection to a specified target for a Session Manager session</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "document": {
+        "resource_type": "document",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "ssm:SessionDocumentAccessCheck"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopautomationexecution"><a aria-hidden="true" class="anchor-heading" href="#stopautomationexecution"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopAutomationExecution</h3>
+<ul>
+<li>description: Grants permission to stop a specified Automation execution that is already in progress</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="terminatesession"><a aria-hidden="true" class="anchor-heading" href="#terminatesession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TerminateSession</h3>
+<ul>
+<li>description: Grants permission to permanently end a Session Manager connection to an instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "session": {
+        "resource_type": "session",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateassociation"><a aria-hidden="true" class="anchor-heading" href="#updateassociation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAssociation</h3>
+<ul>
+<li>description: Grants permission to update an association and immediately run the association on the specified targets</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "association": {
+        "resource_type": "association",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "document": {
+        "resource_type": "document",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "instance": {
+        "resource_type": "instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateassociationstatus"><a aria-hidden="true" class="anchor-heading" href="#updateassociationstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAssociationStatus</h3>
+<ul>
+<li>description: Grants permission to update the status of the SSM document associated with a specified instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "instance": {
+        "resource_type": "instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedocument"><a aria-hidden="true" class="anchor-heading" href="#updatedocument"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDocument</h3>
+<ul>
+<li>description: Grants permission to update one or more values for an SSM document</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedocumentdefaultversion"><a aria-hidden="true" class="anchor-heading" href="#updatedocumentdefaultversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDocumentDefaultVersion</h3>
+<ul>
+<li>description: Grants permission to change the default version of an SSM document</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "document": {
+        "resource_type": "document",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateinstanceassociationstatus"><a aria-hidden="true" class="anchor-heading" href="#updateinstanceassociationstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateInstanceAssociationStatus</h3>
+<ul>
+<li>description: Used by SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "association": {
+        "resource_type": "association",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "instance": {
+        "resource_type": "instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateinstanceinformation"><a aria-hidden="true" class="anchor-heading" href="#updateinstanceinformation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateInstanceInformation</h3>
+<ul>
+<li>description: Used by SSM Agent to send a heartbeat signal to the Systems Manager service in the cloud</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatemaintenancewindow"><a aria-hidden="true" class="anchor-heading" href="#updatemaintenancewindow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateMaintenanceWindow</h3>
+<ul>
+<li>description: Grants permission to update a specified maintenance window</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatemaintenancewindowtarget"><a aria-hidden="true" class="anchor-heading" href="#updatemaintenancewindowtarget"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateMaintenanceWindowTarget</h3>
+<ul>
+<li>description: Grants permission to update a specified maintenance window target</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatemaintenancewindowtask"><a aria-hidden="true" class="anchor-heading" href="#updatemaintenancewindowtask"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateMaintenanceWindowTask</h3>
+<ul>
+<li>description: Grants permission to update a specified maintenance window task</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "maintenancewindow": {
+        "resource_type": "maintenancewindow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatemanagedinstancerole"><a aria-hidden="true" class="anchor-heading" href="#updatemanagedinstancerole"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateManagedInstanceRole</h3>
+<ul>
+<li>description: Grants permission to assign or change the IAM role assigned to a specified managed instance</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "managed-instance": {
+        "resource_type": "managed-instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateopsitem"><a aria-hidden="true" class="anchor-heading" href="#updateopsitem"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateOpsItem</h3>
+<ul>
+<li>description: Grants permission to edit or change an OpsItem</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatepatchbaseline"><a aria-hidden="true" class="anchor-heading" href="#updatepatchbaseline"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdatePatchBaseline</h3>
+<ul>
+<li>description: Grants permission to update a specified patch baseline</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "patchbaseline": {
+        "resource_type": "patchbaseline",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateresourcedatasync"><a aria-hidden="true" class="anchor-heading" href="#updateresourcedatasync"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateResourceDataSync</h3>
+<ul>
+<li>description: Grants permission to update a resource data sync</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "resourcedatasync": {
+        "resource_type": "resourcedatasync",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "ssm:SyncType"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateservicesetting"><a aria-hidden="true" class="anchor-heading" href="#updateservicesetting"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateServiceSetting</h3>
+<ul>
+<li>description: Grants permission to update the service setting for an AWS account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "servicesetting": {
+        "resource_type": "servicesetting",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Systems Manager"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

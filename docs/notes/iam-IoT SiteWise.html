@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>IoT SiteWise - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-IoT SiteWise.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-IoT SiteWise.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-IoT SiteWise.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="IoT SiteWise - undefined" />
+  <meta name="twitter:title" content="IoT SiteWise - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">IoT SiteWise</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="IoT SiteWise">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="iot-sitewise"><a aria-hidden="true" class="anchor-heading" href="#iot-sitewise"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>IoT SiteWise</h1>
+<ul>
+<li>prefix: iotsitewise</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="associateassets"><a aria-hidden="true" class="anchor-heading" href="#associateassets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociateAssets</h3>
+<ul>
+<li>description: Grants permission to associate a child asset to a parent asset by a hierarchy</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset": {
+        "resource_type": "asset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchassociateprojectassets"><a aria-hidden="true" class="anchor-heading" href="#batchassociateprojectassets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchAssociateProjectAssets</h3>
+<ul>
+<li>description: Grants permission to associate assets to a project</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchdisassociateprojectassets"><a aria-hidden="true" class="anchor-heading" href="#batchdisassociateprojectassets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchDisassociateProjectAssets</h3>
+<ul>
+<li>description: Grants permission to disassociate assets from a project</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchputassetpropertyvalue"><a aria-hidden="true" class="anchor-heading" href="#batchputassetpropertyvalue"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchPutAssetPropertyValue</h3>
+<ul>
+<li>description: Grants permission to put property values for asset properties</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset": {
+        "resource_type": "asset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createaccesspolicy"><a aria-hidden="true" class="anchor-heading" href="#createaccesspolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAccessPolicy</h3>
+<ul>
+<li>description: Grants permission to create an access policy for a portal or a project</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "portal": {
+        "resource_type": "portal",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "project": {
+        "resource_type": "project",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createasset"><a aria-hidden="true" class="anchor-heading" href="#createasset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAsset</h3>
+<ul>
+<li>description: Grants permission to create an asset from an asset model</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset-model": {
+        "resource_type": "asset-model",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createassetmodel"><a aria-hidden="true" class="anchor-heading" href="#createassetmodel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAssetModel</h3>
+<ul>
+<li>description: Grants permission to create an asset model</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdashboard"><a aria-hidden="true" class="anchor-heading" href="#createdashboard"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDashboard</h3>
+<ul>
+<li>description: Grants permission to create a dashboard in a project</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creategateway"><a aria-hidden="true" class="anchor-heading" href="#creategateway"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateGateway</h3>
+<ul>
+<li>description: Grants permission to create a gateway</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createportal"><a aria-hidden="true" class="anchor-heading" href="#createportal"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreatePortal</h3>
+<ul>
+<li>description: Grants permission to create a portal</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": [
+            "sso:CreateManagedApplicationInstance",
+            "sso:DescribeRegisteredRegions"
+        ]
+    }
+}
+</code></pre>
+<h3 id="createproject"><a aria-hidden="true" class="anchor-heading" href="#createproject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateProject</h3>
+<ul>
+<li>description: Grants permission to create a project in a portal</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "portal": {
+        "resource_type": "portal",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteaccesspolicy"><a aria-hidden="true" class="anchor-heading" href="#deleteaccesspolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAccessPolicy</h3>
+<ul>
+<li>description: Grants permission to delete an access policy</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "access-policy": {
+        "resource_type": "access-policy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteasset"><a aria-hidden="true" class="anchor-heading" href="#deleteasset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAsset</h3>
+<ul>
+<li>description: Grants permission to delete an asset</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset": {
+        "resource_type": "asset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteassetmodel"><a aria-hidden="true" class="anchor-heading" href="#deleteassetmodel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAssetModel</h3>
+<ul>
+<li>description: Grants permission to delete an asset model</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset-model": {
+        "resource_type": "asset-model",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedashboard"><a aria-hidden="true" class="anchor-heading" href="#deletedashboard"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDashboard</h3>
+<ul>
+<li>description: Grants permission to delete a dashboard</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletegateway"><a aria-hidden="true" class="anchor-heading" href="#deletegateway"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteGateway</h3>
+<ul>
+<li>description: Grants permission to delete a gateway</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gateway": {
+        "resource_type": "gateway",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteportal"><a aria-hidden="true" class="anchor-heading" href="#deleteportal"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeletePortal</h3>
+<ul>
+<li>description: Grants permission to delete a portal</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "portal": {
+        "resource_type": "portal",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "sso:DeleteManagedApplicationInstance"
+        ]
+    }
+}
+</code></pre>
+<h3 id="deleteproject"><a aria-hidden="true" class="anchor-heading" href="#deleteproject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteProject</h3>
+<ul>
+<li>description: Grants permission to delete a project</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeaccesspolicy"><a aria-hidden="true" class="anchor-heading" href="#describeaccesspolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAccessPolicy</h3>
+<ul>
+<li>description: Grants permission to describe an access policy</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "access-policy": {
+        "resource_type": "access-policy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeasset"><a aria-hidden="true" class="anchor-heading" href="#describeasset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAsset</h3>
+<ul>
+<li>description: Grants permission to describe an asset</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset": {
+        "resource_type": "asset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeassetmodel"><a aria-hidden="true" class="anchor-heading" href="#describeassetmodel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAssetModel</h3>
+<ul>
+<li>description: Grants permission to describe an asset model</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset-model": {
+        "resource_type": "asset-model",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeassetproperty"><a aria-hidden="true" class="anchor-heading" href="#describeassetproperty"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAssetProperty</h3>
+<ul>
+<li>description: Grants permission to describe an asset property</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset": {
+        "resource_type": "asset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedashboard"><a aria-hidden="true" class="anchor-heading" href="#describedashboard"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDashboard</h3>
+<ul>
+<li>description: Grants permission to describe a dashboard</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describegateway"><a aria-hidden="true" class="anchor-heading" href="#describegateway"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeGateway</h3>
+<ul>
+<li>description: Grants permission to describe a gateway</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gateway": {
+        "resource_type": "gateway",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describegatewaycapabilityconfiguration"><a aria-hidden="true" class="anchor-heading" href="#describegatewaycapabilityconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeGatewayCapabilityConfiguration</h3>
+<ul>
+<li>description: Grants permission to describe a capability configuration for a gateway</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gateway": {
+        "resource_type": "gateway",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeloggingoptions"><a aria-hidden="true" class="anchor-heading" href="#describeloggingoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeLoggingOptions</h3>
+<ul>
+<li>description: Grants permission to describe logging options for the AWS account</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeportal"><a aria-hidden="true" class="anchor-heading" href="#describeportal"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribePortal</h3>
+<ul>
+<li>description: Grants permission to describe a portal</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "portal": {
+        "resource_type": "portal",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeproject"><a aria-hidden="true" class="anchor-heading" href="#describeproject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeProject</h3>
+<ul>
+<li>description: Grants permission to describe a project</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociateassets"><a aria-hidden="true" class="anchor-heading" href="#disassociateassets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociateAssets</h3>
+<ul>
+<li>description: Grants permission to disassociate a child asset from a parent asset by a hierarchy</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset": {
+        "resource_type": "asset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getassetpropertyaggregates"><a aria-hidden="true" class="anchor-heading" href="#getassetpropertyaggregates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAssetPropertyAggregates</h3>
+<ul>
+<li>description: Grants permission to retrieve computed aggregates for an asset property</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset": {
+        "resource_type": "asset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getassetpropertyvalue"><a aria-hidden="true" class="anchor-heading" href="#getassetpropertyvalue"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAssetPropertyValue</h3>
+<ul>
+<li>description: Grants permission to retrieve the latest value for an asset property</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset": {
+        "resource_type": "asset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getassetpropertyvaluehistory"><a aria-hidden="true" class="anchor-heading" href="#getassetpropertyvaluehistory"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAssetPropertyValueHistory</h3>
+<ul>
+<li>description: Grants permission to retrieve the value history for an asset property</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset": {
+        "resource_type": "asset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listaccesspolicies"><a aria-hidden="true" class="anchor-heading" href="#listaccesspolicies"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAccessPolicies</h3>
+<ul>
+<li>description: Grants permission to list all access policies for an identity or a resource</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "portal": {
+        "resource_type": "portal",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "project": {
+        "resource_type": "project",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listassetmodels"><a aria-hidden="true" class="anchor-heading" href="#listassetmodels"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAssetModels</h3>
+<ul>
+<li>description: Grants permission to list all asset models</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listassets"><a aria-hidden="true" class="anchor-heading" href="#listassets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAssets</h3>
+<ul>
+<li>description: Grants permission to list all assets</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset-model": {
+        "resource_type": "asset-model",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listassociatedassets"><a aria-hidden="true" class="anchor-heading" href="#listassociatedassets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAssociatedAssets</h3>
+<ul>
+<li>description: Grants permission to list all assets associated to an asset by a hierarchy</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset": {
+        "resource_type": "asset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdashboards"><a aria-hidden="true" class="anchor-heading" href="#listdashboards"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDashboards</h3>
+<ul>
+<li>description: Grants permission to list all dashboards in a project</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listgateways"><a aria-hidden="true" class="anchor-heading" href="#listgateways"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListGateways</h3>
+<ul>
+<li>description: Grants permission to list all gateways</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listportals"><a aria-hidden="true" class="anchor-heading" href="#listportals"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListPortals</h3>
+<ul>
+<li>description: Grants permission to list all portals</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listprojectassets"><a aria-hidden="true" class="anchor-heading" href="#listprojectassets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListProjectAssets</h3>
+<ul>
+<li>description: Grants permission to list all assets associated with a project</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listprojects"><a aria-hidden="true" class="anchor-heading" href="#listprojects"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListProjects</h3>
+<ul>
+<li>description: Grants permission to list all projects in a portal</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "portal": {
+        "resource_type": "portal",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Grants permission to list all tags for a resource</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "access-policy": {
+        "resource_type": "access-policy",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "asset": {
+        "resource_type": "asset",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "asset-model": {
+        "resource_type": "asset-model",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "gateway": {
+        "resource_type": "gateway",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "portal": {
+        "resource_type": "portal",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "project": {
+        "resource_type": "project",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putloggingoptions"><a aria-hidden="true" class="anchor-heading" href="#putloggingoptions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutLoggingOptions</h3>
+<ul>
+<li>description: Grants permission to set logging options for the AWS account</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Grants permission to tag a resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "access-policy": {
+        "resource_type": "access-policy",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "asset": {
+        "resource_type": "asset",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "asset-model": {
+        "resource_type": "asset-model",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "gateway": {
+        "resource_type": "gateway",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "portal": {
+        "resource_type": "portal",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "project": {
+        "resource_type": "project",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Grants permission to untag a resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "access-policy": {
+        "resource_type": "access-policy",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "asset": {
+        "resource_type": "asset",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "asset-model": {
+        "resource_type": "asset-model",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "gateway": {
+        "resource_type": "gateway",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "portal": {
+        "resource_type": "portal",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "project": {
+        "resource_type": "project",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateaccesspolicy"><a aria-hidden="true" class="anchor-heading" href="#updateaccesspolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAccessPolicy</h3>
+<ul>
+<li>description: Grants permission to update an access policy</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "access-policy": {
+        "resource_type": "access-policy",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateasset"><a aria-hidden="true" class="anchor-heading" href="#updateasset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAsset</h3>
+<ul>
+<li>description: Grants permission to update an asset</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset": {
+        "resource_type": "asset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateassetmodel"><a aria-hidden="true" class="anchor-heading" href="#updateassetmodel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAssetModel</h3>
+<ul>
+<li>description: Grants permission to update an asset model</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset-model": {
+        "resource_type": "asset-model",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateassetproperty"><a aria-hidden="true" class="anchor-heading" href="#updateassetproperty"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAssetProperty</h3>
+<ul>
+<li>description: Grants permission to update an asset property</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "asset": {
+        "resource_type": "asset",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedashboard"><a aria-hidden="true" class="anchor-heading" href="#updatedashboard"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDashboard</h3>
+<ul>
+<li>description: Grants permission to update a dashboard</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "dashboard": {
+        "resource_type": "dashboard",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updategateway"><a aria-hidden="true" class="anchor-heading" href="#updategateway"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateGateway</h3>
+<ul>
+<li>description: Grants permission to update a gateway</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gateway": {
+        "resource_type": "gateway",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updategatewaycapabilityconfiguration"><a aria-hidden="true" class="anchor-heading" href="#updategatewaycapabilityconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateGatewayCapabilityConfiguration</h3>
+<ul>
+<li>description: Grants permission to update a capability configuration for a gateway</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gateway": {
+        "resource_type": "gateway",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateportal"><a aria-hidden="true" class="anchor-heading" href="#updateportal"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdatePortal</h3>
+<ul>
+<li>description: Grants permission to update a portal</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "portal": {
+        "resource_type": "portal",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateproject"><a aria-hidden="true" class="anchor-heading" href="#updateproject"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateProject</h3>
+<ul>
+<li>description: Grants permission to update a project</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "project": {
+        "resource_type": "project",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-IoT SiteWise"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

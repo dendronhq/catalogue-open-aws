@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Lambda - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/lambda.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/lambda.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/lambda.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Lambda - undefined" />
+  <meta name="twitter:title" content="Lambda - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/1f759d8c-cca7-4fc4-9aa2-6dbf6e596abf.html">Services</a></li><li class="breadcrumb-nav-list-item">Lambda</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Lambda">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <p><img src="/assets/images/AWS-Lambda_en.jpg"></p>
+<blockquote>
+<p>Image from <a href="https://www.awsgeek.com/AWS-Lambda/">@awsgeek</a></p>
+</blockquote>
+<h1 id="lambda"><a aria-hidden="true" class="anchor-heading" href="#lambda"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Lambda</h1>
+<h3 id="lambda-basics"><a aria-hidden="true" class="anchor-heading" href="#lambda-basics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Lambda Basics</h3>
+<ul>
+<li>📒 <a href="https://aws.amazon.com/lambda/">Homepage</a> ∙ <a href="http://docs.aws.amazon.com/lambda/latest/dg/">Developer guide</a> ∙ <a href="https://aws.amazon.com/lambda/faqs/">FAQ</a> ∙ <a href="https://aws.amazon.com/lambda/pricing/">Pricing</a></li>
+<li><strong>Lambda</strong> is AWS' serverless compute offering, allowing users to define Lambda functions in a selection of runtimes that can be invoked via a variety of triggers, including SNS notifications and API Gateway invocations. Lambda is the key service that enables <a href="https://aws.amazon.com/lambda/serverless-architectures-learn-more/">'serverless' architecture on AWS</a>, alongside AWS API Gateway, AWS Batch, and AWS DynamoDB.</li>
+</ul>
+<h3 id="lambda-tips"><a aria-hidden="true" class="anchor-heading" href="#lambda-tips"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Lambda Tips</h3>
+<ul>
+<li>The idea behind 'serverless' is that users don't manage provisioning, scaling, or maintenance of the physical machines that host their application code. With Lambda, the machine that actually executes the user-defined function is abstracted as a <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">'container'</a>. When defining a Lambda function, users are able to declare the amount of memory available to the function, which directly affects the physical hardware specification of the Lambda container.</li>
+<li>Changing the amount of memory available to your Lambda functions also affects the amount of <a href="https://aws.amazon.com/lambda/faqs/">CPU power</a> available to it.</li>
+<li>While AWS does not offer hard guarantees around container reuse, in general it can be expected that an unaltered Lambda function will reuse a warm (previously used) container if called shortly after another invocation. Users can use this as a way to optimize their functions by smartly caching application data on initialization.</li>
+<li>A Lambda that hasn't been invoked in some time may not have any warm containers left. In this case, the Lambda system will have to load and initialize the Lambda code in a 'cold start' scenario, which can add significant latency to Lambda invocations.  Lambda cold start performance <a href="https://levelup.gitconnected.com/aws-lambda-cold-start-language-comparisons-2019-edition-%EF%B8%8F-1946d32a0244">has improved significantly over the 2018-2019 timeframe</a> and is now typically in the range of 200-500 ms for a simple function depending on the language runtime.  </li>
+<li>Lambda functions running insides of VPCs have also seen <a href="https://aws.amazon.com/blogs/compute/announcing-improved-vpc-networking-for-aws-lambda-functions/">recent improvements</a> to cold start times.  Previously these VPC-hosted functions would have cold starts of ~15 seconds; now those same functions cold start in &#x3C; 1 second.   </li>
+<li>There are a few strategies to avoiding or mitigating cold starts.  <a href="https://aws.amazon.com/blogs/aws/new-provisioned-concurrency-for-lambda-functions/">Provisioned concurrency</a> was announced at re:invent 2019 and is an effective means to eliminating cold starts. Other techniques include keeping containers warm by periodic triggering and favoring lightweight runtimes such as Node as opposed to Java.</li>
+<li>Lambda is integrated with AWS CloudWatch and provides a logger at runtime that publishes CloudWatch events.</li>
+<li>Lambda offers out-of-the-box opt-in support for AWS X-Ray. X-Ray can help users diagnose Lambda issues by offering in-depth analysis of their Lambda's execution flow. This is especially useful when investigating issues calling other AWS services as X-Ray gives you a detailed and easy-to-parse <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html#lambda-service-map">visualization of the call graph</a>.</li>
+<li>Using <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">timed CloudWatch events</a>, users can use Lambda to run periodic jobs in a cron-like manner.</li>
+<li>Events sent to Lambda that fail processing can be managed using a <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queue (DLQ) in SQS.</a></li>
+<li>More on serverless:
+<ul>
+<li><a href="http://martinfowler.com/articles/serverless.html">Martin Fowler's thoughts.</a></li>
+<li><a href="https://github.com/awslabs/serverless-application-model">AWS Serverless Application Model (SAM)</a>, a simplification built on top of CloudFormation that can help to define, manage, and deploy serverless applications using Lambda.</li>
+<li><a href="https://github.com/serverless/serverless">Serverless</a>, one of the most popular frameworks for building serverless applications using AWS Lambda and other serverless compute options.</li>
+<li><a href="https://github.com/anaibol/awesome-serverless#frameworks">Other helpful frameworks.</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="lambda-alternatives-and-lock-in"><a aria-hidden="true" class="anchor-heading" href="#lambda-alternatives-and-lock-in"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Lambda Alternatives and Lock-in</h3>
+<ul>
+<li>🚪Other clouds offer similar services with different names, including <a href="https://cloud.google.com/functions/">Google Cloud Functions</a>, <a href="https://azure.microsoft.com/en-us/services/functions/">Azure Functions</a>, and <a href="http://www.ibm.com/cloud-computing/bluemix/openwhisk/">IBM OpenWhisk</a>. Also if you are running Kubernetes another Lambda alternative is <a href="https://github.com/openfaas/faas">OpenFaaS</a></li>
+</ul>
+<h3 id="lambda-gotchas-and-limitations"><a aria-hidden="true" class="anchor-heading" href="#lambda-gotchas-and-limitations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Lambda Gotchas and Limitations</h3>
+<ul>
+<li>🔸Testing Lambdas, locally and remotely, can be a challenge. Several tools are available to make this easier, including the officially supported <a href="https://github.com/awslabs/aws-sam-local">SAM Local</a>.</li>
+<li>🔸Managing lots of Lambda functions is a workflow challenge, and tooling to manage Lambda deployments is still immature.</li>
+<li>🔸AWS’ official workflow around managing function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versioning and aliases</a> is painful. One option is to avoid Lambda versioning by abstracting your deployment workflow outside of Lambda. One way this can be accomplished is by deploying your application in successive stages, with a distinct AWS account per stage, where each account only needs to be aware of the latest version, and rollbacks and updates are handled by external tooling.</li>
+<li>🔸As of Oct 2017, the minimum charge for a Lambda invocation is 100ms, so there is no cost-benefit to reducing your run time below that.</li>
+<li>🔸While adding/removing S3 buckets as triggers for Lambda function, this error may occur: "There was an error creating the trigger: Configuration is ambiguously defined. Cannot have overlapping suffixes in two rules if the prefixes are overlapping for the same event type." In this case, you can manually remove the Lambda event in the "Events" tab in the "Properties" section of the S3 bucket.</li>
+<li>🔸Managing the size of your deployment artifact can be a challenge, especially if using Java. Options to mitigate this include <a href="https://www.guardsquare.com/en/proguard">proguard</a> and loading dependencies at runtime into /tmp.</li>
+<li>When using DynamoDB as a trigger for your Lambda functions, this error may occur: "PROBLEM: internal Lambda error. Please contact Lambda customer support." This usually just means that Lambda can't detect anything in the DynamoDB stream within the last 48 hours. If the issue persists, deleting and recreating your trigger may help.</li>
+<li>🔸If your lambda needs access to resources in a VPC (for example ElastiCache or RDS), it will need to be deployed within it. This will increase cold-start times as an Elastic Network Interface (ENI) will have to be registered within the VPC for each concurrent function. AWS also has a relatively low initial limit (350) on the number ENI's that can be created within an VPC, however this can be increased to the 1000s if a good case is made to AWS support.</li>
+<li>🔸 Lambda has several <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html"><strong>resource limits</strong></a> as of 2017-06:
+<ul>
+<li>A <strong>6MB</strong> request or response payload size.</li>
+<li>A <strong>50 MB</strong> limit on the compressed .zip/.jar file deployment package size.</li>
+<li>A <strong>250 MB</strong> limit on the code/dependencies in the package before compression.</li>
+<li>A <strong>500 MB</strong> limit on local storage in /tmp.</li>
+</ul>
+</li>
+</ul>
+<h3 id="lambda-code-samples"><a aria-hidden="true" class="anchor-heading" href="#lambda-code-samples"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Lambda Code Samples</h3>
+<ul>
+<li><a href="https://github.com/awslabs/aws-lambda-fanout">Fan-out</a> is an example of using Lambda to “fan-out” or copy data from one service, in this case Kinesis, to multiple other AWS data services. Destinations for fan-out data in the sample include IoT, SQS and more.</li>
+<li>This <a href="https://github.com/awslabs/aws-limit-monitor">AWS limit monitor using Lambdas</a> shows use of multiple Lambdas for monitoring.</li>
+<li>This <a href="https://github.com/awslabs/lambda-ecs-worker-pattern">Lambda ECS Worker Pattern</a> shows use of Lambda in a workflow where data from S3 is picked up by the Lambda, pushed to a queue, then sent to ECS for more processing.</li>
+<li>The <a href="https://github.com/awslabs/api-gateway-secure-pet-store">Secure Pet Store</a> is a sample Java application which uses Lambda and API Gateway with Cognito (for user identity).</li>
+<li><a href="https://github.com/unixorn/aws-lambda-list">aws-lambda-list</a> is a list of "hopefully useful AWS lambdas and lambda-related resources". Quite a few code samples here; as usual, not guaranteed tested. Caveat Emptor.</li>
+</ul>
+<p>🚧 <a href="CONTRIBUTING.md"><em>Please help expand this incomplete section.</em></a></p><span id="navId" data="lambda"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

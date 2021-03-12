@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>RoboMaker - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-RoboMaker.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-RoboMaker.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-RoboMaker.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="RoboMaker - undefined" />
+  <meta name="twitter:title" content="RoboMaker - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">RoboMaker</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="RoboMaker">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="robomaker"><a aria-hidden="true" class="anchor-heading" href="#robomaker"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RoboMaker</h1>
+<ul>
+<li>prefix: robomaker</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="batchdeleteworlds"><a aria-hidden="true" class="anchor-heading" href="#batchdeleteworlds"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchDeleteWorlds</h3>
+<ul>
+<li>description: Delete one or more worlds in a batch operation</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchdescribesimulationjob"><a aria-hidden="true" class="anchor-heading" href="#batchdescribesimulationjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchDescribeSimulationJob</h3>
+<ul>
+<li>description: Describe multiple simulation jobs</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="canceldeploymentjob"><a aria-hidden="true" class="anchor-heading" href="#canceldeploymentjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelDeploymentJob</h3>
+<ul>
+<li>description: Cancel a deployment job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deploymentJob": {
+        "resource_type": "deploymentJob",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelsimulationjob"><a aria-hidden="true" class="anchor-heading" href="#cancelsimulationjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelSimulationJob</h3>
+<ul>
+<li>description: Cancel a simulation job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "simulationJob": {
+        "resource_type": "simulationJob",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelsimulationjobbatch"><a aria-hidden="true" class="anchor-heading" href="#cancelsimulationjobbatch"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelSimulationJobBatch</h3>
+<ul>
+<li>description: Cancel a simulation job batch</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "simulationJobBatch": {
+        "resource_type": "simulationJobBatch",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelworldexportjob"><a aria-hidden="true" class="anchor-heading" href="#cancelworldexportjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelWorldExportJob</h3>
+<ul>
+<li>description: Cancel a world export job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "worldExportJob": {
+        "resource_type": "worldExportJob",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelworldgenerationjob"><a aria-hidden="true" class="anchor-heading" href="#cancelworldgenerationjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelWorldGenerationJob</h3>
+<ul>
+<li>description: Cancel a world generation job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "worldGenerationJob": {
+        "resource_type": "worldGenerationJob",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdeploymentjob"><a aria-hidden="true" class="anchor-heading" href="#createdeploymentjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDeploymentJob</h3>
+<ul>
+<li>description: Create a deployment job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": [
+            "iam:CreateServiceLinkedRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="createfleet"><a aria-hidden="true" class="anchor-heading" href="#createfleet"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateFleet</h3>
+<ul>
+<li>description: Create a deployment fleet that represents a logical group of robots running the same robot application</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createrobot"><a aria-hidden="true" class="anchor-heading" href="#createrobot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRobot</h3>
+<ul>
+<li>description: Create a robot that can be registered to a fleet</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": [
+            "iam:CreateServiceLinkedRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="createrobotapplication"><a aria-hidden="true" class="anchor-heading" href="#createrobotapplication"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRobotApplication</h3>
+<ul>
+<li>description: Create a robot application</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createrobotapplicationversion"><a aria-hidden="true" class="anchor-heading" href="#createrobotapplicationversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRobotApplicationVersion</h3>
+<ul>
+<li>description: Create a snapshot of a robot application</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "robotApplication": {
+        "resource_type": "robotApplication",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "s3:GetObject"
+        ]
+    }
+}
+</code></pre>
+<h3 id="createsimulationapplication"><a aria-hidden="true" class="anchor-heading" href="#createsimulationapplication"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSimulationApplication</h3>
+<ul>
+<li>description: Create a simulation application</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsimulationapplicationversion"><a aria-hidden="true" class="anchor-heading" href="#createsimulationapplicationversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSimulationApplicationVersion</h3>
+<ul>
+<li>description: Create a snapshot of a simulation application</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "simulationApplication": {
+        "resource_type": "simulationApplication",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "s3:GetObject"
+        ]
+    }
+}
+</code></pre>
+<h3 id="createsimulationjob"><a aria-hidden="true" class="anchor-heading" href="#createsimulationjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSimulationJob</h3>
+<ul>
+<li>description: Create a simulation job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": [
+            "iam:CreateServiceLinkedRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="createworldexportjob"><a aria-hidden="true" class="anchor-heading" href="#createworldexportjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateWorldExportJob</h3>
+<ul>
+<li>description: Create a world export job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "world": {
+        "resource_type": "world",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createworldgenerationjob"><a aria-hidden="true" class="anchor-heading" href="#createworldgenerationjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateWorldGenerationJob</h3>
+<ul>
+<li>description: Create a world generation job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "worldTemplate": {
+        "resource_type": "worldTemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createworldtemplate"><a aria-hidden="true" class="anchor-heading" href="#createworldtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateWorldTemplate</h3>
+<ul>
+<li>description: Create a world template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletefleet"><a aria-hidden="true" class="anchor-heading" href="#deletefleet"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteFleet</h3>
+<ul>
+<li>description: Delete a deployment fleet</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deploymentFleet": {
+        "resource_type": "deploymentFleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleterobot"><a aria-hidden="true" class="anchor-heading" href="#deleterobot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRobot</h3>
+<ul>
+<li>description: Delete a robot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "robot": {
+        "resource_type": "robot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleterobotapplication"><a aria-hidden="true" class="anchor-heading" href="#deleterobotapplication"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRobotApplication</h3>
+<ul>
+<li>description: Delete a robot application</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "robotApplication": {
+        "resource_type": "robotApplication",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesimulationapplication"><a aria-hidden="true" class="anchor-heading" href="#deletesimulationapplication"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSimulationApplication</h3>
+<ul>
+<li>description: Delete a simulation application</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "simulationApplication": {
+        "resource_type": "simulationApplication",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteworldtemplate"><a aria-hidden="true" class="anchor-heading" href="#deleteworldtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteWorldTemplate</h3>
+<ul>
+<li>description: Delete a world template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "worldTemplate": {
+        "resource_type": "worldTemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deregisterrobot"><a aria-hidden="true" class="anchor-heading" href="#deregisterrobot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeregisterRobot</h3>
+<ul>
+<li>description: Deregister a robot from a fleet</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deploymentFleet": {
+        "resource_type": "deploymentFleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "robot": {
+        "resource_type": "robot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describedeploymentjob"><a aria-hidden="true" class="anchor-heading" href="#describedeploymentjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeDeploymentJob</h3>
+<ul>
+<li>description: Describe a deployment job</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deploymentJob": {
+        "resource_type": "deploymentJob",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describefleet"><a aria-hidden="true" class="anchor-heading" href="#describefleet"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeFleet</h3>
+<ul>
+<li>description: Describe a deployment fleet</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deploymentFleet": {
+        "resource_type": "deploymentFleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describerobot"><a aria-hidden="true" class="anchor-heading" href="#describerobot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeRobot</h3>
+<ul>
+<li>description: Describe a robot</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "robot": {
+        "resource_type": "robot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describerobotapplication"><a aria-hidden="true" class="anchor-heading" href="#describerobotapplication"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeRobotApplication</h3>
+<ul>
+<li>description: Describe a robot application</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "robotApplication": {
+        "resource_type": "robotApplication",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describesimulationapplication"><a aria-hidden="true" class="anchor-heading" href="#describesimulationapplication"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeSimulationApplication</h3>
+<ul>
+<li>description: Describe a simulation application</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "simulationApplication": {
+        "resource_type": "simulationApplication",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describesimulationjob"><a aria-hidden="true" class="anchor-heading" href="#describesimulationjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeSimulationJob</h3>
+<ul>
+<li>description: Describe a simulation job</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "simulationJob": {
+        "resource_type": "simulationJob",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describesimulationjobbatch"><a aria-hidden="true" class="anchor-heading" href="#describesimulationjobbatch"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeSimulationJobBatch</h3>
+<ul>
+<li>description: Describe a simulation job batch</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "simulationJobBatch": {
+        "resource_type": "simulationJobBatch",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeworld"><a aria-hidden="true" class="anchor-heading" href="#describeworld"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeWorld</h3>
+<ul>
+<li>description: Describe a world</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "world": {
+        "resource_type": "world",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeworldexportjob"><a aria-hidden="true" class="anchor-heading" href="#describeworldexportjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeWorldExportJob</h3>
+<ul>
+<li>description: Describe a world export job</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "worldExportJob": {
+        "resource_type": "worldExportJob",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeworldgenerationjob"><a aria-hidden="true" class="anchor-heading" href="#describeworldgenerationjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeWorldGenerationJob</h3>
+<ul>
+<li>description: Describe a world generation job</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "worldGenerationJob": {
+        "resource_type": "worldGenerationJob",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeworldtemplate"><a aria-hidden="true" class="anchor-heading" href="#describeworldtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeWorldTemplate</h3>
+<ul>
+<li>description: Describe a world template</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "worldTemplate": {
+        "resource_type": "worldTemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getworldtemplatebody"><a aria-hidden="true" class="anchor-heading" href="#getworldtemplatebody"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetWorldTemplateBody</h3>
+<ul>
+<li>description: Get the body of a world template</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "worldTemplate": {
+        "resource_type": "worldTemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdeploymentjobs"><a aria-hidden="true" class="anchor-heading" href="#listdeploymentjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDeploymentJobs</h3>
+<ul>
+<li>description: List deployment jobs</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listfleets"><a aria-hidden="true" class="anchor-heading" href="#listfleets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListFleets</h3>
+<ul>
+<li>description: List fleets</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listrobotapplications"><a aria-hidden="true" class="anchor-heading" href="#listrobotapplications"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRobotApplications</h3>
+<ul>
+<li>description: List robot applications</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listrobots"><a aria-hidden="true" class="anchor-heading" href="#listrobots"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRobots</h3>
+<ul>
+<li>description: List robots</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsimulationapplications"><a aria-hidden="true" class="anchor-heading" href="#listsimulationapplications"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSimulationApplications</h3>
+<ul>
+<li>description: List simulation applications</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsimulationjobbatches"><a aria-hidden="true" class="anchor-heading" href="#listsimulationjobbatches"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSimulationJobBatches</h3>
+<ul>
+<li>description: List simulation job batches</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsimulationjobs"><a aria-hidden="true" class="anchor-heading" href="#listsimulationjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSimulationJobs</h3>
+<ul>
+<li>description: List simulation jobs</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsupportedavailabilityzones"><a aria-hidden="true" class="anchor-heading" href="#listsupportedavailabilityzones"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSupportedAvailabilityZones</h3>
+<ul>
+<li>description: Lists supported availability zones</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: List tags for a RoboMaker resource.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deploymentFleet": {
+        "resource_type": "deploymentFleet",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "deploymentJob": {
+        "resource_type": "deploymentJob",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "robot": {
+        "resource_type": "robot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "robotApplication": {
+        "resource_type": "robotApplication",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "simulationApplication": {
+        "resource_type": "simulationApplication",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "simulationJob": {
+        "resource_type": "simulationJob",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "simulationJobBatch": {
+        "resource_type": "simulationJobBatch",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "world": {
+        "resource_type": "world",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "worldExportJob": {
+        "resource_type": "worldExportJob",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "worldGenerationJob": {
+        "resource_type": "worldGenerationJob",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "worldTemplate": {
+        "resource_type": "worldTemplate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listworldexportjobs"><a aria-hidden="true" class="anchor-heading" href="#listworldexportjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListWorldExportJobs</h3>
+<ul>
+<li>description: List world export jobs</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listworldgenerationjobs"><a aria-hidden="true" class="anchor-heading" href="#listworldgenerationjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListWorldGenerationJobs</h3>
+<ul>
+<li>description: List world generation jobs</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listworldtemplates"><a aria-hidden="true" class="anchor-heading" href="#listworldtemplates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListWorldTemplates</h3>
+<ul>
+<li>description: List world templates</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listworlds"><a aria-hidden="true" class="anchor-heading" href="#listworlds"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListWorlds</h3>
+<ul>
+<li>description: List worlds</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="registerrobot"><a aria-hidden="true" class="anchor-heading" href="#registerrobot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegisterRobot</h3>
+<ul>
+<li>description: Register a robot to a fleet</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deploymentFleet": {
+        "resource_type": "deploymentFleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "robot": {
+        "resource_type": "robot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="restartsimulationjob"><a aria-hidden="true" class="anchor-heading" href="#restartsimulationjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RestartSimulationJob</h3>
+<ul>
+<li>description: Restart a running simulation job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "simulationJob": {
+        "resource_type": "simulationJob",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startsimulationjobbatch"><a aria-hidden="true" class="anchor-heading" href="#startsimulationjobbatch"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartSimulationJobBatch</h3>
+<ul>
+<li>description: Create a simulation job batch</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": [
+            "iam:CreateServiceLinkedRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="syncdeploymentjob"><a aria-hidden="true" class="anchor-heading" href="#syncdeploymentjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SyncDeploymentJob</h3>
+<ul>
+<li>description: Ensures the most recently deployed robot application is deployed to all robots in the fleet</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deploymentFleet": {
+        "resource_type": "deploymentFleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "iam:CreateServiceLinkedRole"
+        ]
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Add tags to a RoboMaker resource</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deploymentFleet": {
+        "resource_type": "deploymentFleet",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "deploymentJob": {
+        "resource_type": "deploymentJob",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "robot": {
+        "resource_type": "robot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "robotApplication": {
+        "resource_type": "robotApplication",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "simulationApplication": {
+        "resource_type": "simulationApplication",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "simulationJob": {
+        "resource_type": "simulationJob",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "simulationJobBatch": {
+        "resource_type": "simulationJobBatch",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "world": {
+        "resource_type": "world",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "worldExportJob": {
+        "resource_type": "worldExportJob",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "worldGenerationJob": {
+        "resource_type": "worldGenerationJob",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "worldTemplate": {
+        "resource_type": "worldTemplate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Remove tags from a RoboMaker resource</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "deploymentFleet": {
+        "resource_type": "deploymentFleet",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "deploymentJob": {
+        "resource_type": "deploymentJob",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "robot": {
+        "resource_type": "robot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "robotApplication": {
+        "resource_type": "robotApplication",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "simulationApplication": {
+        "resource_type": "simulationApplication",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "simulationJob": {
+        "resource_type": "simulationJob",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "simulationJobBatch": {
+        "resource_type": "simulationJobBatch",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "world": {
+        "resource_type": "world",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "worldExportJob": {
+        "resource_type": "worldExportJob",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "worldGenerationJob": {
+        "resource_type": "worldGenerationJob",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "worldTemplate": {
+        "resource_type": "worldTemplate",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updaterobotapplication"><a aria-hidden="true" class="anchor-heading" href="#updaterobotapplication"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRobotApplication</h3>
+<ul>
+<li>description: Update a robot application</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "robotApplication": {
+        "resource_type": "robotApplication",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updaterobotdeployment"><a aria-hidden="true" class="anchor-heading" href="#updaterobotdeployment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRobotDeployment</h3>
+<ul>
+<li>description: Report the deployment status for an individual robot</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatesimulationapplication"><a aria-hidden="true" class="anchor-heading" href="#updatesimulationapplication"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateSimulationApplication</h3>
+<ul>
+<li>description: Update a simulation application</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "simulationApplication": {
+        "resource_type": "simulationApplication",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateworldtemplate"><a aria-hidden="true" class="anchor-heading" href="#updateworldtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateWorldTemplate</h3>
+<ul>
+<li>description: Update a world template</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "worldTemplate": {
+        "resource_type": "worldTemplate",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-RoboMaker"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

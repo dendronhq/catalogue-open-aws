@@ -1,10 +1,19 @@
+version: 1
+vaults:
+    -
+        fsPath: vault
 site:
     siteHierarchies:
         - root
     siteRootDir: docs
+    siteUrl: "https://aws.dendron.so"
     usePrettyRefs: true
+    duplicateNoteBehavior:
+        action: useVault
+        payload:
+            - vault
     config:
-      iam: 
+      iam:
           customFrontmatter: [
             {
               key: "toc",

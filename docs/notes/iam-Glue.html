@@ -1,0 +1,2571 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Glue - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Glue.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Glue.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Glue.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Glue - undefined" />
+  <meta name="twitter:title" content="Glue - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Glue</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Glue">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="glue"><a aria-hidden="true" class="anchor-heading" href="#glue"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Glue</h1>
+<ul>
+<li>prefix: glue</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="batchcreatepartition"><a aria-hidden="true" class="anchor-heading" href="#batchcreatepartition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchCreatePartition</h3>
+<ul>
+<li>description: Grants permission to create one or more partitions</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchdeleteconnection"><a aria-hidden="true" class="anchor-heading" href="#batchdeleteconnection"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchDeleteConnection</h3>
+<ul>
+<li>description: Grants permission to delete one or more connections</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "connection": {
+        "resource_type": "connection",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchdeletepartition"><a aria-hidden="true" class="anchor-heading" href="#batchdeletepartition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchDeletePartition</h3>
+<ul>
+<li>description: Grants permission to delete one or more partitions</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchdeletetable"><a aria-hidden="true" class="anchor-heading" href="#batchdeletetable"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchDeleteTable</h3>
+<ul>
+<li>description: Grants permission to delete one or more tables</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchdeletetableversion"><a aria-hidden="true" class="anchor-heading" href="#batchdeletetableversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchDeleteTableVersion</h3>
+<ul>
+<li>description: Grants permission to delete one or more versions of a table</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "tableversion": {
+        "resource_type": "tableversion",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchgetcrawlers"><a aria-hidden="true" class="anchor-heading" href="#batchgetcrawlers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchGetCrawlers</h3>
+<ul>
+<li>description: Grants permission to retrieve one or more crawlers</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchgetdevendpoints"><a aria-hidden="true" class="anchor-heading" href="#batchgetdevendpoints"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchGetDevEndpoints</h3>
+<ul>
+<li>description: Grants permission to retrieve one or more development endpoints</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchgetjobs"><a aria-hidden="true" class="anchor-heading" href="#batchgetjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchGetJobs</h3>
+<ul>
+<li>description: Grants permission to retrieve one or more jobs</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchgetpartition"><a aria-hidden="true" class="anchor-heading" href="#batchgetpartition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchGetPartition</h3>
+<ul>
+<li>description: Grants permission to retrieve one or more partitions</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchgettriggers"><a aria-hidden="true" class="anchor-heading" href="#batchgettriggers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchGetTriggers</h3>
+<ul>
+<li>description: Grants permission to retrieve one or more triggers</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchgetworkflows"><a aria-hidden="true" class="anchor-heading" href="#batchgetworkflows"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchGetWorkflows</h3>
+<ul>
+<li>description: Grants permission to retrieve one or more workflows</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="batchstopjobrun"><a aria-hidden="true" class="anchor-heading" href="#batchstopjobrun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>BatchStopJobRun</h3>
+<ul>
+<li>description: Grants permission to stop one or more job runs for a job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="cancelmltaskrun"><a aria-hidden="true" class="anchor-heading" href="#cancelmltaskrun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CancelMLTaskRun</h3>
+<ul>
+<li>description: Grants permission to stop a running ML Task Run</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mlTransform": {
+        "resource_type": "mlTransform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createclassifier"><a aria-hidden="true" class="anchor-heading" href="#createclassifier"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateClassifier</h3>
+<ul>
+<li>description: Grants permission to create a classifier</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createconnection"><a aria-hidden="true" class="anchor-heading" href="#createconnection"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateConnection</h3>
+<ul>
+<li>description: Grants permission to create a connection</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "connection": {
+        "resource_type": "connection",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcrawler"><a aria-hidden="true" class="anchor-heading" href="#createcrawler"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateCrawler</h3>
+<ul>
+<li>description: Grants permission to create a crawler</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdatabase"><a aria-hidden="true" class="anchor-heading" href="#createdatabase"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDatabase</h3>
+<ul>
+<li>description: Grants permission to create a database</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdevendpoint"><a aria-hidden="true" class="anchor-heading" href="#createdevendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDevEndpoint</h3>
+<ul>
+<li>description: Grants permission to create a development endpoint</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createjob"><a aria-hidden="true" class="anchor-heading" href="#createjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateJob</h3>
+<ul>
+<li>description: Grants permission to create a job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createmltransform"><a aria-hidden="true" class="anchor-heading" href="#createmltransform"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateMLTransform</h3>
+<ul>
+<li>description: Grants permission to create an ML Transform</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createpartition"><a aria-hidden="true" class="anchor-heading" href="#createpartition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreatePartition</h3>
+<ul>
+<li>description: Grants permission to create a partition</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createscript"><a aria-hidden="true" class="anchor-heading" href="#createscript"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateScript</h3>
+<ul>
+<li>description: Grants permission to create a script</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsecurityconfiguration"><a aria-hidden="true" class="anchor-heading" href="#createsecurityconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSecurityConfiguration</h3>
+<ul>
+<li>description: Grants permission to create a security configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtable"><a aria-hidden="true" class="anchor-heading" href="#createtable"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTable</h3>
+<ul>
+<li>description: Grants permission to create a table</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createtrigger"><a aria-hidden="true" class="anchor-heading" href="#createtrigger"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateTrigger</h3>
+<ul>
+<li>description: Grants permission to create a trigger</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createuserdefinedfunction"><a aria-hidden="true" class="anchor-heading" href="#createuserdefinedfunction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateUserDefinedFunction</h3>
+<ul>
+<li>description: Grants permission to create a function definition</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "userdefinedfunction": {
+        "resource_type": "userdefinedfunction",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createworkflow"><a aria-hidden="true" class="anchor-heading" href="#createworkflow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateWorkflow</h3>
+<ul>
+<li>description: Grants permission to create a workflow</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteclassifier"><a aria-hidden="true" class="anchor-heading" href="#deleteclassifier"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteClassifier</h3>
+<ul>
+<li>description: Grants permission to delete a classifier</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteconnection"><a aria-hidden="true" class="anchor-heading" href="#deleteconnection"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteConnection</h3>
+<ul>
+<li>description: Grants permission to delete a connection</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "connection": {
+        "resource_type": "connection",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletecrawler"><a aria-hidden="true" class="anchor-heading" href="#deletecrawler"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteCrawler</h3>
+<ul>
+<li>description: Grants permission to delete a crawler</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedatabase"><a aria-hidden="true" class="anchor-heading" href="#deletedatabase"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDatabase</h3>
+<ul>
+<li>description: Grants permission to delete a database</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedevendpoint"><a aria-hidden="true" class="anchor-heading" href="#deletedevendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDevEndpoint</h3>
+<ul>
+<li>description: Grants permission to delete a development endpoint</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletejob"><a aria-hidden="true" class="anchor-heading" href="#deletejob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteJob</h3>
+<ul>
+<li>description: Grants permission to delete a job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletemltransform"><a aria-hidden="true" class="anchor-heading" href="#deletemltransform"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteMLTransform</h3>
+<ul>
+<li>description: Grants permission to delete an ML Transform</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mlTransform": {
+        "resource_type": "mlTransform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletepartition"><a aria-hidden="true" class="anchor-heading" href="#deletepartition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeletePartition</h3>
+<ul>
+<li>description: Grants permission to delete a partition</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteresourcepolicy"><a aria-hidden="true" class="anchor-heading" href="#deleteresourcepolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteResourcePolicy</h3>
+<ul>
+<li>description: Grants permission to delete a resource policy</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesecurityconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deletesecurityconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSecurityConfiguration</h3>
+<ul>
+<li>description: Grants permission to delete a security configuration</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetable"><a aria-hidden="true" class="anchor-heading" href="#deletetable"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTable</h3>
+<ul>
+<li>description: Grants permission to delete a table</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetableversion"><a aria-hidden="true" class="anchor-heading" href="#deletetableversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTableVersion</h3>
+<ul>
+<li>description: Grants permission to delete a version of a table</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "tableversion": {
+        "resource_type": "tableversion",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletetrigger"><a aria-hidden="true" class="anchor-heading" href="#deletetrigger"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteTrigger</h3>
+<ul>
+<li>description: Grants permission to delete a trigger</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteuserdefinedfunction"><a aria-hidden="true" class="anchor-heading" href="#deleteuserdefinedfunction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteUserDefinedFunction</h3>
+<ul>
+<li>description: Grants permission to delete a function definition</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "userdefinedfunction": {
+        "resource_type": "userdefinedfunction",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteworkflow"><a aria-hidden="true" class="anchor-heading" href="#deleteworkflow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteWorkflow</h3>
+<ul>
+<li>description: Grants permission to delete a workflow</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcatalogimportstatus"><a aria-hidden="true" class="anchor-heading" href="#getcatalogimportstatus"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCatalogImportStatus</h3>
+<ul>
+<li>description: Grants permission to retrieve the catalog import status</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getclassifier"><a aria-hidden="true" class="anchor-heading" href="#getclassifier"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetClassifier</h3>
+<ul>
+<li>description: Grants permission to retrieve a classifier</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getclassifiers"><a aria-hidden="true" class="anchor-heading" href="#getclassifiers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetClassifiers</h3>
+<ul>
+<li>description: Grants permission to list all classifiers</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getconnection"><a aria-hidden="true" class="anchor-heading" href="#getconnection"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetConnection</h3>
+<ul>
+<li>description: Grants permission to retrieve a connection</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "connection": {
+        "resource_type": "connection",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getconnections"><a aria-hidden="true" class="anchor-heading" href="#getconnections"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetConnections</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of connections</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "connection": {
+        "resource_type": "connection",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcrawler"><a aria-hidden="true" class="anchor-heading" href="#getcrawler"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCrawler</h3>
+<ul>
+<li>description: Grants permission to retrieve a crawler</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcrawlermetrics"><a aria-hidden="true" class="anchor-heading" href="#getcrawlermetrics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCrawlerMetrics</h3>
+<ul>
+<li>description: Grants permission to retrieve metrics about crawlers</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcrawlers"><a aria-hidden="true" class="anchor-heading" href="#getcrawlers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCrawlers</h3>
+<ul>
+<li>description: Grants permission to retrieve all crawlers</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdatacatalogencryptionsettings"><a aria-hidden="true" class="anchor-heading" href="#getdatacatalogencryptionsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDataCatalogEncryptionSettings</h3>
+<ul>
+<li>description: Grants permission to retrieve catalog encryption settings</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdatabase"><a aria-hidden="true" class="anchor-heading" href="#getdatabase"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDatabase</h3>
+<ul>
+<li>description: Grants permission to retrieve a database</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdatabases"><a aria-hidden="true" class="anchor-heading" href="#getdatabases"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDatabases</h3>
+<ul>
+<li>description: Grants permission to retrieve all databases</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdataflowgraph"><a aria-hidden="true" class="anchor-heading" href="#getdataflowgraph"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDataflowGraph</h3>
+<ul>
+<li>description: Grants permission to transform a script into a directed acyclic graph (DAG)</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdevendpoint"><a aria-hidden="true" class="anchor-heading" href="#getdevendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDevEndpoint</h3>
+<ul>
+<li>description: Grants permission to retrieve a development endpoint</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdevendpoints"><a aria-hidden="true" class="anchor-heading" href="#getdevendpoints"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDevEndpoints</h3>
+<ul>
+<li>description: Grants permission to retrieve all development endpoints</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getjob"><a aria-hidden="true" class="anchor-heading" href="#getjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetJob</h3>
+<ul>
+<li>description: Grants permission to retrieve a job</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getjobbookmark"><a aria-hidden="true" class="anchor-heading" href="#getjobbookmark"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetJobBookmark</h3>
+<ul>
+<li>description: Grants permission to retrieve a job bookmark</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getjobrun"><a aria-hidden="true" class="anchor-heading" href="#getjobrun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetJobRun</h3>
+<ul>
+<li>description: Grants permission to retrieve a job run</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getjobruns"><a aria-hidden="true" class="anchor-heading" href="#getjobruns"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetJobRuns</h3>
+<ul>
+<li>description: Grants permission to retrieve all job runs of a job</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getjobs"><a aria-hidden="true" class="anchor-heading" href="#getjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetJobs</h3>
+<ul>
+<li>description: Grants permission to retrieve all current jobs</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmltaskrun"><a aria-hidden="true" class="anchor-heading" href="#getmltaskrun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMLTaskRun</h3>
+<ul>
+<li>description: Grants permission to retrieve an ML Task Run</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mlTransform": {
+        "resource_type": "mlTransform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmltaskruns"><a aria-hidden="true" class="anchor-heading" href="#getmltaskruns"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMLTaskRuns</h3>
+<ul>
+<li>description: Grants permission to retrieve all ML Task Runs</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mlTransform": {
+        "resource_type": "mlTransform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmltransform"><a aria-hidden="true" class="anchor-heading" href="#getmltransform"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMLTransform</h3>
+<ul>
+<li>description: Grants permission to retrieve an ML Transform</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mlTransform": {
+        "resource_type": "mlTransform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmltransforms"><a aria-hidden="true" class="anchor-heading" href="#getmltransforms"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMLTransforms</h3>
+<ul>
+<li>description: Grants permission to retrieve all ML Transforms</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getmapping"><a aria-hidden="true" class="anchor-heading" href="#getmapping"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMapping</h3>
+<ul>
+<li>description: Grants permission to create a mapping</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getpartition"><a aria-hidden="true" class="anchor-heading" href="#getpartition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPartition</h3>
+<ul>
+<li>description: Grants permission to retrieve a partition</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getpartitions"><a aria-hidden="true" class="anchor-heading" href="#getpartitions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPartitions</h3>
+<ul>
+<li>description: Grants permission to retrieve the partitions of a table</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getplan"><a aria-hidden="true" class="anchor-heading" href="#getplan"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPlan</h3>
+<ul>
+<li>description: Grants permission to retrieve a mapping for a script</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getresourcepolicy"><a aria-hidden="true" class="anchor-heading" href="#getresourcepolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetResourcePolicy</h3>
+<ul>
+<li>description: Grants permission to retrieve a resource policy</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsecurityconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getsecurityconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSecurityConfiguration</h3>
+<ul>
+<li>description: Grants permission to retrieve a security configuration</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsecurityconfigurations"><a aria-hidden="true" class="anchor-heading" href="#getsecurityconfigurations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSecurityConfigurations</h3>
+<ul>
+<li>description: Grants permission to retrieve one or more security configurations</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettable"><a aria-hidden="true" class="anchor-heading" href="#gettable"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTable</h3>
+<ul>
+<li>description: Grants permission to retrieve a table</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettableversion"><a aria-hidden="true" class="anchor-heading" href="#gettableversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTableVersion</h3>
+<ul>
+<li>description: Grants permission to retrieve a version of a table</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "tableversion": {
+        "resource_type": "tableversion",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettableversions"><a aria-hidden="true" class="anchor-heading" href="#gettableversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTableVersions</h3>
+<ul>
+<li>description: Grants permission to retrieve a list of versions of a table</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "tableversion": {
+        "resource_type": "tableversion",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettables"><a aria-hidden="true" class="anchor-heading" href="#gettables"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTables</h3>
+<ul>
+<li>description: Grants permission to retrieve the tables in a database</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettags"><a aria-hidden="true" class="anchor-heading" href="#gettags"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTags</h3>
+<ul>
+<li>description: Grants permission to retrieve all tags associated with a resource</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "crawler": {
+        "resource_type": "crawler",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "devendpoint": {
+        "resource_type": "devendpoint",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "job": {
+        "resource_type": "job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "trigger": {
+        "resource_type": "trigger",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "workflow": {
+        "resource_type": "workflow",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettrigger"><a aria-hidden="true" class="anchor-heading" href="#gettrigger"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTrigger</h3>
+<ul>
+<li>description: Grants permission to retrieve a trigger</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="gettriggers"><a aria-hidden="true" class="anchor-heading" href="#gettriggers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetTriggers</h3>
+<ul>
+<li>description: Grants permission to retrieve the triggers associated with a job</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getuserdefinedfunction"><a aria-hidden="true" class="anchor-heading" href="#getuserdefinedfunction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetUserDefinedFunction</h3>
+<ul>
+<li>description: Grants permission to retrieve a function definition.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "userdefinedfunction": {
+        "resource_type": "userdefinedfunction",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getuserdefinedfunctions"><a aria-hidden="true" class="anchor-heading" href="#getuserdefinedfunctions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetUserDefinedFunctions</h3>
+<ul>
+<li>description: Grants permission to retrieve multiple function definitions</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "userdefinedfunction": {
+        "resource_type": "userdefinedfunction",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getworkflow"><a aria-hidden="true" class="anchor-heading" href="#getworkflow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetWorkflow</h3>
+<ul>
+<li>description: Grants permission to retrieve a workflow</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getworkflowrun"><a aria-hidden="true" class="anchor-heading" href="#getworkflowrun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetWorkflowRun</h3>
+<ul>
+<li>description: Grants permission to retrieve a workflow run</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getworkflowrunproperties"><a aria-hidden="true" class="anchor-heading" href="#getworkflowrunproperties"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetWorkflowRunProperties</h3>
+<ul>
+<li>description: Grants permission to retrieve workflow run properties</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getworkflowruns"><a aria-hidden="true" class="anchor-heading" href="#getworkflowruns"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetWorkflowRuns</h3>
+<ul>
+<li>description: Grants permission to retrieve all runs of a workflow</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="importcatalogtoglue"><a aria-hidden="true" class="anchor-heading" href="#importcatalogtoglue"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ImportCatalogToGlue</h3>
+<ul>
+<li>description: Grants permission to import an Athena data catalog into AWS Glue</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcrawlers"><a aria-hidden="true" class="anchor-heading" href="#listcrawlers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListCrawlers</h3>
+<ul>
+<li>description: Grants permission to retrieve all crawlers</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listdevendpoints"><a aria-hidden="true" class="anchor-heading" href="#listdevendpoints"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListDevEndpoints</h3>
+<ul>
+<li>description: Grants permission to retrieve all development endpoints</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listjobs"><a aria-hidden="true" class="anchor-heading" href="#listjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListJobs</h3>
+<ul>
+<li>description: Grants permission to retrieve all current jobs</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listmltransforms"><a aria-hidden="true" class="anchor-heading" href="#listmltransforms"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListMLTransforms</h3>
+<ul>
+<li>description: Grants permission to retrieve all ML Transforms</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtriggers"><a aria-hidden="true" class="anchor-heading" href="#listtriggers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTriggers</h3>
+<ul>
+<li>description: Grants permission to retrieve all triggers</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listworkflows"><a aria-hidden="true" class="anchor-heading" href="#listworkflows"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListWorkflows</h3>
+<ul>
+<li>description: Grants permission to retrieve all workflows</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putdatacatalogencryptionsettings"><a aria-hidden="true" class="anchor-heading" href="#putdatacatalogencryptionsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutDataCatalogEncryptionSettings</h3>
+<ul>
+<li>description: Grants permission to update catalog encryption settings</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putresourcepolicy"><a aria-hidden="true" class="anchor-heading" href="#putresourcepolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutResourcePolicy</h3>
+<ul>
+<li>description: Grants permission to update a resource policy</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putworkflowrunproperties"><a aria-hidden="true" class="anchor-heading" href="#putworkflowrunproperties"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutWorkflowRunProperties</h3>
+<ul>
+<li>description: Grants permission to update workflow run properties</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resetjobbookmark"><a aria-hidden="true" class="anchor-heading" href="#resetjobbookmark"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResetJobBookmark</h3>
+<ul>
+<li>description: Grants permission to reset a job bookmark</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="searchtables"><a aria-hidden="true" class="anchor-heading" href="#searchtables"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SearchTables</h3>
+<ul>
+<li>description: Grants permission to retrieve the tables in the catalog</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startcrawler"><a aria-hidden="true" class="anchor-heading" href="#startcrawler"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartCrawler</h3>
+<ul>
+<li>description: Grants permission to start a crawler</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startcrawlerschedule"><a aria-hidden="true" class="anchor-heading" href="#startcrawlerschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartCrawlerSchedule</h3>
+<ul>
+<li>description: Grants permission to change the schedule state of a crawler to SCHEDULED</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startexportlabelstaskrun"><a aria-hidden="true" class="anchor-heading" href="#startexportlabelstaskrun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartExportLabelsTaskRun</h3>
+<ul>
+<li>description: Grants permission to start an Export Labels ML Task Run</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mlTransform": {
+        "resource_type": "mlTransform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startimportlabelstaskrun"><a aria-hidden="true" class="anchor-heading" href="#startimportlabelstaskrun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartImportLabelsTaskRun</h3>
+<ul>
+<li>description: Grants permission to start an Import Labels ML Task Run</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mlTransform": {
+        "resource_type": "mlTransform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startjobrun"><a aria-hidden="true" class="anchor-heading" href="#startjobrun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartJobRun</h3>
+<ul>
+<li>description: Grants permission to start running a job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startmlevaluationtaskrun"><a aria-hidden="true" class="anchor-heading" href="#startmlevaluationtaskrun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartMLEvaluationTaskRun</h3>
+<ul>
+<li>description: Grants permission to start an Evaluation ML Task Run</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mlTransform": {
+        "resource_type": "mlTransform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startmllabelingsetgenerationtaskrun"><a aria-hidden="true" class="anchor-heading" href="#startmllabelingsetgenerationtaskrun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartMLLabelingSetGenerationTaskRun</h3>
+<ul>
+<li>description: Grants permission to start a Labeling Set Generation ML Task Run</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mlTransform": {
+        "resource_type": "mlTransform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="starttrigger"><a aria-hidden="true" class="anchor-heading" href="#starttrigger"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartTrigger</h3>
+<ul>
+<li>description: Grants permission to start a trigger</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startworkflowrun"><a aria-hidden="true" class="anchor-heading" href="#startworkflowrun"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartWorkflowRun</h3>
+<ul>
+<li>description: Grants permission to start running a workflow</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopcrawler"><a aria-hidden="true" class="anchor-heading" href="#stopcrawler"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopCrawler</h3>
+<ul>
+<li>description: Grants permission to stop a running crawler</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopcrawlerschedule"><a aria-hidden="true" class="anchor-heading" href="#stopcrawlerschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopCrawlerSchedule</h3>
+<ul>
+<li>description: Grants permission to set the schedule state of a crawler to NOT_SCHEDULED</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stoptrigger"><a aria-hidden="true" class="anchor-heading" href="#stoptrigger"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopTrigger</h3>
+<ul>
+<li>description: Grants permission to stop a trigger</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Grants permission to add tags to a resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "crawler": {
+        "resource_type": "crawler",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "devendpoint": {
+        "resource_type": "devendpoint",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "job": {
+        "resource_type": "job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "trigger": {
+        "resource_type": "trigger",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "workflow": {
+        "resource_type": "workflow",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Grants permission to remove tags associated with a resource</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "crawler": {
+        "resource_type": "crawler",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "devendpoint": {
+        "resource_type": "devendpoint",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "job": {
+        "resource_type": "job",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "trigger": {
+        "resource_type": "trigger",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "workflow": {
+        "resource_type": "workflow",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateclassifier"><a aria-hidden="true" class="anchor-heading" href="#updateclassifier"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateClassifier</h3>
+<ul>
+<li>description: Grants permission to update a classifier</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateconnection"><a aria-hidden="true" class="anchor-heading" href="#updateconnection"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateConnection</h3>
+<ul>
+<li>description: Grants permission to update a connection</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "connection": {
+        "resource_type": "connection",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecrawler"><a aria-hidden="true" class="anchor-heading" href="#updatecrawler"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateCrawler</h3>
+<ul>
+<li>description: Grants permission to update a crawler</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecrawlerschedule"><a aria-hidden="true" class="anchor-heading" href="#updatecrawlerschedule"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateCrawlerSchedule</h3>
+<ul>
+<li>description: Grants permission to update the schedule of a crawler</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedatabase"><a aria-hidden="true" class="anchor-heading" href="#updatedatabase"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDatabase</h3>
+<ul>
+<li>description: Grants permission to update a database</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedevendpoint"><a aria-hidden="true" class="anchor-heading" href="#updatedevendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDevEndpoint</h3>
+<ul>
+<li>description: Grants permission to update a development endpoint</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatejob"><a aria-hidden="true" class="anchor-heading" href="#updatejob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateJob</h3>
+<ul>
+<li>description: Grants permission to update a job</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatemltransform"><a aria-hidden="true" class="anchor-heading" href="#updatemltransform"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateMLTransform</h3>
+<ul>
+<li>description: Grants permission to update an ML Transform</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mlTransform": {
+        "resource_type": "mlTransform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatepartition"><a aria-hidden="true" class="anchor-heading" href="#updatepartition"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdatePartition</h3>
+<ul>
+<li>description: Grants permission to update a partition</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatetable"><a aria-hidden="true" class="anchor-heading" href="#updatetable"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateTable</h3>
+<ul>
+<li>description: Grants permission to update a table</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "table": {
+        "resource_type": "table",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatetrigger"><a aria-hidden="true" class="anchor-heading" href="#updatetrigger"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateTrigger</h3>
+<ul>
+<li>description: Grants permission to update a trigger</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateuserdefinedfunction"><a aria-hidden="true" class="anchor-heading" href="#updateuserdefinedfunction"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateUserDefinedFunction</h3>
+<ul>
+<li>description: Grants permission to update a function definition</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "catalog": {
+        "resource_type": "catalog",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "database": {
+        "resource_type": "database",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "userdefinedfunction": {
+        "resource_type": "userdefinedfunction",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateworkflow"><a aria-hidden="true" class="anchor-heading" href="#updateworkflow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateWorkflow</h3>
+<ul>
+<li>description: Grants permission to update a workflow</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="usemltransforms"><a aria-hidden="true" class="anchor-heading" href="#usemltransforms"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UseMLTransforms</h3>
+<ul>
+<li>description: Grants permission to use an ML Transform from within a Glue ETL Script</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "mlTransform": {
+        "resource_type": "mlTransform",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Glue"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

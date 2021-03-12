@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Pinpoint - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Pinpoint.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Pinpoint.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Pinpoint.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Pinpoint - undefined" />
+  <meta name="twitter:title" content="Pinpoint - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Pinpoint</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Pinpoint">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="pinpoint"><a aria-hidden="true" class="anchor-heading" href="#pinpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Pinpoint</h1>
+<ul>
+<li>prefix: mobiletargeting</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="createapp"><a aria-hidden="true" class="anchor-heading" href="#createapp"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateApp</h3>
+<ul>
+<li>description: Create an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcampaign"><a aria-hidden="true" class="anchor-heading" href="#createcampaign"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateCampaign</h3>
+<ul>
+<li>description: Create a campaign for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createemailtemplate"><a aria-hidden="true" class="anchor-heading" href="#createemailtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateEmailTemplate</h3>
+<ul>
+<li>description: Create an email template.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createexportjob"><a aria-hidden="true" class="anchor-heading" href="#createexportjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateExportJob</h3>
+<ul>
+<li>description: Create an export job that exports endpoint definitions to Amazon S3.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createimportjob"><a aria-hidden="true" class="anchor-heading" href="#createimportjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateImportJob</h3>
+<ul>
+<li>description: Import endpoint definitions from to create a segment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createjourney"><a aria-hidden="true" class="anchor-heading" href="#createjourney"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateJourney</h3>
+<ul>
+<li>description: Create a Journey for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createpushtemplate"><a aria-hidden="true" class="anchor-heading" href="#createpushtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreatePushTemplate</h3>
+<ul>
+<li>description: Create a push notification template.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createrecommenderconfiguration"><a aria-hidden="true" class="anchor-heading" href="#createrecommenderconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRecommenderConfiguration</h3>
+<ul>
+<li>description: Create an Amazon Pinpoint configuration for a recommender model.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsegment"><a aria-hidden="true" class="anchor-heading" href="#createsegment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSegment</h3>
+<ul>
+<li>description: Create a segment that is based on endpoint data reported to Pinpoint by your app. To allow a user to create a segment by importing endpoint data from outside of Pinpoint, allow the mobiletargeting:CreateImportJob action.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createsmstemplate"><a aria-hidden="true" class="anchor-heading" href="#createsmstemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateSmsTemplate</h3>
+<ul>
+<li>description: Create an sms message template.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createvoicetemplate"><a aria-hidden="true" class="anchor-heading" href="#createvoicetemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateVoiceTemplate</h3>
+<ul>
+<li>description: Create a voice message template.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteadmchannel"><a aria-hidden="true" class="anchor-heading" href="#deleteadmchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAdmChannel</h3>
+<ul>
+<li>description: Delete the ADM channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteapnschannel"><a aria-hidden="true" class="anchor-heading" href="#deleteapnschannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteApnsChannel</h3>
+<ul>
+<li>description: Delete the APNs channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteapnssandboxchannel"><a aria-hidden="true" class="anchor-heading" href="#deleteapnssandboxchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteApnsSandboxChannel</h3>
+<ul>
+<li>description: Delete the APNs sandbox channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteapnsvoipchannel"><a aria-hidden="true" class="anchor-heading" href="#deleteapnsvoipchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteApnsVoipChannel</h3>
+<ul>
+<li>description: Delete the APNs VoIP channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteapnsvoipsandboxchannel"><a aria-hidden="true" class="anchor-heading" href="#deleteapnsvoipsandboxchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteApnsVoipSandboxChannel</h3>
+<ul>
+<li>description: Delete the APNs VoIP sandbox channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteapp"><a aria-hidden="true" class="anchor-heading" href="#deleteapp"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteApp</h3>
+<ul>
+<li>description: Delete a specific campaign.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletebaiduchannel"><a aria-hidden="true" class="anchor-heading" href="#deletebaiduchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteBaiduChannel</h3>
+<ul>
+<li>description: Delete the Baidu channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletecampaign"><a aria-hidden="true" class="anchor-heading" href="#deletecampaign"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteCampaign</h3>
+<ul>
+<li>description: Delete a specific campaign.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "campaigns": {
+        "resource_type": "campaigns",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteemailchannel"><a aria-hidden="true" class="anchor-heading" href="#deleteemailchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEmailChannel</h3>
+<ul>
+<li>description: Delete the email channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteemailtemplate"><a aria-hidden="true" class="anchor-heading" href="#deleteemailtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEmailTemplate</h3>
+<ul>
+<li>description: Delete an email template or an email template version.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteendpoint"><a aria-hidden="true" class="anchor-heading" href="#deleteendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEndpoint</h3>
+<ul>
+<li>description: Delete an endpoint.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteeventstream"><a aria-hidden="true" class="anchor-heading" href="#deleteeventstream"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteEventStream</h3>
+<ul>
+<li>description: Delete the event stream for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletegcmchannel"><a aria-hidden="true" class="anchor-heading" href="#deletegcmchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteGcmChannel</h3>
+<ul>
+<li>description: Delete the GCM channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletejourney"><a aria-hidden="true" class="anchor-heading" href="#deletejourney"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteJourney</h3>
+<ul>
+<li>description: Delete a specific journey.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "journeys": {
+        "resource_type": "journeys",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletepushtemplate"><a aria-hidden="true" class="anchor-heading" href="#deletepushtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeletePushTemplate</h3>
+<ul>
+<li>description: Delete a push notification template or a push notification template version.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleterecommenderconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deleterecommenderconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRecommenderConfiguration</h3>
+<ul>
+<li>description: Delete an Amazon Pinpoint configuration for a recommender model.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "recommenders": {
+        "resource_type": "recommenders",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesegment"><a aria-hidden="true" class="anchor-heading" href="#deletesegment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSegment</h3>
+<ul>
+<li>description: Delete a specific segment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "segments": {
+        "resource_type": "segments",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesmschannel"><a aria-hidden="true" class="anchor-heading" href="#deletesmschannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSmsChannel</h3>
+<ul>
+<li>description: Delete the SMS channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletesmstemplate"><a aria-hidden="true" class="anchor-heading" href="#deletesmstemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteSmsTemplate</h3>
+<ul>
+<li>description: Delete an sms message template or an sms message template version.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteuserendpoints"><a aria-hidden="true" class="anchor-heading" href="#deleteuserendpoints"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteUserEndpoints</h3>
+<ul>
+<li>description: Delete all of the endpoints that are associated with a user ID.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevoicechannel"><a aria-hidden="true" class="anchor-heading" href="#deletevoicechannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVoiceChannel</h3>
+<ul>
+<li>description: Delete the Voice channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevoicetemplate"><a aria-hidden="true" class="anchor-heading" href="#deletevoicetemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVoiceTemplate</h3>
+<ul>
+<li>description: Delete a voice message template or a voice message template version.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getadmchannel"><a aria-hidden="true" class="anchor-heading" href="#getadmchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetAdmChannel</h3>
+<ul>
+<li>description: Retrieve information about the Amazon Device Messaging (ADM) channel for an app.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getapnschannel"><a aria-hidden="true" class="anchor-heading" href="#getapnschannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetApnsChannel</h3>
+<ul>
+<li>description: Retrieve information about the APNs channel for an app.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getapnssandboxchannel"><a aria-hidden="true" class="anchor-heading" href="#getapnssandboxchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetApnsSandboxChannel</h3>
+<ul>
+<li>description: Retrieve information about the APNs sandbox channel for an app.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getapnsvoipchannel"><a aria-hidden="true" class="anchor-heading" href="#getapnsvoipchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetApnsVoipChannel</h3>
+<ul>
+<li>description: Retrieve information about the APNs VoIP channel for an app.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getapnsvoipsandboxchannel"><a aria-hidden="true" class="anchor-heading" href="#getapnsvoipsandboxchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetApnsVoipSandboxChannel</h3>
+<ul>
+<li>description: Retrieve information about the APNs VoIP sandbox channel for an app.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getapp"><a aria-hidden="true" class="anchor-heading" href="#getapp"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetApp</h3>
+<ul>
+<li>description: Retrieve information about a specific app in your Amazon Pinpoint account.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getapplicationsettings"><a aria-hidden="true" class="anchor-heading" href="#getapplicationsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetApplicationSettings</h3>
+<ul>
+<li>description: Retrieve the default settings for an app.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getapps"><a aria-hidden="true" class="anchor-heading" href="#getapps"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetApps</h3>
+<ul>
+<li>description: Retrieve a list of apps in your Amazon Pinpoint account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbaiduchannel"><a aria-hidden="true" class="anchor-heading" href="#getbaiduchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBaiduChannel</h3>
+<ul>
+<li>description: Retrieve information about the Baidu channel for an app.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcampaign"><a aria-hidden="true" class="anchor-heading" href="#getcampaign"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCampaign</h3>
+<ul>
+<li>description: Retrieve information about a specific campaign.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "campaigns": {
+        "resource_type": "campaigns",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcampaignactivities"><a aria-hidden="true" class="anchor-heading" href="#getcampaignactivities"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCampaignActivities</h3>
+<ul>
+<li>description: Retrieve information about the activities performed by a campaign.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "campaigns": {
+        "resource_type": "campaigns",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcampaignversion"><a aria-hidden="true" class="anchor-heading" href="#getcampaignversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCampaignVersion</h3>
+<ul>
+<li>description: Retrieve information about a specific campaign version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "campaigns": {
+        "resource_type": "campaigns",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcampaignversions"><a aria-hidden="true" class="anchor-heading" href="#getcampaignversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCampaignVersions</h3>
+<ul>
+<li>description: Retrieve information about the current and prior versions of a campaign.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "campaigns": {
+        "resource_type": "campaigns",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcampaigns"><a aria-hidden="true" class="anchor-heading" href="#getcampaigns"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCampaigns</h3>
+<ul>
+<li>description: Retrieve information about all campaigns for an app.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getchannels"><a aria-hidden="true" class="anchor-heading" href="#getchannels"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetChannels</h3>
+<ul>
+<li>description: Get all channels information for your app.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getemailchannel"><a aria-hidden="true" class="anchor-heading" href="#getemailchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetEmailChannel</h3>
+<ul>
+<li>description: Obtain information about the email channel in an app.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getemailtemplate"><a aria-hidden="true" class="anchor-heading" href="#getemailtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetEmailTemplate</h3>
+<ul>
+<li>description: Retrieve information about a specific or the active version of an email template.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getendpoint"><a aria-hidden="true" class="anchor-heading" href="#getendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetEndpoint</h3>
+<ul>
+<li>description: Retrieve information about a specific endpoint.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="geteventstream"><a aria-hidden="true" class="anchor-heading" href="#geteventstream"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetEventStream</h3>
+<ul>
+<li>description: Retrieve information about the event stream for an app.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getexportjob"><a aria-hidden="true" class="anchor-heading" href="#getexportjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetExportJob</h3>
+<ul>
+<li>description: Obtain information about a specific export job.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getexportjobs"><a aria-hidden="true" class="anchor-heading" href="#getexportjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetExportJobs</h3>
+<ul>
+<li>description: Retrieve a list of all of the export jobs for an app.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getgcmchannel"><a aria-hidden="true" class="anchor-heading" href="#getgcmchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetGcmChannel</h3>
+<ul>
+<li>description: Retrieve information about the GCM channel for an app.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getimportjob"><a aria-hidden="true" class="anchor-heading" href="#getimportjob"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetImportJob</h3>
+<ul>
+<li>description: Retrieve information about a specific import job.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getimportjobs"><a aria-hidden="true" class="anchor-heading" href="#getimportjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetImportJobs</h3>
+<ul>
+<li>description: Retrieve information about all import jobs for an app.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getjourney"><a aria-hidden="true" class="anchor-heading" href="#getjourney"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetJourney</h3>
+<ul>
+<li>description: Retrieve information about a specific journey.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "journeys": {
+        "resource_type": "journeys",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getpushtemplate"><a aria-hidden="true" class="anchor-heading" href="#getpushtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetPushTemplate</h3>
+<ul>
+<li>description: Retrieve information about a specific or the active version of an push notification template.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrecommenderconfiguration"><a aria-hidden="true" class="anchor-heading" href="#getrecommenderconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRecommenderConfiguration</h3>
+<ul>
+<li>description: Retrieve information about an Amazon Pinpoint configuration for a recommender model.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "recommenders": {
+        "resource_type": "recommenders",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrecommenderconfigurations"><a aria-hidden="true" class="anchor-heading" href="#getrecommenderconfigurations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRecommenderConfigurations</h3>
+<ul>
+<li>description: Retrieve information about all the recommender model configurations that are associated with an Amazon Pinpoint account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsegment"><a aria-hidden="true" class="anchor-heading" href="#getsegment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSegment</h3>
+<ul>
+<li>description: Retrieve information about a specific segment.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "segments": {
+        "resource_type": "segments",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsegmentexportjobs"><a aria-hidden="true" class="anchor-heading" href="#getsegmentexportjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSegmentExportJobs</h3>
+<ul>
+<li>description: Retrieve information about jobs that export endpoint definitions from segments to Amazon S3.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "segments": {
+        "resource_type": "segments",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsegmentimportjobs"><a aria-hidden="true" class="anchor-heading" href="#getsegmentimportjobs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSegmentImportJobs</h3>
+<ul>
+<li>description: Retrieve information about jobs that create segments by importing endpoint definitions from .</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "segments": {
+        "resource_type": "segments",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsegmentversion"><a aria-hidden="true" class="anchor-heading" href="#getsegmentversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSegmentVersion</h3>
+<ul>
+<li>description: Retrieve information about a specific segment version.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "segments": {
+        "resource_type": "segments",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsegmentversions"><a aria-hidden="true" class="anchor-heading" href="#getsegmentversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSegmentVersions</h3>
+<ul>
+<li>description: Retrieve information about the current and prior versions of a segment.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "segments": {
+        "resource_type": "segments",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsegments"><a aria-hidden="true" class="anchor-heading" href="#getsegments"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSegments</h3>
+<ul>
+<li>description: Retrieve information about the segments for an app.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsmschannel"><a aria-hidden="true" class="anchor-heading" href="#getsmschannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSmsChannel</h3>
+<ul>
+<li>description: Obtain information about the SMS channel in an app.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getsmstemplate"><a aria-hidden="true" class="anchor-heading" href="#getsmstemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetSmsTemplate</h3>
+<ul>
+<li>description: Retrieve information about a specific or the active version of an sms message template.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getuserendpoints"><a aria-hidden="true" class="anchor-heading" href="#getuserendpoints"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetUserEndpoints</h3>
+<ul>
+<li>description: Retrieve information about the endpoints that are associated with a user ID.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getvoicechannel"><a aria-hidden="true" class="anchor-heading" href="#getvoicechannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetVoiceChannel</h3>
+<ul>
+<li>description: Obtain information about the Voice channel in an app.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getvoicetemplate"><a aria-hidden="true" class="anchor-heading" href="#getvoicetemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetVoiceTemplate</h3>
+<ul>
+<li>description: Retrieve information about a specific or the active version of a voice message template.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listjourneys"><a aria-hidden="true" class="anchor-heading" href="#listjourneys"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListJourneys</h3>
+<ul>
+<li>description: Retrieve information about all journeys for an app.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: List tags for a resource.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "campaigns": {
+        "resource_type": "campaigns",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "segments": {
+        "resource_type": "segments",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtemplateversions"><a aria-hidden="true" class="anchor-heading" href="#listtemplateversions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTemplateVersions</h3>
+<ul>
+<li>description: Retrieve all versions about a specific template.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtemplates"><a aria-hidden="true" class="anchor-heading" href="#listtemplates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTemplates</h3>
+<ul>
+<li>description: Retrieve metadata about the queried templates.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="phonenumbervalidate"><a aria-hidden="true" class="anchor-heading" href="#phonenumbervalidate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PhoneNumberValidate</h3>
+<ul>
+<li>description: Obtain metadata for a phone number, such as the number type (mobile, landline, or VoIP), location, and provider.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="puteventstream"><a aria-hidden="true" class="anchor-heading" href="#puteventstream"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutEventStream</h3>
+<ul>
+<li>description: Create or update an event stream for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putevents"><a aria-hidden="true" class="anchor-heading" href="#putevents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutEvents</h3>
+<ul>
+<li>description: Create or update events for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="removeattributes"><a aria-hidden="true" class="anchor-heading" href="#removeattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RemoveAttributes</h3>
+<ul>
+<li>description: Used to remove the attributes for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="sendmessages"><a aria-hidden="true" class="anchor-heading" href="#sendmessages"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SendMessages</h3>
+<ul>
+<li>description: Send an SMS message or push notification to specific endpoints.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="sendusersmessages"><a aria-hidden="true" class="anchor-heading" href="#sendusersmessages"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SendUsersMessages</h3>
+<ul>
+<li>description: Send an SMS message or push notification to all endpoints that are associated with a specific user ID.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Adds tags to a resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "campaigns": {
+        "resource_type": "campaigns",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "segments": {
+        "resource_type": "segments",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Removes tags from a resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "campaigns": {
+        "resource_type": "campaigns",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "segments": {
+        "resource_type": "segments",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateadmchannel"><a aria-hidden="true" class="anchor-heading" href="#updateadmchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAdmChannel</h3>
+<ul>
+<li>description: Update the Amazon Device Messaging (ADM) channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateapnschannel"><a aria-hidden="true" class="anchor-heading" href="#updateapnschannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateApnsChannel</h3>
+<ul>
+<li>description: Update the Apple Push Notification service (APNs) channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateapnssandboxchannel"><a aria-hidden="true" class="anchor-heading" href="#updateapnssandboxchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateApnsSandboxChannel</h3>
+<ul>
+<li>description: Update the Apple Push Notification service (APNs) sandbox channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateapnsvoipchannel"><a aria-hidden="true" class="anchor-heading" href="#updateapnsvoipchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateApnsVoipChannel</h3>
+<ul>
+<li>description: Update the Apple Push Notification service (APNs) VoIP channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateapnsvoipsandboxchannel"><a aria-hidden="true" class="anchor-heading" href="#updateapnsvoipsandboxchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateApnsVoipSandboxChannel</h3>
+<ul>
+<li>description: Update the Apple Push Notification service (APNs) VoIP sandbox channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateapplicationsettings"><a aria-hidden="true" class="anchor-heading" href="#updateapplicationsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateApplicationSettings</h3>
+<ul>
+<li>description: Update the default settings for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatebaiduchannel"><a aria-hidden="true" class="anchor-heading" href="#updatebaiduchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateBaiduChannel</h3>
+<ul>
+<li>description: Update the Baidu channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecampaign"><a aria-hidden="true" class="anchor-heading" href="#updatecampaign"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateCampaign</h3>
+<ul>
+<li>description: Update a specific campaign.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "campaigns": {
+        "resource_type": "campaigns",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateemailchannel"><a aria-hidden="true" class="anchor-heading" href="#updateemailchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateEmailChannel</h3>
+<ul>
+<li>description: Update the email channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateemailtemplate"><a aria-hidden="true" class="anchor-heading" href="#updateemailtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateEmailTemplate</h3>
+<ul>
+<li>description: Update a specific email template under the same version or generate a new version.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateendpoint"><a aria-hidden="true" class="anchor-heading" href="#updateendpoint"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateEndpoint</h3>
+<ul>
+<li>description: Create an endpoint or update the information for an endpoint.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateendpointsbatch"><a aria-hidden="true" class="anchor-heading" href="#updateendpointsbatch"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateEndpointsBatch</h3>
+<ul>
+<li>description: Create or update endpoints as a batch operation.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updategcmchannel"><a aria-hidden="true" class="anchor-heading" href="#updategcmchannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateGcmChannel</h3>
+<ul>
+<li>description: Update the Firebase Cloud Messaging (FCM) or Google Cloud Messaging (GCM) API key that allows to send push notifications to your Android app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatejourney"><a aria-hidden="true" class="anchor-heading" href="#updatejourney"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateJourney</h3>
+<ul>
+<li>description: Update a specific journey.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "journeys": {
+        "resource_type": "journeys",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatejourneystate"><a aria-hidden="true" class="anchor-heading" href="#updatejourneystate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateJourneyState</h3>
+<ul>
+<li>description: Update a specific journey state.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "journeys": {
+        "resource_type": "journeys",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatepushtemplate"><a aria-hidden="true" class="anchor-heading" href="#updatepushtemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdatePushTemplate</h3>
+<ul>
+<li>description: Update a specific push notification template under the same version or generate a new version.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updaterecommenderconfiguration"><a aria-hidden="true" class="anchor-heading" href="#updaterecommenderconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRecommenderConfiguration</h3>
+<ul>
+<li>description: Update an Amazon Pinpoint configuration for a recommender model.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "recommenders": {
+        "resource_type": "recommenders",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatesegment"><a aria-hidden="true" class="anchor-heading" href="#updatesegment"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateSegment</h3>
+<ul>
+<li>description: Update a specific segment.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "segments": {
+        "resource_type": "segments",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatesmschannel"><a aria-hidden="true" class="anchor-heading" href="#updatesmschannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateSmsChannel</h3>
+<ul>
+<li>description: Update the SMS channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatesmstemplate"><a aria-hidden="true" class="anchor-heading" href="#updatesmstemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateSmsTemplate</h3>
+<ul>
+<li>description: Update a specific sms message template under the same version or generate a new version.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatetemplateactiveversion"><a aria-hidden="true" class="anchor-heading" href="#updatetemplateactiveversion"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateTemplateActiveVersion</h3>
+<ul>
+<li>description: Upate the active version parameter of a specific template.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatevoicechannel"><a aria-hidden="true" class="anchor-heading" href="#updatevoicechannel"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateVoiceChannel</h3>
+<ul>
+<li>description: Update the Voice channel for an app.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "apps": {
+        "resource_type": "apps",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatevoicetemplate"><a aria-hidden="true" class="anchor-heading" href="#updatevoicetemplate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateVoiceTemplate</h3>
+<ul>
+<li>description: Update a specific voice message template under the same version or generate a new version.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "templates": {
+        "resource_type": "templates",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Pinpoint"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>GameLift - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-GameLift.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-GameLift.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-GameLift.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="GameLift - undefined" />
+  <meta name="twitter:title" content="GameLift - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">GameLift</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="GameLift">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="gamelift"><a aria-hidden="true" class="anchor-heading" href="#gamelift"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GameLift</h1>
+<ul>
+<li>prefix: gamelift</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="acceptmatch"><a aria-hidden="true" class="anchor-heading" href="#acceptmatch"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AcceptMatch</h3>
+<ul>
+<li>description: Registers player acceptance or rejection of a proposed FlexMatch match.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="claimgameserver"><a aria-hidden="true" class="anchor-heading" href="#claimgameserver"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ClaimGameServer</h3>
+<ul>
+<li>description: Locates and reserves a game server to host a new game session.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createalias"><a aria-hidden="true" class="anchor-heading" href="#createalias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateAlias</h3>
+<ul>
+<li>description: Defines a new alias for a fleet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createbuild"><a aria-hidden="true" class="anchor-heading" href="#createbuild"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateBuild</h3>
+<ul>
+<li>description: Creates a new game build using files stored in an Amazon S3 bucket.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createfleet"><a aria-hidden="true" class="anchor-heading" href="#createfleet"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateFleet</h3>
+<ul>
+<li>description: Creates a new fleet of computing resources to run your game servers.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creategameservergroup"><a aria-hidden="true" class="anchor-heading" href="#creategameservergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateGameServerGroup</h3>
+<ul>
+<li>description: Creates a new game server group, sets up a corresponding Auto Scaling group, and launches instances to host game servers.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creategamesession"><a aria-hidden="true" class="anchor-heading" href="#creategamesession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateGameSession</h3>
+<ul>
+<li>description: Starts a new game session on a specified fleet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creategamesessionqueue"><a aria-hidden="true" class="anchor-heading" href="#creategamesessionqueue"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateGameSessionQueue</h3>
+<ul>
+<li>description: Sets up a new queue for processing new game session placement requests.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creatematchmakingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#creatematchmakingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateMatchmakingConfiguration</h3>
+<ul>
+<li>description: Creates a new FlexMatch matchmaker.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creatematchmakingruleset"><a aria-hidden="true" class="anchor-heading" href="#creatematchmakingruleset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateMatchmakingRuleSet</h3>
+<ul>
+<li>description: Creates a new matchmaking rule set for FlexMatch.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createplayersession"><a aria-hidden="true" class="anchor-heading" href="#createplayersession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreatePlayerSession</h3>
+<ul>
+<li>description: Reserves an available game session slot for a player.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createplayersessions"><a aria-hidden="true" class="anchor-heading" href="#createplayersessions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreatePlayerSessions</h3>
+<ul>
+<li>description: Reserves available game session slots for multiple players.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createscript"><a aria-hidden="true" class="anchor-heading" href="#createscript"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateScript</h3>
+<ul>
+<li>description: Creates a new Realtime Servers script.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createvpcpeeringauthorization"><a aria-hidden="true" class="anchor-heading" href="#createvpcpeeringauthorization"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateVpcPeeringAuthorization</h3>
+<ul>
+<li>description: Allows GameLift to create or delete a peering connection between a GameLift fleet VPC and a VPC on another AWS account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createvpcpeeringconnection"><a aria-hidden="true" class="anchor-heading" href="#createvpcpeeringconnection"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateVpcPeeringConnection</h3>
+<ul>
+<li>description: Establishes a peering connection between your GameLift fleet VPC and a VPC on another account.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletealias"><a aria-hidden="true" class="anchor-heading" href="#deletealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteAlias</h3>
+<ul>
+<li>description: Deletes an alias.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "alias": {
+        "resource_type": "alias",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletebuild"><a aria-hidden="true" class="anchor-heading" href="#deletebuild"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteBuild</h3>
+<ul>
+<li>description: Deletes a game build.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "build": {
+        "resource_type": "build",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletefleet"><a aria-hidden="true" class="anchor-heading" href="#deletefleet"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteFleet</h3>
+<ul>
+<li>description: Deletes an empty fleet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletegameservergroup"><a aria-hidden="true" class="anchor-heading" href="#deletegameservergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteGameServerGroup</h3>
+<ul>
+<li>description: Permanently deletes a game server group and terminates FleetIQ activity for the corresponding Auto Scaling group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletegamesessionqueue"><a aria-hidden="true" class="anchor-heading" href="#deletegamesessionqueue"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteGameSessionQueue</h3>
+<ul>
+<li>description: Deletes an existing game session queue.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameSessionQueue": {
+        "resource_type": "gameSessionQueue",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletematchmakingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#deletematchmakingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteMatchmakingConfiguration</h3>
+<ul>
+<li>description: Deletes an existing FlexMatch matchmaker.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "matchmakingConfiguration": {
+        "resource_type": "matchmakingConfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletematchmakingruleset"><a aria-hidden="true" class="anchor-heading" href="#deletematchmakingruleset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteMatchmakingRuleSet</h3>
+<ul>
+<li>description: Deletes an existing FlexMatch matchmaking rule set.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "matchmakingRuleSet": {
+        "resource_type": "matchmakingRuleSet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletescalingpolicy"><a aria-hidden="true" class="anchor-heading" href="#deletescalingpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteScalingPolicy</h3>
+<ul>
+<li>description: Deletes a set of auto-scaling rules.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletescript"><a aria-hidden="true" class="anchor-heading" href="#deletescript"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteScript</h3>
+<ul>
+<li>description: Deletes a Realtime Servers script.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "script": {
+        "resource_type": "script",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevpcpeeringauthorization"><a aria-hidden="true" class="anchor-heading" href="#deletevpcpeeringauthorization"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVpcPeeringAuthorization</h3>
+<ul>
+<li>description: Cancels a VPC peering authorization.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletevpcpeeringconnection"><a aria-hidden="true" class="anchor-heading" href="#deletevpcpeeringconnection"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteVpcPeeringConnection</h3>
+<ul>
+<li>description: Removes a peering connection between VPCs.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deregistergameserver"><a aria-hidden="true" class="anchor-heading" href="#deregistergameserver"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeregisterGameServer</h3>
+<ul>
+<li>description: Removes a game server from a game server group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describealias"><a aria-hidden="true" class="anchor-heading" href="#describealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeAlias</h3>
+<ul>
+<li>description: Retrieves properties for an alias.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "alias": {
+        "resource_type": "alias",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describebuild"><a aria-hidden="true" class="anchor-heading" href="#describebuild"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeBuild</h3>
+<ul>
+<li>description: Retrieves properties for a game build.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "build": {
+        "resource_type": "build",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeec2instancelimits"><a aria-hidden="true" class="anchor-heading" href="#describeec2instancelimits"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeEC2InstanceLimits</h3>
+<ul>
+<li>description: Retrieves the maximum allowed and current usage for EC2 instance types.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describefleetattributes"><a aria-hidden="true" class="anchor-heading" href="#describefleetattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeFleetAttributes</h3>
+<ul>
+<li>description: Retrieves general properties, including status, for fleets.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describefleetcapacity"><a aria-hidden="true" class="anchor-heading" href="#describefleetcapacity"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeFleetCapacity</h3>
+<ul>
+<li>description: Retrieves the current capacity setting for fleets.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describefleetevents"><a aria-hidden="true" class="anchor-heading" href="#describefleetevents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeFleetEvents</h3>
+<ul>
+<li>description: Retrieves entries from a fleet's event log.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describefleetportsettings"><a aria-hidden="true" class="anchor-heading" href="#describefleetportsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeFleetPortSettings</h3>
+<ul>
+<li>description: Retrieves the inbound connection permissions for a fleet.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describefleetutilization"><a aria-hidden="true" class="anchor-heading" href="#describefleetutilization"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeFleetUtilization</h3>
+<ul>
+<li>description: Retrieves utilization statistics for fleets.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describegameserver"><a aria-hidden="true" class="anchor-heading" href="#describegameserver"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeGameServer</h3>
+<ul>
+<li>description: Retrieves properties for a game server.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describegameservergroup"><a aria-hidden="true" class="anchor-heading" href="#describegameservergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeGameServerGroup</h3>
+<ul>
+<li>description: Retrieves properties for a game server group.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describegameserverinstances"><a aria-hidden="true" class="anchor-heading" href="#describegameserverinstances"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeGameServerInstances</h3>
+<ul>
+<li>description: Retrieves the status of EC2 instances in a game server group.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describegamesessiondetails"><a aria-hidden="true" class="anchor-heading" href="#describegamesessiondetails"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeGameSessionDetails</h3>
+<ul>
+<li>description: Retrieves properties for game sessions in a fleet, including the protection policy.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describegamesessionplacement"><a aria-hidden="true" class="anchor-heading" href="#describegamesessionplacement"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeGameSessionPlacement</h3>
+<ul>
+<li>description: Retrieves details of a game session placement request.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describegamesessionqueues"><a aria-hidden="true" class="anchor-heading" href="#describegamesessionqueues"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeGameSessionQueues</h3>
+<ul>
+<li>description: Retrieves properties for game session queues.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describegamesessions"><a aria-hidden="true" class="anchor-heading" href="#describegamesessions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeGameSessions</h3>
+<ul>
+<li>description: Retrieves properties for game sessions in a fleet.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeinstances"><a aria-hidden="true" class="anchor-heading" href="#describeinstances"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeInstances</h3>
+<ul>
+<li>description: Retrieves information about instances in a fleet.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describematchmaking"><a aria-hidden="true" class="anchor-heading" href="#describematchmaking"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMatchmaking</h3>
+<ul>
+<li>description: Retrieves details of matchmaking tickets.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describematchmakingconfigurations"><a aria-hidden="true" class="anchor-heading" href="#describematchmakingconfigurations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMatchmakingConfigurations</h3>
+<ul>
+<li>description: Retrieves properties for FlexMatch matchmakers.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describematchmakingrulesets"><a aria-hidden="true" class="anchor-heading" href="#describematchmakingrulesets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeMatchmakingRuleSets</h3>
+<ul>
+<li>description: Retrieves properties for FlexMatch matchmaking rule sets.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeplayersessions"><a aria-hidden="true" class="anchor-heading" href="#describeplayersessions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribePlayerSessions</h3>
+<ul>
+<li>description: Retrieves properties for player sessions in a game session.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeruntimeconfiguration"><a aria-hidden="true" class="anchor-heading" href="#describeruntimeconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeRuntimeConfiguration</h3>
+<ul>
+<li>description: Retrieves the current runtime configuration for a fleet.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describescalingpolicies"><a aria-hidden="true" class="anchor-heading" href="#describescalingpolicies"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeScalingPolicies</h3>
+<ul>
+<li>description: Retrieves all scaling policies that are applied to a fleet.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describescript"><a aria-hidden="true" class="anchor-heading" href="#describescript"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeScript</h3>
+<ul>
+<li>description: Retrieves properties for a Realtime Servers script.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "script": {
+        "resource_type": "script",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describevpcpeeringauthorizations"><a aria-hidden="true" class="anchor-heading" href="#describevpcpeeringauthorizations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeVpcPeeringAuthorizations</h3>
+<ul>
+<li>description: Retrieves valid VPC peering authorizations.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describevpcpeeringconnections"><a aria-hidden="true" class="anchor-heading" href="#describevpcpeeringconnections"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeVpcPeeringConnections</h3>
+<ul>
+<li>description: Retrieves details on active or pending VPC peering connections.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getgamesessionlogurl"><a aria-hidden="true" class="anchor-heading" href="#getgamesessionlogurl"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetGameSessionLogUrl</h3>
+<ul>
+<li>description: Retrieves the location of stored logs for a game session.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinstanceaccess"><a aria-hidden="true" class="anchor-heading" href="#getinstanceaccess"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInstanceAccess</h3>
+<ul>
+<li>description: Requests remote access to a specified fleet instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listaliases"><a aria-hidden="true" class="anchor-heading" href="#listaliases"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListAliases</h3>
+<ul>
+<li>description: Retrieves all aliases that are defined in the current region.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listbuilds"><a aria-hidden="true" class="anchor-heading" href="#listbuilds"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListBuilds</h3>
+<ul>
+<li>description: Retrieves all game build in the current region.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listfleets"><a aria-hidden="true" class="anchor-heading" href="#listfleets"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListFleets</h3>
+<ul>
+<li>description: Retrieves a list of fleet IDs for all fleets in the current region.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listgameservergroups"><a aria-hidden="true" class="anchor-heading" href="#listgameservergroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListGameServerGroups</h3>
+<ul>
+<li>description: Retrieves all game server groups that are defined in the current region.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listgameservers"><a aria-hidden="true" class="anchor-heading" href="#listgameservers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListGameServers</h3>
+<ul>
+<li>description: Retrieves all game servers that are currently running in a game server group.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listscripts"><a aria-hidden="true" class="anchor-heading" href="#listscripts"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListScripts</h3>
+<ul>
+<li>description: Retrieves properties for all Realtime Servers scripts in the current region.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Lists tags for GameLift resources</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "alias": {
+        "resource_type": "alias",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "build": {
+        "resource_type": "build",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "fleet": {
+        "resource_type": "fleet",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "gameSessionQueue": {
+        "resource_type": "gameSessionQueue",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "matchmakingConfiguration": {
+        "resource_type": "matchmakingConfiguration",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "matchmakingRuleSet": {
+        "resource_type": "matchmakingRuleSet",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "script": {
+        "resource_type": "script",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putscalingpolicy"><a aria-hidden="true" class="anchor-heading" href="#putscalingpolicy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutScalingPolicy</h3>
+<ul>
+<li>description: Creates or updates a fleet auto-scaling policy.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="registergameserver"><a aria-hidden="true" class="anchor-heading" href="#registergameserver"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RegisterGameServer</h3>
+<ul>
+<li>description: Notifies GameLift FleetIQ when a new game server is ready to host gameplay.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="requestuploadcredentials"><a aria-hidden="true" class="anchor-heading" href="#requestuploadcredentials"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RequestUploadCredentials</h3>
+<ul>
+<li>description: Retrieves fresh upload credentials to use when uploading a new game build.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "build": {
+        "resource_type": "build",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resolvealias"><a aria-hidden="true" class="anchor-heading" href="#resolvealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResolveAlias</h3>
+<ul>
+<li>description: Retrieves the fleet ID associated with an alias.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "alias": {
+        "resource_type": "alias",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="resumegameservergroup"><a aria-hidden="true" class="anchor-heading" href="#resumegameservergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResumeGameServerGroup</h3>
+<ul>
+<li>description: Reinstates suspended FleetIQ activity for a game server group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="searchgamesessions"><a aria-hidden="true" class="anchor-heading" href="#searchgamesessions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SearchGameSessions</h3>
+<ul>
+<li>description: Retrieves game sessions that match a set of search criteria.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startfleetactions"><a aria-hidden="true" class="anchor-heading" href="#startfleetactions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartFleetActions</h3>
+<ul>
+<li>description: Resumes auto-scaling activity on a fleet after it was suspended with StopFleetActions().</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startgamesessionplacement"><a aria-hidden="true" class="anchor-heading" href="#startgamesessionplacement"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartGameSessionPlacement</h3>
+<ul>
+<li>description: Sends a game session placement request to a game session queue.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameSessionQueue": {
+        "resource_type": "gameSessionQueue",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startmatchbackfill"><a aria-hidden="true" class="anchor-heading" href="#startmatchbackfill"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartMatchBackfill</h3>
+<ul>
+<li>description: Requests FlexMatch matchmaking to fill available player slots in an existing game session.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startmatchmaking"><a aria-hidden="true" class="anchor-heading" href="#startmatchmaking"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartMatchmaking</h3>
+<ul>
+<li>description: Requests FlexMatch matchmaking for one or a group of players and game session placement for a resulting match.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopfleetactions"><a aria-hidden="true" class="anchor-heading" href="#stopfleetactions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopFleetActions</h3>
+<ul>
+<li>description: Suspends auto-scaling activity on a fleet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopgamesessionplacement"><a aria-hidden="true" class="anchor-heading" href="#stopgamesessionplacement"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopGameSessionPlacement</h3>
+<ul>
+<li>description: Cancels a game session placement request that is in progress.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopmatchmaking"><a aria-hidden="true" class="anchor-heading" href="#stopmatchmaking"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopMatchmaking</h3>
+<ul>
+<li>description: Cancels a matchmaking or match backfill request that is in progress.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="suspendgameservergroup"><a aria-hidden="true" class="anchor-heading" href="#suspendgameservergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SuspendGameServerGroup</h3>
+<ul>
+<li>description: Temporarily stops FleetIQ activity for a game server group.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Tags GameLift resources</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "alias": {
+        "resource_type": "alias",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "build": {
+        "resource_type": "build",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "fleet": {
+        "resource_type": "fleet",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "gameSessionQueue": {
+        "resource_type": "gameSessionQueue",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "matchmakingConfiguration": {
+        "resource_type": "matchmakingConfiguration",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "matchmakingRuleSet": {
+        "resource_type": "matchmakingRuleSet",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "script": {
+        "resource_type": "script",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Untags GameLift resources</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "alias": {
+        "resource_type": "alias",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "build": {
+        "resource_type": "build",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "fleet": {
+        "resource_type": "fleet",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "gameSessionQueue": {
+        "resource_type": "gameSessionQueue",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "matchmakingConfiguration": {
+        "resource_type": "matchmakingConfiguration",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "matchmakingRuleSet": {
+        "resource_type": "matchmakingRuleSet",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "script": {
+        "resource_type": "script",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatealias"><a aria-hidden="true" class="anchor-heading" href="#updatealias"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateAlias</h3>
+<ul>
+<li>description: Updates the properties of an existing alias.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "alias": {
+        "resource_type": "alias",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatebuild"><a aria-hidden="true" class="anchor-heading" href="#updatebuild"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateBuild</h3>
+<ul>
+<li>description: Updates an existing build's metadata.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "build": {
+        "resource_type": "build",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatefleetattributes"><a aria-hidden="true" class="anchor-heading" href="#updatefleetattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateFleetAttributes</h3>
+<ul>
+<li>description: Updates the general properties of an existing fleet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatefleetcapacity"><a aria-hidden="true" class="anchor-heading" href="#updatefleetcapacity"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateFleetCapacity</h3>
+<ul>
+<li>description: Adjusts a fleet's capacity settings.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatefleetportsettings"><a aria-hidden="true" class="anchor-heading" href="#updatefleetportsettings"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateFleetPortSettings</h3>
+<ul>
+<li>description: Adjusts a fleet's port settings.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updategameserver"><a aria-hidden="true" class="anchor-heading" href="#updategameserver"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateGameServer</h3>
+<ul>
+<li>description: Changes game server properties, health status, or utilization status.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updategameservergroup"><a aria-hidden="true" class="anchor-heading" href="#updategameservergroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateGameServerGroup</h3>
+<ul>
+<li>description: Updates properties for game server group, including allowed instance types.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameServerGroup": {
+        "resource_type": "gameServerGroup",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updategamesession"><a aria-hidden="true" class="anchor-heading" href="#updategamesession"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateGameSession</h3>
+<ul>
+<li>description: Updates the properties of an existing game session.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updategamesessionqueue"><a aria-hidden="true" class="anchor-heading" href="#updategamesessionqueue"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateGameSessionQueue</h3>
+<ul>
+<li>description: Updates properties of an existing game session queue.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "gameSessionQueue": {
+        "resource_type": "gameSessionQueue",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatematchmakingconfiguration"><a aria-hidden="true" class="anchor-heading" href="#updatematchmakingconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateMatchmakingConfiguration</h3>
+<ul>
+<li>description: Updates properties of an existing FlexMatch matchmaking configuration.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "matchmakingConfiguration": {
+        "resource_type": "matchmakingConfiguration",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateruntimeconfiguration"><a aria-hidden="true" class="anchor-heading" href="#updateruntimeconfiguration"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRuntimeConfiguration</h3>
+<ul>
+<li>description: Updates how server processes are configured on instances in an existing fleet.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "fleet": {
+        "resource_type": "fleet",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatescript"><a aria-hidden="true" class="anchor-heading" href="#updatescript"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateScript</h3>
+<ul>
+<li>description: Updates the metadata and content of an existing Realtime Servers script.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "script": {
+        "resource_type": "script",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="validatematchmakingruleset"><a aria-hidden="true" class="anchor-heading" href="#validatematchmakingruleset"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ValidateMatchmakingRuleSet</h3>
+<ul>
+<li>description: Validates the syntax of a FlexMatch matchmaking rule set.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-GameLift"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

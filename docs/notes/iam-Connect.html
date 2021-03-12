@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Connect - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Connect.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Connect.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Connect.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Connect - undefined" />
+  <meta name="twitter:title" content="Connect - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Connect</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Connect">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="connect"><a aria-hidden="true" class="anchor-heading" href="#connect"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Connect</h1>
+<ul>
+<li>prefix: connect</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="associateroutingprofilequeues"><a aria-hidden="true" class="anchor-heading" href="#associateroutingprofilequeues"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AssociateRoutingProfileQueues</h3>
+<ul>
+<li>description: Grants permissions to associate queues with a routing profile in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "queue": {
+        "resource_type": "queue",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcontactflow"><a aria-hidden="true" class="anchor-heading" href="#createcontactflow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateContactFlow</h3>
+<ul>
+<li>description: Grants permissions to create a contact flow in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact-flow": {
+        "resource_type": "contact-flow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createinstance"><a aria-hidden="true" class="anchor-heading" href="#createinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateInstance</h3>
+<ul>
+<li>description: Grants permissions to create a new Amazon Connect instance. The associated required actions grant permissions to configure instance settings.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": [
+            "ds:CreateAlias",
+            "ds:DeleteDirectory",
+            "ds:DescribeDirectories",
+            "firehose:DescribeDeliveryStream",
+            "firehose:ListDeliveryStreams",
+            "iam:CreateServiceLinkedRole",
+            "kinesis:DescribeStream",
+            "kinesis:ListStreams",
+            "kms:CreateGrant",
+            "kms:DescribeKey",
+            "kms:ListAliases",
+            "kms:RetireGrant",
+            "s3:CreateBucket",
+            "s3:GetBucketLocation",
+            "s3:ListAllMyBuckets"
+        ]
+    }
+}
+</code></pre>
+<h3 id="createroutingprofile"><a aria-hidden="true" class="anchor-heading" href="#createroutingprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRoutingProfile</h3>
+<ul>
+<li>description: Grants permission to create a routing profile in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "queue": {
+        "resource_type": "queue",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createuser"><a aria-hidden="true" class="anchor-heading" href="#createuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateUser</h3>
+<ul>
+<li>description: Grants permission to create a user for the specified Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "security-profile": {
+        "resource_type": "security-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "hierarchy-group": {
+        "resource_type": "hierarchy-group",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteuser"><a aria-hidden="true" class="anchor-heading" href="#deleteuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteUser</h3>
+<ul>
+<li>description: Grants permissions to delete a user in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describecontactflow"><a aria-hidden="true" class="anchor-heading" href="#describecontactflow"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeContactFlow</h3>
+<ul>
+<li>description: Grants permissions to describe a contact flow in an Amazon Connect instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact-flow": {
+        "resource_type": "contact-flow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeinstance"><a aria-hidden="true" class="anchor-heading" href="#describeinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeInstance</h3>
+<ul>
+<li>description: Grants permissions to view details of an Amazon Connect instance. This is required to create an instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "firehose:DescribeDeliveryStream",
+            "firehose:ListDeliveryStreams",
+            "kinesis:DescribeStream",
+            "kinesis:ListStreams",
+            "kms:DescribeKey",
+            "kms:ListAliases",
+            "s3:ListAllMyBuckets"
+        ]
+    }
+}
+</code></pre>
+<h3 id="describeroutingprofile"><a aria-hidden="true" class="anchor-heading" href="#describeroutingprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeRoutingProfile</h3>
+<ul>
+<li>description: Grants permissions to describe a routing profile in an Amazon Connect instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeuser"><a aria-hidden="true" class="anchor-heading" href="#describeuser"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeUser</h3>
+<ul>
+<li>description: Grants permissions to describe a user in an Amazon Connect instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeuserhierarchygroup"><a aria-hidden="true" class="anchor-heading" href="#describeuserhierarchygroup"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeUserHierarchyGroup</h3>
+<ul>
+<li>description: Grants permissions to describe a hierarchy group for an Amazon Connect instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "hierarchy-group": {
+        "resource_type": "hierarchy-group",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="describeuserhierarchystructure"><a aria-hidden="true" class="anchor-heading" href="#describeuserhierarchystructure"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DescribeUserHierarchyStructure</h3>
+<ul>
+<li>description: Grants permissions to describe the hierarchy structure for an Amazon Connect instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="destroyinstance"><a aria-hidden="true" class="anchor-heading" href="#destroyinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DestroyInstance</h3>
+<ul>
+<li>description: Grants permissions to delete an Amazon Connect instance. When you remove an instance, the link to an existing AWS directory is also removed.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="disassociateroutingprofilequeues"><a aria-hidden="true" class="anchor-heading" href="#disassociateroutingprofilequeues"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DisassociateRoutingProfileQueues</h3>
+<ul>
+<li>description: Grants permissions to disassociate queues from a routing profile in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcontactattributes"><a aria-hidden="true" class="anchor-heading" href="#getcontactattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetContactAttributes</h3>
+<ul>
+<li>description: Grants permissions to retrieve the contact attributes for the specified contact.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact": {
+        "resource_type": "contact",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcurrentmetricdata"><a aria-hidden="true" class="anchor-heading" href="#getcurrentmetricdata"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCurrentMetricData</h3>
+<ul>
+<li>description: Grants permissions to retrieve current metric data for the queues in an Amazon Connect instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "queue": {
+        "resource_type": "queue",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getfederationtoken"><a aria-hidden="true" class="anchor-heading" href="#getfederationtoken"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetFederationToken</h3>
+<ul>
+<li>description: Allows federation into an instance when using SAML-based authentication for identity management.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getfederationtokens"><a aria-hidden="true" class="anchor-heading" href="#getfederationtokens"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetFederationTokens</h3>
+<ul>
+<li>description: Grants permissions to federate in to an Amazon Connect instance (Log in as administrator functionality in the AWS console).</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "connect:DescribeInstance",
+            "connect:ListInstances",
+            "ds:DescribeDirectories"
+        ]
+    }
+}
+</code></pre>
+<h3 id="getmetricdata"><a aria-hidden="true" class="anchor-heading" href="#getmetricdata"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetMetricData</h3>
+<ul>
+<li>description: Grants permissions to retrieve historical metric data for queues in an Amazon Connect instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "queue": {
+        "resource_type": "queue",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listcontactflows"><a aria-hidden="true" class="anchor-heading" href="#listcontactflows"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListContactFlows</h3>
+<ul>
+<li>description: Grants permissions to list contact flow resources in an Amazon Connect instance.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listhoursofoperations"><a aria-hidden="true" class="anchor-heading" href="#listhoursofoperations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListHoursOfOperations</h3>
+<ul>
+<li>description: Grants permissions to list hours of operation resources in an Amazon Connect instance.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listinstances"><a aria-hidden="true" class="anchor-heading" href="#listinstances"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListInstances</h3>
+<ul>
+<li>description: Grants permissions to view the Amazon Connect instances associated with an AWS account.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listphonenumbers"><a aria-hidden="true" class="anchor-heading" href="#listphonenumbers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListPhoneNumbers</h3>
+<ul>
+<li>description: Grants permissions to list phone number resources in an Amazon Connect instance.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listprompts"><a aria-hidden="true" class="anchor-heading" href="#listprompts"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListPrompts</h3>
+<ul>
+<li>description: Grants permissions to list prompt resources in an Amazon Connect instance.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listqueues"><a aria-hidden="true" class="anchor-heading" href="#listqueues"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListQueues</h3>
+<ul>
+<li>description: Grants permissions to list queue resources in an Amazon Connect instance.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listroutingprofilequeues"><a aria-hidden="true" class="anchor-heading" href="#listroutingprofilequeues"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRoutingProfileQueues</h3>
+<ul>
+<li>description: Grants permissions to list queue resources in a routing profile in an Amazon Connect instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listroutingprofiles"><a aria-hidden="true" class="anchor-heading" href="#listroutingprofiles"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListRoutingProfiles</h3>
+<ul>
+<li>description: Grants permissions to list routing profile resources in an Amazon Connect instance.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listsecurityprofiles"><a aria-hidden="true" class="anchor-heading" href="#listsecurityprofiles"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListSecurityProfiles</h3>
+<ul>
+<li>description: Grants permissions to list security profile resources in an Amazon Connect instance.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listtagsforresource"><a aria-hidden="true" class="anchor-heading" href="#listtagsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListTagsForResource</h3>
+<ul>
+<li>description: Grants permissions to list tags for an Amazon Connect resource.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact-flow": {
+        "resource_type": "contact-flow",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "user": {
+        "resource_type": "user",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listuserhierarchygroups"><a aria-hidden="true" class="anchor-heading" href="#listuserhierarchygroups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListUserHierarchyGroups</h3>
+<ul>
+<li>description: Grants permissions to list the hierarchy group resources in an Amazon Connect instance.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="listusers"><a aria-hidden="true" class="anchor-heading" href="#listusers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ListUsers</h3>
+<ul>
+<li>description: Grants permissions to list user resources in an Amazon Connect instance.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="modifyinstance"><a aria-hidden="true" class="anchor-heading" href="#modifyinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ModifyInstance</h3>
+<ul>
+<li>description: Grants permissions to modify configuration settings for an existing Amazon Connect instance. The associated required actions grant permission modify the settings for the instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "instance": {
+        "resource_type": "instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": [
+            "firehose:DescribeDeliveryStream",
+            "firehose:ListDeliveryStreams",
+            "kinesis:DescribeStream",
+            "kinesis:ListStreams",
+            "kms:CreateGrant",
+            "kms:DescribeKey",
+            "kms:ListAliases",
+            "kms:RetireGrant",
+            "s3:CreateBucket",
+            "s3:GetBucketLocation",
+            "s3:ListAllMyBuckets"
+        ]
+    }
+}
+</code></pre>
+<h3 id="resumecontactrecording"><a aria-hidden="true" class="anchor-heading" href="#resumecontactrecording"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ResumeContactRecording</h3>
+<ul>
+<li>description: Grants permissions to resume recording for the specified contact.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact": {
+        "resource_type": "contact",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startchatcontact"><a aria-hidden="true" class="anchor-heading" href="#startchatcontact"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartChatContact</h3>
+<ul>
+<li>description: Grants permissions to initiate a chat using the Amazon Connect API.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact-flow": {
+        "resource_type": "contact-flow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startcontactrecording"><a aria-hidden="true" class="anchor-heading" href="#startcontactrecording"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartContactRecording</h3>
+<ul>
+<li>description: Grants permissions to start recording for the specified contact.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact": {
+        "resource_type": "contact",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startoutboundvoicecontact"><a aria-hidden="true" class="anchor-heading" href="#startoutboundvoicecontact"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartOutboundVoiceContact</h3>
+<ul>
+<li>description: Grants permissions to initiate outbound calls using the Amazon Connect API.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact": {
+        "resource_type": "contact",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopcontact"><a aria-hidden="true" class="anchor-heading" href="#stopcontact"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopContact</h3>
+<ul>
+<li>description: Grants permissions to stop contacts that were initiated using the Amazon Connect API. If you use this operation on an active contact the contact ends, even if the agent is active on a call with a customer.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact": {
+        "resource_type": "contact",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopcontactrecording"><a aria-hidden="true" class="anchor-heading" href="#stopcontactrecording"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopContactRecording</h3>
+<ul>
+<li>description: Grants permissions to stop recording for the specified contact.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact": {
+        "resource_type": "contact",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="suspendcontactrecording"><a aria-hidden="true" class="anchor-heading" href="#suspendcontactrecording"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>SuspendContactRecording</h3>
+<ul>
+<li>description: Grants permissions to suspend recording for the specified contact.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact": {
+        "resource_type": "contact",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Grants permissions to tag an Amazon Connect resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact-flow": {
+        "resource_type": "contact-flow",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "user": {
+        "resource_type": "user",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:RequestTag/${TagKey}",
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Grants permissions to untag an Amazon Connect resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact-flow": {
+        "resource_type": "contact-flow",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "user": {
+        "resource_type": "user",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:TagKeys",
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecontactattributes"><a aria-hidden="true" class="anchor-heading" href="#updatecontactattributes"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateContactAttributes</h3>
+<ul>
+<li>description: Grants permissions to create or update the contact attributes associated with the specified contact.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact": {
+        "resource_type": "contact",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecontactflowcontent"><a aria-hidden="true" class="anchor-heading" href="#updatecontactflowcontent"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateContactFlowContent</h3>
+<ul>
+<li>description: Grants permissions to update contact flow content in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact-flow": {
+        "resource_type": "contact-flow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatecontactflowname"><a aria-hidden="true" class="anchor-heading" href="#updatecontactflowname"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateContactFlowName</h3>
+<ul>
+<li>description: Grants permissions to update the name and description of a contact flow in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "contact-flow": {
+        "resource_type": "contact-flow",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateroutingprofileconcurrency"><a aria-hidden="true" class="anchor-heading" href="#updateroutingprofileconcurrency"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRoutingProfileConcurrency</h3>
+<ul>
+<li>description: Grants permissions to update the concurrency in a routing profile in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateroutingprofiledefaultoutboundqueue"><a aria-hidden="true" class="anchor-heading" href="#updateroutingprofiledefaultoutboundqueue"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRoutingProfileDefaultOutboundQueue</h3>
+<ul>
+<li>description: Grants permissions to update the outbound queue in a routing profile in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "queue": {
+        "resource_type": "queue",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateroutingprofilename"><a aria-hidden="true" class="anchor-heading" href="#updateroutingprofilename"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRoutingProfileName</h3>
+<ul>
+<li>description: Grants permissions to update a routing profile name and description in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateroutingprofilequeues"><a aria-hidden="true" class="anchor-heading" href="#updateroutingprofilequeues"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRoutingProfileQueues</h3>
+<ul>
+<li>description: Grants permissions to update the queues in routing profile in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateuserhierarchy"><a aria-hidden="true" class="anchor-heading" href="#updateuserhierarchy"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateUserHierarchy</h3>
+<ul>
+<li>description: Grants permissions to update a hierarchy group for a user in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "hierarchy-group": {
+        "resource_type": "hierarchy-group",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateuseridentityinfo"><a aria-hidden="true" class="anchor-heading" href="#updateuseridentityinfo"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateUserIdentityInfo</h3>
+<ul>
+<li>description: Grants permissions to update identity information for a user in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateuserphoneconfig"><a aria-hidden="true" class="anchor-heading" href="#updateuserphoneconfig"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateUserPhoneConfig</h3>
+<ul>
+<li>description: Grants permissions to update phone configuration settings for a user in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateuserroutingprofile"><a aria-hidden="true" class="anchor-heading" href="#updateuserroutingprofile"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateUserRoutingProfile</h3>
+<ul>
+<li>description: Grants permissions to update a routing profile for a user in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "routing-profile": {
+        "resource_type": "routing-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateusersecurityprofiles"><a aria-hidden="true" class="anchor-heading" href="#updateusersecurityprofiles"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateUserSecurityProfiles</h3>
+<ul>
+<li>description: Grants permissions to update security profiles for a user in an Amazon Connect instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "security-profile": {
+        "resource_type": "security-profile",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "user": {
+        "resource_type": "user",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:ResourceTag/${TagKey}"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Connect"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

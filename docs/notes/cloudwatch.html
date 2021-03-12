@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>CloudWatch - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/cloudwatch.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/cloudwatch.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/cloudwatch.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="CloudWatch - undefined" />
+  <meta name="twitter:title" content="CloudWatch - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/1f759d8c-cca7-4fc4-9aa2-6dbf6e596abf.html">Services</a></li><li class="breadcrumb-nav-list-item">CloudWatch</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="CloudWatch">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="cloudwatch"><a aria-hidden="true" class="anchor-heading" href="#cloudwatch"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CloudWatch</h1>
+<h3 id="cloudwatch-basics"><a aria-hidden="true" class="anchor-heading" href="#cloudwatch-basics"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CloudWatch Basics</h3>
+<ul>
+<li>📒  <a href="https://aws.amazon.com/cloudwatch/">Homepage</a> ∙ <a href="https://aws.amazon.com/documentation/cloudwatch/">Documentation</a> ∙ <a href="https://aws.amazon.com/cloudwatch/faqs/">FAQ</a> ∙ <a href="https://aws.amazon.com/cloudwatch/pricing/">Pricing</a></li>
+<li><strong>CloudWatch</strong> monitors resources and applications, captures logs, and sends events.</li>
+<li>CloudWatch monitoring is the standard mechanism for keeping tabs on AWS resources. A wide range of  <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html"><strong>metrics and dimensions</strong></a> are available via CloudWatch, allowing you to create time based graphs, <strong><a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html">alarms</a></strong>, and <strong><a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Dashboards.html">dashboards</a></strong>.
+<ul>
+<li>Alarms are the most practical use of CloudWatch, allowing you to trigger notifications from any given metric.</li>
+<li>Alarms can trigger <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ConsoleAlarms.html">SNS notifications</a>, <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/policy_creating.html">Auto Scaling actions</a>, or <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingAlarmActions.html">EC2 actions</a>.</li>
+<li>Alarms also support <a href="https://aws.amazon.com/about-aws/whats-new/2017/12/amazon-cloudwatch-alarms-now-alerts-you-when-any-m-out-of-n-metric-datapoints-in-an-interval-are-above-your-threshold/">alerting when any M out of N datapoints cross the alarm threshold</a>.</li>
+<li>Publish and share graphs of metrics by creating <a href="https://aws.amazon.com/blogs/aws/cloudwatch-dashboards-create-use-customized-metrics-views/">customizable dashboard views</a>.
+<ul>
+<li>Monitor and report on EC2 <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html#creating_status_check_alarms">instance system check failure alarms</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Using CloudWatch Events:</strong>
+<ul>
+<li>Events create a mechanism to automate actions in various services on AWS. You can create <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html">event rules</a> from instance states, AWS APIs, Auto Scaling, Run commands, deployments or time-based schedules (think Cron).</li>
+<li><a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CWE_GettingStarted.html">Triggered events</a> can invoke Lambda functions, send SNS/SQS/Kinesis messages, or perform instance actions (terminate, restart, stop, or snapshot volumes).</li>
+<li>Custom payloads can be sent to targets in JSON format, this is especially useful when triggering Lambdas.</li>
+</ul>
+</li>
+<li><strong>Using CloudWatch Logs:</strong>
+<ul>
+<li><a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">CloudWatch Logs</a> is a streaming log storage system. By storing logs within AWS you have access to unlimited paid storage, but you also have the option of streaming logs directly to ElasticSearch or custom Lambdas.</li>
+<li>A <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_GettingStarted.html">log agent installed</a> on your servers will process logs over time and send them to CloudWatch Logs.</li>
+<li>You can <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/S3Export.html">export logged data to S3</a> or stream results to other AWS services.</li>
+<li>CloudWatch Logs can be <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/encrypt-log-data-kms.html">encrypted using keys managed through KMS</a>.</li>
+</ul>
+</li>
+<li><strong>Detailed monitoring:</strong> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch-new.html">Detailed monitoring</a> for EC2 instances must be enabled to get granular metrics, and is <a href="https://aws.amazon.com/cloudwatch/pricing/">billed under CloudWatch</a>.</li>
+</ul>
+<h3 id="cloudwatch-alternatives-and-lock-in"><a aria-hidden="true" class="anchor-heading" href="#cloudwatch-alternatives-and-lock-in"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CloudWatch Alternatives and Lock-In</h3>
+<ul>
+<li>CloudWatch offers fairly basic functionality that doesn't create significant (additional) AWS lock-in. Most of the metrics provided by the service can be obtained through APIs that can be imported into other aggregation or visualization tools or services (many specifically provide CloudWatch data import services).</li>
+<li>🚪 Alternatives to CloudWatch monitoring services include <a href="http://newrelic.com/">NewRelic</a>, <a href="http://datadog.com/">Datadog</a>, <a href="http://sumologic.com/">Sumo Logic</a>, <a href="http://zabbix.com/">Zabbix</a>, <a href="http://nagios.org/">Nagios</a>, <a href="http://ruxit.com/">Ruxit</a>, <a href="https://www.elastic.co/elk-stack">Elastic Stack</a>, open source options such as <a href="https://github.com/etsy/statsd">StatsD</a> or <a href="https://collectd.org/">collectd</a> with <a href="https://graphiteapp.org/">Graphite</a>, and many others.</li>
+<li>🚪 CloudWatch Log alternatives include <a href="http://splunk.com/">Splunk</a>, <a href="http://sumologic.com/">Sumo Logic</a>, <a href="http://loggly.com/">Loggly</a>, <a href="https://logdna.com/">LogDNA</a>, <a href="https://www.elastic.co/products/logstash">Logstash</a>, <a href="https://papertrailapp.com/">Papertrail</a>, <a href="https://www.elastic.co/elk-stack">Elastic Stack</a>, and other centralized logging solutions.</li>
+</ul>
+<h3 id="cloudwatch-tips"><a aria-hidden="true" class="anchor-heading" href="#cloudwatch-tips"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CloudWatch Tips</h3>
+<ul>
+<li>Some very common use cases for CloudWatch are <strong><a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">billing alarms</a></strong>, <strong>instance</strong> <strong>or <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-cloudwatch-metrics.html">load balancer up/down alarms</a></strong>, and <strong>disk usage alerts</strong>.</li>
+<li>You can use <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html#send_logs_to_cwl">EC2Config</a> to monitor watch memory and disk metrics on Windows platform instances. For Linux, there are <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html">example scripts</a> that do the same thing.</li>
+<li>You can <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">publish your own metrics</a> using the AWS API. <a href="https://aws.amazon.com/cloudwatch/pricing/">Incurs additional cost</a>.</li>
+<li>You can stream directly from CloudWatch Logs to a Lambda or ElasticSearch cluster by creating <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html">subscriptions</a> on Log Groups.</li>
+<li>Don't forget to take advantage of the <a href="https://aws.amazon.com/free/#Amazon_CloudWatch">CloudWatch non-expiring free tier</a>.</li>
+</ul>
+<h3 id="cloudwatch-gotchas-and-limitations"><a aria-hidden="true" class="anchor-heading" href="#cloudwatch-gotchas-and-limitations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CloudWatch Gotchas and Limitations</h3>
+<ul>
+<li>🔸Metrics in CloudWatch originate <a href="https://forums.aws.amazon.com/message.jspa?messageID=403578">on the hypervisor</a>. The hypervisor doesn't have access to OS information, so certain metrics (most notably memory utilization) are not available unless pushed to CloudWatch from inside the instance.</li>
+<li>🔸You can not use <a href="https://forums.aws.amazon.com/thread.jspa?threadID=94984">more than one metric for an alarm</a>.</li>
+<li>🔸Notifications you receive from alarms will not have any contextual detail; they have only the specifics of the threshold, alarm state, and timing.</li>
+<li>🔸By default, CloudWatch metric resolution is 1 minute. If you send multiple values of a metric within the same minute, they will be aggregated into minimum, maximum, average and total (sum) per minute.</li>
+<li>🐥In July 2017, a new <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">high-resolution option</a> was added for CloudWatch metrics and alarms. This feature allows you to record metrics with 1-second resolution, and to evaluate CloudWatch alarms every 10 seconds.
+<ul>
+<li>The <a href="https://aws.amazon.com/blogs/aws/new-high-resolution-custom-metrics-and-alarms-for-amazon-cloudwatch/">blog post introducing this feature</a> describes how to publish a high-resolution metric to CloudWatch. Note that when calling the <code>PutMetricData</code> API, <code>StorageResolution</code> is an attribute of each item you send in the <code>MetricData</code> array, not a direct parameter of the <code>PutMetricData</code> API call.</li>
+</ul>
+</li>
+<li>🔸Data about metrics is kept in CloudWatch <a href="https://aws.amazon.com/blogs/aws/amazon-cloudwatch-update-extended-metrics-retention-user-interface-update/">for 15 months</a>, starting November 2016 (used to be 14 days). Minimum granularity increases after 15 days.</li>
+</ul><span id="navId" data="cloudwatch"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>

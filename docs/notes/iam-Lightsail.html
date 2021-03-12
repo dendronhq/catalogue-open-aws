@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  
+  <title>Lightsail - undefined</title>
+  
+
+  <link
+    rel="shortcut icon"
+    href="https://aws.dendron.so/favicon.ico"
+    type="image/x-icon"
+  />
+  <link
+    rel="stylesheet"
+    href="https://aws.dendron.so/assets/css/just-the-docs-default.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/just-the-docs.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+    crossorigin="anonymous"
+  />
+  <script
+    type="text/javascript"
+    src="https://aws.dendron.so/assets/js/vendor/lunr.min.js"
+  ></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+  
+<meta name="description" content="Personal knowledge space">
+<meta name="author" content="">
+
+<link rel="canonical" href="https://aws.dendron.so/notes/iam-Lightsail.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aws.dendron.so/notes/iam-Lightsail.html">
+<meta property="og:description" content="Personal knowledge space">
+<meta property="og:image" content="https://aws.dendron.soundefined">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:url" content="https://aws.dendron.so/notes/iam-Lightsail.html">
+<meta name="twitter:description" content="Personal knowledge space">
+<meta name="twitter:image" content="https://aws.dendron.soundefined">
+
+
+  <meta property="og:title" content="Lightsail - undefined" />
+  <meta name="twitter:title" content="Lightsail - undefined" />
+  
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="svg-link" viewBox="0 0 24 24">
+        <title>Link</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </symbol>
+      <symbol id="svg-search" viewBox="0 0 24 24">
+        <title>Search</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-menu" viewBox="0 0 24 24">
+        <title>Menu</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </symbol>
+      <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+        <title>Expand</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </symbol>
+      <symbol id="svg-doc" viewBox="0 0 24 24">
+        <title>Document</title>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+        </svg>
+      </symbol>
+    </svg>
+
+    <div class="side-bar">
+      <div class="site-header">
+        <a href="https://aws.dendron.so" class="site-title lh-tight">
+  
+
+ </a>
+        <a href="#" id="menu-button" class="site-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+        </a>
+      </div>
+
+      <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      </nav>
+      <footer class="site-footer">
+        🌱 with 💕 using <a href="https://www.dendron.so/"> Dendron 🌲 </a>
+      </footer>
+    </div>
+    <div class="main" id="top">
+        <div id="main-header" class="main-header">
+          
+            <div class="search">
+              <div class="search-input-wrap">
+                <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search " aria-label="Search " autocomplete="off">
+                <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+              </div>
+              <div id="search-results" class="search-results"></div>
+            </div>
+          
+          
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+        
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so">Home</a></li><li class="breadcrumb-nav-list-item"><a href="https://aws.dendron.so/notes/7ac589e9-18e6-402b-a01e-ca7c802d0ce1.html">IAM</a></li><li class="breadcrumb-nav-list-item">Lightsail</li></ol>
+          </nav>
+        
+      
+      <div id="main-content" class="main-content" role="main">
+
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        
+
+        <script>
+          $(function () {
+            $('[data-toggle="popover"]').popover({html: true})
+          })
+        </script>
+
+        
+
+<div id="main" role="main">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Lightsail">
+    
+    <meta itemprop="datePublished" content="1969-12-31T16:00:00+00:00">
+    <meta itemprop="dateModified" content="1969-12-31T16:00:00+00:00">
+
+    <div class="page__inner-wrap">
+
+      
+
+      <section class="page__content" itemprop="text">
+
+        
+
+        <h1 id="lightsail"><a aria-hidden="true" class="anchor-heading" href="#lightsail"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Lightsail</h1>
+<ul>
+<li>prefix: lightsail</li>
+</ul>
+<h2 id="table-of-contents"><a aria-hidden="true" class="anchor-heading" href="#table-of-contents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Table of Contents</h2>
+<h2 id="privileges"><a aria-hidden="true" class="anchor-heading" href="#privileges"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Privileges</h2>
+<h3 id="allocatestaticip"><a aria-hidden="true" class="anchor-heading" href="#allocatestaticip"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AllocateStaticIp</h3>
+<ul>
+<li>description: Creates a static IP address that can be attached to an instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "StaticIp": {
+        "resource_type": "StaticIp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="attachdisk"><a aria-hidden="true" class="anchor-heading" href="#attachdisk"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AttachDisk</h3>
+<ul>
+<li>description: Attaches a disk to an instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Disk": {
+        "resource_type": "Disk",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="attachinstancestoloadbalancer"><a aria-hidden="true" class="anchor-heading" href="#attachinstancestoloadbalancer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AttachInstancesToLoadBalancer</h3>
+<ul>
+<li>description: Attaches one or more instances to a load balancer.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="attachloadbalancertlscertificate"><a aria-hidden="true" class="anchor-heading" href="#attachloadbalancertlscertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AttachLoadBalancerTlsCertificate</h3>
+<ul>
+<li>description: Attaches a TLS certificate to a load balancer.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="attachstaticip"><a aria-hidden="true" class="anchor-heading" href="#attachstaticip"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>AttachStaticIp</h3>
+<ul>
+<li>description: Attaches a static IP address to an instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "StaticIp": {
+        "resource_type": "StaticIp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="closeinstancepublicports"><a aria-hidden="true" class="anchor-heading" href="#closeinstancepublicports"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CloseInstancePublicPorts</h3>
+<ul>
+<li>description: Closes a public port of an instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="copysnapshot"><a aria-hidden="true" class="anchor-heading" href="#copysnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CopySnapshot</h3>
+<ul>
+<li>description: Copies a snapshot from one AWS Region to another in Amazon Lightsail.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createcloudformationstack"><a aria-hidden="true" class="anchor-heading" href="#createcloudformationstack"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateCloudFormationStack</h3>
+<ul>
+<li>description: Creates a new Amazon EC2 instance from an exported Amazon Lightsail snapshot.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ExportSnapshotRecord": {
+        "resource_type": "ExportSnapshotRecord",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdisk"><a aria-hidden="true" class="anchor-heading" href="#createdisk"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDisk</h3>
+<ul>
+<li>description: Creates a disk.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Disk": {
+        "resource_type": "Disk",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="creatediskfromsnapshot"><a aria-hidden="true" class="anchor-heading" href="#creatediskfromsnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDiskFromSnapshot</h3>
+<ul>
+<li>description: Creates a disk from snapshot.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Disk": {
+        "resource_type": "Disk",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdisksnapshot"><a aria-hidden="true" class="anchor-heading" href="#createdisksnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDiskSnapshot</h3>
+<ul>
+<li>description: Creates a disk snapshot.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Disk": {
+        "resource_type": "Disk",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdomain"><a aria-hidden="true" class="anchor-heading" href="#createdomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDomain</h3>
+<ul>
+<li>description: Creates a domain resource for the specified domain name.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Domain": {
+        "resource_type": "Domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createdomainentry"><a aria-hidden="true" class="anchor-heading" href="#createdomainentry"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateDomainEntry</h3>
+<ul>
+<li>description: Creates one or more DNS record entries for a domain resource: Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Domain": {
+        "resource_type": "Domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createinstancesnapshot"><a aria-hidden="true" class="anchor-heading" href="#createinstancesnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateInstanceSnapshot</h3>
+<ul>
+<li>description: Creates an instance snapshot.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "InstanceSnapshot": {
+        "resource_type": "InstanceSnapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createinstances"><a aria-hidden="true" class="anchor-heading" href="#createinstances"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateInstances</h3>
+<ul>
+<li>description: Creates one or more instances.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "KeyPair": {
+        "resource_type": "KeyPair",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createinstancesfromsnapshot"><a aria-hidden="true" class="anchor-heading" href="#createinstancesfromsnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateInstancesFromSnapshot</h3>
+<ul>
+<li>description: Creates one or more instances based on an instance snapshot.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "InstanceSnapshot": {
+        "resource_type": "InstanceSnapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createkeypair"><a aria-hidden="true" class="anchor-heading" href="#createkeypair"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateKeyPair</h3>
+<ul>
+<li>description: Creates a key pair used to authenticate and connect to an instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "KeyPair": {
+        "resource_type": "KeyPair",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createloadbalancer"><a aria-hidden="true" class="anchor-heading" href="#createloadbalancer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateLoadBalancer</h3>
+<ul>
+<li>description: Creates a load balancer.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createloadbalancertlscertificate"><a aria-hidden="true" class="anchor-heading" href="#createloadbalancertlscertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateLoadBalancerTlsCertificate</h3>
+<ul>
+<li>description: Creates a load balancer TLS certificate.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createrelationaldatabase"><a aria-hidden="true" class="anchor-heading" href="#createrelationaldatabase"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRelationalDatabase</h3>
+<ul>
+<li>description: Creates a new relational database.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createrelationaldatabasefromsnapshot"><a aria-hidden="true" class="anchor-heading" href="#createrelationaldatabasefromsnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRelationalDatabaseFromSnapshot</h3>
+<ul>
+<li>description: Creates a new relational database from a snapshot.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="createrelationaldatabasesnapshot"><a aria-hidden="true" class="anchor-heading" href="#createrelationaldatabasesnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>CreateRelationalDatabaseSnapshot</h3>
+<ul>
+<li>description: Creates a relational database snapshot.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabaseSnapshot": {
+        "resource_type": "RelationalDatabaseSnapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedisk"><a aria-hidden="true" class="anchor-heading" href="#deletedisk"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDisk</h3>
+<ul>
+<li>description: Deletes a disk.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Disk": {
+        "resource_type": "Disk",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedisksnapshot"><a aria-hidden="true" class="anchor-heading" href="#deletedisksnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDiskSnapshot</h3>
+<ul>
+<li>description: Deletes a disk snapshot.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Disk": {
+        "resource_type": "Disk",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedomain"><a aria-hidden="true" class="anchor-heading" href="#deletedomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDomain</h3>
+<ul>
+<li>description: Deletes a domain resource and all of its DNS records.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Domain": {
+        "resource_type": "Domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletedomainentry"><a aria-hidden="true" class="anchor-heading" href="#deletedomainentry"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteDomainEntry</h3>
+<ul>
+<li>description: Deletes a DNS record entry for a domain resource.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Domain": {
+        "resource_type": "Domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteinstance"><a aria-hidden="true" class="anchor-heading" href="#deleteinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteInstance</h3>
+<ul>
+<li>description: Deletes an instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteinstancesnapshot"><a aria-hidden="true" class="anchor-heading" href="#deleteinstancesnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteInstanceSnapshot</h3>
+<ul>
+<li>description: Deletes an instance snapshot.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "InstanceSnapshot": {
+        "resource_type": "InstanceSnapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deletekeypair"><a aria-hidden="true" class="anchor-heading" href="#deletekeypair"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteKeyPair</h3>
+<ul>
+<li>description: Deletes a key pair used to authenticate and connect to an instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "KeyPair": {
+        "resource_type": "KeyPair",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteknownhostkeys"><a aria-hidden="true" class="anchor-heading" href="#deleteknownhostkeys"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteKnownHostKeys</h3>
+<ul>
+<li>description: Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to authenticate an instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteloadbalancer"><a aria-hidden="true" class="anchor-heading" href="#deleteloadbalancer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteLoadBalancer</h3>
+<ul>
+<li>description: Deletes a load balancer.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleteloadbalancertlscertificate"><a aria-hidden="true" class="anchor-heading" href="#deleteloadbalancertlscertificate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteLoadBalancerTlsCertificate</h3>
+<ul>
+<li>description: Deletes a load balancer TLS certificate.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleterelationaldatabase"><a aria-hidden="true" class="anchor-heading" href="#deleterelationaldatabase"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRelationalDatabase</h3>
+<ul>
+<li>description: Deletes a relational database.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="deleterelationaldatabasesnapshot"><a aria-hidden="true" class="anchor-heading" href="#deleterelationaldatabasesnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DeleteRelationalDatabaseSnapshot</h3>
+<ul>
+<li>description: Deletes relational database snapshot.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabaseSnapshot": {
+        "resource_type": "RelationalDatabaseSnapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="detachdisk"><a aria-hidden="true" class="anchor-heading" href="#detachdisk"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DetachDisk</h3>
+<ul>
+<li>description: Detaches a disk from an instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Disk": {
+        "resource_type": "Disk",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="detachinstancesfromloadbalancer"><a aria-hidden="true" class="anchor-heading" href="#detachinstancesfromloadbalancer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DetachInstancesFromLoadBalancer</h3>
+<ul>
+<li>description: Detaches one or more instances from a load balancer.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="detachstaticip"><a aria-hidden="true" class="anchor-heading" href="#detachstaticip"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DetachStaticIp</h3>
+<ul>
+<li>description: Detaches a static IP from an instance to which it is attached.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "StaticIp": {
+        "resource_type": "StaticIp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="downloaddefaultkeypair"><a aria-hidden="true" class="anchor-heading" href="#downloaddefaultkeypair"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>DownloadDefaultKeyPair</h3>
+<ul>
+<li>description: Downloads the default key pair used to authenticate and connect to instances in a specific AWS Region.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "KeyPair": {
+        "resource_type": "KeyPair",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="exportsnapshot"><a aria-hidden="true" class="anchor-heading" href="#exportsnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ExportSnapshot</h3>
+<ul>
+<li>description: Exports an Amazon Lightsail snapshot to Amazon EC2.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getactivenames"><a aria-hidden="true" class="anchor-heading" href="#getactivenames"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetActiveNames</h3>
+<ul>
+<li>description: Returns the names of all active (not deleted) resources.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getblueprints"><a aria-hidden="true" class="anchor-heading" href="#getblueprints"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBlueprints</h3>
+<ul>
+<li>description: Returns a list of instance images, or blueprints. You can use a blueprint to create a new instance already running a specific operating system, as well as a pre-installed application or development stack. The software that runs on your instance depends on the blueprint you define when creating the instance.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getbundles"><a aria-hidden="true" class="anchor-heading" href="#getbundles"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetBundles</h3>
+<ul>
+<li>description: Returns a list of instance bundles. You can use a bundle to create a new instance with a set of performance specifications, such as CPU count, disk size, RAM size, and network transfer allowance. The cost of your instance depends on the bundle you define when creating the instance.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getcloudformationstackrecords"><a aria-hidden="true" class="anchor-heading" href="#getcloudformationstackrecords"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetCloudFormationStackRecords</h3>
+<ul>
+<li>description: Returns information about all CloudFormation stacks used to create Amazon EC2 resources from exported Amazon Lightsail snapshots.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "CloudFormationStackRecord": {
+        "resource_type": "CloudFormationStackRecord",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdisk"><a aria-hidden="true" class="anchor-heading" href="#getdisk"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDisk</h3>
+<ul>
+<li>description: Returns information about a disk.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Disk": {
+        "resource_type": "Disk",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdisksnapshot"><a aria-hidden="true" class="anchor-heading" href="#getdisksnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDiskSnapshot</h3>
+<ul>
+<li>description: Returns information about a disk snapshot.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Disk": {
+        "resource_type": "Disk",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdisksnapshots"><a aria-hidden="true" class="anchor-heading" href="#getdisksnapshots"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDiskSnapshots</h3>
+<ul>
+<li>description: Returns information about all disk snapshots.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Disk": {
+        "resource_type": "Disk",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdisks"><a aria-hidden="true" class="anchor-heading" href="#getdisks"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDisks</h3>
+<ul>
+<li>description: Returns information about all disks.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdomain"><a aria-hidden="true" class="anchor-heading" href="#getdomain"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDomain</h3>
+<ul>
+<li>description: Returns DNS records for a domain resource.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Domain": {
+        "resource_type": "Domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getdomains"><a aria-hidden="true" class="anchor-heading" href="#getdomains"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetDomains</h3>
+<ul>
+<li>description: Returns DNS records for all domain resources.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Domain": {
+        "resource_type": "Domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getexportsnapshotrecords"><a aria-hidden="true" class="anchor-heading" href="#getexportsnapshotrecords"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetExportSnapshotRecords</h3>
+<ul>
+<li>description: Returns information about all records to export Amazon Lightsail snapshots to Amazon EC2.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "ExportSnapshotRecord": {
+        "resource_type": "ExportSnapshotRecord",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinstance"><a aria-hidden="true" class="anchor-heading" href="#getinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInstance</h3>
+<ul>
+<li>description: Returns information about an instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinstanceaccessdetails"><a aria-hidden="true" class="anchor-heading" href="#getinstanceaccessdetails"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInstanceAccessDetails</h3>
+<ul>
+<li>description: Returns temporary keys you can use to authenticate and connect to an instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinstancemetricdata"><a aria-hidden="true" class="anchor-heading" href="#getinstancemetricdata"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInstanceMetricData</h3>
+<ul>
+<li>description: Returns the data points for the specified metric of an instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinstanceportstates"><a aria-hidden="true" class="anchor-heading" href="#getinstanceportstates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInstancePortStates</h3>
+<ul>
+<li>description: Returns the port states of an instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinstancesnapshot"><a aria-hidden="true" class="anchor-heading" href="#getinstancesnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInstanceSnapshot</h3>
+<ul>
+<li>description: Returns information about an instance snapshot.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "InstanceSnapshot": {
+        "resource_type": "InstanceSnapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinstancesnapshots"><a aria-hidden="true" class="anchor-heading" href="#getinstancesnapshots"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInstanceSnapshots</h3>
+<ul>
+<li>description: Returns information about all instance snapshots.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "InstanceSnapshot": {
+        "resource_type": "InstanceSnapshot",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinstancestate"><a aria-hidden="true" class="anchor-heading" href="#getinstancestate"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInstanceState</h3>
+<ul>
+<li>description: Returns the state of an instance.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getinstances"><a aria-hidden="true" class="anchor-heading" href="#getinstances"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetInstances</h3>
+<ul>
+<li>description: Returns information about all instances.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getkeypair"><a aria-hidden="true" class="anchor-heading" href="#getkeypair"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetKeyPair</h3>
+<ul>
+<li>description: Returns information about a key pair.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "KeyPair": {
+        "resource_type": "KeyPair",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getkeypairs"><a aria-hidden="true" class="anchor-heading" href="#getkeypairs"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetKeyPairs</h3>
+<ul>
+<li>description: Returns information about all key pairs.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "KeyPair": {
+        "resource_type": "KeyPair",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getloadbalancer"><a aria-hidden="true" class="anchor-heading" href="#getloadbalancer"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetLoadBalancer</h3>
+<ul>
+<li>description: Returns information about a load balancer.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getloadbalancermetricdata"><a aria-hidden="true" class="anchor-heading" href="#getloadbalancermetricdata"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetLoadBalancerMetricData</h3>
+<ul>
+<li>description: Returns the data points for the specified metric of a load balancer.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getloadbalancertlscertificates"><a aria-hidden="true" class="anchor-heading" href="#getloadbalancertlscertificates"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetLoadBalancerTlsCertificates</h3>
+<ul>
+<li>description: Returns information about a load balancer TLS certificate.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getloadbalancers"><a aria-hidden="true" class="anchor-heading" href="#getloadbalancers"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetLoadBalancers</h3>
+<ul>
+<li>description: Returns information about load balancers.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getoperation"><a aria-hidden="true" class="anchor-heading" href="#getoperation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetOperation</h3>
+<ul>
+<li>description: Returns information about an operation. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getoperations"><a aria-hidden="true" class="anchor-heading" href="#getoperations"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetOperations</h3>
+<ul>
+<li>description: Returns information about all operations. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getoperationsforresource"><a aria-hidden="true" class="anchor-heading" href="#getoperationsforresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetOperationsForResource</h3>
+<ul>
+<li>description: Returns operations for a resource.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Domain": {
+        "resource_type": "Domain",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "Instance": {
+        "resource_type": "Instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "InstanceSnapshot": {
+        "resource_type": "InstanceSnapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "KeyPair": {
+        "resource_type": "KeyPair",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "StaticIp": {
+        "resource_type": "StaticIp",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getregions"><a aria-hidden="true" class="anchor-heading" href="#getregions"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRegions</h3>
+<ul>
+<li>description: Returns a list of all valid AWS Regions for Amazon Lightsail.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrelationaldatabase"><a aria-hidden="true" class="anchor-heading" href="#getrelationaldatabase"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRelationalDatabase</h3>
+<ul>
+<li>description: Returns information about a relational database.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrelationaldatabaseblueprints"><a aria-hidden="true" class="anchor-heading" href="#getrelationaldatabaseblueprints"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRelationalDatabaseBlueprints</h3>
+<ul>
+<li>description: Returns a list of relational database images, or blueprints. You can use a blueprint to create a new database running a specific database engine. The database engine that runs on your database depends on the blueprint you define when creating the relational database.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrelationaldatabasebundles"><a aria-hidden="true" class="anchor-heading" href="#getrelationaldatabasebundles"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRelationalDatabaseBundles</h3>
+<ul>
+<li>description: Returns a list of relational database bundles. You can use a bundle to create a new database with a set of performance specifications, such as CPU count, disk size, RAM size, network transfer allowance, and standard of high availability. The cost of your database depends on the bundle you define when creating the relational database.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrelationaldatabaseevents"><a aria-hidden="true" class="anchor-heading" href="#getrelationaldatabaseevents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRelationalDatabaseEvents</h3>
+<ul>
+<li>description: Returns events for a relational database.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrelationaldatabaselogevents"><a aria-hidden="true" class="anchor-heading" href="#getrelationaldatabaselogevents"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRelationalDatabaseLogEvents</h3>
+<ul>
+<li>description: Returns events for the specified log stream of a relational database.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrelationaldatabaselogstreams"><a aria-hidden="true" class="anchor-heading" href="#getrelationaldatabaselogstreams"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRelationalDatabaseLogStreams</h3>
+<ul>
+<li>description: Returns the log streams available for a relational database.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrelationaldatabasemasteruserpassword"><a aria-hidden="true" class="anchor-heading" href="#getrelationaldatabasemasteruserpassword"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRelationalDatabaseMasterUserPassword</h3>
+<ul>
+<li>description: Returns the master user password of a relational database.</li>
+<li>access level: Permissions management</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrelationaldatabasemetricdata"><a aria-hidden="true" class="anchor-heading" href="#getrelationaldatabasemetricdata"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRelationalDatabaseMetricData</h3>
+<ul>
+<li>description: Returns the data points for the specified metric of a relational database.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrelationaldatabaseparameters"><a aria-hidden="true" class="anchor-heading" href="#getrelationaldatabaseparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRelationalDatabaseParameters</h3>
+<ul>
+<li>description: Returns the parameters of a relational database.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrelationaldatabasesnapshot"><a aria-hidden="true" class="anchor-heading" href="#getrelationaldatabasesnapshot"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRelationalDatabaseSnapshot</h3>
+<ul>
+<li>description: Returns information about a relational database snapshot.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrelationaldatabasesnapshots"><a aria-hidden="true" class="anchor-heading" href="#getrelationaldatabasesnapshots"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRelationalDatabaseSnapshots</h3>
+<ul>
+<li>description: Returns information about all relational database snapshots.</li>
+<li>access level: List</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getrelationaldatabases"><a aria-hidden="true" class="anchor-heading" href="#getrelationaldatabases"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetRelationalDatabases</h3>
+<ul>
+<li>description: Return information about all relational databases.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getstaticip"><a aria-hidden="true" class="anchor-heading" href="#getstaticip"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetStaticIp</h3>
+<ul>
+<li>description: Returns information about a static IP.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "StaticIp": {
+        "resource_type": "StaticIp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="getstaticips"><a aria-hidden="true" class="anchor-heading" href="#getstaticips"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>GetStaticIps</h3>
+<ul>
+<li>description: Returns information about all static IPs.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "StaticIp": {
+        "resource_type": "StaticIp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="importkeypair"><a aria-hidden="true" class="anchor-heading" href="#importkeypair"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ImportKeyPair</h3>
+<ul>
+<li>description: Imports a public key from a key pair.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "KeyPair": {
+        "resource_type": "KeyPair",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="isvpcpeered"><a aria-hidden="true" class="anchor-heading" href="#isvpcpeered"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>IsVpcPeered</h3>
+<ul>
+<li>description: Returns a boolean value indicating whether the Amazon Lightsail virtual private cloud (VPC) is peered.</li>
+<li>access level: Read</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="openinstancepublicports"><a aria-hidden="true" class="anchor-heading" href="#openinstancepublicports"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>OpenInstancePublicPorts</h3>
+<ul>
+<li>description: Adds, or opens a public port of an instance.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="peervpc"><a aria-hidden="true" class="anchor-heading" href="#peervpc"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PeerVpc</h3>
+<ul>
+<li>description: Tries to peer the Amazon Lightsail virtual private cloud (VPC) with the default VPC.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="putinstancepublicports"><a aria-hidden="true" class="anchor-heading" href="#putinstancepublicports"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>PutInstancePublicPorts</h3>
+<ul>
+<li>description: Sets the specified open ports for an instance, and closes all ports for every protocol not included in the request.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="rebootinstance"><a aria-hidden="true" class="anchor-heading" href="#rebootinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RebootInstance</h3>
+<ul>
+<li>description: Reboots an instance that is in a running state.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="rebootrelationaldatabase"><a aria-hidden="true" class="anchor-heading" href="#rebootrelationaldatabase"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>RebootRelationalDatabase</h3>
+<ul>
+<li>description: Reboots a relational database that is in a running state.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="releasestaticip"><a aria-hidden="true" class="anchor-heading" href="#releasestaticip"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>ReleaseStaticIp</h3>
+<ul>
+<li>description: Deletes a static IP.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "StaticIp": {
+        "resource_type": "StaticIp",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startinstance"><a aria-hidden="true" class="anchor-heading" href="#startinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartInstance</h3>
+<ul>
+<li>description: Starts an instance that is in a stopped state.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="startrelationaldatabase"><a aria-hidden="true" class="anchor-heading" href="#startrelationaldatabase"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StartRelationalDatabase</h3>
+<ul>
+<li>description: Starts a relational database that is in a stopped state.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stopinstance"><a aria-hidden="true" class="anchor-heading" href="#stopinstance"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopInstance</h3>
+<ul>
+<li>description: Stops an instance that is in a running state.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Instance": {
+        "resource_type": "Instance",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="stoprelationaldatabase"><a aria-hidden="true" class="anchor-heading" href="#stoprelationaldatabase"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>StopRelationalDatabase</h3>
+<ul>
+<li>description: Stops a relational database that is in a running state.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="tagresource"><a aria-hidden="true" class="anchor-heading" href="#tagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>TagResource</h3>
+<ul>
+<li>description: Tags a resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Disk": {
+        "resource_type": "Disk",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "DiskSnapshot": {
+        "resource_type": "DiskSnapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "Domain": {
+        "resource_type": "Domain",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "Instance": {
+        "resource_type": "Instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "InstanceSnapshot": {
+        "resource_type": "InstanceSnapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "KeyPair": {
+        "resource_type": "KeyPair",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "RelationalDatabaseSnapshot": {
+        "resource_type": "RelationalDatabaseSnapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "StaticIp": {
+        "resource_type": "StaticIp",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="unpeervpc"><a aria-hidden="true" class="anchor-heading" href="#unpeervpc"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UnpeerVpc</h3>
+<ul>
+<li>description: Attempts to unpeer the Amazon Lightsail virtual private cloud (VPC) from the default VPC.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="untagresource"><a aria-hidden="true" class="anchor-heading" href="#untagresource"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UntagResource</h3>
+<ul>
+<li>description: Untags a resource.</li>
+<li>access level: Tagging</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Disk": {
+        "resource_type": "Disk",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "DiskSnapshot": {
+        "resource_type": "DiskSnapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "Domain": {
+        "resource_type": "Domain",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "Instance": {
+        "resource_type": "Instance",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "InstanceSnapshot": {
+        "resource_type": "InstanceSnapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "KeyPair": {
+        "resource_type": "KeyPair",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "RelationalDatabaseSnapshot": {
+        "resource_type": "RelationalDatabaseSnapshot",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "StaticIp": {
+        "resource_type": "StaticIp",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    },
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys"
+        ],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updatedomainentry"><a aria-hidden="true" class="anchor-heading" href="#updatedomainentry"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateDomainEntry</h3>
+<ul>
+<li>description: Updates a domain recordset after it is created.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "Domain": {
+        "resource_type": "Domain",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updateloadbalancerattribute"><a aria-hidden="true" class="anchor-heading" href="#updateloadbalancerattribute"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateLoadBalancerAttribute</h3>
+<ul>
+<li>description: Updates a load balancer attribute, such as the health check path and session stickiness.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "LoadBalancer": {
+        "resource_type": "LoadBalancer",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updaterelationaldatabase"><a aria-hidden="true" class="anchor-heading" href="#updaterelationaldatabase"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRelationalDatabase</h3>
+<ul>
+<li>description: Updates a relational database.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "RelationalDatabase": {
+        "resource_type": "RelationalDatabase",
+        "required": true,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre>
+<h3 id="updaterelationaldatabaseparameters"><a aria-hidden="true" class="anchor-heading" href="#updaterelationaldatabaseparameters"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>UpdateRelationalDatabaseParameters</h3>
+<ul>
+<li>description: Updates the parameters of a relational database.</li>
+<li>access level: Write</li>
+<li>resource types</li>
+</ul>
+<pre><code>{
+    "": {
+        "resource_type": "",
+        "required": false,
+        "condition_keys": [],
+        "dependent_actions": []
+    }
+}
+</code></pre><span id="navId" data="iam-Lightsail"></span>
+
+                
+      </section>
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+        
+          <hr>
+          <footer>
+            
+            
+
+            
+                
+              </div>
+          </footer>
+        
+    </div>
+</div>
+
+
+  
+
+  <div class="search-overlay"></div>
+
+</div>
+</body>
+</html>
