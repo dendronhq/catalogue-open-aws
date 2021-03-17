@@ -736,7 +736,6 @@ body {
 .main-content a {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .main-content ul,
 .main-content ol {
@@ -1661,7 +1660,6 @@ h6,
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
   padding: 0;
 }
@@ -1692,7 +1690,6 @@ h6,
   display: block;
 }
 .search-active .search-overlay {
-  width: 100%;
   height: 100%;
   opacity: 1;
   transition: opacity ease 400ms, width 0s, height 0s;
